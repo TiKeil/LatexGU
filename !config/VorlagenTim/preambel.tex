@@ -1,0 +1,493 @@
+%!TEX root = ../../PDGL1_SS16/pdeskript.tex
+%!TEX TS-program = xelatex
+%\documentclass[a4paper, twoside, headsepline, index=totoc,toc=listof, fontsize=11pt, cleardoublepage=empty, headinclude, DIV=12, BCOR=5mm, titlepage]{scrartcl}
+\documentclass[a4paper, twoside, headsepline, index=totoc,toc=listof,toc=bibliography,toc=index, fontsize=11pt, cleardoublepage=empty, headinclude, DIV=12, BCOR=5mm, titlepage,draft]{scrartcl}
+\usepackage{scrtime} % KOMA, Uhrzeit ermoeglicht
+\usepackage{scrpage2} % wie fancyhdr, nur optimiert auf KOMA-Skript, leicht andere Syntax
+\usepackage{etoolbox}
+\usepackage{letltxmacro}
+\usepackage{ifthen}
+
+
+%--Farbdefinitionen
+%-- muss vor tikz geladen werden
+\usepackage[usenames, table, x11names]{xcolor}
+\definecolor{dark_gray}{gray}{0.45}
+\definecolor{light_gray}{gray}{0.6}
+\definecolor{fb10_blue}{cmyk}{0.8,0.4,0.13,0.07}
+\usepackage[final]{graphicx}
+
+%--Zum Zeichnen
+%-- muss vor polyglossia bzw. babel geladen werden
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{external}
+\tikzset{>=latex}
+\usetikzlibrary{shapes,arrows.meta,intersections}
+\usetikzlibrary{calc,3d}
+\usetikzlibrary{decorations.pathreplacing,decorations.markings, decorations.pathmorphing}
+\usetikzlibrary{angles}
+
+%-- Konfiguration von tikzexternalize
+\tikzexternalize[prefix=tikz/,up to date check=diff]
+\pgfkeys{/pgf/images/include external/.code=\includegraphics{#1}}
+\tikzset{external/system call={xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode --shell-escape -jobname "\image" "\texsource"}}
+
+
+%-- tikzexternalize fuer tikzcd deaktivieren, da inkompatibel
+\AtBeginEnvironment{tikzcd}{\tikzexternaldisable}
+\AtEndEnvironment{tikzcd}{\tikzexternalenable}
+
+%-- um Inkompatibilitaeten von quotes und polyglossia bzw. babel zu vermeiden
+\tikzset{
+  every picture/.append style={
+    execute at begin picture={\shorthandoff{"}},
+    execute at end picture={\shorthandon{"}}
+  }
+}
+\usetikzlibrary{quotes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps}
+% \pgfplotsset{compat=1.12}
+
+
+%-- Mathesymbole etc.
+\usepackage{mathtools} % beinhaltet amsmath
+\mathtoolsset{showonlyrefs, centercolon}
+\newtagform{brackets}[\textbf]{[}{]}
+\usetagform{brackets}
+\usepackage{wasysym} % zusätzliche Symbole
+\usepackage{amssymb} % zusätzliche Symbole
+\usepackage{latexsym} % zusätzliche Symbole
+\usepackage{stmaryrd} % für Blitz
+\usepackage{nicefrac} % schräge Brüche
+\usepackage{cancel} % Befehle zum Durchstreichen
+\usepackage{mathdots} % Verbesserung von Punkten wie zB \ldots
+\usepackage{mathrsfs} % das X wurde benötigt
+\usepackage{esint}
+
+%-- einzelne Symbole aus dem mathx-package
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{<-> mathx10}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\bigplus}{1}{mathx}{"90}
+
+%-- 
+\DeclareSymbolFont{bbold}{U}{bbold}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbbold}{bbold}
+\newcommand{\mathds}[1]{\mathbb{#1}} % Um Kompatibilitaet mit frueheren Benutzung von dsfont herzustellen
+\newcommand{\ind}{\mathbbold{1}} % charakteristische-Funktion-Eins
+
+\def\mathul#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}} %farbiges Untersteichen im Mathe-Modus
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+%-- Underbrace als Befehl in LaTeX-Syntax (und ohne Spacing probleme mit nachfolgenden Operatoren...)
+\newcommand{\Underbrace}[2]{{\underbrace{#1}_{#2}}}
+
+%-- Alles was mit Schrift und XeTeX zu tun hat
+\usepackage[no-math]{fontspec}
+\usepackage{polyglossia} % moderner babel-ersatz
+\setmainlanguage[spelling=new,babelshorthands=true]{german}
+\shorthandoff{"}
+\setotherlanguage{english}
+% \newcommand\glqq{"}
+% \newcommand\grqq{"}
+\defaultfontfeatures{Mapping=tex-text, WordSpace={1.4}} %
+\setmainfont{SourceSansPro}[Scale=MatchUppercase,Extension=.otf,UprightFont=*-Regular,BoldFont=*-Semibold,ItalicFont=*-LightIt,BoldItalicFont=*-SemiboldIt]
+\setsansfont{SourceSansPro}[Scale=MatchUppercase,Extension=.otf,UprightFont=*-Regular,BoldFont=*-Semibold,ItalicFont=*-LightIt,BoldItalicFont=*-SemiboldIt]
+
+\setmonofont{Inconsolatazi4}[Scale=MatchLowercase,Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold,StylisticSet=1]
+\usepackage{xltxtra}
+% \usepackage{fontawesome}
+\usepackage{microtype}
+
+
+
+%--Mixed
+\usepackage[neverdecrease]{paralist}
+\usepackage[german=quotes]{csquotes}
+\usepackage{makeidx}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage[margin=10pt, font=small, labelfont={sf, bf}, format=plain, indention=1em]{caption}
+\captionsetup[wrapfigure]{name=Abb. }
+\usepackage{stackrel}
+\usepackage{multicol}
+
+\flushbottom
+
+
+%--Unterstreichung
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{1.8pt}
+
+%--Indexverarbeitung
+\newcommand{\bet}[1]{\textbf{#1}}
+\newcommand{\Index}[1]{\textbf{#1}\index{#1}}
+\makeindex
+\setindexpreamble{{\noindent \itshape Die \emph{Seitenzahlen} sind mit Hyperlinks zu den entsprechenden Seiten versehen, also anklickbar}\par \bigskip}
+\renewcommand{\indexpagestyle}{scrheadings}
+
+
+%--Marginnote & todonotes
+\deffootnote[1.5em]{1.5em}{1.5em}{\textsuperscript{\thefootnotemark}\ }
+\usepackage[fulladjust]{marginnote}
+\renewcommand*{\marginfont}{\color{dark_gray} \itshape \footnotesize}
+\usepackage[textsize=small]{todonotes}
+\usepackage{ragged2e}
+\renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
+\renewcommand*{\raggedrightmarginnote}{\RaggedRight}
+
+%--Todonotes mit tikz/externalize kompatibel machen
+\LetLtxMacro{\oldtodo}{\todo}
+\renewcommand{\todo}[2][]{\tikzexternaldisable\oldtodo[#1]{#2}\tikzexternalenable}
+\LetLtxMacro{\oldmissingfigure}{\missingfigure}
+\renewcommand{\missingfigure}[2][]{\tikzexternaldisable\oldmissingfigure[{#1}]{#2}\tikzexternalenable}
+
+%--Konfiguration von Hyperref pdfstartview=FitH, 
+\usepackage[hidelinks, pdfpagelabels,  bookmarksopen=true, bookmarksnumbered=true, linkcolor=black, urlcolor=SkyBlue2, plainpages=false,pagebackref, citecolor=black, hypertexnames=true, pdfauthor={Tim Keil}, pdfborderstyle={/S/U}, linkbordercolor=SkyBlue2, colorlinks=false,final,backref=false]{hyperref}
+
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+% \newcommand{\appendLink}[1]{#1\,\faExternalLink}
+% \newcommand{\hrefsym}[2]{\href{#1}{\texttt{\appendLink{#2}}}}
+% \newcommand{\hrefsymX}[2]{\href{#1}{\appendLink{#2}}}
+% \newcommand{\hrefsymmail}[2]{\href{#1}{\texttt{\faEnvelopeO\,#2}}}
+% \renewcommand{\url}[1]{\hrefsym{#1}{\nolinkurl{#1}}}
+
+% -- QR-Codes
+% \usepackage{qrcode} %-- hinter hyperref laden!
+
+%--Römische Zahlen
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1{}}}
+% \renewcommand{\thesection}{\Roman{section}} % für römische section nummerierung
+
+%%--Abkürzungen etc.
+\newcommand{\light}{\text{\Large $\lightning$}}
+
+%-- Definitionen von weiteren Mathe-Befehlen
+\DeclareMathOperator{\re}{Re} %Realteil
+\DeclareMathOperator{\diver}{div} %Realteil
+\DeclareMathOperator{\im}{Im} %Imaginaerteil
+\DeclareMathOperator{\id}{id} %identische Abbildung
+\DeclareMathOperator{\Hom}{Hom} 
+\DeclareMathOperator{\Tr}{Tr} 
+\DeclareMathOperator{\dist}{dist} 
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Eig}{Eig}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\esssup}{esssup}
+\DeclareMathOperator{\spn}{span}
+\newcommand{\mathd}{\ensuremath{\mathrm{d}\mkern-1.0mu}}
+
+
+
+%--Skalarprodukt
+\DeclarePairedDelimiterX\sprod[2]{\langle}{\rangle}{#1\,\delimsize\vert\,#2}
+\DeclarePairedDelimiterX\skal[2]{\langle}{\rangle}{#1\,,\,#2}
+
+%--Betrag, Gaußklammer
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+%--Norm
+\DeclarePairedDelimiter\doppelstrich{\Vert}{\Vert}
+\newcommand{\norm}[2][\relax]{
+\ifx#1\relax \ensuremath{\doppelstrich*{#2}}
+\else \ensuremath{\doppelstrich*{#2}_{#1}}
+\fi}
+
+
+%--Umklammern
+\DeclarePairedDelimiter\enbrace{(}{)}
+\DeclarePairedDelimiter\benbrace{[}{]}
+\DeclarePairedDelimiter\lenbrace{<}{>}
+\newcommand{\ssbrace}[1]{{\scriptscriptstyle\enbrace{#1}}}
+
+%--Mengen
+\DeclarePairedDelimiterX\mengenA[1]{\lbrace}{\rbrace}{#1}
+\DeclarePairedDelimiterX\mengenB[2]{\lbrace}{\rbrace}{#1\, \delimsize\vert \, #2}
+
+\makeatletter
+\newcommand{\set}[2][\relax]{
+\ifx#1\relax \ensuremath{
+\mengenA*{#2}}
+\else \ensuremath{%
+  \mengenB*{#1}{#2}}
+\fi}
+\makeatother
+
+\DeclareRobustCommand{\minwidthbox}[2]{%
+  \ifmmode
+    \expandafter\mathmakebox
+  \else
+    \expandafter\makebox
+  \fi
+  [\ifdim#2<\width\width\else#2\fi]{#1}%
+}
+
+
+%--offen und abgeschlossen
+\newcommand{\off}{\! \stackrel[\text{offen}]{}{\subset} \!}
+\newcommand{\abg}{\! \stackrel[\text{abg.}]{}{\subset} \!}
+
+%--Differential
+\newcommand{\diff}[2]{\ensuremath{\frac{{\partial #1}}{{\partial #2}} }}
+\newcommand{\diffd}[2]{\ensuremath{\frac{\mathd #1}{\mathd #2} }}
+
+
+%thrm declare
+
+% -- theorem packages
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{mdframed}
+\usepackage{blindtext}
+\renewcommand{\listtheoremname}{Übersicht aller Aussagen}
+
+% -- Theoreme als PDF-Lesezeichen
+\usepackage{bookmark}
+\bookmarksetup{open,numbered}
+\makeatletter
+\newcommand*{\theorembookmark}{%
+  \bookmark[
+    dest=\@currentHref,
+    rellevel=1,
+    keeplevel,
+  ]{%
+    \thmt@thmname\space\csname the\thmt@envname\endcsname
+    \ifx\thmt@shortoptarg\@empty
+    \else
+      \space(\thmt@shortoptarg)%
+    \fi
+  }%
+}   
+\makeatother
+
+% -- Definition der einzelnen Umgebungen
+\declaretheoremstyle[%
+	headfont=\sffamily\bfseries,
+	notefont=\normalfont\sffamily,
+	bodyfont=\normalfont,
+	headformat=\NAME\ \NUMBER\NOTE,
+	%headpunct=.,
+	postheadspace=1em,
+	spaceabove=\parsep,spacebelow=\parsep,
+	%shaded={bgcolor=gray!20},
+	postheadhook=\theorembookmark,
+    mdframed={
+        backgroundcolor=gray!20, 
+            linecolor=gray!20, 
+            innertopmargin=6pt,
+            roundcorner=5pt, 
+            innerbottommargin=6pt, 
+            skipbelow=\parsep, 
+            skipbelow=\parsep }
+	]%
+{mainstyle}
+\declaretheoremstyle[%
+	headfont=\sffamily\bfseries,
+	notefont=\normalfont\sffamily,
+	bodyfont=\normalfont,
+	headformat=\NAME\ \NUMBER\NOTE,
+	%headpunct=.,
+	postheadspace=1em,
+	spaceabove=\parsep,spacebelow=\parsep,
+	%shaded={bgcolor=fb10_blue!20},
+	postheadhook=\theorembookmark,
+    mdframed={
+        backgroundcolor=fb10_blue!20, 
+            linecolor=fb10_blue!20, 
+            innertopmargin=6pt,
+            roundcorner=5pt, 
+            innerbottommargin=6pt, 
+            skipbelow=\parsep, 
+            skipbelow=\parsep }
+]{mainstyle_blue}
+\declaretheoremstyle[%
+	headfont=\sffamily\bfseries,
+	notefont=\normalfont\sffamily,
+	bodyfont=\normalfont,
+	headformat=\NAME\ \NUMBER\NOTE,
+	%headpunct=.,
+	postheadspace=1em,
+	spaceabove=15pt,spacebelow=10pt,
+	postheadhook=\theorembookmark]%
+{mainstyle_unshaded}
+\declaretheoremstyle[%
+	headfont=\sffamily\bfseries,
+	notefont=\normalfont\sffamily,
+	bodyfont=\normalfont,
+	headformat=\NUMBER\NAME\NOTE,
+	%headpunct=.,
+	postheadspace=1em,
+	spaceabove=15pt,spacebelow=10pt,
+	% shaded={bgcolor=gray!20},
+	postheadhook=\theorembookmark]%
+{mainstyle_unnumbered}
+\declaretheoremstyle[%
+	headfont=\sffamily\bfseries,
+	notefont=\normalfont\sffamily,
+	bodyfont=\normalfont,
+	headformat=swapnumber,
+	%headpunct=.,
+	postheadspace=1em,
+	spaceabove=15pt,spacebelow=10pt,
+	shaded={bgcolor=gray!20},
+	postheadhook=\theorembookmark,
+	qed=\qedsymbol]%
+{mainstyleB}
+
+\declaretheorem[name=Definition,parent=section,style=mainstyle_blue]{definition}
+\declaretheorem[name=Definition,numbered=no,style=mainstyle_blue]{definition*}
+\declaretheorem[name=Theorem,sharenumber=definition,style=mainstyle]{theorem}
+\declaretheorem[name=Theorem,numbered=no,style=mainstyle]{theorem*}
+\declaretheorem[name=Proposition,sharenumber=definition,style=mainstyle]{proposition}
+\declaretheorem[name=Proposition,numbered=no,style=mainstyle_blue]{proposition*}
+\declaretheorem[name=Lemma,sharenumber=definition,style=mainstyle]{lemma}
+\declaretheorem[name=Lemma,numbered=no,style=mainstyle_blue]{lemma*}
+\declaretheorem[name=Statement,sharenumber=definition,style=mainstyle]{satz}
+\declaretheorem[name=Statement,sharenumber=definition,style=mainstyle_unshaded]{satzUnshaded}
+\declaretheorem[name=Definition,sharenumber=definition,style=mainstyle_unshaded]{definitionUnshaded}
+\declaretheorem[name=Satz,numbered=no,style=mainstyle_unnumbered]{satz*}
+\declaretheorem[name=Korollar,sharenumber=definition,style=mainstyle]{korollar}
+\declaretheorem[name=Korollar,sharenumber=definition,style=mainstyleB]{korollarB}
+
+\declaretheorem[name=Notation,numbered=no,style=mainstyle_unnumbered]{notation}
+\declaretheorem[name=Remark,numbered=no,style=mainstyle_unnumbered]{bemerkung}
+\declaretheorem[name=Nebenbedingung,numbered=no,style=mainstyle_unnumbered]{nb}
+\declaretheorem[name=Example,numbered=no,style=mainstyle_unnumbered]{beispiel}
+\declaretheorem[name=Examples,numbered=no,style=mainstyle_unnumbered]{beispiele}
+
+
+% \declaretheorem[name=Notation,sharenumber=definition,style=mainstyle_unshaded]{notation}
+% \declaretheorem[name=Bemerkung,sharenumber=definition,style=mainstyle_unshaded]{bemerkung}
+% \declaretheorem[name=Nebenbedingung,sharenumber=definition,style=mainstyle_unshaded]{nb}
+% \declaretheorem[name=Beispiel,sharenumber=definition,style=mainstyle_unshaded]{beispiel}
+% \declaretheorem[name=Beispiele,sharenumber=definition,style=mainstyle_unshaded]{beispiele}
+
+% -- Beweise
+\declaretheoremstyle[headfont=\bfseries,bodyfont=\normalfont,headpunct=.,postheadspace=1em,spacebelow=12pt,spaceabove=2pt,qed=\qedsymbol]{beweise}
+\declaretheoremstyle[headfont=\sffamily\bfseries,bodyfont=\normalfont,headpunct=:,postheadspace=1em,spacebelow=10pt,spaceabove=10pt]{bemerkungen}
+\declaretheorem[name=proof,numbered=no,style=beweise]{beweis}
+
+% %für schönere abhebungen
+% \usepackage[framemethod=TikZ]{mdframed}
+% \usepackage{amsthm}
+% \usepackage{thmtools}
+%
+% \declaretheoremstyle[%
+% 	headfont=\sffamily\bfseries,
+% 	notefont=\normalfont\sffamily,
+% 	bodyfont=\normalfont,
+% 	headformat=\NUMBER\ \NAME\NOTE,
+% 	headpunct={},
+% 	postheadspace=1ex,
+% 	spaceabove=15pt,spacebelow=30pt,]%
+% {mainstyle}
+%
+% \declaretheoremstyle[%
+% 	headfont=\sffamily\bfseries,
+% 	notefont=\normalfont\sffamily,
+% 	bodyfont=\normalfont,
+% 	headformat=\NUMBER\ \NAME\NOTE,
+% 	headpunct={},
+% 	postheadspace=1ex,
+% 	backgroundcolor = blue!10,
+% 	align = center , % align the environment itself (left, center, rigth)
+% 	nobreak = true, % prevent a frame from splitting
+% 	hidealllines = true , %
+% 	topline = true , bottomline = true , %
+% 	spaceabove=15pt,spacebelow=30pt,]%
+% {unterlegt}
+%
+% \declaretheoremstyle[%
+% 	headfont=\bfseries\scshape,
+% 	bodyfont=\normalfont,
+% 	headpunct=:,
+% 	postheadspace=1ex,
+% 	spacebelow=12pt,spaceabove=2pt,
+% 	qed=\qedsymbol]%
+% {beweise}
+%
+% \declaretheorem[name=Definition,parent=section,style=unterlegt]{definition}
+% \declaretheorem[name=Satz,sharenumber=definition,style=unterlegt]{satz}
+% \declaretheorem[name=Korollar,sharenumber=definition,style=mainstyle]{korollar}
+% \declaretheorem[name=Lemma,sharenumber=definition,style=mainstyle]{lemma}
+% \declaretheorem[name=Proposition,sharenumber=definition,style=mainstyle]{proposition}
+%
+% \declaretheorem[name=Beweis,numbered=no,style=beweise]{beweis}
+% \declaretheorem[name=Bemerkung,numbered=no,style=mainstyle]{bemerkung}
+% \declaretheorem[name=Notation,numbered=no,style=mainstyle]{notation}
+% \declaretheorem[name=Nebenbedingung,numbered=no,style=mainstyle]{nb}
+% \declaretheorem[name=Beispiel,numbered=no,style=mainstyle]{beispiel}
+% \declaretheorem[name=Beispiele,numbered=no,style=mainstyle]{beispiele}
+
+\declaretheoremstyle[
+    headfont=\bfseries, 
+    notebraces={[}{]},
+    bodyfont=\normalfont\itshape,
+    headpunct={},
+    postheadspace=\newline,
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={
+        backgroundcolor=red!20, 
+            linecolor=red!30, 
+            innertopmargin=6pt,
+            roundcorner=5pt, 
+            innerbottommargin=6pt, 
+            skipbelow=\parsep, 
+            skipbelow=\parsep } 
+]{myexamplestyle}
+
+% example environment - thmtools
+\declaretheorem[
+    style=myexamplestyle,
+    name=Example,
+    numberwithin=section
+]{example}
+
+%%% Titelseite
+\providecommand{\verfasser}{Tim Keil}
+
+%--Konfiguration von scrheadings
+\setheadsepline{1pt}[\color{light_gray}]
+\pagestyle{scrheadings}
+\clearscrheadfoot
+
+\providecommand{\shortFach}{\fach}
+\lehead{ \includegraphics[height=1.0 cm,keepaspectratio]{!config/Bilder/GU}}
+\rehead{\rule{0cm}{0.6cm}\footnotesize \sffamily \color{light_gray} \verfasser{} -- Script \shortFach}
+\lohead{\rule{0cm}{0.6cm} \footnotesize \sffamily \color{light_gray} Stand: \today \; \thistime[:]}
+\rohead{\includegraphics[height=1.0 cm,keepaspectratio]{!config/Bilder/CH}}
+
+
+\ofoot[{ \color{dark_gray} \LARGE \sffamily \thepage}]{{ \color{dark_gray} \LARGE \sffamily \thepage}} %hier wir auch der plain Stil bearbeitet!
+\automark{section}
+\ifoot{ \color{dark_gray} \small \leftmark}
+
+
+%--Inhaltsverzeichnis
+\usepackage[tocindentauto]{tocstyle}
+\usetocstyle{KOMAlike}	
+\shorthandon{"}
+
+%--Punkte (als letztes laden)
+\usepackage{ellipsis}
+
+%--Metadaten
+\providecommand{\mail}{keil.menden@web.de}
+\author{\verfasser}
+\titlehead{\includegraphics[height=2.5cm, keepaspectratio]{!config/Bilder/GU}%
+\hfill \includegraphics[height=2.3cm, keepaspectratio]{!config/Bilder/CH}}
+\title{\fach}
+\subtitle{Script of \enquote{\fach} by \prof}
+
+
