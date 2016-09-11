@@ -88,9 +88,10 @@
 %-- Alles was mit Schrift und XeTeX zu tun hat
 \usepackage[no-math]{fontspec}
 \usepackage{polyglossia} % moderner babel-ersatz
-\setmainlanguage[spelling=new,babelshorthands=true]{german}
-\shorthandoff{"}
-\setotherlanguage{english}
+%\setmainlanguage[spelling=new,babelshorthands=true]{english}
+%\shorthandoff{"}
+\setmainlanguage{english}
+%\setotherlanguage{english}
 % \newcommand\glqq{"}
 % \newcommand\grqq{"}
 \defaultfontfeatures{Mapping=tex-text, WordSpace={1.4}} %
@@ -465,7 +466,7 @@
 \providecommand{\shortFach}{\fach}
 \lehead{ \includegraphics[height=1.0 cm,keepaspectratio]{!config/Bilder/GU}}
 \rehead{\rule{0cm}{0.6cm}\footnotesize \sffamily \color{light_gray} \verfasser{} -- Script \shortFach}
-\lohead{\rule{0cm}{0.6cm} \footnotesize \sffamily \color{light_gray} Stand: \today \; \thistime[:]}
+\lohead{\rule{0cm}{0.6cm} \footnotesize \sffamily \color{light_gray} Effective: \today \; \thistime[:]}
 \rohead{\includegraphics[height=1.0 cm,keepaspectratio]{!config/Bilder/CH}}
 
 
@@ -477,7 +478,7 @@
 %--Inhaltsverzeichnis
 \usepackage[tocindentauto]{tocstyle}
 \usetocstyle{KOMAlike}	
-\shorthandon{"}
+%\shorthandon{"}
 
 %--Punkte (als letztes laden)
 \usepackage{ellipsis}
