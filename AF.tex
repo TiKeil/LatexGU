@@ -488,14 +488,14 @@ This is \underline{Banach's fixed point theorem}.
 \end{beispiele}
 
 %01.09.2016
-\begin{theorem*}[Hölder's inequality]
+\begin{theorem}[Hölder's inequality]
 	Assume $1<p<\infty$ and $\frac{1}{p}+ \frac{1}{q}=1$. Let $(x_1, \dots, x_n, \dots)$ and $(y_1,y_2, \dots, y_n, \dots)$ be sequences of complex numbers. Then
 	\[
 		\sum_{n=1}^{\infty}\abs{x_ny_n} 
 		\leq \left( \sum_{n=1}^{\infty}\abs{x_n}^p \right)^{\frac{1}{p}} \cdot \left( \sum_{n=1}^{\infty}\abs{y_n}^q \right)^{\frac{1}{q}}
 	\]
 	Remark there the LHS can be infinity, but the RHS can also be infinity.
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[Step 1] We're going to proof 
@@ -541,12 +541,12 @@ This is \underline{Banach's fixed point theorem}.
 		Let $N \to \infty$. First in RHS and then in LHS. 
 	\end{description}
 \end{beweis}
-\begin{theorem*}[Minkowski's inequality]
+\begin{theorem}[Minkowski's inequality]
 	Assume $1 \leq p < \infty$. and $X,Y \in l^p$. Then
 	\[
 		\norm{X+Y}_{l^p} \leq \norm{X}_{l^p} + \norm{Y}_{l^p}
 	\]
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[$p=1$] 
@@ -655,7 +655,7 @@ This is \underline{Banach's fixed point theorem}.
 			\item $ \text{span } C = E$
 		\end{enumerate}
 		continue of the example above: \\
-		Claim: $A$ is a basis for E.
+		\minisec{Claim:}$A$ is a basis for E.
 		\item Set $E = l^2$ and
 		\[
 			A = \set[X_k]{k =1,2,\dots}
@@ -663,7 +663,7 @@ This is \underline{Banach's fixed point theorem}.
 		\[
 			X_k = (0,0,\dots,0,1,0,0,\dots)
 		\]
-		Claim: A is linear independant since
+		\minisec{Claim:}A is linear independant since
 		\[
 			\alpha_1 X_1 + \alpha_2 X_2 + \dots + \alpha_n X_n = 0
 		\]
@@ -787,12 +787,12 @@ This is \underline{Banach's fixed point theorem}.
 	\end{description}
 	\end{enumerate}
 \end{beispiele}
-\begin{theorem*}[equivalent norm]
+\begin{theorem}[equivalent norm]
 	$E$ vector space with norms $\norm{.}$ and $\norm{.}_{*}$. We say that $\norm{.}$ and $\norm{.}_{*}$ are equivalent if there exists $\alpha, \beta >0$ such that
 	\[
 		\alpha \norm{x}_{*} \leq \norm{x} \leq \beta \norm{x}_{*} \qquad \text{for all }x \in E.
 	\]
-\end{theorem*}
+\end{theorem}
 \begin{beispiel}
 		\item $E = C([0,1])$. Choose $y = f(t)$ and $y = \abs{f(t)}$
 		\[
@@ -813,10 +813,10 @@ This is \underline{Banach's fixed point theorem}.
 		\]
 		The norms are not equivalent! Answer: NO ! 
 	\end{beispiel}
-\begin{theorem*}
+\begin{theorem}
 	$E$ vector space with $\dim E < \infty$.  \\
 	$\Rightarrow $ All norms on $E$ are equivalent.
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	Assume $n = \dim E$ with a positive integer $n$. Let $x_1,x_2, \dots , x_n$ be a basis for $E$. For every $x \in E$
 	\[
@@ -826,9 +826,9 @@ This is \underline{Banach's fixed point theorem}.
 	\[
 		\norm{x}_{*} = \abs{\alpha_1(x)}+ \dots + \abs{\alpha_n(x)}, \qquad x \in E
 	\]
-	Claim: $\norm{.}_{*}$ defines a norm on $E$ (easy proof) \\
+	\minisec{Claim:}$\norm{.}_{*}$ defines a norm on $E$ (easy proof) \\
 	Fix an arbitrary norm $\norm{.}$ on $E$. \\
-	Claim: $\norm{.}_{*}$ and $\norm{.}$ are equivalent. \\
+	\minisec{Claim:}$\norm{.}_{*}$ and $\norm{.}$ are equivalent. \\
 	Note for $x \in E$
 	\begin{align*}
 		\norm{x} &= \norm{\alpha_1(x)x_1 + \dots + \alpha_n(x)x_n}  \\
@@ -999,12 +999,12 @@ This is \underline{Banach's fixed point theorem}.
 	\]
 \end{definition*}
 One can define open and closed using the definition of convergence:
-\begin{satz*} % statement
+\begin{satz} % statement
 	$A \subseteq E$ is closed if any convergent sequence in $A$ has a limit in $A$, i.e
 	\[
 		\substack{x_n \to x \\ \text{for }n \to \infty \\ x_n \in A} \Rightarrow x \in A
 	\]
-\end{satz*}
+\end{satz}
 \begin{beweis}
 	\begin{description}
 		\item[$\Rightarrow$:]Assume that $A$ is closed and $x_n \to x$. $x_n \in A$, but $x_n \not \in A$. (try to get a contradiction). \\
@@ -1072,9 +1072,9 @@ Another example is $(C_0, \norm{.}_{\infty})$ where
 		\[
 			C_F = \set[x = (x_1,x_2,\dots)]{\text{only a finite number of }x_i \neq 0} \subset C_0
 		\]
-\begin{satz*}
+\begin{satz}
 	$C_F$ is dense in $C_0$
-\end{satz*}
+\end{satz}
 \begin{beweis}
 	\[
 		\forall\,  x \in C_0 \,\forall\, \varepsilon>0 \text{ must find }y \in C_F \text{ such that }\norm{y-x}_{\infty} < \varepsilon.
@@ -1124,9 +1124,9 @@ Another example is $(C_0, \norm{.}_{\infty})$ where
 For instance let $E= C([0,1])$. Then $S=\set[g \in C([0,1])]{\norm{g}_{\infty}\leq 1}$ is closed and bounded, but not compact. \\
 Take $x_n(t):=t^n$. Then $x_n \in S$. $\set{x_n}$ does not have a subsequence convergent to a continuous function.
 \end{bemerkung}
-\begin{theorem*}
+\begin{theorem}
 	$(E,\norm{.})$ normed space and $\dim E < \infty$ \\ iff $\set{\forall\, A \subset E,\,A \text{compact} \Leftrightarrow A \text{ is closed and bounded}}$
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[$\Rightarrow$:]If $\dim E < \infty$ then $A$ is compact iff $A$ is bounded and closed (exsercise)
@@ -1285,9 +1285,9 @@ Clearly $\set{x_n} \subset S$ has no convergent subsequence. Hence $S$ is not co
 \begin{definition*}[Convergent and absolutely convergent series]
 	A series $\sum_{n=1}^{\infty}x_n$ in $E$ is called \underline{convergent} if $\set{\sum_{n=1}^{m}x_n}_m$, a sequence of partial sums, is convergent in $E$. If $\sum_{n=1}^{\infty}\norm{x_n} < \infty$ then we say that $\sum_{n=1}^{\infty}x_n$ converges absolutely.
 \end{definition*}
-\begin{theorem*}
+\begin{theorem}
 	A normed space $E$ is complete iff every absolutely convergent series converges in $E$.
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[$\Rightarrow$:] Suppose $X$ is complete and $\sum_{n=1}^{\infty}\norm{x_n} < \infty$. Let 
@@ -1356,10 +1356,10 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 	$\sum_{n=1}^{\infty}x_m$ converges absolutely in $(E,\norm{.})$ if $\sum_{n=1}^{\infty}\norm{x_n}$ converges $(\mathbb{R},\norm{.})$. \\
 \end{bemerkung}
 
-\subsection{Mappings between normal spaces} 
-\label{sub:mappings_between_normal_spaces}
+\subsection{Mappings between normed spaces} 
+\label{sub:mappings_between_normed_spaces}
 \begin{definition*}
-	Let $(E_1,\norm{.}_1)$, $(E_2,\norm{.}_2)$ be normal spaces. $T: E_1 \to E_2$ (not necessarily linear) is called continuous at $x_0 \in E_1$, if 
+	Let $(E_1,\norm{.}_1)$, $(E_2,\norm{.}_2)$ be normed spaces. $T: E_1 \to E_2$ (not necessarily linear) is called continuous at $x_0 \in E_1$, if 
 	\[
 		x_n \to x_0 \text{ in } (E_1,\norm{.}_1) \qquad \Rightarrow \qquad T(x_n) \to T(x_0) \text{ in } (E_2,\norm{.}_2)
 	\]
@@ -1563,7 +1563,7 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 	\]
 	\end{enumerate}
 \end{beispiele}
-\begin{satz*}
+\begin{satz}
 
 	$T_1,T_2$ bounded linear mappings $(E_1,\norm{.}_1) \to (E_2,\norm{.}_2)$ and $\lambda$ scalar. Set
 	\begin{align*}
@@ -1580,7 +1580,7 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 		\]
 		defines a norm in $B(E_1,E_2)$.
 	\end{enumerate}
-\end{satz*}
+\end{satz}
 \begin{beweis}
 	\begin{enumerate}[(1)]
 		\item $\norm{T}=0$ implies that $\norm{T(x)}_2 = 0$ for all $x \in E_1$ $ \,\, \Rightarrow \,\, $ $T(x) = 0 \in E_2$.
@@ -1604,10 +1604,10 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 		\end{align*}
 	\end{enumerate}
 \end{beweis}
-Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space. 
-\begin{satz*}
+Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normed space. 
+\begin{satz}
 	 $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a Banach space if $(E_2,\norm{.}_2)$ is a Banach space.
-\end{satz*}
+\end{satz}
 \begin{beweis}
 	Assume $(T_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ where $(E_2, \norm{.}_2)$ is a Banach space. Fix $x \in E_1$
 	\begin{align*}
@@ -1654,8 +1654,8 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		\]
 	\end{enumerate}
 \end{beweis}
-\begin{theorem*}[Banach-Steinhaus theorem (uniform boundedness principle)]
-	$(E_1,\norm{.}_1)$ Banach space, $(E_2,\norm{.}_2)$ normal space and $\mathcal{F} \subset B(E_1,E_2)$. Assume
+\begin{theorem}[Banach-Steinhaus theorem (uniform boundedness principle)]
+	$(E_1,\norm{.}_1)$ Banach space, $(E_2,\norm{.}_2)$ normed space and $\mathcal{F} \subset B(E_1,E_2)$. Assume
 	\[
 		\sup\limits_{T \in \mathcal{F}}\norm{T(x)}_2 < \infty \qquad \text{for all } x \in E_1
 	\]
@@ -1663,7 +1663,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	\[
 		\sup\limits_{T \in \mathcal{F}}\norm{T}_{E_1 \to E_2} < \infty.
 	\]
-	\end{theorem*}
+	\end{theorem}
 	\begin{bemerkung}
 		The implication $\Leftarrow$ is easy to prove. If $\mathcal{F}$ is a finite set, the theorem is trivial.
 	\end{bemerkung}
@@ -1737,7 +1737,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		f(x)+ 5 \int_{0}^{1-x} \min(x,y)f(y) \,\mathrm{d}y = g(x), \qquad x \in [0,1] \qquad (*)
 	\]
 	where $g \in C([0,1])$. \\ 
-	Claim: There exists an unique solution $f \in C([0,1])$ that $(*)$. \\
+	\minisec{Claim:}There exists an unique solution $f \in C([0,1])$ that $(*)$. \\
 	Idea:
 	\[
 		f(x) = f(x) - 5 \int_{0}^{1-x} \min(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1]
@@ -1753,7 +1753,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	Clearly $ \tilde T : C([0,1]) \to C([0,1])$. (continual later).
 \end{beispiel}
 
-\begin{theorem*}[Banach's fixed point theorem]
+\begin{theorem}[Banach's fixed point theorem]
 	$(E, \norm{.})$ Banach space. $T: E \to E$ (no assumption on linearity) is a contraction on $E$, i.e. there exists $c>1$ such that
 	\[
 		\norm{T(x)-T(\tilde x)} \leq c \norm{x- \tilde x} \qquad \text{for all }x,\tilde x \in E.
@@ -1763,7 +1763,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		\bar{x} = T( \bar{ x})
 	\]
 	($\bar{x}$ is a fixed point)
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[Uniqueness:]Assume $T( \bar{x}) = \bar{x}$ and $T ( \tilde x) = \tilde x$. Then
@@ -1775,7 +1775,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		\[
 			x_{n+1} = T(x_{n}), \qquad n=0,1,2,\dots
 		\]
-		Claim: $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$.
+		\minisec{Claim:}$(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$.
 		Note:
 		\begin{align*}
 			\norm{x_{n+1}-x_n}  &= \norm{T(x_n)-T(x_{n-1})} \\
@@ -1791,7 +1791,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 			&\leq \frac{c^m}{1-c} \norm{x_1 - x_0} \to 0 \qquad \text{as }n,m \to \infty
 		\end{align*}
 		Hence $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$. $(E, \norm{.})$ is a Banach space. So $(x_n)_{n=1}^{\infty}$ converges in $(E,\norm{.})$. Call the limit $\bar{x}$. \\
-		Claim: $\bar{x}$ is a fixed point for $T$. 
+		\minisec{Claim:}$\bar{x}$ is a fixed point for $T$. 
 		\begin{align*}
 			\norm{\bar{ x}- T(\bar{x})} & = \norm{\bar{x}-x_{n+1}+ x_{n+1} - T(\bar{x})} \\
 			&\leq \norm{\bar{x}-x_{n+1}} + \norm{\underset{T(x_n)}{\underbrace{x_{n+1}}} - T(\bar{x})} \\
@@ -1830,7 +1830,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	We conclude that $\tilde T$ is a contraction. We can take $c = \frac{5}{6}$. By Banach's fixed point theorem $\tilde T$ has a unique fixed point. Finally $(*)$
 	has a unique solution $f \in C([0,1])$ which is the fixed point. 
 \end{beispiel}
-\begin{theorem*}[Banach's fixed point theorem (generalization)]
+\begin{theorem}[Banach's fixed point theorem (generalization)]
 	$(E, \norm{.})$ Banach space. $T: F \to F$ where $F$ is a closed set in $E$. $N$ positive integer. Assume $T^N = \underset{N-\text{times}}{\underbrace{T \circ T \circ \dots \circ T}}$ is a contraction on $F$, i.e. there exists $c > 1$ such that
 	\[
 		\norm{T^N(x)- T^N(\tilde x)} \leq c \norm{x-\tilde x}, \qquad \text{for all }x, \tilde x \in F.
@@ -1839,7 +1839,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	\[
 		\bar{x} = T(\bar{x}) \in F
 	\]
-\end{theorem*}
+\end{theorem}
 \begin{beweis}
 	\begin{description}
 		\item[$N=1$:] Fix $x_0 \in F$ and consider $(x_n)_{n=1}^{\infty}$ where $x_{n+1} = T(x_n)$ for $n=0,1,2, \dots$. There $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence and hence this converges in $E$ since this is a Banach space. Call the limit $\bar{x}$. Note
@@ -1848,7 +1848,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		\] 
 		implies $\bar{x} \in F$. The rest of the argument is the same as before.
 		\item[$N>1$:] By previous result we know that $T^N$ has a unique fixpoint $\bar{x} \in F$, i.e. $\bar{x} = T^N(\bar{x})$. \\
-		Claim: $\bar{x}$ is a fixed point for $T$.
+		\minisec{Claim:}$\bar{x}$ is a fixed point for $T$.
 		\begin{align*}
 			\norm{T(\bar{x})-\bar{x}} &= \norm{T(T^N(\bar{x}))- T^N(\bar{x})} \\
 			&= \norm{T^N(T(\bar{x}))- T^N(\bar{x})} \\
@@ -1873,7 +1873,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	\begin{enumerate}[(1)]
 		\item $T: (0,1] \to (0,1]$ where $T(x) = \frac{x}{2}$. Clearly $T$ is a contraction on $(0,1]$ but has no fixed point. Note that $(0,1]$ is not a closed intervall. 
 		\item $T: [0,\infty) \to [0,\infty)$, where $T(x) = x + \frac{1}{x}$. Clearly $[0,\infty)$ is a closed intervall in $\mathbb{R}$ but $T$ has no fixed point. \\
-		Claim: $T$ is not a contraction but 'close' to be a contraction. \\
+		\minisec{Claim:}$T$ is not a contraction but 'close' to be a contraction. \\
 		\begin{align*}
 			\abs{T(x)-T(\tilde x)} < \abs{x- \tilde x} \qquad \text{for }x, \tilde x \in [1, \infty), x \neq \tilde x
 		\end{align*}
@@ -1951,7 +1951,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	\[
 		\abs{h(x,z_1)-h(x,z_2)} \leq M \abs{z_1- z_2} \qquad \text{for all }x \in [0,1],\,z_1,z_2 \in \mathbb{R}
 	\]
-	Claim: $(*)$ has a unique solution $f \in C([0,1])$. For $f \in C([0,1])$ set
+	\minisec{Claim:}$(*)$ has a unique solution $f \in C([0,1])$. For $f \in C([0,1])$ set
 	\[
 		T(f)(x) = \int_{0}^{x}k(x,y)h(y,f(y)) \,\mathrm{d}y + g(x) \qquad x \in [0,1].
 	\]
@@ -1977,16 +1977,16 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 		\norm{f}_a = \max\limits_{x \in [0,1]} e^{-ax}\abs{f(x)}
 	\] 
 	for $f \in C([0,1])$. \\
-	Claim: $\norm{.}_a$ defines a norm on $C([0,1])$. This is easy to check. \\
-	Claim: $\norm{.}$ and $\norm{.}_a$ are equivalent. \\
+	\minisec{Claim:}$\norm{.}_a$ defines a norm on $C([0,1])$. This is easy to check. \\
+	\minisec{Claim:}$\norm{.}$ and $\norm{.}_a$ are equivalent. \\
 	This follows from
 	\[
 		e^{-a} \norm{f} \leq \norm{f}_a \leq \norm{f}
 	\]
 	for all $f \in C([0,1])$ (note that $\norm{.}$ is the max-norm).\\
-	Claim: $(C([0,1]), \norm{.}_a)$ is a Banach space. \\
+	\minisec{Claim:}$(C([0,1]), \norm{.}_a)$ is a Banach space. \\
 	This follows from the fact that $\norm{.}$ und $\norm{.}_a$ are equivalent and $(C([0,1]),\norm{.})$ is a Banach space. \\
-	Claim: $T$ is a contraction on $(C([0,1]),\norm{.}_a)$ for $a >0$ large enough. \\
+	\minisec{Claim:}$T$ is a contraction on $(C([0,1]),\norm{.}_a)$ for $a >0$ large enough. \\
 	For $f_1,f_2 \in C([0,1])$ and $x \in [0,1]$ we have
 	\begin{align*}
 		\abs{(T(f_1)-T(f_2))(x)} &\leq \int_{0}^{x} NM \abs{(f_1-f_2)(y)} \,\mathrm{d}y \\
@@ -2003,6 +2003,786 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normal space.
 	\]
 	For $a > NM$ is $T$ a contraction on $(C([0,1]),\norm{.}_a)$. Banach fixed point theorem implies that there is a unique $f \in C([0,1])$ that solves $(*)$.
 \end{beispiel}
+%%% 15.9.2016
+\begin{theorem}
+	$(E,\norm{.})$ Banach space, $(Y,\norm{.})$ normed space. $T: E \times Y \to E$ where
+	\begin{enumerate}[(1)]
+		\item There exists a $C > 1$ such that
+		\[
+			\norm{T(x,y)-T(\tilde x,y)} \leq C \norm{x - \tilde x} \qquad \text{for all }x, \tilde x \in E,\, y \in Y.
+		\]
+		\item $T_x: Y \to E$ where $T_x(y)= T(x,y)$ is continuous for all $x \in E$.
+	\end{enumerate}
+	$\Rightarrow $ For every $y \in Y$ there exists a unique $g(y) \in E$ such that \[
+		g(y)= T(g(y),y)
+	\] and $g: Y \to E$ is continuous.
+\end{theorem}
+\begin{beweis}
+	The existence of a unique element $g(y) \in E$ for every $y \in Y$ follows from Banach's fixed point theorem. \\
+	Assume $y_n \to \tilde y$ in $(Y, \norm{.}_{*})$, i.e. \[
+		\norm{y_n - \tilde y}_* \to 0, \qquad n \to \infty
+	\]
+	Remains to show
+	\[
+		g(y_m) \to g(\tilde y) \qquad \text{ in }(E(,\norm{.}))
+	\]
+	\begin{align*}
+		\norm{g(y_n)- g( \tilde y)} &= \norm{T(g(y_n),y_n) - T(g(\tilde y), \tilde y)} \\
+		&\leq  \underset{ \stackrel{(1)}{\leq } c \norm{g(y_n)-g(\tilde y)}}{\underbrace{\norm{T(g(y_n),y_n) - T(g( \tilde y),y_n)}}} + 
+		\underset{^{(2)}\to 0, \, n \to \infty}{\underbrace{\norm{T(g(\tilde y),y_n)- T(g(\tilde y),\tilde y)}}}
+	\end{align*}
+	We obtain
+	\[
+		\norm{g(y_n)-g(\tilde y)} \leq \frac{1}{1-c} \norm{T(g(\tilde y), y_n) - T(g(\tilde y),\tilde y)} \to 0, \qquad n \to \infty.
+	\]
+\end{beweis}
+
+\begin{theorem}[Brouwer's fixed point theorem]
+	$K$ compact ($=$ closed and bounded) convex subset of $\mathbb{R}^n$ and $T: K \to K$ continuous. Then $T$ has a fixed point, i.e. there exists $\bar{x} \in K$ with
+	\[
+		T(\bar{x}) = \bar{x}.
+	\]
+\end{theorem}
+\begin{bemerkung}
+	\begin{itemize}
+		\item No uniqueness! Consider the case $T= \id_K$.
+		\item Set $K \subseteq \mathbb{R}^n$ (in general) is convex if
+		\[
+			x, \tilde x \in K \text{ and } \lambda \in [0,1] \qquad \Rightarrow \qquad \lambda x + ( 1- \lambda)\tilde x \in K.
+		\]
+	\end{itemize}
+\end{bemerkung}
+
+\begin{theorem}[Perron's theorem]
+	$A$ real-valued $n \times n$-Matrix with positive entries. $A = [a_{ij}]_{i,j=1, \dots,n}$ all $a_{ij}>0$. \\
+	$\Rightarrow $ The mapping for $x \in \mathbb{R}^n$ 
+	\[
+		x \mapsto Ax
+	\]
+	has an eigenvalue $>0$ with an eigenvecto with positive entries, i.e. there exists $\lambda >0$ and $\tilde x \in \mathbb{R}^n$ with $A \tilde x = \lambda \tilde x$and all entries in $\tilde x$ are positive.
+\end{theorem}
+
+\begin{beweis}
+We use Brouwer's fixed point theorem. Set \[
+	K := \set[(x_1,x_2,\dots,x_n) \in \mathbb{R}^n]{x_k \geq 0, \, \sum^{n}_{i=1} x_i = 1}
+\]	
+\minisec{Claim:}$K$ is closed, bounded and a convex set in $\mathbb{R}^n$. Thus $K$ is compact (since $K \subseteq \mathbb{R}^n$). Set
+\[
+	T(x_1,\dots,x_n) = \underset{\in K}{\underbrace{\frac{1}{\norm{Ax}_{l^1}}A \cdot \begin{pmatrix}
+		x_1 \\ \vdots \\ x_n
+	\end{pmatrix}}} \qquad \text{for all }(x_1,\dots,x_n) \in K
+\]
+\minisec{Claim:}$T: K \to K$ is continuous. \\
+Since
+\[
+	x_k \to x \qquad \text{ in } K \text{ w.r.t. }l^1-\text{norm}.
+\]
+To show:
+\[
+	T(x_k) \to T(x) \qquad \text{ in } K \text{ w.r.t. }l^1-\text{norm}.
+\]
+Set
+\begin{align*}
+	x &= (x_1,x_2, \dots,x_n) \\
+	x_k &= (x_1^{(k)},x_2^{(k)}, \dots, x_n^{(k)}) \qquad k = 1,2,\dots.
+\end{align*}
+Consider
+\begin{align*}
+	\norm{T(x_k)-T(x)}_{l^1} &= \norm{ \frac{1}{\norm{Ax_k}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x }_{l^1} \\
+	&\leq  \norm{\frac{1}{\norm{Ax_k}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x_k}_{l^1} + \norm{\frac{1}{\norm{Ax}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x}_{l^1} \\
+	&= \abs{\frac{1}{\norm{Ax_k}_{l^1}} - \frac{1}{\norm{Ax}_{l^1}}} \norm{A x_k}_{l^1} + \frac{1}{\norm{Ax}_{l^1}} \norm{A(x -x_k)}_{l^1}
+\end{align*}
+and
+\begin{align*}
+	\norm{A(x-x_k)}_{l^1} &= \sum^{n}_{i=1} \abs{ \sum^{n}_{j=1} a_{ij}(x_j-x_j^{(k)})} \\
+	&\leq  \sum^{n}_{i=1} \sum^{n}_{j=1} a_{ij} \abs{x_j-x_j^{(k)}} \\
+	&\leq \underset{< \infty}{\underbrace{n \cdot \max\limits_{i,j} a_{ij}}} \underset{\to 0}{\underbrace{\norm{x-x_k}_{l^1}}} \to 0, \qquad k \to \infty
+\end{align*}
+So \[
+	Ax_k \to Ax \qquad \text{in }l^1.
+\]
+This implies
+\[
+	\norm{Ax_k}_{l^1} \to \norm{Ax}_{l^1} \qquad \text{ in }\mathbb{R}.
+\]
+Brouwer's fixed point theorem implies that $T$ has a fixed point $\bar{x} \in K$.
+\begin{align*}
+	\bar{x} &= (\bar{x}_1,\bar{x}_2,\dots,\bar{x}_n) \\
+	\bar{x} &= T(\bar{x}) = \frac{1}{\norm{A \bar{x}}_{l^1}} A \bar{x} 
+\end{align*}
+Hence
+$A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\abs{A \bar{x}}_l^1 >0$ and $\bar{x}$ has all entries $>0$.
+\end{beweis}
+
+\begin{theorem}[Schander's fixed point theorem]
+	$(E, \norm{.})$ Banach space. $K$ compact, convex set in $E$. $T: K \to K$ continuous. \\
+	$\Rightarrow $ $T$ has a fixed point in $K$.
+\end{theorem}
+\begin{beispiel}
+	\[
+		S = \set[f \in C([0,1])]{f(0) = 0,\, f(1)=1,\, \norm{f} = \max\limits_{x \in [0,1]} \abs{f(x)} \leq 1}
+	\]
+	$T: S \to S$ defined by
+	\[
+		T(f)(x) = f(x^2), \qquad x \in [0,1].
+	\]
+	$C([0,1])$ is equipped with the max-norm. \\
+	\minisec{Claim:}\begin{itemize}
+		\item $S$ is closed, bounded and convex in $C([0,1])$.
+		\item $T: S \to S$ is continuous
+		\item $T$ has no fixed point in $S$
+	\end{itemize}
+	\begin{itemize}
+		\item 
+	$S$ bounded: $f \in S$ implies $\norm{f}\leq 1$. 
+	\item $S$ closed: $f_n \to f$ in $(C([0,1]),\norm{.})$. \\
+	To show: $f \in S$. \\
+	Note \[
+		\max_{x \in [0,1]}\abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty
+	\]
+	This implies
+	\[
+		\abs{f(0)} = \abs{f_n(0)-f(0)} \to 0, \qquad n \to \infty.
+	\]
+	So $f(0)=0$.
+	\[
+		\abs{1-f(1)} = \norm{f_n(1)-f(1)} \to 0, \qquad n \to \infty.
+	\]
+	So $f(1)=1$. For $x \in [0,1]$ we get
+	\begin{align*}
+		\abs{f(x)} &\leq \norm{f(x)-f_n(x)} + \abs{f_n(x)} \\
+		&\leq \underset{\to 0}{\underbrace{\norm{f-f_n}}} + \underset{\leq 1}{\underbrace{\norm{f_n}}}. 
+	\end{align*}
+	Conclusion $f \in S$
+	\[
+		\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq 1.
+	\]
+	\item $f,\tilde f \in S$ and $\lambda \in [0,1]$. \\
+	To show: 
+	\[
+		\lambda f + (1- \lambda) \tilde f \in S
+	\]
+	Trivial since
+	\[
+		(\lambda f + (1-\lambda) \tilde f)(0) = 0 
+	\]
+	\[
+		(\lambda f + (1- \lambda) \tilde f)(1) = \lambda f(1)+ (1- \lambda)\tilde f(1)= 1
+	\]
+	and	
+	\[
+		\norm{\lambda f + (1-\lambda) \tilde f} \leq \abs{\lambda} \norm{f} + \abs{1- \lambda} \norm{ \tilde f} \leq 1
+	\]
+	\end{itemize}
+	We want to show that $T: S \to S$ is continuous. (obvious that $T(S) \subseteq S$)\\ Assume $f_n \to f$ in $S$ in max-norm, i.e.
+	\[
+		\max_{x \in [0,1]} \abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty
+	\]
+	To show: $T(f_n) \to T(f)$ in $S$ in max-norm.
+	\begin{align*}
+		\norm{T(f_n)-T(f)} &= \max_{x \in [0,1]}\abs{T(f_n)(x)- T(f)(x)} \\ & = \max_{x \in [0,1]}\abs{f_n(x^2)-f(x^2)}  \\ &= \norm{f_n -f} \to 0, \qquad n \to \infty
+	\end{align*}
+	$T: S \to S $ has no fixed point. \\
+	If $f \in S$ is a fixed point for $T$ then 
+	\[
+		f(x^2) = T(f)(x) = f(x), \qquad x \in [0,1].
+	\]
+	To show: there can be no such $f \in S$. \\
+	Set $a = \inf \set[x \in [0,1]]{f(x) = \frac{1}{2}} \neq \emptyset \text{ since $f$ is continuous}$. $a \in (0,1)$ since if $a = 0$ then there exists a sequence
+	\[
+		a_n \in \set[x \in [0,1]]{f(x)= \frac{1}{2}} 
+	\]
+	such that $a_n \to a$ in $\mathbb{R}$ as $n \to \infty$. Contradiction since 
+	\[
+		\frac{1}{2} = f(a_n) \to f(a) = f(0) = 0
+	\]
+	since $f$ is continuous. \\
+	But $0 < a^2 < a$ and $f(a^2) = f(a) = \frac{1}{2}$. This is a contradiction. \\
+	If we believe in Schauder then we can conclude that $S \subseteq C([0,1])$ is not compact.
+\end{beispiel}
+\begin{theorem}[Arzela-Ascoli theorem]
+	Assume $K$ is a compact set in $\mathbb{R}^n$ (e.g. $K = [0,1]$ in $\mathbb{R}$n $n=1$) and $S \subseteq C(K)$ where $C(K)$ is equipped with the max-norm. \\
+	$\Rightarrow $ S is relatively compact in $C(K)$ iff
+	\begin{enumerate}[(1)]
+		\item $S$ uniformly bounded.
+		\item $S$ is equicontinuous.
+	\end{enumerate}
+\end{theorem}
+\begin{definition*}
+	\begin{enumerate}[(i)]
+		\item $S$ is uniformly bounded if
+		\[
+			\sup\limits_{f \in S} \norm{f} < \infty
+		\]
+		\item $S$ is equicontinuous if: for every $\varepsilon >0$ there exists $\delta >0$ such that
+		\[
+			\abs{x- \tilde x} < \delta, \, x, \tilde x \in K \qquad \Rightarrow \qquad \abs{f(x)-f(\tilde x)}< \varepsilon.
+		\]
+		$\delta = \delta (\varepsilon)$ must not depend on $f$. \\
+	\end{enumerate}
+\end{definition*}
+$S$ is relatively compact in $C(K)$ if for every sequence $(f_n)_{n=1}^{\infty}$ in $S$ there exists a converging subsequence in $C(K)$. \\
+To show:
+$S$ is relatively compact in $C(K)$ iff the closure $\bar{S}$ is compact in $C(K)$. 
+\minisec{things to do:}
+\begin{enumerate}[(1)]
+	\item Proof of Schander's theorem
+	\item Proof of Arzela-Ascoli theorem
+	\item Application with Schander
+	\item Proof of Brouwer's thereom (special case)
+	\item Completion of normed spaces
+\end{enumerate}	
+For (4) wie consider the following lemma
+\begin{lemma*}[Sperner's lemma]
+	Big triangle $T$ 
+	\[
+		T = \bigcup_{a \in A} T_a
+	\]
+	$\set{T_a}_{a \in A}$ is triangle of $T$, i.e. for any pair $T_a$, $T_{\tilde a}$ in the triangulation
+	\[
+		T_a \cup T_{\tilde a}= \set{\emptyset \text{ or common vertrex or common side or }T_a = T_{\tilde a}}.
+	\]
+	$\Rightarrow $ There must exists a triangle $T_a$ with all vertices colored differently. MISSING FIGURE!
+\end{lemma*}
+
+\begin{description}
+	\item[Proof of Schander's fixed point theorem:]
+	To prove: $(E, \norm{.})$ Banach space, $K$ compact convex set in $E$ and $T: K \to K$ continuous. \\
+	\minisec{Claim:}$T$ has a fixed point. \\
+	\begin{beweis}
+		\begin{lemma}
+			Assume $(x_n)_{n=1}^{\infty}$ sequence in $K$ such that
+			\[
+				\norm{T(x_n)-x_n} \to 0, \qquad  n \to \infty
+			\]
+			T has a fixed point in $K$
+		\end{lemma}
+		\begin{beweis}
+			Consider $(T(x_n))_{n=1}^{\infty}$ in $K$. $K$ compact implies that there exists a $z \in K$ and a subsequence $(T(\tilde x_n))_{n=1}^{\infty}$ of $(T(x_n))_{n=1}^{\infty}$ such that 
+			\[
+				T(\tilde x_n) \to  z \qquad  \text{in $K$ as }n \to \infty.
+			\]
+			Then
+			\[
+				\norm{\underset{\to z}{\underbrace{T(\tilde x_n)}}- \tilde x_n} \to 0, \qquad \text{as }n \to \infty
+			\]
+			So $\tilde x_n \to z$ for $n \to \infty$. But $T$ continuous implies 
+			\[
+				z \leftarrow T( \tilde x_n) \to T(z), \qquad  n \to \infty.
+			\]
+			Conclusion: $z = T(z)$ so $z$ is a fixed point.
+		\end{beweis}
+		\begin{lemma}
+			$K$ compact set in $E$. Let $\varepsilon >0$. Then there exists a finite set $x_1,\dots,x_n \in K$ such that for all $x \in K$
+			\[
+				\min\limits_{k = 1, \dots, N} \norm{x- x_k} < \varepsilon
+			\] 
+		\end{lemma}
+		\begin{beweis}
+			Assume there is no finite sequence $x_1, \dots, x_N$. Then there exists a sequence $(x_n)_{n=1}^{\infty}$ such that
+			\[
+				\norm{x_k-x_l} \geq \varepsilon, \qquad \text{for }k \neq l
+			\]
+			Clearly $(x_n)_{n=1}^{\infty}$ has no converging subsequence. This contradicts $K$ beeing compact.
+		\end{beweis}
+		Fix positive integer $n$. Apply previous lemma with $\varepsilon = \frac{1}{\varepsilon}$. then there exists a finite set $x_1,\dots,x_N$ such that
+		\[
+			K \subset \bigcup_{k=1}^N B \left(x_k, \frac{1}{n} \right)
+		\]
+		Set 
+		\begin{align*}
+			K_n  &= \set{\text{set of all convex combinations of $x_1, \dots,x_N$}} \\
+			&= \set[\sum_{k=1}^{N} \lambda_k x_k]{\lambda_k \geq 0 \text{ for all }k,\, \sum_{k=1}^{N}\lambda_k = 1}
+		\end{align*}
+		This set is a closed and bounded set in $\text{span}(K_n)$ finite dimensional. Also $K_n$ is convex.  \\
+		(want $T_n: K_n \to K_n$ where $T_n$ close to $T$) \\
+		Set $f_k(x)= \max \left(0, \frac{1}{n}- \norm{x-x_k}\right)$ for $x \in K$ and $k=1,2, \dots,N$. \\
+		For each $x \in K$ there exists a $k$ such that $f_k(x)>0$. Set
+		\[
+			P_n(x) = \frac{f_1(x)x_1+f_2(x_2)+ \dots+ f_N(x_N)}{f_1(x)+f_2(x)+ \dots+ f_N(x)}, \qquad x \in K.
+		\]
+		$P_n$ is a convex combination of $x_1,\dots,x_N$ for every $x \in K$. So $P_n(x) \in K_n$ for every $x \in K$. \\
+		\minisec{Claim:}$\norm{P_n(x)-x} < \frac{1}{n}$ for all $x \in K$.Set $T_n$ to be defined like
+		\[
+			T_n := P_n T : K_n \to K_n
+		\]
+		Here $T_n$ is continuous since $T$ and $P_n$ are continuous. $K_n$ is compact and convex in a finite dimensional space. Brouwer's fixed point theorem implies that $T_n$ has a fixed point in $K_n$,i.e. there exists $x_n \in K_n$ such that
+		\[
+			x_n = T_n(x_n)= P_n(x_n).
+		\]
+		But then
+		\[
+			\norm{x_n - T(x_n)} \leq  \underset{=0}{\underbrace{\norm{x_n - \underset{=T_n}{\underbrace{P_nT(x_n)}}}}} + \underset{< \frac{1}{n}}{\underbrace{\norm{ P_nT(x_n)- T(x_n)}}}
+		\]
+		The first lemma above gives that $T$ has a fixed point in $K$.
+	\end{beweis} 
+\end{description}
+\begin{beispiel}
+	Assume $k(x,y)$ continuous on $[0,1] \times [0,1]$ and $h(y,z)$ continuous on $[0,1]\times \mathbb{R}$ and 
+	\[
+		\sup\limits_{(y,z) \in [0,1] \times \mathbb{R}} \abs{h(y,z)} \equiv B < \infty
+	\]
+	Then there exists a solution $f \in C([0,1])$ to 
+	\[
+		f(x) = \int_{0}^{1} k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1]
+	\]
+	Methos: Set $f \in C([0,1])$ and
+	\[
+		T(f)(x) = \int_{0}^{1}k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1] \qquad (*)
+	\]
+	We want to apply (a generalized version of) Schander's fixed point theorem. Assume $(E, \norm{.})$ is a Banach space and $F$ closed convex subset of $E$. Moreover assume $T: E \to E$ continuos and $T(F)$ relatively compact in $(E,\norm{.})$. Then $T$ has a fixed point in $F$. \\
+	\begin{description}
+		\item[Step 1:] $T$ as in $(*)$. \\
+		\minisec{Claim:}$T(C([0,1])) \subseteq C([0,1])$. \\
+		To proof this we note that $k$ is continuous on $[0,1] \times [0,1]$ whicht is compact in $\mathbb{R}^2$. This implies that $k$
+ is uniformly continuous on $[0,1]\times [0,1]$. Fix now $\varepsilon >0$. \\
+ Then there exists $\delta = \delta (\varepsilon) >0$ such that
+ \[
+ 	\abs{k(x_1,y_1)- k(x_2,y_2)} < \frac{\varepsilon}{B}
+ \]
+ for $\abs{(x_1,y_1)- (x_2,y_2)}< \delta $. \\
+ Fix $f \in C([0,1])$
+ 	\begin{align*}
+ 		\abs{T(f)(x_1)-T(f)(x_2)} & = \abs{ \int_{0}^{1}(k(x_1,y)-k(x_2,y))h(y,f(y)) \,\mathrm{d}y} \\
+		&\leq \int_{0}^{1}\underset{< \frac{\varepsilon}{B} \text{ if } \abs{x_1-x_2}< \delta }{\underbrace{\abs{k(x_1,y)-k(x_2,y)}}}\underset{\leq B}{\underbrace{\abs{h(y,f(y))}}} \,\mathrm{d}y < \varepsilon, \qquad \text{provided }\abs{x_1-x_2}< \delta
+ 	\end{align*}
+	Conclusion: $T(f) \in C([0,1])$ for $f \in C([0,1])$
+	\item[Step 2:] Choose $F$. \\
+	$k$ is a continuous function on a compact set $[0,1] \times [0,1]$ implies
+	\[
+		\sup\limits_{(x,y) \in [0,1] \times [0,1]} \abs{k(x,y)} \equiv A < \infty.
+	\]
+	Hence 
+	\[
+		\abs{T(f)(x)} \leq  AB \qquad \text{ for all }f \in C([0,1]).
+	\]
+	Set 
+	\[
+		F:= \set[f \in C([0,1])]{\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq AB}
+	\]
+	Clearly $F$ is closed convex in $(C([0,1]),\norm{.})$ which is a Banach space.
+	\item[Step 3:] \minisec{Claim:}$T(F)$ is relatively compact. \\
+	To prove this we use the Arzela-Ascoli Theorem. \\
+	$\phantom{...}$ \\
+	Let $K$ be a compact set in $\mathbb{R}^n$. Let $\mathcal{S} \subset C(K)$ (realvalued continuous functions on $K$). \\
+	Then $\mathcal{S}$ is relatively compact in $(C(K),\norm{.}_{\infty})$ if 
+	\begin{enumerate}[(1)]
+		\item $\mathcal{S}$ uniformly bounded, i.e.
+		\[
+			\sup_{f \in \mathcal{S}} \norm{f} < \infty
+		\]
+		\item equicontinuity of $f \in \mathcal{S}$, i.e.
+		\begin{align*}
+			\forall\, \varepsilon>0 \,\exists\, \delta = \delta (\varepsilon) >0: \,\forall\,  f \in \mathcal{S}: & \\
+			\abs{x_1-x_2} < \delta, \, x_1,x_2 \in K \qquad \Rightarrow & \qquad \abs{f(x_2)-f(x_1)}< \varepsilon
+		\end{align*}
+	\end{enumerate}
+	In our example it is $\mathcal{S} = F$, $K = [0,1]$ in $\mathbb{R}$. Check that (1) and (2) in AA-Theorem are satisfied. \\
+	\begin{enumerate}[(1)]
+		\item $F$ is uniformly bounded since
+	\[
+		\sup_{f \in F}\norm{f} \leq AB < \infty
+	\]
+	\item Equicontinuity follows from calculations in Step 1. \\
+	\end{enumerate}	
+	Conclusion: $T(F)$ is relatively compact.
+	\item[Step 4:] \minisec{Claim:}$T: F \to F$ continuous \\
+	In step 1 we had $f \in F$ and $x_n \to x$ in $[0,1]$. We have shown that $T(f)(x_n) \to T(f)(x)$ in $\mathbb{R}$. So $T(f)$ is a continuous function. \\
+	Now we want to show that for $f_n \to f$ in $F$ we've got $T(f_n) \to T(f)$ in $C([0,1])$. \\
+	Note that $h: [0,1] \times [-AB,AB] \to \mathbb{R}$ is continuous and $[0,1] \times [-AB,AB]$ is compact set in $\mathbb{R}^2$. So $h: [0,1] \times [-AB,AB] \to \mathbb{R}$ is uniformly continuous. \\
+	Fix $\varepsilon >0$. Then there exists a $\delta = \delta (\varepsilon) >0$ such that
+	\[
+		\abs{h(y_1,z_1)-h(y_2,z_2)} < \frac{\varepsilon}{A}
+	\] 
+	for $\abs{(y_1,z_1)-(y_2,z_2)} < \delta $. For $f_1,f_2 \in F$ with
+	\[
+		\norm{f_1-f_2} < \delta 
+	\]
+	We have 
+	\begin{align*}
+		\abs{T(f_1)(x)-T(f_2)(x)} &= \abs{\int_{0}^{1}k(x,y)(h(y,f_1(y))-h(y,f_2(y))) \,\mathrm{d}y} \\
+		&\leq  \int_{0}^{1}\underset{\leq A}{\underbrace{\abs{k(x,y)}}}\underset{< \frac{\varepsilon}{A}}{\underbrace{\abs{h(y,f_1(y))-h(y,f_2(y))}}} \,\mathrm{d}y < \varepsilon 
+	\end{align*}
+	Conclusion: $T: F \to F$ is continuous. 
+	\item[Step 5:] Apply Schander's fixed point theorem.
+	\end{description}
+\end{beispiel}
+\subsection{Completion of normed spaces} 
+\label{sub:completion_of_normed_spaces}
+$(E,\norm{.})$ normed spaces. We say that $(\tilde E, \norm{.}_*)$ is a completion of $(E,\norm{.})$ if $(\tilde E, \norm{.}_*)$ is a normed space such that
+\begin{enumerate}[(1)]
+	\item $\exists\, \Phi: E \to \tilde E$ injective and linear.
+	\item $\norm{x} = \norm{\Phi(x)}_*$ for all $x \in E$.
+	\item $\Phi(E)$ is dense in $\tilde E$.
+	\item $(\tilde E, \norm{.}_*)$ is a Banach space.
+\end{enumerate}
+\minisec{Construction:}
+Let $(x_n)_{n=1}^{\infty}$ and $(y_n)_{n=1}^{\infty}$ be Cauchy sequences in $(E,\norm{.})$. We say that $(x_n)_{n=1}^{\infty}$ and $(y_n)_{n=1}^{\infty}$ are equivalent, denoted by $(x_n) \sim (y_n)$, if 
+\[
+	\norm{x_n-y_n} \to 0, \qquad n \to \infty.
+\]
+Set \[
+	\tilde E= \set[ \left((x_n) \right)_N]{(x_n)_{n=1}^{\infty} \text{ Cauchy sequence in } (E,\norm{.})}
+\]
+Vecotr space structure:
+\[
+	\begin{cases}
+		[(x_n)]_N + [(\tilde x_n)]_N &= [(x_n + \tilde x_n)]_N \\
+		\lambda [(x_n)]_N &= [(\lambda x)_n]_N
+	\end{cases}
+\]
+Show that these definitions are well-defined, i.e. independent of the choice of representative Norm
+\[
+	\norm{ [(x_n)]_N}_* = \lim_{n \to \infty} \norm{x_n}
+\]
+Note \[
+	(x_n) \sim (y_n)
+\]
+implies
+\[
+	\lim_{n \to \infty}\norm{x_n} = \lim_{n \to \infty} \norm{y_n}.
+\]
+Since
+\[
+	\abs{\norm{x_n}- \norm{y_n}} \leq \norm{x_n-y_n} \to 0, \qquad n \to \infty
+\]
+Check that the axioms for being a norm are satisfied. \\
+Now we have $(\tilde E,\norm{.}_*)$ is a normed space. \\
+Define $\Phi$: For $x \in E$ set $\Phi(x) = \left[ (x)_{n=1}^{\infty} \right]_N$ where 
+\[
+	(x)_{n=1}^{\infty} = (x,x,x, \dots).
+\]
+\begin{description}
+\item[Claim 1 \& 2:] easy to prove. 
+\item[Claim 3:] item $\Phi(E)$ dense in $(\tilde E,\norm{.}_*)$. Fix $\left[ (x_n) \right]_N \in \tilde E$. Consider $\Phi(x_k)$ where $x_k$ is the element in the $k$-th position in the sequence $(x_1,x_2, \dots,x_n, \dots)$.
+\begin{align*}
+	\norm{\left[ (x_n) \right]_N - \Phi(x_k)}_* = \lim_{n \to \infty}\norm{x_n - x_k} \to 0 \qquad k \to \infty
+\end{align*}
+Since $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence. \\
+\item[Claim 4:] item $(\tilde E, \norm{.}_*)$ is a Banach space.\\
+Consider a Cauchy sequence $z_n \in \tilde E$ such that $\norm{z_n - z} \to 0$ as $n \to \infty$. \\
+To show: There exists $z \in \tilde E$ such that 
+\[
+	\norm{z_n - z} \to 0, \qquad n \to \infty.
+\]
+By 3 we have that $\Phi(E)$ is dense in $ \tilde E$ so for $n=1,2,\dots$ there exists $x_n \in E$, $n=1,2,\dots$ such that
+\[
+	\norm{z_n - \Phi(z_n)} < \frac{1}{n}, \qquad  n=1,2,\dots
+\]
+Set $z=: \left[ (x_n) \right]_N$. \\
+Need to show that $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence
+\begin{align*}
+	\norm{x_n - x_m} &= \norm{\Phi(x_n)-\Phi(x_m)}_* \\
+	& \leq  \norm{\Phi(x_n)- z_n}_* + \norm{z_n-z_m}_* + \norm{z_m - \Phi(x_m)}_* \\
+	&< \frac{1}{n} + \norm{z_n-z_m} + \frac{1}{m} \to 0, \qquad n,m \to \infty
+\end{align*}
+Conclusion: $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E, \norm{.})$. Remains to show:
+\[
+	\norm{z_n-z}_* \to 0, \qquad n \to \infty
+\]
+\[
+	\norm{z_n - z}_* \leq \underset{< \frac{1}{n}}{\underbrace{\norm{z_n - \Phi(x_n)}_*}} + \underset{= \lim_{n \to \infty}\norm{x_n-x_m}}{\underbrace{\norm{\Phi(x_n)-z}_*}} \to 0, \qquad n \to \infty.
+\]
+\end{description}
+
+Consider $ f \in C([0,1])$
+\begin{itemize}
+	\item max-norm: $\norm{f} = \max_{x \in [0,1]}\abs{f(x)}$. Then $(C([0,1]),\norm{.})$ is a Banach space.
+	\item $p \geq 1:$
+	\[
+		\norm{f}_{L^p} = \left( \int_{0}^{1}\abs{f(x)}^p \,\mathrm{d}x \right)^{\frac{1}{p}} 
+	\]
+	defines a norm for $C([0,1])$
+\end{itemize}
+\begin{bemerkung}
+	\begin{itemize}
+		\item Consider piecewise linear $f_n \in C([0,1])$ for $n =1,2, \dots$
+		\[
+			f_n(x) = \begin{cases}
+				1, &\text{ if } \frac{1}{2} \leq x \leq 1 \\
+				0, &\text{ if } x \leq \frac{1}{2} - \frac{1}{2n}
+			\end{cases}
+		\]
+		with
+		\[
+			\norm{f_n-f_m}_{L^1} \leq \frac{1}{2} \frac{1}{\min(m,n)} \to 0, \qquad n,m \to \infty
+		\]
+		So $(f_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(C([0,1]),\norm{.}_{L^1})$ but $(f_n)_{n=1}^{\infty}$ does not converge in $(C([0,1]),\norm{.}_{L^1})$ since
+		if $\norm{f_n - f}_{L^1} \to 0$ as $n \to \infty$ and $f \in C([0,1])$ then
+		\[
+			f(x) = \begin{cases}
+				0, &\text{ if }x \in [0,\frac{1}{2})\\
+				1, &\text{ if }x \in [\frac{1}{2},1]
+			\end{cases}
+		\]
+		Conclusion: $(C([0,1]), \norm{.}_{L^1})$ is not a Banach space.
+		\item Consider:
+		\[
+			f(x) = \begin{cases}
+				1, &\text{ if }x = \frac{1}{2}\\
+				0, &\text{ if }x \in [0,1] \setminus \set{\frac{1}{2}}
+			\end{cases}
+		\]
+		Then
+		\[
+			\norm{f}_{L^1} = 0 = \norm{0}_{L^1}.
+		\]
+		Compare this with the first axiom for a norm function. Replace $[0,1]$ with $\mathbb{R}$. For $f : \mathbb{R} \to \mathbb{R}$ set \[
+			\supp(f) = \set[x \in \mathbb{R}]{f(x) \neq 0}
+		\]
+		Set 
+		\[
+			C_0(\mathbb{R}) = \set[f \in C(\mathbb{R})]{ \supp(f) \text{ is compact in }\mathbb{R}}
+		\]
+		\minisec{Claim:} $C_0(\mathbb{R})$ forms a vector space and for every $p \geq 1$ and $f \in C_0(\mathbb{R})$
+		\[
+			\norm{f}_{L^p} = \left( \int_{\mathbb{R}}^{} \abs{f(x)}^p \,\mathrm{d}x \right)^{\frac{1}{p}}
+		\] defines a norm on $C_0(\mathbb{R})$. \\
+		Problem: $(C_0(\mathbb{R}), \norm{.}_{L^p})$ for $p \geq 1$ are not Banach spaces. \\
+		$(L^1(\mathbb{R}),\norm{.}_{L^1})$ is a completion of $(C_0(\mathbb{R}),\norm{.}_{L^1})$. \\
+		Note $A \subset \mathbb{R}$ and $A$ bounded. Define
+		\[
+			f_A(x) \begin{cases}
+				1, & x \in A\\
+				0, \text{elsewhere}
+			\end{cases}
+		\]
+		Lebesguesmeasure of $A = \norm{f_A}_{L^1} = \mu(f_A)$. $A \subset \mathbb{R}$ and $A$ unbounded
+		\[
+			\mu(A) = \lim_{n \to \infty} \mu ( A \cap [-n,n]).
+		\]
+		We say that $A \subset \mathbb{R}$ is a $0$- set if for all $\varepsilon >0$ there exist open intervals $I_n$, $n=1,2, \dots$ such that
+		\begin{enumerate}[(1)]
+			\item $ A \subseteq \bigcup_{n=1}^{\infty}I_n$
+			\item $\sum_{n=1}^{\infty}$ lenghts of $I_m < \varepsilon$
+		\end{enumerate} 
+		In particular
+		\[
+			A = \mathbb{Q} = \set[r_n]{n=1,2,\dots}\qquad \text{is a $0$-set}	
+		\]
+	\end{itemize}
+\end{bemerkung}
+%% 20.9
+\newpage
+\section{Hilbert spaces} 
+\label{sec:hilbert_spaces}
+\begin{beispiel}
+	Consider $\mathbb{C}^n = \set[(x_1,x_2,\dots,x_n)]{x_i \in \mathbb{C}}$ and $x,y \in \mathbb{C}^n$ with
+	$x= (x_1,\dots,x_n)$, $y = (y_1,\dots,y_n)$. Define the inner product of $x,y$ (scalar product)
+	\[
+		\skal{x}{y} = \sum^{n}_{i=1}x_i \bar{y}_i \in \mathbb{C}
+	\]
+	We have a map
+	\begin{align*}
+		\mathbb{C}^n \times \mathbb{C}^n &\to \mathbb{C} \\
+		(x,y) &\mapsto \skal{x}{y}
+	\end{align*}
+	This mapping has properties:
+	\begin{itemize}
+		\item $x \neq 0$ folgt $\skal{x}{x} = \sum^{n}_{i=1}x_i \bar{x}_i = \sum^{n}_{i=1} \abs{x_i}^2 >0$
+		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for $x,y \in \mathbb{C}^n$, $\lambda \in \mathbb{C}$.
+		\item $\skal{x}{y} = \sum^{n}_{i=1} x_i \bar{y}_i = \overline{\sum^{n}_{i=1}y_i \bar{x}_i}$ for $x,y \in \mathbb{C}^n$. \\
+		In particular $\skal{x}{\lambda y} = \bar{\lambda} \skal{x}{y}$ for $\lambda \in \mathbb{C}$.
+		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for $x,y,z \in \mathbb{C}^n$. 
+	\end{itemize}
+\end{beispiel}
+\begin{definition}
+	An inner product space $V$ is a complex vector space with an inner product which is a map 
+	\[
+		\skal{.}{.}: V \times V \to \mathbb{C}
+	\]
+	satisfying
+	\begin{itemize}
+		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for any $x,y \in V$, $\lambda \in \mathbb{C}$
+		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for any $x,y,z \in V$
+		\item $\skal{x}{y} = \overline{y,x}$ for any $x,y \in V$
+		\item $\skal{x}{x}>0$ for any $x \in V, x \neq 0$
+	\end{itemize}
+\end{definition}
+Can we generalize $\mathbb{C}^n$? \\
+\[
+	\mathbb{C}^{\mathbb{N}} \set[(x_1,x_2, \dots)]{x_i \in \mathbb{C}}
+\]
+with
+\[
+	\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i 
+\]
+This is not necesserily convergent.
+\begin{beispiele}
+	\begin{enumerate}[(1)]
+		\item 	\[
+		l^2 = \set[(x_1,x_2, \dots)]{ \sum^{\infty}_{i=1} \abs{x_i}^2 < \infty}.
+	\]
+	We have with Cauchy Schwarz
+	\[
+		\sum^{n}_{i=1} \abs{x_i \bar{y}_i} \leq \left( \sum^{n}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum^{n}_{i=1} \abs{y_i}^2 \right)^{\frac{1}{2}}
+	\]
+	if $x \in l^2$ and $y \in l^2$ we get
+	\begin{align*}
+		\sum^{n}_{i=1}\abs{x_i \bar{y}_i} \leq \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum_{i=1}^{\infty} \abs{y_i}^2 \right)^{\frac{1}{2}} < \infty.
+	\end{align*}
+	It follows that $\sum_{i=1}^{\infty} x_i \bar{y}_i$ converges absolutely and hence it is convergent. The following 
+	\[
+		\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i
+	\]
+	is well-defined for vectors $x,y \in l^2$. Like for $\mathbb{C}^n$ one can easily check that $\skal{.}{.}$ satisfies the axioms for inner products. \\
+	$(l^2, \skal{.}{.})$ is an inner product space.
+	\item Consider $C([0,1])$ with the inner product
+	\[
+		\skal{f}{g} = \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t \qquad \forall\, f,g \in C([0,1])
+	\]
+	\begin{itemize}
+		\item 	\[
+			\skal{\lambda f}{g} = \int_{0}^{1}\lambda f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \skal{f}{g}
+		\]
+		\item \[
+			\skal{f}{f} = \int_{0}^{1}f(t) \overline{f(t)} \,\mathrm{d}t = \int_{0}^{1} \abs{f(t)}^2 \,\mathrm{d}t >0
+		\]	
+		\item $\dots$
+	\end{itemize}
+	\end{enumerate}
+\end{beispiele}
+If we take $\mathbb{R}^3$ with the Eucledian norm on $\mathbb{R}^3$
+\[
+	\norm{(x_1,x_2,x_3)} = \sqrt{x_1^2 + x_2^2 + x_3^2} = \left( \sum_{i=1}^{3} \abs{x_i}^2 \right)^{\frac{1}{2}} = \skal{x}{x}^{\frac{1}{2}}
+\]
+Let $V$ be an inner product space with $\skal{.}{.}$ as the inner product. Let for $x \in V$
+\[
+	\norm{x} := \skal{x}{x}^{\frac{1}{2}}
+\]
+\begin{satz}
+	The $x \mapsto  \norm{x}$ with $\norm{.}$ defined above is a norm.
+\end{satz}
+\begin{beweis}
+	We are going to prove the norm axioms but first we need another theorem
+	\begin{theorem}[Cauchy-Schwarz inequalitiy]
+		For any $x,y \in V$ (inner product space) 
+		\[
+			\abs{\skal{x}{y}} \leq \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}
+		\]
+		The equality holds iff $x,y$ are linearly dependent.
+	\end{theorem}
+	\begin{beweis}
+		Assume $x,y$ linearly dependent. We can assume that $x= \lambda y$ for some $\lambda \in \mathbb{C} $.
+		\[
+			\abs{\skal{x}{y}} = \abs{ \skal{\lambda y}{y}} = \abs{\lambda} \skal{y}{y}
+		\]
+		and
+		\begin{align*}
+					\skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} &= \skal{\lambda y}{\lambda y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
+					&= \abs{\lambda} \skal{y}{y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
+					&= \abs{\lambda} \skal{y}{y}
+		\end{align*}
+		Hence \[
+			\abs{\skal{x}{y}} = \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}.
+		\]
+		Assume $x,y$ are linearly independent. Hence $x + \lambda y \neq 0$ for any $\lambda \in \mathbb{C}$. By an axiom for inner product we get
+		\[
+			0< \skal{x+ \lambda y}{x + \lambda y} = \skal{x}{x} + \lambda \skal{y}{x} + \bar{\lambda} \skal{x}{y} + \abs{\lambda}^2 \skal{y}{y}
+		\]
+		Pick now
+		\[
+			\lambda = - \frac{\skal{x}{y}}{\skal{y}{y}}
+		\]
+		(Note that $y \neq 0$ as $x,y$ linearly independent.)
+		We have \begin{align*}
+						0 &< \skal{x}{x} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\skal{x}{y}\skal{y}{x}}}}{\skal{y}{y}} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\overline{\skal{x}{y}}\skal{x}{y}}}}{\skal{y}{y}}+ \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}^2} \skal{y}{y} \\
+						&= \skal{x}{x} - \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}}
+		\end{align*}
+		This gives
+		\[
+			\frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}} < \skal{x}{x}
+		\]
+		and it follows
+		\[
+			\abs{\skal{x}{y}}^2 < \skal{x}{x} \skal{y}{y}
+		\]
+	\end{beweis}
+	\begin{enumerate}[(i)]
+		\item $\norm{x} >0$ for all $x \neq 0$ in $V$ (Exercise)
+		\item $\norm{\lambda x} = \abs{\lambda} \norm{x}$ for all $x \in V$, $\lambda \in \mathbb{C}$ (Exercise)
+		\item Let $x,y \in V$. Then 
+		\begin{align*}
+			\norm{x+y}^2 &= \skal{x+y}{x+y} \\ &= \skal{x}{x}+ \skal{x}{y}+ \skal{y}{x} + \skal{y}{y} \\
+			&= \skal{x}{x} + 2 \text{Re}( \skal{x}{y}) + \skal{y}{y} \\
+			&\leq  \skal{x}{x}+ 2 \abs{\skal{x}{y}} + \skal{y}{y} \\
+			&\leq  \skal{x}{x} + 2 \skal{x}{x}^{\frac{1}{2}}\skal{y}{y}^{\frac{1}{2}} + \skal{y}{y} \\
+			&= \left( \skal{x}{x}^{\frac{1}{2}} + \skal{y}{y}^{\frac{1}{2}} \right)^2 
+		\end{align*} 
+		So
+		\[
+			\norm{x+y}^2 \leq \left( \norm{x} + \norm{y} \right)^2
+		\]
+	\end{enumerate}
+\end{beweis}
+\begin{theorem}[The Parallelogram Law]
+	Let $(V, \skal{.}{.})$ be an inner product space. Let $\norm{x} = \skal{x}{x}^{\frac{1}{2}}$. Then
+	\[
+		\norm{x+y}^2 + \norm{x-y}^2 = 2 (\norm{x}^2 + \norm{y}^2) \qquad \forall\, x,y \in V.
+	\]
+\end{theorem}
+\begin{satz}
+	$l^p$ has inner product $\skal{.}{.}_{l^p}$ such that
+	\[
+		\norm{x}_p = \sqrt{\skal{x}{x}_{l^p}}
+	\]
+	iff $p =2$.
+\end{satz}
+\begin{beweis}
+	Enough to show that $\norm{.}_p$-norm does not satisfy the parallelogram law for some $x,y \in l^p$ if $p \neq 2$. Take, for example, $x = (1,0,0, \dots)$
+	and $y= (0,1,0, \dots)$.
+\end{beweis}
+\minisec{Exercise:}Show that $(C([0,1]),\norm{.}_{\infty})$ is not an inner product space.
+\begin{bemerkung}
+	Whenever a norm satisfies the parallelogram law then there exists an inner product on $V$ such that
+	\[
+		\norm{x} = \skal{x}{x}^{\frac{1}{2}}
+	\]
+\end{bemerkung}
+\begin{theorem}[The Polarization Identity]
+	Let $(V,\skal{.}{.})$ be an inner product space. Then 
+	\[
+		4 \skal{x}{y}  = \norm{x+y}^2- \norm{x-y}^2 + i \norm{x+ iy}^2 - i \norm{x - iy}^2
+	\]
+\end{theorem}
+\begin{definition}
+	Let $(V, \skal{.}{.})$ be an inner product space. We say that $x,y$ in $V$ are othogonal if $\skal{x}{y} = 0$ (We write $x \perp y$). Let $M \subseteq V$
+	Define the orthogonal complement
+	\[
+		M^{\perp} = \set[x \in V]{x \perp y \text{ for any }y \in M}
+	\]
+\end{definition}
+\begin{proposition}
+	If $M \subseteq V$ then $M^{\perp}$ is a subspace of $V$
+\end{proposition}
+\begin{theorem}[Pythagorean formula]
+	$x,y \in V$ (inner product space). Then
+	\[
+		x \perp y \qquad \text{iff} \qquad \norm{x+y}^2 = \norm{x}^2 + \norm{y}^2.
+	\]
+\end{theorem}
+
+\begin{theorem}
+	GAP BECAUSE OF LAZINESS
+\end{theorem}
+%%%% 27.09.2016
+
+Consider $(H, \skal{.}{.})$- Hilbert space (inner product space which is complete w.r.t. to a norm $\norm{x}= \sqrt{\skal{x}{x}}$). \\
+Let $M$ be a cloased subspace of $H$. 
+\[
+	\mathcal{M}^{\perp} = \set[y \in H]{\skal{x}{y}= 0, \, \forall\,  x \in M}.
+\]
+Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $y \in M$ and $z \in M^{\perp}$ such that
+\[
+	x = y + z.
+\]
+\begin{theorem}
+	r
+\end{theorem}
+
+
+
+
 \cleardoubleoddemptypage
 \pagenumbering{Alph}
 \setcounter{page}{1}
