@@ -25,27 +25,27 @@ aVfloat
 p12
 aVmakeidx
 p13
-aVamsthm
-p14
-aVcancel
-p15
-aVtikz-cd
-p16
-aVifthen
-p17
-aVulem
-p18
-aVparalist
-p19
-aVmathtools
-p20
-aVmulticol
-p21
-aVletltxmacro
-p22
-aVmdframed
-p23
 aVstmaryrd
+p14
+aVamsthm
+p15
+aVcancel
+p16
+aVtikz-cd
+p17
+aVifthen
+p18
+aVragged2e
+p19
+aVparalist
+p20
+aVmathtools
+p21
+aVmulticol
+p22
+aVletltxmacro
+p23
+aVmdframed
 p24
 aVnicefrac
 p25
@@ -53,7 +53,7 @@ aVbookmark
 p26
 aVxltxtra
 p27
-aVragged2e
+aVulem
 p28
 aVblindtext
 p29
@@ -119,15 +119,17 @@ aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/Applied Functional/tex/.
 p60
 aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture7.tex
 p61
-aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/!config/VorlagenTim/preambel.tex
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture9.tex
 p62
-aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture8b.tex
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/!config/VorlagenTim/preambel.tex
 p63
-aS'AF.tex'
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture8b.tex
 p64
-atp65
-Rp66
+aS'AF.tex'
+p65
+atp66
+Rp67
 sVsynctex
-p67
+p68
 I01
 s.
