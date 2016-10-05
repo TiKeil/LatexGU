@@ -77,7 +77,228 @@ It mainly contains the written content of the lecture. I will not assume any res
 		AB - BA = I
 	\]
 	where $I$ is the identity ($I(x)=x$ for $x \in E$).
+	\begin{bemerkung}
+		Consider $ f \in E = C^{\infty}([0,1])$ and 
+		\[
+			A = \diffd{}{x}, \qquad B=x
+		\]Then
+		\[
+			(AB - BA)(f)(x) = \diffd{}{x}(x(f(x))) - x \diffd{}{x}f(x) = f(x) 
+		\]
+	\end{bemerkung}
+	Argue by contradiction. \\
+	Assume $A,B \in B(E,E)$ with $AB-BA = I$. \\
+	Hint: Consider $A^nB-BA^n$ for $n = 1,2,\dots$. For $n =2$ we have
+	\begin{align*}
+		A^2B-BA^2 &= A^2B-ABA + ABA - BA^2 \\
+		&= A(AB-BA) + (AB-BA)A \\
+		&= 2A
+	\end{align*}
+	For $n=3$ we have
+	\begin{align*}
+		A^3B-BA^3 &= A^3B-A^2BA + A^2BA - BA^3 \\
+		&=A^2(AB-BA) + (A^2B-BA^2)A \\
+		&= 3A^2
+	\end{align*}
+	In general 
+	\[
+		A^nB-BA^n = nA^{n-1}, \qquad n=2,3,4,\dots \qquad (*)
+	\]
+	Check using an induction argument. We obtain
+	\[
+		n \norm{A^{n-1}} = \norm{A^nB-BA^n} \leq \norm{A^nB} + \norm{BA^n} \leq  2 \norm{A^{n-1}} \norm{A} \norm{B}
+	\]
+	Hence \[
+		(2 \norm{A} \norm{B} -n) \norm{A^{n-1}} \geq 0, \qquad  \forall\,  n = 2,3,\dots
+	\]
+	We conclude that $\norm{A^{n-1}}= 0$ for $n$ large enough. Clearly the same for $\norm{A^n}$. This yields $A^n=0$ for $n$ large enough. Repeated use of $(*)$ gives $A=0$. This contradicts $AB-BA= I$ so the implication in the example is proven.
 \end{beispiel}
+
+Recall a important theorem:
+
+\begin{theorem}[Riesz representation theorem]
+	$(E, \skal{.}{.})$ Hilbert space $f \in B(E,\mathbb{C})$. $f$ is bounded linear functional on $E$. This yields
+	\[
+		\exists\,! x_f \in E: \qquad f(x) = \skal{x}{x_f}, \qquad \forall\, x \in E
+	\]
+	Also it holds
+	\[
+		\underset{\substack{\text{operator norm} \\ \text{of $f$}}}{\underbrace{\norm{f}}} = \underset{\substack{norm of} \\ \text{$x_f$ in $E$}}{\underbrace{\norm{x_f}}}
+	\]
+\end{theorem}
+
+\begin{definition}
+	$\varphi: E \times E \to \mathbb{C}$ is called
+	\begin{itemize}
+		\item bilinear, if for scalars $\alpha$ and $\beta$ it holds
+		\begin{align*}
+			\varphi( \alpha x, \beta y,z) &= \alpha \varphi(x,z)+ \beta \varphi(y,z) \qquad \forall\, x,y,z \in E \\
+			\varphi(x,\alpha y + \beta z) &= \bar{\alpha} \varphi(x,z) + \overline{\beta} \varphi(y,z) \qquad \forall\, x,y,z \in E
+		\end{align*}
+		\item boudned, if there exists $M>0$ such that
+		\[
+			\abs{\varphi(x,y)} \leq M \norm{x}\norm{y}, \qquad \forall\, x,y \in E
+		\]
+		\item coercive, if there exists $K>0$ such that
+		\[
+			\varphi(x,x) \geq K \norm{x}^2, \qquad \forall\, x \in E.
+		\]
+	\end{itemize}
+\end{definition}
+Clearly $\skal{.}{.}$ in $E$ is a bilinear, bounded and coercive functional in $E$ (with $M=K=1$). \\
+We will now introduce a Generalization of the Riesz representation theorem.
+
+\begin{theorem}[Lax-Milgram]
+	$(E, \skal{.}{.})$ Hilbert space. Let $\varphi: E \times E \to \mathbb{C}$ be a bilinear, bounded and coercive functional. $f: E \to \mathbb{C}$ bounded linear functional in $E$. Then there exists an unique $x_f \in E$ such that
+	\[
+		f(x) = \varphi(x,x_f), \qquad  \forall\, x \in E
+	\]
+\end{theorem}
+
+\begin{beweis}
+	\begin{enumerate}[Step 1:]
+		\item $\exists\,!$ $A \in B(E,E)$ with
+		\[
+			\varphi(x,y)= \skal{x}{A(y)}, \qquad \forall\, x,y \in E.
+		\]
+		\item $A$ is injective and surjective.
+		\item Apply RRT with $ \tilde x_f = A^{-1}(x_f)$
+		\begin{align*}
+			f(x) &= \skal{x}{x_f} \\ &= \skal{x}{A(A^{-1}(x_f))} \\ &= \varphi(x, \tilde x_f), \qquad \forall\, x \in E
+		\end{align*}
+	\end{enumerate}
+	\begin{description}
+		\item[Step 1:] Fix $y \in E$ and consider for $x \in E$
+		\[
+			x \stackrel{f_y}{\mapsto } \varphi(x,y) \in \mathbb{C}.
+		\] 
+		\textbf{Claim:} \text{    }$f_y: E \to \mathbb{C}$ is a bounded linear functional. \\
+		For $x,y,z \in E$ and $\alpha,\beta$ scalars we have
+		\begin{align*}
+			f_y(\alpha x+ \beta z) &= \varphi(\alpha x + \beta z,y) \\
+			&= \alpha \varphi(x,y) + \beta \varphi(z,y) \\
+			&= \alpha f_y(x) + \beta f_y(z)  
+		\end{align*}
+		Hence $f_y$ is linear. It is bounded because of
+		\[
+			\abs{f_y(x)} = \abs{\varphi(x,y)} \leq (M \norm{y})\norm{x}, \qquad \forall\, x \in E
+		\]
+		So $f_y$ is bounded. \\
+		RRT implies $f_y(x) = \skal{x}{A(y)}$ for all $x \in E$ for some $A(y) \in E$. \\ Now we have $A : E \to E$.
+		\textbf{Claim:} \text{    }$A \in B(E,E)$. \\
+		For $x,y,z \in E$ and scalars $\alpha, \beta$ we have
+		\begin{align*}
+			\skal{x}{A( \alpha y + \beta z)} &= \varphi(x, \alpha y + \beta z) \\
+			&= \bar{\alpha} \varphi(x,y)+ \bar{\beta} \varphi(x,z) \\
+			&= \bar{\alpha} \skal{x}{A(y)} + \bar{\beta} \skal{x}{A(z)} \\
+			&= \skal{x}{\alpha A(y)}+ \skal{x}{\beta A(z)} \\
+		\end{align*}
+		This is equivalent to
+		\[
+			\skal{x}{A(\alpha y + \beta z)- \alpha A(y) - \beta A(z)} = 0, \qquad  x \in E
+		\]
+		This implies 
+		\[
+			\norm{A(\alpha y + \beta z) - \alpha A(y) - \beta A(z)} = 0
+		\]
+		So \[
+			A( \alpha y+ \beta z) = \alpha A(y) + \beta A(z) \qquad \forall\, y,z \in E \text{ and scalars }\beta,\alpha
+		\]
+		Hence, $A$ is linear. We will now show that $A$ is bounded: \\
+		We know because $\varphi$ is continuous that for all $x,y \in E$
+		\[
+			\abs{\skal{x}{A(y)}} = \abs{\varphi(x,y)} \leq M \norm{x} \norm{y}
+		\]
+		Take $x = A(y)$ and get
+		\[
+			\norm{A(y)}^2 \leq  M \norm{A(y)} \norm{y} \qquad \forall\, y \in E
+		\]
+		which implies
+		\[
+			\norm{A(y)} \leq M \norm{y} \qquad \forall\, y \in E
+		\]
+		Hence $\norm{A} \leq M < \infty$.
+		\item[Step 2:] Note $\varphi(x,y) = \skal{x}{A(y)}$ for alle $x,y \in E$. \\
+		\textbf{Claim:} \text{    }$A$ is injective, i.e.
+		\[
+			A(x_1) = A(x_2) \qquad \Rightarrow \qquad x_1 = x_2
+ 		\]
+		$\varphi$ is coercive so
+		\[
+			\norm{x}^2 \leq \frac{\varphi(x,x)}{K} = \frac{1}{K} \underset{\abs{\skal{x}{A(x)}}}{\underbrace{>0}} \leq \frac{1}{K} \norm{x} \norm{A(x)} \qquad \forall\,  x \in E
+		\]
+		Hence \[
+			\norm{x} \leq  \frac{1}{K} \norm{A(x)}, \qquad \forall\, x \in E.
+		\]
+		If $A(x_1) = A(x_2)$ we have $A(x_1-x_2) = 0 \in E$ then
+		\[
+			\norm{x_1 - x_2} \leq \frac{1}{K} \norm{A(x_1 -x_2)} = 0.
+		\]
+		We get $x_1 = x_2$. \\
+		\textbf{Claim:} \text{    }$A$ is surjective, i.e. the image of $A$ is $E$: \[
+			\Re(A) = \set[A(x)]{x \in E} = E.
+		\] 
+		We first show that $\Re(A)$ is a closed subspace of $E$. 
+		\begin{itemize}
+			\item $\Re(A)$ is a subspace in $E$ since $A$ is linear.
+			\item $\Re(A)$ is closed since
+			\[
+				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \Re(A)
+			\]			
+		\end{itemize}
+		$\Re(A)$ is linear. Take $y_1,y_2 \in \Re(A)$ with preimages $x_1,x_2$ and yield
+		\[
+			\alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 A(x_1) + \alpha_2 A(x_2) = A(\alpha_1 x_1 + \alpha_2 x_2)
+		\]
+		So \[
+			\alpha_1 y_1 + \alpha_2 y_2 \in \Re(A).
+		\]
+		Assume \[
+			y_n \to y \qquad \text{in }(E, \norm{.})
+		\]
+		For $n=1,2,\dots$ there are $x_1,x_2,\dots$ such that $y_n= A(x_n)$ for $n=1,2,\dots$. \\
+		\textbf{Claim:} \text{    }$(x_n)_{n \in \mathbb{N}}$ is a Cauchy sequence in $E$ since
+		\begin{align*}
+			\norm{x_n-x_m} &\leq \frac{1}{K} \norm{A(x_n-x_m)} \\
+			&= \frac{1}{K} \norm{A(x_n)- A(x_m)} \\
+			&= \frac{1}{K} \norm{y_n -y_m} \to 0, \qquad n,m \to \infty
+		\end{align*}
+		since $(y_n)_{n \in \mathbb{N}}$ converges. \\
+		Since $(E, \norm{.})$ is a Banach space $(x_n)_{n \in \mathbb{N}}$ converges in $(E, \norm{.})$. Call the limit $x \in E$. Hence
+		\[
+			A(x_n) \to y
+		\]
+		since $A$ is bounded, continuos and linear. So $y = A(x)$ and we get $y \in \Re(A)$. \\
+		Secondly $A$ is surjective, i.e. $\Re(A)=E$. \\
+		Assume that this is not true. The Orthogonal decomposition theorem gives
+		\[
+			E = \Re(A) \oplus \Re(A)^{\perp}
+		\]
+		The first one is a closed subspace in $E$ and the second one is not empty by assumption. Fix $z \in \Re(A)^{\perp} \setminus \set{0}$. Note 
+		\[
+			\varphi(x,y) = \skal{x}{A(y)} \qquad x,y \in E
+		\]
+		With $x = y = z$ we get
+		\[
+			\varphi(z,z) = \skal{z}{A(z)} = 0
+		\]
+		and 
+		\[
+			\varphi(z,z) \geq K \norm{z}^2 \geq 0 \qquad \Rightarrow  \,z=0
+		\]
+		This is a contradiction. \\
+		The Conclusion is 
+		\[
+			\Re(A)^{\perp} = \set{0} \qquad \Rightarrow \qquad \Re(A) = E.
+		\]
+		We have $\varphi(x,y) = \skal{x}{A(y)}$ for all $x,y \in E$ and $A \in B(E,E)$ surjective.
+		\item[Step 3:] see above.
+	\end{description}
+\end{beweis}
+
+\subsection{Adjoint operator} 
+\label{sub:adjoint_operator}
+
 
 
 %%%%%%%%
