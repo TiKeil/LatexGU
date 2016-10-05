@@ -1,0 +1,112 @@
+%%% lecture 8b
+
+\begin{theorem}[Orthogonal Decompostion Theorem]
+	Let $(E, \skal{.}{.})$ be a Hilbert space and $S$ be a closed subspace of $E$. 
+	\[
+		\Rightarrow \qquad E = S \oplus S^{\perp}
+	\]
+	which means that for every $x \in E$ there exists an unique decomposition
+	\[
+		x = y + z
+	\]
+	with $y \in S$ and $z \in S^{\perp}$.
+\end{theorem}
+\begin{beispiel}
+	Let $A \subseteq E$ where $E$ is a Hilbert space. It follows
+	\[
+		\overline{\text{span }A} = \left( A^{\perp} \right)^{\perp}
+	\]
+	Note 
+	\[
+		A \subseteq \underset{\text{subspace of $E$}}{\underbrace{ \left( A^{\perp} \right)^{\perp}}} \qquad \Rightarrow \qquad \text{span }A \subseteq 
+		\underset{\text{closed}}{\underbrace{ \left( A^{\perp} \right)^{\perp}}} \qquad \Rightarrow \qquad \overline{\text{span }A} \subseteq 
+		\left( A^{\perp} \right)^{\perp}
+	\]
+	\[
+		A \subseteq \overline{\text{span }A} \qquad \Rightarrow \qquad \overline{\text{span }A}^{\perp} \subseteq A^{\perp} \qquad \Rightarrow \qquad 
+		\left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\text{span }A}^{\perp} \right)^{\perp}
+	\]
+	Hence
+	\[
+		\overline{\text{span }A} \subseteq \left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\text{span }A}^{\perp} \right)^{\perp}
+	\]
+	By the Orthogonal Decomposition Theorem we get
+	\[
+		E = \overline{\text{span }A} \oplus \overline{\text{span }A}^{\perp} = \overline{\text{span }A}^{\perp} \oplus \left( \overline{\text{span }A}^{\perp} \right)^{\perp} 
+	\]
+	which implies
+	\[
+		\overline{\text{span }A} = \left( \overline{\text{span }A}^{\perp} \right)^{\perp}
+	\]
+	\[
+		\Rightarrow \qquad \left( A^{\perp} \right)^{\perp} = \overline{\text{span }A}
+	\]
+\end{beispiel}
+
+Now we are going to prove the Orthogonal Decomposition Theorem.
+
+\begin{beweis}
+	\begin{description}
+		\item[Step 1:] $S$ is a closed convex set in a Hilbert space $E$. This implies that 
+		\[
+			\forall\,  x \in E \, \exists\,! \,y \in S: \qquad \norm{x-y} \leq \norm{x- \tilde y} \qquad \forall\, \tilde y \in S.
+		\] 
+		which means
+		\[
+			\norm{x-y} = \inf_{\tilde y \in S}\norm{x-\tilde y}.
+		\]
+		Fix $x \not \in S$ with
+		\[
+			\inf_{ \tilde y \in S} \norm{x- \tilde y} = d > 0.
+		\]
+		Take a sequence $(y_n)_{n=1}^{\infty}$ in $S$ such that 
+		\[
+			\norm{x-y_n} \to d, \qquad n \to \infty.
+		\]
+		\textbf{Claim:} \text{    } This is a Cauchy sequence. \\
+		(use Parallelogram-law for $\norm{.}$)
+		\item[Step 2:] $S$ as in ODT. \\
+		Note: $S$ must be convex. \\
+		Fix $x \in E$, choose $y \in S$ with
+		\[
+			\norm{x-y} \leq  \norm{x- \tilde y}, \qquad \forall\,  \tilde y \in S
+		\]
+		Set
+		\[
+			\underset{\in E}{\underbrace{x}} = \underset{\in S}{\underbrace{y}} + (x-y)
+		\]
+		To show: $x-y \in S^{\perp}$. A variational argument of this is 
+		\[
+			\skal{x-y}{v}= 0, \qquad \forall\, v \in S.
+		\]
+		We know
+		\begin{align*}
+			\norm{x-y}^2 &\leq \norm{x-y + \alpha v}^2 \qquad \forall\, \text{scalars }\alpha \\
+			\norm{x-y}^2 &\leq \skal{x-y+\alpha v}{x-y+ \alpha v} \\
+			&= \norm{x-y}^2+ \alpha \skal{v}{x-y} + \bar{\alpha} \skal{x-y}{v} + \abs{\alpha}^2 \norm{v}^2
+		\end{align*}
+		and
+		\[
+			0 \leq 2 \re( \alpha \skal{x+y}{v}) + \abs{\alpha}^2 \norm{v}
+		\]
+		Set 
+		\[
+			\alpha = t \overline{\skal{x-y}{v}}, \qquad t \in \mathbb{R}.
+		\]
+		\[
+			\Rightarrow \qquad 0 \leq  2 t \abs{\skal{x-y}{v}}^2 + t^2 \abs{\skal{x-y}{v}}^2 \norm{v}^2
+		\]
+		Assume $\skal{x-y}{v} \neq 0$: \\
+		We have 
+		\begin{align*}
+			0 &\leq 2t + t^2 \norm{v}^2 \qquad \forall\, t \in \mathbb{R} \\
+			\Rightarrow \qquad -2t &\leq  t^2 \norm{v}^2, \qquad \text{Let }t <0 \\
+			\Leftrightarrow \qquad 2 &\leq -t \norm{v}^2, \qquad t<0
+		\end{align*}
+		Let $t \to 0$, then
+		\[
+			2 \leq 0
+		\]
+		which is a contradiction.
+	\end{description}
+\end{beweis}

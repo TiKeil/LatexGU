@@ -1,0 +1,411 @@
+%%% lecture 4
+
+
+%%% 8.9.2016
+\minisec{Recall:}
+converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 0$ for $n \to \infty$ for some $x \in E$. (Notation: $x_n \to x$ in $(E,\norm{.})$)
+\begin{bemerkung}
+	Assume $x_n \to x$ in $(E,\norm{.})$ Then
+	\begin{enumerate}[1)]
+		\item $\norm{x_n} \to \norm{x}$ in $(E,\norm{.})$. 
+		\item $\sup_{n} \norm{x_n} < \infty$.
+	\end{enumerate}
+	because
+	\begin{enumerate}[1)]
+		\item \[
+			\norm{x_n} \leq \norm{x_n-x} + \norm{x}
+		\]
+		so
+		\[
+			\norm{x_n} - \norm{x} \leq \norm{x_n -x}
+		\]
+		it follows
+		\[
+			-(\norm{x_n}-\norm{x}) \leq \norm{x_n -x}
+		\]
+		So
+		\[
+			\abs{\norm{x_n}-\norm{x}} \leq \norm{x_n -x} \to 0, \qquad \text{for } n \to \infty
+		\]
+		Cauchy sequence in $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$ if $\norm{x_n-x_m} \to 0$ for $n,m \to \infty$. \\
+		We obtain:
+	 	$(x_n)_{n=1}^{\infty}$ converges in $(E,\norm{.})$  $\qquad \Rightarrow \qquad$  $(x_n)_{n=1}^{\infty}$ Cauchy sequence in $(E,\norm{.})$. ($\not \Leftarrow $ in general).
+		If $\Leftarrow$ then we call $(E,\norm{.})$ a Banach space. 
+	\end{enumerate}
+	$\sum_{n=1}^{\infty}x_m$ converges in $(E,\norm{.})$ if $\left( \sum_{n=1}^{k}x_n \right)_{k=1}^{\infty}$ converges in $(E,\norm{.})$. \\
+	$\sum_{n=1}^{\infty}x_m$ converges absolutely in $(E,\norm{.})$ if $\sum_{n=1}^{\infty}\norm{x_n}$ converges $(\mathbb{R},\norm{.})$. \\
+\end{bemerkung}
+
+\subsection{Mappings between normed spaces} 
+\label{sub:mappings_between_normed_spaces}
+\begin{definition*}
+	Let $(E_1,\norm{.}_1)$, $(E_2,\norm{.}_2)$ be normed spaces. $T: E_1 \to E_2$ (not necessarily linear) is called continuous at $x_0 \in E_1$, if 
+	\[
+		x_n \to x_0 \text{ in } (E_1,\norm{.}_1) \qquad \Rightarrow \qquad T(x_n) \to T(x_0) \text{ in } (E_2,\norm{.}_2)
+	\]
+	$T$ is called \underline{continuous} if it is continuous at $x_0 \in E_1$ for all $x_0 \in E_1$. We say that $T: E_1 \to E_2$ is \underline{linear} if 
+	\[
+		T(\lambda_1 x_1 + \lambda_2 x_2) = \lambda_1 T(x_1) + \lambda_2 T(x_2)
+	\]
+	for all scalars $\lambda_1$, $\lambda_2$ and $x_1,x_2 \in E_1$. \\
+	$T: E_1 \to E_2$ linear is called \underline{bounded} if there exists $M>0$ such that
+	\[
+		\norm{T(x)}_2 \leq M \norm{x}_1 \qquad \text{for all }x \in E_1.
+	\]If $T$ is bounded linear $E_1 \to E_2$ define
+	\[
+		\norm{T} = \norm{T}_{E_1 \to E_2} := \inf \set[M \geq 0]{\norm{T(x)}_2 \leq M \norm{x}_1 \text{ for all }x \in E_1}
+	\]
+\end{definition*}
+\begin{lemma*}
+	\[
+		\norm{T} = \sup\limits_{\substack{x \in E_1 \\ x \neq 0}} \frac{\norm{T(x)}_2}{\norm{x}_1} = \sup\limits_{\substack{x \in E_1 \\ \norm{x}_1=1}} \norm{T(x)}_2
+	\]
+\end{lemma*}
+\begin{proposition}
+	Assume $T: E_1 \to E_2$ linear. Then all the following statements are equivalent:
+	\begin{enumerate}[(1)]
+		\item $T$ continuous at $0 \in E_1$.
+		\item $T$ continuous at $x_0 \in E_1$ for some $x_0 \in E_1$.
+		\item $T$ continuous at $x_0 \in E_1$ for all $x_0 \in E_1$.
+		\item $T$ is bounded.
+	\end{enumerate}
+\end{proposition}
+\begin{beweis}
+	\begin{description}
+		\item[$(1) \Rightarrow (4)$:] Assume $T$ is continuous at $0 \in E_1$. i.e. 
+		\[
+			x_n \to 0 \text{ in }(E_1, \norm{.}_1) \qquad \Rightarrow \qquad T(x_n) \to T(\underset{\in E_1}{\underbrace{0}}) = \underset{\in E_2}{\underbrace{0}} \text{ in }(E_2,\norm{.}_2)
+		\] 
+		We want to prove that $T$ is bounded. We search a $M>0$ such that
+		\[
+			\norm{T(x)}_2 \leq  M \norm{x}_1
+		\]
+		We assume that this doesn't hold true. \\
+		For $n=1,2,\dots$ there exists $x_n \in E_1$ such that 
+		\[
+			\norm{T(x_n)}_2 > n \norm{x_n}_1.
+		\]
+		Set for $n=1,2,\dots$
+		\[
+			z_n := \frac{1}{n \norm{x_n}_1}x_n
+		\]
+		(Note that $\norm{x_n}_1 >0$. Otherwise we would get a contradiction.) \\
+		Note
+		\begin{align*}
+		\norm{z_n}_1 &= \norm{\frac{1}{n \norm{x_n}_1}}_1 = \frac{1}{n \norm{x_n}_1} \norm{x_n}_1 = \frac{1}{n} \to 0, \qquad \text{for }n \to \infty
+		\end{align*}
+		We have $z_n \to 0$ in $(E_1,\norm{.}_1)$. But 
+		\[
+			\norm{T(z_n)}_2 = \norm{\frac{1}{n \norm{x_n}_1}T(x_n)_2} = \frac{1}{n \norm{x_n}_1} \norm{T(x_n)}_2 > 1 \qquad \text{ for all }n.
+		\]
+		Hence
+		\[
+			T(z_n) \not \to 0 \qquad \text{ in }(E_2, \norm{.}_2).
+		\]
+		This is a contradiction.
+		\item[$(1) \Leftarrow (4)$:] Assume $T$ is bounded. For some $M > 0$ 
+		\[
+			\norm{T(x)}_2 \leq M \norm{x}_1, \qquad \text{ for all }x \in E_1.
+		\] 
+		We need to show that $T$ is continuous at $0 \in E_1$, i.e.
+		\[
+			x_n \to 0 \text{ in } (E_1, \norm{.}_1) \qquad \Rightarrow \qquad T(x_n) \to T(0) = 0 \text{ in } (E_2, \norm{.}_2)
+		\]
+		From \[
+			\norm{T(x_n)}_2 \leq  M \norm{x_n}_1 \to 0
+		\]
+		so
+		\[
+			T(x_n) \to \underset{=T(0)}{\underbrace{0}} \text{ in }(E_2, \norm{.}_2).
+		\]
+	\end{description}
+\end{beweis}
+\begin{beispiele}
+	\begin{enumerate}[(A)]
+	\item 
+	$E_1 = E_2 = C([0,1])$, $\norm{.}_1 = \norm{.}_2 = \norm{.}_{\infty}=: \norm{.}$, i.e.
+	\[
+		\norm{f} := \max \limits _{x \in [0,1]} \abs{f(x)}.
+	\]
+	\[
+		T(f)(x) = \int_{0}^{1-x} \min(x,y)f(y) \,\mathrm{d}y, \qquad \text{for }f \in C([0,1]), x \in [0,1].
+	\]
+	\begin{enumerate}[(1)]
+		\item $T(f) \in C([0,1])$ for $ f \in C([0,1])$,
+		\item $T$ linear,
+		\item $T$ bounded,
+		\item Calculate $\norm{T}$.
+	\end{enumerate}
+	\begin{beweis}
+		\begin{enumerate}[(1)]
+			\item Fix $f \in C([0,1])$ arbitrary and fix $x \in [0,1]$. Show that $T(f)$ is continuous at $x$. Consider a sequence $(x_n)_{n=1}^{\infty}$ in $[0,1]$ such that $x_n \to x$ in $(\mathbb{R},\abs{.})$. \\
+			To show $T(f)(x_n) \to T(f)(x)$ in $(\mathbb{R},\abs{.})$
+			\begin{align*}
+				\abs{T(f)(x_n)- T(f)(x)} &= \set{\text{assume that }x_n \leq x} \\
+				&= \abs{\int_{0}^{1-x_n}\min(x_n,y)f(y) \,\mathrm{d}y - \int_{0}^{1-x} \min (x,y)f(y) \,\mathrm{d}y} \\
+				&\leq  \abs{\int_{0}^{1-x}(\min (x_n,y) - \min(x,y) )f(y) \,\mathrm{d}y} \\ 
+				&\qquad  + \abs{\int_{1-x}^{1-x_n}\min(x_n,y)f(y) \,\mathrm{d}y} \\
+				&\leq \underset{\leq \abs{x_n-x} \norm{f}}{\underbrace{\int_{0}^{1-x} \underset{\leq \abs{x_n-x }}{\underbrace{\abs{\min (x_n,y) - \min(x,y)}}}
+				 \underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y}} \\ 
+				& \qquad + \underset{0 \leq \dots \leq \abs{x_n-x}\cdot \norm{f}}{\underbrace{\int_{1-x}^{1-x_n}\underset{\leq
+					 	1}{\underbrace{\min(x_n,y)}}\underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y }} \to 0, \qquad \text{ as }n \to \infty
+			\end{align*}
+			If $x_n > x$ we get a similar calculation. Conclusion: 
+			\[
+				T(f)(x_n) \to T(f)(x) \text{ in }(\mathbb{R},\abs{.}) \text{ as } n \to \infty.
+			\]
+			\item Fix $f_1,f_2 \in C([0,1])$ and $\lambda_1, \lambda_2$ scalars. Then
+			\begin{align*}
+				T(\lambda_1 f_1 + \lambda_2 f_2)(x) &= \int_{0}^{1-x} \min(x,y)\underset{= \lambda_1 f_1(y)+\lambda_2 f_2(y)}{\underbrace{(\lambda_1 f_1 + \lambda_2 f_2)(y)}} \,\mathrm{d}y \\
+				&= \lambda_1 \int_{0}^{1-x}\min(x,y)f_1(y) \,\mathrm{d}y + \lambda_2 \int_{0}^{1-x} \min(x,y)f_2(y) \,\mathrm{d}y \\
+				&= \lambda_1 T(f_1)(x) + \lambda_2 T(f_2)(x) \qquad \text{ for }x \in [0,1]
+			\end{align*}
+			\item Fix $f \in C([0,1])$. For $x \in [0,1]$
+			\begin{align*}
+				\abs{T(f)(x)} &= \abs{ \int_{0}^{1-x} \underset{\geq 0}{\underbrace{\min(x,y)f(y)}} \,\mathrm{d}y }\\
+				&\stackrel{(*_1)}{\leq} \int_{0}^{1-x}\min(x,y)\underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y \\
+				&\stackrel{(*_2)}{\leq} \int_{0}^{1-x} \min(x,y) \,\mathrm{d}y \norm{f}
+			\end{align*}
+			Clearly 
+			\[
+				\max\limits_{x \in [0,1]}\int_{0}^{1-x} \min(x,y) \,\mathrm{d}y \leq 1
+			\]
+			This gives:
+			\[
+				\norm{T(f)} = \max\limits_{x \in [0,1]}\abs{T(f)(x)} \leq 1 \cdot \norm{f}, \qquad \text{for all }f \in C([0,1]).
+			\]
+			Conclusion: $T$ is bounded with ($M=1$)
+			\item Consider the unequality above. $(*_1)$ is an equality if $f$ has a constant sign. $(*_2)$ is an equality if $f$ is a constant function. So we have to calculate 
+			\[
+				\int_{0}^{1-x} \min(x,y) \,\mathrm{d}y \qquad \text{for }x \in [0,1].
+			\]
+			\begin{description}
+				\item[case 1:]$1-x \leq x$ i.e. $ \frac{1}{2} \leq x$ and we get
+				\begin{align*}
+					\int_{0}^{1-x} \underset{=y}{\underbrace{\min(x,y)}} \,\mathrm{d}y &= \left[ \frac{1}{2} y^2 \right]_0^{1-x}  \\ &= \frac{1}{2} (1-x)^2
+				\end{align*}
+				\item[case 2:] $x < 1-x$ i.e. $ x < \frac{1}{2}$ and we get
+				\begin{align*}
+					\int_{0}^{1-x} \min(x,y) \,\mathrm{d}y &= \int_{0}^{x} y  \,\mathrm{d}y + \int_{x}^{1-x}x \,\mathrm{d}y  \\ &= \frac{1}{2}x^2 + x(1-2x) 
+					\\ & = x - \frac{3}{2}x^2
+				\end{align*}
+				\textbf{Claim:} \text{    }   
+				\[
+					\norm{T} = \max \left( \max\limits_{x \in [\frac{1}{2},1]} \frac{1}{2}(1-x)^2 , \max\limits_{x \in [0,\frac{1}{2}]}\left( x - \frac{3}{2}x^2
+					 \right) \right) = 
+					\dots = \frac{1}{6}
+				\]
+				Note 
+				\begin{itemize}
+					\item $\norm{T(f)}\leq \norm{T} \cdot \norm{f}$ for all $f \in C([0,1])$,
+					\item $\norm{T(1)} = \norm{T} \cdot \norm{1}$ where $1(x)=1$ for $x \in [0,1]$.
+				\end{itemize}
+			\end{description}
+		\end{enumerate}
+	\end{beweis}
+	\item $E_1 = C([0,1])$ with maximumnorm, $E_2 = \mathbb{R}$ with absolut value. $T: E_1 \to E_2$ with
+	\[
+		T(f) = \int_{0}^{\frac{1}{2}}f(y) \,\mathrm{d}y - \int_{\frac{1}{2}}^{1} f(y) \,\mathrm{d}y \qquad \text{for }f \in E_1
+	\]
+	\begin{align*}
+		\abs{T(f)} &= \abs{\int_{0}^{\frac{1}{2}}f(y) \,\mathrm{d}y - \int_{\frac{1}{2}}^{1} f(y) \,\mathrm{d}y} \\
+		&\leq \abs{\int_{0}^{\frac{1}{2}}f(y) \,\mathrm{d}y} + \abs{\int_{\frac{1}{2}}^{1} f(y) \,\mathrm{d}y} \\
+		&\leq \int_{0}^{\frac{1}{2}}\underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y 
+		+ \int_{\frac{1}{2}}^{1} \underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y \\
+		&\leq 1 \norm{f}
+	\end{align*}
+	Hence $T$ is bounded and $\norm{T}\leq 1$.
+	\[
+		T(f) = \int_{0}^{1}k(y)f(y) \,\mathrm{d}y 
+	\]
+	where 
+	\[
+		T(f_n)= \begin{cases}
+			nachholen, &\text{ falls }case\\
+			
+		\end{cases}
+	\]
+	\[
+		T(f_n) \leq 1 \left( \frac{1}{2} - \frac{1}{2n} + \frac{1}{2} - \frac{1}{2n} \right) = 1 - \frac{1}{n}, \qquad  n=1,2,\dots
+	\]
+	note
+	\[
+		k(y)f_n(y) \geq 0 \qquad \text{ for } y \in [0,1].
+	\]
+	Hence $\norm{T} \leq 1- \frac{1}{n}$ for $n =1,2,\dots$. Note $\norm{f_n}=1$ for all $n$. Conclusion $\norm{T}=1$. \\
+	Here
+	\[
+		\abs{T(f)} \leq \underset{\leq 1}{\underbrace{\norm{T}}} \norm{f} \text{ for all }f \in C([0,1])
+	\]
+	but
+	\[
+		\abs{T(f)} < \norm{T} \norm{f} \qquad \text{ for all }f \in C([0,1]).
+	\]
+	\end{enumerate}
+\end{beispiele}
+\begin{satz}
+
+	$T_1,T_2$ bounded linear mappings $(E_1,\norm{.}_1) \to (E_2,\norm{.}_2)$ and $\lambda$ scalar. Set
+	\begin{align*}
+		(T_1+T_2)(x) &= T_1(x) + T_2(x) \qquad x \in E_1 \\
+		( \lambda T_1)(x) &= \lambda T_1(x) \qquad x \in E_1
+	\end{align*}
+	\textbf{Claim:} \text{    }     
+	\begin{enumerate}[(1)]
+		\item $T_1 + T_2$ and $\lambda T_1$ are both linear mappings $(E_1,\norm{.}_1) \to (E_2,\norm{.}_2)$,
+		\item $T_1 + T_2$ and $\lambda T_1$ are both bounded mappings $(E_1,\norm{.}_1) \to (E_2,\norm{.}_2)$. \\
+		$B(E_1,E_2)$ denote the vector space of all bounded linear mappings $(E_1,\norm{.}_1) \to (E_2,\norm{.}_2)$.
+		\item \[
+			\norm{T}_{E_1 \to E_2} := \inf \set[M > 0]{\norm{T(x)}_2 \leq M \norm{x}_1 \text{ for all }x \in E_1}
+		\]
+		defines a norm in $B(E_1,E_2)$.
+	\end{enumerate}
+\end{satz}
+\begin{beweis}
+	\begin{enumerate}[(1)]
+		\item $\norm{T}=0$ implies that $\norm{T(x)}_2 = 0$ for all $x \in E_1$ $ \,\, \Rightarrow \,\, $ $T(x) = 0 \in E_2$.
+		\[
+			T = 0 \in B(E_1,E_2)
+		\]
+		\item $T \in B(E_1,E_2)$ and $\lambda$ scalar. 
+		\begin{align*}
+			\norm{\lambda T} &= \inf \set[M >0]{\norm{(\lambda T)(x)}_2 \leq M \norm{x}_1 \text{ for all }x \in E_1} \\
+			&= \inf \set[M>0]{\abs{\lambda} \norm{T(x)}_2 \leq M \norm{x}_1 \text{ for all }x \in E_1} \\
+			&= \set{\text{if }\lambda \neq 0} \\
+			&= \inf \set[\underset{= \abs{\lambda} \tilde M}{\underbrace{M}}>0]{\norm{T(x)}_2 \leq \underset{= \tilde M}{\underbrace{\frac{M}{\abs{\lambda}}}}\norm{x}_1 \text{ for all }x \in E_1} \\
+			&= \abs{\lambda} \inf \set[\tilde M >0]{ \norm{T(x)}_2 \leq \tilde M \norm{x}_1 \text{ for all }x \in E_1} \\
+			&= \abs{\lambda} \norm{T}
+		\end{align*}
+		\item Set $T_1,T_2 \in B(E_1,E_2)$.
+		\begin{align*}
+			\norm{T_1+ T_2} &= \inf \set[M>0]{\norm{(T_1+T_2)(x)}_2 \leq M \norm{x}_1 \text{ for all }x \in E_1} \\
+			&\leq \inf \set[M_1 + M_2>0]{\norm{T_1(x)}_2 \leq M_1 \norm{x}_1, \, \norm{T_2(x)}_2 \leq M_2 \norm{x}_1 \text{ for all }x \in E_1} \\
+			&= \norm{T_1} + \norm{T_2}
+		\end{align*}
+	\end{enumerate}
+\end{beweis}
+Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normed space. 
+\begin{satz}
+	 $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a Banach space if $(E_2,\norm{.}_2)$ is a Banach space.
+\end{satz}
+\begin{beweis}
+	Assume $(T_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ where $(E_2, \norm{.}_2)$ is a Banach space. Fix $x \in E_1$
+	\begin{align*}
+		\norm{T_n(x)-T_m(x)}_2 &= \norm{(T_n-T_m)(x)}_2  \\
+		&\leq \underset{\substack{\to 0 \\ n,m \to \infty}}{\underbrace{\norm{T_n-T_m}_{E_1 \to E_2}}} \cdot \norm{x}_1 \to 0, \qquad n,m \to \infty
+	\end{align*}
+	Hence $(T_n(x))_{n=1}^{\infty}$ is a Cauchy sequence in $(E_2, \norm{.}_2)$. This is a Banach space which implies that $(T_n(x))_{n=1}^{\infty}$ converges in 
+	$(E_2,\norm{.}_2)$. Call the limit $T(x) \in E_2$ for all $x \in E_1$. Show now 
+	\begin{enumerate}[(1)]
+		\item $T: E_1 \to E_2$ is linear,
+		\item $T$ is bounded,
+		\item $\norm{T_n - T}_{E_1 \to E_2} \to 0$ for $n \to \infty$.
+	\end{enumerate}
+	\begin{enumerate}[(1)]
+		\item Observe 
+		\begin{align*}
+		T(\lambda_1 x_1 + \lambda_2 + x_2)\leftarrow T_n(\lambda_1 x_1 + \lambda_2 x_2) = \set{T \text{ linear}} = \underset{\to \lambda_1 T(x_1) + \lambda_2 T(x_2)}{\underbrace{\underset{\to \lambda_1 T(x_1)}{\underbrace{\lambda_1 \underset{\to T(x_1)}{\underbrace{T_n(x_1)}}}} + \underset{\to \lambda_2 T(x_2)}{\underbrace{\lambda_2 \underset{\to T(x_2)}{\underbrace{T_n(x_2)}}}}}}
+		\end{align*}
+		So for $n \to  \infty$ it is
+		\[
+			T(\lambda_1 x_1 + \lambda_2 + x_2) = \lambda_1 T(x_1) + \lambda_2 T(x_2) \qquad \text{ in }(E_2, \norm{.}_2).
+		\]
+		\item Fix $\varepsilon >0$. Then there exists $N$ such that:
+		\[
+			\norm{T_n- T_m}_{E_1 \to E_2} < \varepsilon \qquad \text{for }n,m \geq N
+		\]
+		So for $x \in E_1$
+		\[
+			\norm{T_n(x)-T_m(x)}_2 \leq \norm{T_n - T_m}_{E_1 \to E_2} \norm{x}_1 < \varepsilon \norm{x}_1 \qquad \text{for }n,m \geq N
+		\]
+		Let $m \to \infty$.
+		\[
+			\norm{T_n(x)- T(x)}_2 \leq \varepsilon \norm{x}_1 \qquad \text{for }n \geq N
+ 		\]
+		So
+		\begin{align*}
+			\norm{T(x)}_2 &\leq  \norm{T(x)- T_N(x)}_2 + \norm{T_N(x)}_2 \\
+			&\leq \varepsilon \norm{x}_1 + \norm{T_N}_{E_1 \to E_2} \cdot \norm{x}_1 \\
+			&= \left( \varepsilon +  \norm{T_N}_{E_1 \to E_2} \right) \norm{x}_1 \qquad \text{for }x \in E_1
+		\end{align*}
+		\item Look above and get
+		\[
+			\norm{T_n - T}_{E_1 \to E_2} \to 0, \qquad  n \to \infty.
+		\]
+	\end{enumerate}
+\end{beweis}
+\begin{theorem}[Banach-Steinhaus Theorem (uniform boundedness principle)]
+	Set \\ $(E_1,\norm{.}_1)$ Banach space, $(E_2,\norm{.}_2)$ normed space and $\mathcal{F} \subset B(E_1,E_2)$. Assume
+	\[
+		\sup\limits_{T \in \mathcal{F}}\norm{T(x)}_2 < \infty \qquad \text{for all } x \in E_1
+	\]
+	then
+	\[
+		\sup\limits_{T \in \mathcal{F}}\norm{T}_{E_1 \to E_2} < \infty.
+	\]
+	\end{theorem}
+	\begin{bemerkung}
+		The implication $\Leftarrow$ is easy to prove. If $\mathcal{F}$ is a finite set, the theorem is trivial.
+	\end{bemerkung}
+	\begin{beweis}
+		\begin{enumerate}[Step 1:]
+			\item Assume 
+			\[
+				\exists\,x_0 \in E_1\, \exists\, r >0 \,\exists\, M>0: \,\forall\, x \in \overline{B(x_0,r)} \, \forall\,  T \in \mathcal{F}: \,\norm{T(x)}_2 \leq M
+			\]
+			We have to show that 
+			\[
+				\sup\limits_{T \in \mathcal{F}} \norm{T}_{E_1 \to E_2} < \infty.
+			\]
+			Fix $T \in \mathcal{F}$. For $\norm{x}_1 \leq r$
+			\[
+				\norm{T(x_0+x)}_2 \leq M
+			\]
+			Note that $x_0+x \in \overline{B(x_0,r)}$.
+			\begin{align*}
+				\norm{T(x)}_2 &= \norm{T(x_0+x-x_0)}_2 \\ &= \set{T \text{ linear}} \\ &= \norm{T(x_0 + x)-T(x_0)}_2 \\ &\leq \norm{T(x_0+x)}_2 +
+				\norm{T(x_0)}_2 \\ &\leq 2M
+			\end{align*}
+			For $0 \neq x \in E_1$ 
+			\[
+				\norm{T \left( \frac{r}{\norm{x}_1} x \right)}_2 \leq 2M
+			\]
+			$\frac{r}{\norm{x}_1} $ has the $\norm{.}_1$-norm equal to $r$. This implies , since T linear,
+			\[
+				\frac{r}{\norm{x}_1} \norm{T(x)}_2 \leq 2M
+			\]
+			i.e.
+			\[
+				\norm{T(x)}_2 \leq \frac{2M}{r}\norm{x}_1 \qquad \text{for all }0 \neq x \in E_1.
+			\]
+			We have
+			\[
+				\norm{t}_{E_1 \to E_2} \leq \underset{\substack{\text{independant}\\ \text{of }T}}{\underbrace{\frac{2M}{r}}} < \infty
+			\]
+			\[
+				\sup\limits_{T \in \mathcal{F}}\norm{T}_{E_1 \to E_2} \leq \frac{2M}{r} < \infty
+			\]
+			\item Justify the assumption in step 1. This assumption is equivalent to
+			\[
+			\exists\,x_0 \in E_1\, \exists\, r >0 \,\exists\, M>0: \,\forall\, x \in B(x_0,r) \, \forall\,  T \in \mathcal{F}: \,\norm{T(x)}_2 \leq M	
+			\]
+			(Note $\overline{B(x_0,r_1)} \subset B(x_0,r) \subset B(x_0,r_2)$ for $0 < r_1 < r < r_2$). \\
+			Argue by contradiction. Assume that the assumption is false. Then it holds
+			\[
+				\forall\, x_0 \in E_1 \, \forall\, r >0 \,\forall\,  M>0: \,\exists\, x \in B(x_0,r) \,\exists\, T \in \mathcal{F} : \, \norm{T(x)}_2 > M.
+			\]
+			Idea: Find a converging sequence $x_n \in E_1$, $x_n \to x$ in $(E_1,\norm{.}_1)$ and a sequence $(T_n)_{n=1}^{\infty} \subset \mathcal{F}$ such that
+			\[
+				\norm{T_n(x_n)}_2 > n \qquad \text{for all }n, \qquad \text{and} \qquad \norm{T_n(x)}_2 > n \qquad \text{ for all }n.
+			\]
+			We have from above $x_1 \in B(0,1)$ and $T_1 \in  \mathcal{F}$ such that \[
+				\norm{T_1(x_1)}_2 > 1.
+			\] $T_1$ is bounded linear, hence continuous. This implies that there exists $0<r_1 < \frac{1}{2}$ such that
+			\[
+				\norm{T_1(x)}_2 >1 \qquad \text{for }x \in B(x_1,r_1)
+			\]
+			and \[
+				\overline{B(x_1,r_1)}\subset B(0,1).
+			\]
+		\end{enumerate}
+	\end{beweis}

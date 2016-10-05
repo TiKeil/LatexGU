@@ -1,0 +1,447 @@
+%01.09.2016
+\begin{theorem}[Hölder's inequality]
+	Assume $1<p<\infty$ and $\frac{1}{p}+ \frac{1}{q}=1$. \\ Let $(x_1, \dots, x_n, \dots)$ and $(y_1,y_2, \dots, y_n, \dots)$ be sequences of complex numbers. Then
+	\[
+		\sum_{n=1}^{\infty}\abs{x_ny_n} 
+		\leq \left( \sum_{n=1}^{\infty}\abs{x_n}^p \right)^{\frac{1}{p}} \cdot \left( \sum_{n=1}^{\infty}\abs{y_n}^q \right)^{\frac{1}{q}}
+	\]
+	Remark there the LHS can be infinity, but the RHS can also be infinity.
+\end{theorem}
+\begin{beweis}
+	\begin{description}
+		\item[Step 1] We're going to proof 
+		\[
+			ab \leq \frac{a^p}{p}+ \frac{b^q}{q}, \qquad \text{for all }a,b >0.
+		\] 
+		\[
+			\int_{0}^{a} x^{p-1} \,\mathrm{d}x = \frac{a^p}{p}
+		\]
+		Note $y = x^{p-1}$ gives \[
+			x  = y ^{\frac{1}{p-1}} = y^{\frac{1}{\frac{1}{1-\frac{1}{q}}-1}}= y ^{\frac{1}{\frac{q}{q-1}-1}} = y^{q-1}
+		\] 
+		so
+		\[
+			\int_{0}^{b}y^{q-1} \,\mathrm{d}y = \frac{b^q}{q}
+		\]
+		We get
+		\[
+			ab \leq \frac{a^p}{p}+ \frac{b^q}{q}
+		\]
+		(You also get condition for $=$)
+		\item[Step 2] It is enough to consider the cases LHS $>0$ and RHS $< \infty$. There exists an integer $N$ such that
+		\[
+			0 < \sum_{n=1}^{N}\abs{x_n}^p, \, \sum_{n=1}^{N}\abs{y_n}^q < \infty.
+		\]
+		Set 
+		\begin{align*}
+			a &= \frac{\abs{x_k}}{\left( \sum_{n=1}^{N}\abs{x_n}^p \right)^{\frac{1}{p}}}, \qquad k = 1,2, \dots,N, \\
+			b &= \frac{\abs{y_k}}{\left( \sum_{n=1}^{N}\abs{y_n}^q \right)^{\frac{1}{q}}}, \qquad k = 1,2, \dots,N.
+		\end{align*}
+		Insert into
+		\[
+			ab \leq \frac{a^p}{p}+ \frac{b^q}{q}.
+		\]
+		\[
+			\frac{\abs{x_ky_k}}{\left( \sum_{n=1}^{N}\abs{x_n}^p \right)^{\frac{1}{p}}\left( \sum_{n=1}^{N}\abs{y_n}^q \right)^{\frac{1}{q}}} 
+			\leq \frac{\abs{x_k}^p}{p \sum_{n=1}^{N}\abs{x_n}^p} + \frac{\abs{y_k}^q}{q \sum_{n=1}^{N}\abs{y_n}^q}, \qquad k = 1,2, \dots, N.
+		\]
+		We sum over $k$ from $1$ to $N$.
+		\[
+			\sum_{k=1}^{N}\abs{x_ky_k} \leq  \left( \sum_{n=1}^{N}\abs{x_n}^p \right)^{\frac{1}{p}} \cdot \left( \sum_{n=1}^{N}\abs{y_n}^q \right)^{\frac{1}{q}}
+		\]
+		Let $N \to \infty$. First in RHS and then in LHS. 
+	\end{description}
+\end{beweis}
+\begin{theorem}[Minkowski's inequality]
+	Assume $1 \leq p < \infty$. and $X,Y \in l^p$. Then
+	\[
+		\norm{X+Y}_{l^p} \leq \norm{X}_{l^p} + \norm{Y}_{l^p}.
+	\]
+\end{theorem}
+\begin{beweis}
+	\begin{description}
+		\item[$p=1$:] 
+		\begin{align*}
+			\norm{X+Y}_{l^1} &= \norm{(x_1,x_2, \dots,x_n, \dots)+ (y_1,y_2, \dots,y_n, \dots)}_{l^1} \\
+			&= \norm{(x_1+y_1, \dots,x_n + y_n, \dots)}_{l^1} \\
+			&= \sum_{n=1}^{\infty} \abs{x_n+y_n} \\
+			&\leq \sum_{n=1}^{\infty} (\abs{x_n}+\abs{y_n}) \\
+			&= \sum_{n=1}^{\infty}\abs{x_n}+ \sum_{n=1}^{\infty}\abs{y_n} \\
+			&= \norm{X}_{l^1}+ \norm{Y}_{l^1}
+		\end{align*} 
+		\item[$1 < p < \infty$:] 
+		\begin{align*}
+					\norm{X+Y}_{l^p}^p &= \sum_{n=1}^{\infty}\abs{x_n+y_n}^p \\
+					&= \sum_{n=1}^{\infty}\abs{x_n+y_n}\abs{x_n+y_n}^{p-1} \\
+					&\leq \sum_{n=1}^{\infty}\abs{x_n}\abs{x_n+y_n}^{p-1} + \sum_{n=1}^{\infty}\abs{y_n}\abs{x_n+y_n}^{p-1}.
+		\end{align*}
+		Use Hölder to get
+		\begin{align*}
+			\sum_{n=1}^{\infty}\abs{x_n}\abs{x_n+y_n}^{p-1} &\leq
+			 \underset{=\norm{X}_{l^p}}{\underbrace{\left( \sum_{n=1}^{\infty}\abs{x_n}^p \right)^{\frac{1}{p}}}} \cdot \left( \sum_{n=1}^{\infty}\abs{x_n+y_n}^{(p-1)q} \right)^{\frac{1}{q}} \\
+			 &= \set{(p-1)q = (p-1)\frac{1}{1-\frac{1}{p}}=p} \\
+			 &= \norm{X}_{l^p}  \left( \sum_{n=1}^{\infty}\abs{x_n+y_n}^p \right)^{\frac{1}{q}}.
+		\end{align*}
+		We have
+		\[
+			\norm{X+Y}_{l^p}^p \leq \left( \norm{X}_{l^p} + \norm{Y}_{l^p} \right) \norm{X+Y}_{l^p}^{\frac{p}{q}}.
+		\]
+		If $\norm{X+Y}_{l^p} \neq 0$ then
+		\[
+			\norm{X+Y}_{l^p}^{p-\frac{p}{q}} \leq \norm{X}_{l^p} + \norm{Y}_{l^p}
+		\]
+		there
+		\[
+			p- \frac{p}{q} = p (1- \frac{1}{q}) = p \frac{1}{p} = 1.
+		\]
+	\end{description}
+\end{beweis}
+\begin{bemerkung}
+	$f \in C([0,1])$ then for $1 \leq p < \infty$
+	\[
+		\norm{f}_{L^p} = \left( \int_{0}^{1} \abs{f(t)}^p \,\mathrm{d}t \right)^{\frac{1}{p}}.
+	\]
+	\textbf{Claim:} \text{    }     
+	\begin{align*}
+		\norm{fq}_{L^1} = \int_{0}^{1} \abs{f(t)\cdot g(t)} \,\mathrm{d}t \leq \norm{f}_{L^p} \cdot \norm{g}_{L^q}
+	\end{align*}
+	where $\frac{1}{p}+ \frac{1}{q}= 1$. Also we have
+	\[
+		\norm{f+q}_{L^p} \leq \norm{f}_{L^p}+ \norm{g}_{L^p}
+	\]
+	This is proven with the same technique as we used for $l^p$. $\sum_{n=1}^{\infty}$ is replaced by $\int_{0}^{1} \,\mathrm{d}t$. \\
+	$E$ real/complex vector space. $x_1, \dots,x_n \in E$, $\lambda_1, \dots, \lambda_n$ scalar. We say that 
+	\[
+		\lambda_1 x_1, \dots, \lambda_n x_n
+	\]
+	is a linear combination of $x_1,\dots,x_n$. We say that $x_1,\dots,x_n$ are linear independent if 
+	\[
+		\alpha_1 x_1 + \dots + \alpha_n x_n = 0 \qquad \Rightarrow \qquad \alpha_1 = \dots = \alpha_n = 0.
+	\]
+	If $A \subset E$, we say that $A$ is linear independant if every linear combination of vectors in $A$ is linear independent.
+\end{bemerkung}
+	\begin{beispiele}
+		\begin{enumerate}[(1)]
+			\item 
+		Set $E = P([0,1])$ and $A = \set[p_k]{p_k(x) = x^k, x \in [0,1], k= 0,1, \dots}$. A is linear independant since: \\ consider
+		\[
+			\alpha_0 p_0 + \alpha_1 p_1 + \dots + \alpha_np_n = 0
+		\]
+		i.e. 
+		\[
+			\alpha_0 p_0(x) + \alpha_1 p_1(x) + \dots + \alpha_n p_n(x) = 0(x), \qquad x \in [0,1] 
+		\]
+		i.e.
+		\[
+			\alpha_0 + \alpha_1 x + \dots + \alpha_n x^n = 0, \qquad x \in [0,1]
+		\]
+		If $x = 0$ then $\alpha_0 = 0$
+		\[
+			\alpha_1 x + \dots + \alpha_n x^n = 0, \qquad x \in [0,1].
+		\]
+		Differentiate
+		\[
+			\alpha_1 + 2 \alpha_2 x + \dots + n \alpha_n x^{n-1} = 0
+		\]
+		gives $\alpha_1 = 0$. Continue and get
+		\[
+			\alpha_0 = \alpha_1 = \dots = \alpha_n = 0.
+		\]
+		Set $B \subset E$ where
+		\begin{align*}
+			\text{span } B &= \set{\text{set of all linear combinations of elements in B}} \\
+			&= \set[\sum_{k=1}^{n}lambda_k x_k]{x_k \in B, \lambda_k \in \mathbb{R}, k=1,2,\dots,n \text{ where n is a positive integer}}
+		\end{align*}
+		\begin{bemerkung}
+			\[
+				\sum_{k=1}^{n}\lambda_k x_k \in E
+			\]
+			\[
+				\sum_{k=1}^{\infty} \lambda_k x_k \text{    has no meaning}
+			\]
+		\end{bemerkung}
+		$C \subset E$ is called a basis for E if
+		\begin{enumerate}[1)]
+			\item $C$ linear independent.
+			\item $ \text{span } C = E$
+		\end{enumerate}
+		continue of the example above: \\
+		\textbf{Claim:} \text{    }     $A$ is a basis for E.
+		\item Set $E = l^2$ and
+		\[
+			A = \set[X_k]{k =1,2,\dots}
+		\]
+		\[
+			X_k = (0,0,\dots,0,1,0,0,\dots)
+		\]
+		\textbf{Claim:} \text{    }     A is linear independent since
+		\[
+			\alpha_1 X_1 + \alpha_2 X_2 + \dots + \alpha_n X_n = 0
+		\]
+		Here 
+		\[
+			\alpha_1 X_1 = (\alpha_1,0,0,\dots), \qquad etc
+		\]
+		and
+		\[
+			0 = (0,0, \dots)
+		\]
+		So
+		\[
+			(\alpha_1,\alpha_2, \dots, \alpha_n,0, \dots) = (0,0,\dots)
+		\]
+		So $\alpha_1= \alpha_2 = \dots = \alpha_n = 0$. \\
+		Question: Is $A$ a basis for $l^2$? \\
+		We note: If $X \in \text{span }A$ then
+		\[
+			X = (x_1,x_2, \dots,x_n,0,0,\dots)
+		\]
+		for some positive integer $n$, i.e. $X$ has only finitely many nonzero positions. \\
+		Cosider:
+		\[
+			X := (1, \frac{1}{2}, \dots, \frac{1}{n}, \dots)
+		\]
+		\[
+			\norm{X}_{l^2} = \left( \sum_{n=1}^{\infty} \frac{1}{n^2} \right)^{\frac{1}{2}} < \infty
+		\]
+		So $X \in l^2 \setminus \text{span }A$.
+		\end{enumerate}
+		\begin{bemerkung}
+			Every vector space has a basis (if we are allowed to use Axiom of Choice/ zorns lemma). \\ Basis = vector space basis = Hamel basis
+		\end{bemerkung}
+		Assume $x_1, \dots,x_n$ is a basis for $E$. Then every basis for $E$ must contain $n$ different elements. 
+		\[
+			n = \dim E
+		\]
+		is well-defined. (System of linear equations, homogeneous with more unknowns than equations. Then there exists a nontrivial solution.)
+	\end{beispiele}
+\begin{definition*}[norm]
+	$E$ vector space. We say that $\norm{.}: E \to [0,\infty)$ is a norm on $E$ if
+	\begin{enumerate}[1)]
+		\item $\norm{x}=0 \qquad \Rightarrow x =0$
+		\item $\norm{\lambda x} = \abs{\lambda} \norm{x} \qquad $ for all $x \in E, \lambda \in \mathbb{R}$
+		\item $\norm{x+y} \leq \norm{x} + \norm{y} \qquad $ for all $x,y \in E$
+	\end{enumerate}
+	
+\end{definition*}
+\begin{bemerkung}
+	\[
+		\norm{0} = \norm{0 \cdot 0} = \underset{=0}{\underbrace{\abs{0}}} \norm{0} = 0
+	\]
+\end{bemerkung}
+\begin{beispiele}
+	\begin{enumerate}[(1)]
+		\item $1 < p < \infty$ and 
+	\[
+		\norm{X}_{l^p} = \left( \sum_{n=1}^{\infty} \abs{x_n}^p \right)^{\frac{1}{p}}
+	\]
+	is a norm on $l^p$. Check $1)$,$2)$ and $3)$ above:
+	\begin{enumerate}[1)]
+		\item \phantom{1} \[
+			0 = \norm{X}_{l^p} = \left( \sum_{n=1}^{\infty} \abs{x_n}^p \right)^{\frac{1}{p}} 
+		\]
+		It follows
+		\[
+			x_n=0, \qquad n=1,2,\dots
+		\]
+		\[
+			\Rightarrow \qquad X = (x_1,x_2, \dots) = (0,0,\dots) = 0
+		\]
+		\item \phantom{1}\[
+			\norm{\lambda X}_{l^p} = \left( \sum_{n=1}^{\infty} \abs{\lambda x_n}^p \right)^{\frac{1}{p}} 
+			= \left( \abs{\lambda}^p \sum_{n=1}^{\infty} \abs{x_n}^p \right)^{\frac{1}{p}} = \abs{\lambda} \norm{X}_{l^p}
+		\]
+		\item \phantom{1}\[
+			\norm{X+Y}_{l^p} \leq \set{\text{Minkowski's inequality}} \leq \norm{X}_{l^p} + \norm{Y}_{l^p}
+		\]
+	\end{enumerate}
+	\item $E = C([0,1])$ and $f \in E$
+	\[
+		\norm{f} = \max\limits_{t \in [0,1]} \abs{f(t)} \in [0,\infty)
+	\]
+	Check the axioms above
+	\begin{enumerate}[1)]
+		\item If $\norm{f} = 0$ it follows
+		\[
+			\abs{f(t)} = 0 \,\text{ for all }t \in [0,1], \qquad \Rightarrow \qquad f=0
+		\]
+		\item \[
+			\norm{\lambda f} = \max\limits_{t \in [0,1]} \underset{\abs{\lambda}\abs{f(t)}}{\underbrace{\abs{\underset{\lambda f(t)}{\underbrace{(\lambda f)(t)}}}}}
+			= \abs{\lambda} \max\limits_{t \in [0,1]} \abs{f(t)} = \abs{\lambda} \norm{f}
+		\]
+		\item 
+		\[
+			\norm{f+g} = \max\limits_{t \in [0,1]} \abs{\underset{f(t)+g(t)}{\underbrace{(f+g)(t)}}} = \max\limits_{t \in [0,1]}  \left( \abs{f(t)} + \abs{g(t)} \right)
+			\leq \max\limits_{t \in [0,1]} \abs{f(t)} + \max\limits_{t \in [0,1]} \abs{g(t)} = \norm{f} + \norm{g}
+		\]
+	\end{enumerate}
+	\item $E = C([0,1])$ and $f \in E$.
+	\[
+		\norm{f}_{L^1} = \int_{0}^{1} \abs{f(t)} \,\mathrm{d}t 
+	\]
+	defines also a norm on $E$.
+	\begin{description}
+		\item[3)]
+		\begin{align*}
+			\norm{f+g}_{L^1} &= \int_{0}^{1} \abs{\underset{f(t)+g(t)}{\underbrace{(f+g)(t)}}} \,\mathrm{d}t \\
+			&\leq \int_{0}^{1}(\abs{f(t)}+ \abs{g(t)}) \,\mathrm{d}t \\
+			&= \int_{0}^{1}\abs{f(t)} \,\mathrm{d}t + \int_{0}^{1}\abs{g(t)} \,\mathrm{d}t \\
+			&= \norm{f}_{L^1} + \norm{g}_{L^1}
+		\end{align*}
+		\item[2)] \[
+			\norm{\lambda f} = \int_{0}^{1} \underset{= \abs{\lambda}\abs{f(t)}}{\underbrace{\abs{(\lambda f)(t)}}} \,\mathrm{d}t = \abs{\lambda} \norm{f}_{L^1}
+		\]
+		\item[1)] \[
+			0 = \norm{f}_{L^1} = \int_{0}^{1}\abs{f(t)} \,\mathrm{d}t
+		\]
+		This implies $f(t)=0$ for $t \in [0,1]$ since f is continuous! i.e. $f=0$
+	\end{description}
+	\end{enumerate}
+\end{beispiele}
+\begin{theorem}[equivalent norm]
+	$E$ vector space with norms $\norm{.}$ and $\norm{.}_{*}$. We say that $\norm{.}$ and $\norm{.}_{*}$ are equivalent if there exists $\alpha, \beta >0$ such that
+	\[
+		\alpha \norm{x}_{*} \leq \norm{x} \leq \beta \norm{x}_{*} \qquad \text{for all }x \in E.
+	\]
+\end{theorem}
+\begin{beispiel}
+		\item $E = C([0,1])$. Choose $y = f(t)$ and $y = \abs{f(t)}$
+		\[
+			\norm{f} = \max\limits_{t \in [0,1]} \abs{f(t)}, \qquad \norm{f}_{*} = \norm{f}_{L^1} = \text{area}.
+		\]
+		Question: Are these norms equivalent? \\
+		\textbf{Claim:} \text{    }   $f \in C([0,1])$ 
+		\[
+			\norm{f}_{*} = \int_{0}^{1} \underset{\leq \norm{f}}{\underbrace{\abs{f(t)}}} \,\mathrm{d}t \leq \norm{f}
+		\]
+		Choose $f_n(t)$ such that
+		\[
+			\norm{f_n} = 1, \qquad \norm{f_n}_{*} = \frac{1}{2n}
+		\]
+		So 
+		\[
+			\frac{\norm{f_n}_{*}}{\norm{f_n}} = \frac{1}{2n} \to 0 \qquad n \to \infty
+		\]
+		The norms are not equivalent! Answer: NO ! 
+	\end{beispiel}
+\begin{theorem}
+	$E$ vector space with $\dim E < \infty$.  \\
+	$\Rightarrow $ All norms on $E$ are equivalent.
+\end{theorem}
+\begin{beweis}
+	Assume $n = \dim E$ with a positive integer $n$. Let $x_1,x_2, \dots , x_n$ be a basis for $E$. For every $x \in E$
+	\[
+		x = \alpha_1(x)x_1 + \dots + \alpha_n(x)x_n
+	\]
+	where $\alpha_1(x), \dots, \alpha_n(x)$ unique. Set 
+	\[
+		\norm{x}_{*} = \abs{\alpha_1(x)}+ \dots + \abs{\alpha_n(x)}, \qquad x \in E
+	\]
+	\textbf{Claim:} \text{    }     $\norm{.}_{*}$ defines a norm on $E$ (easy proof) \\
+	Fix an arbitrary norm $\norm{.}$ on $E$. \\
+	\textbf{Claim:} \text{    }     $\norm{.}_{*}$ and $\norm{.}$ are equivalent. \\
+	Note for $x \in E$
+	\begin{align*}
+		\norm{x} &= \norm{\alpha_1(x)x_1 + \dots + \alpha_n(x)x_n}  \\
+		&\leq \abs{\alpha_1(x)}\norm{x_1} + \dots + \abs{\alpha_n(x)} \norm{x_n} \\
+		&\leq \max\limits_{k=1,2,\dots,n} \norm{x_k} ( \underset{= \norm{x}_{*}}{\underbrace{\abs{\alpha_1(x)}+ \dots + \abs{\alpha_n(x)}}}) 
+	\end{align*}
+	Set $\beta = \max\limits_{k=1,2,\dots,n} \norm{x_k}$.
+	Then
+	\[
+		\norm{x} \leq \beta \norm{x}_{*} \qquad \text{for all }x \in E.
+	\]
+	Remains to prove: There exists $\alpha >0$ such that
+	\[
+		\alpha \norm{x}_{*} \leq \norm{x} \qquad \text{for all } x \in E \qquad (*)
+	\]
+	Let $E$ be a vector space with norm $\norm{.}$ and $(v_m)_{m=1}^{\infty}$ a sequence in $E$. We say that $(v_m)_{m=1}^{\infty}$ converges in $(E,\norm{.})$ if there exists $v \in E$ such that $\norm{v_m-v} \to 0$ for $n \to \infty$. \\
+	Notation: $v_m \to v$ in $(E, \norm{.})$. \\
+	Note: If we have $\norm{.}$ and $\norm{.}_{*}$ are equivalent, then
+	\[
+		v_n \to v \text{ in }(E,\norm{.}) \qquad  \Leftrightarrow \qquad v_n \to v \text{ in }(E,\norm{.}_{*})
+	\] 
+	Back to $(*)$: Argue by contradiction. \\
+	Assume there is no $\alpha >0$ such that
+	\[
+		\alpha \norm{x}_{*} \leq \norm{x} \qquad \text{for all } x \in E
+	\]
+	For $k=1,2,3,\dots$ there are $y_k \in E$ such that
+	\[
+		\frac{1}{k}\norm{y_k}_{*} > \norm{y_k}. \qquad (**)
+	\]
+	We have 
+	\[
+		y_k = \alpha_1^{(k)} x_1 + \dots + \alpha_n^{(k)} x_n
+	\]
+	where $\alpha_1^{(k)}, \dots, \alpha_n^{(k)}$ are unique scalars and $k = 1,2, \dots$. \\
+	$(**)$ implies that
+	\[
+		k \norm{y_k} < \abs{\alpha_1^{(k)}} + \dots + \abs{\alpha_n^{(k)}}
+	\]
+	WLOG we can assume $\abs{\alpha_1^{(k)}}+ \dots + \abs{\alpha_n^{(k)}} = 1$. ( If not consider 
+	\begin{align*}
+		\lambda z &= \lambda ( \alpha_1(z)x_1+ \dots+ \alpha_n(z)x_n)  \\
+		&= (\lambda \alpha_1(z))x_1 + \dots + (\lambda \alpha_n (z))x_n \\
+		&= \alpha_1(\lambda z)x_1 + \dots + \alpha_n(\lambda z)x_n
+	\end{align*}
+	We have \[
+		\alpha_k(\lambda z) = \lambda \alpha_k(z), \qquad k=1,2,\dots,n)
+	\]
+	We have 
+	\[
+		k \norm{y_k} < 1 \qquad k=1,2,\dots
+	\]
+	which implies $y_k \to 0$ in $(E,\norm{.})$. \\
+	\begin{Large}
+		\underline{IF:}
+	\end{Large} \begin{align*}
+		\alpha_1^{(k)} &\to \bar{\alpha_1} \\
+		\alpha_2^{(k)} &\to \bar{\alpha_2} \\
+		&\vdots \\
+		\alpha_n^{(k)} &\to \bar{\alpha_n}
+	\end{align*}
+	for $k \to \infty$. Then set
+	\[
+		\bar{y} = \bar{\alpha_1}x_1 + \dots + \bar{\alpha_n}x_n
+	\]
+	and get
+	\begin{align*}
+		\norm{y_k-\bar{y}} &= \norm{(\alpha_1^{(k)}-\bar{\alpha_1})x_1 + \dots+ (\alpha_n^{(k)}-\bar{\alpha_n})x_n} \\
+		&\leq \underset{\to 0}{\underbrace{\abs{\alpha_1^{(k)}-\bar{\alpha_1}}}}\underset{< \infty}{\underbrace{\norm{x_1}}} 
+		+ \dots + \underset{\to 0}{\underbrace{\abs{\alpha_n^{(k)}-\bar{\alpha_n}}}}\underset{< \infty}{\underbrace{\norm{x_n}}} \to 0, \qquad k \to \infty
+	\end{align*}
+	\[
+		\norm{\bar{y}} = \norm{\bar{y}-y_k + y_k} \leq \underset{\to 0}{\underbrace{\bar{y}-y_k}} + \underset{\to 0}{\underbrace{\norm{y_k}}} \to 0, \qquad k \to \infty
+	\]
+	So $\norm{\bar{y}} = 0$ hence $\bar{y}=0$. But
+	\[
+		\abs{\bar{\alpha_1}} + \abs{\bar{\alpha_2}} + \dots + \abs{\bar{\alpha_n}} = 1.
+	\]
+	This contradicts $x_1, \dots,x_n$ is a basis. \\
+	We have for $k= 1,2, \dots$ the vector $(\alpha_1^{(k)},\alpha_2^{(k)},\dots,\alpha_n^{(k)})$ where
+	\[
+		\abs{\alpha_1^{(k)}}+ \dots + \abs{\alpha_n^{(k)}} = 1
+	\]
+	We focus on the first one and we have
+	\[
+		\abs{\alpha_1^{(k)}} \leq 1, \qquad k =1,2,\dots
+	\]
+	By Bolzano-Weierstraß then there exists a converging subsequence $(\alpha_{1,1}^{(k)})_{k=1}^{\infty}$ of $(\alpha_{1}^{(k)})_{k=1}^{\infty}$. Set
+	\[
+		\bar{\alpha_1} = \lim_{k \to \infty} \alpha_{1,1}^{(k)}
+	\]
+	consider
+	\[
+		(\alpha_{1,1}^{(k)},\alpha_{2,1}^{(k)}, \dots ,\alpha_{n,1}^{(k)}), \qquad k=1,2,\dots
+	\]
+	We have 
+	\[
+		\abs{\alpha_{2,1}^{(k)}} \leq 1, \qquad k=1,2,\dots
+	\]
+	Bolzano-Weierstraß implies that there exists a converging subsequenz $(\alpha_{2,2}^{(k)})_{k=1}^{\infty}$ of $(\alpha_{2,1}^{(k)})_{k=1}^{\infty}$. 
+	Set 
+	\[
+		\bar{\alpha_2} = \lim_{k \to \infty} \alpha_{2,2}^{(k)}
+	\]
+\end{beweis}

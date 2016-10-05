@@ -1,0 +1,248 @@
+%%% lecture 8a
+
+\begin{beispiel}
+	Assume $k(x,y)$ continuous on $[0,1] \times [0,1]$ and $h(y,z)$ continuous on $[0,1]\times \mathbb{R}$ and 
+	\[
+		\sup\limits_{(y,z) \in [0,1] \times \mathbb{R}} \abs{h(y,z)} \equiv B < \infty
+	\]
+	Then there exists a solution $f \in C([0,1])$ to 
+	\[
+		f(x) = \int_{0}^{1} k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1]
+	\]
+	Method: Set $f \in C([0,1])$ and
+	\[
+		T(f)(x) = \int_{0}^{1}k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1] \qquad (*)
+	\]
+	We want to apply (a generalized version of) Schander's fixed point theorem. Assume $(E, \norm{.})$ is a Banach space and $F$ closed convex subset of $E$. Moreover assume $T: E \to E$ continuos and $T(F)$ relatively compact in $(E,\norm{.})$. Then $T$ has a fixed point in $F$. \\
+	\begin{description}
+		\item[Step 1:] $T$ as in $(*)$. \\
+		\textbf{Claim:} \text{    }     $T(C([0,1])) \subseteq C([0,1])$. \\
+		To proof this we note that $k$ is continuous on $[0,1] \times [0,1]$ whicht is compact in $\mathbb{R}^2$. This implies that $k$
+ is uniformly continuous on $[0,1]\times [0,1]$. Fix now $\varepsilon >0$. \\
+ Then there exists $\delta = \delta (\varepsilon) >0$ such that
+ \[
+ 	\abs{k(x_1,y_1)- k(x_2,y_2)} < \frac{\varepsilon}{B}
+ \]
+ for $\abs{(x_1,y_1)- (x_2,y_2)}< \delta $. \\
+ Fix $f \in C([0,1])$
+ 	\begin{align*}
+ 		\abs{T(f)(x_1)-T(f)(x_2)} & = \abs{ \int_{0}^{1}(k(x_1,y)-k(x_2,y))h(y,f(y)) \,\mathrm{d}y} \\
+		&\leq \int_{0}^{1}\underset{< \frac{\varepsilon}{B} \text{ if } \abs{x_1-x_2}< \delta }{\underbrace{\abs{k(x_1,y)-k(x_2,y)}}}\underset{\leq B}{\underbrace{\abs{h(y,f(y))}}} \,\mathrm{d}y < \varepsilon, \qquad \text{provided }\abs{x_1-x_2}< \delta
+ 	\end{align*}
+	Conclusion: $T(f) \in C([0,1])$ for $f \in C([0,1])$
+	\item[Step 2:] Choose $F$. \\
+	$k$ is a continuous function on a compact set $[0,1] \times [0,1]$ implies
+	\[
+		\sup\limits_{(x,y) \in [0,1] \times [0,1]} \abs{k(x,y)} \equiv A < \infty.
+	\]
+	Hence 
+	\[
+		\abs{T(f)(x)} \leq  AB \qquad \text{ for all }f \in C([0,1]).
+	\]
+	Set 
+	\[
+		F:= \set[f \in C([0,1])]{\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq AB}
+	\]
+	Clearly $F$ is closed convex in $(C([0,1]),\norm{.})$ which is a Banach space.
+	\item[Step 3:] \textbf{Claim:} \text{    }     $T(F)$ is relatively compact. \\
+	To prove this we use the Arzela-Ascoli Theorem. \\
+	$\phantom{...}$ \\
+	Let $K$ be a compact set in $\mathbb{R}^n$. Let $\mathcal{S} \subset C(K)$ (realvalued continuous functions on $K$). \\
+	Then $\mathcal{S}$ is relatively compact in $(C(K),\norm{.}_{\infty})$ if 
+	\begin{enumerate}[(1)]
+		\item $\mathcal{S}$ uniformly bounded, i.e.
+		\[
+			\sup_{f \in \mathcal{S}} \norm{f} < \infty
+		\]
+		\item equicontinuity of $f \in \mathcal{S}$, i.e.
+		\begin{align*}
+			\forall\, \varepsilon>0 \,\exists\, \delta = \delta (\varepsilon) >0: \,\forall\,  f \in \mathcal{S}: & \\
+			\abs{x_1-x_2} < \delta, \, x_1,x_2 \in K \qquad \Rightarrow & \qquad \abs{f(x_2)-f(x_1)}< \varepsilon
+		\end{align*}
+	\end{enumerate}
+	In our example it is $\mathcal{S} = F$, $K = [0,1]$ in $\mathbb{R}$. Check that (1) and (2) in AA-Theorem are satisfied. \\
+	\begin{enumerate}[(1)]
+		\item $F$ is uniformly bounded since
+	\[
+		\sup_{f \in F}\norm{f} \leq AB < \infty
+	\]
+	\item Equicontinuity follows from calculations in Step 1. \\
+	\end{enumerate}	
+	Conclusion: $T(F)$ is relatively compact.
+	\item[Step 4:] \textbf{Claim:} \text{    }     $T: F \to F$ continuous \\
+	In step 1 we had $f \in F$ and $x_n \to x$ in $[0,1]$. We have shown that $T(f)(x_n) \to T(f)(x)$ in $\mathbb{R}$. So $T(f)$ is a continuous function. \\
+	Now we want to show that for $f_n \to f$ in $F$ we've got $T(f_n) \to T(f)$ in $C([0,1])$. \\
+	Note that $h: [0,1] \times [-AB,AB] \to \mathbb{R}$ is continuous and $[0,1] \times [-AB,AB]$ is compact set in $\mathbb{R}^2$. So $h: [0,1] \times [-AB,AB] \to \mathbb{R}$ is uniformly continuous. \\
+	Fix $\varepsilon >0$. Then there exists a $\delta = \delta (\varepsilon) >0$ such that
+	\[
+		\abs{h(y_1,z_1)-h(y_2,z_2)} < \frac{\varepsilon}{A}
+	\] 
+	for $\abs{(y_1,z_1)-(y_2,z_2)} < \delta $. For $f_1,f_2 \in F$ with
+	\[
+		\norm{f_1-f_2} < \delta 
+	\]
+	We have 
+	\begin{align*}
+		\abs{T(f_1)(x)-T(f_2)(x)} &= \abs{\int_{0}^{1}k(x,y)(h(y,f_1(y))-h(y,f_2(y))) \,\mathrm{d}y} \\
+		&\leq  \int_{0}^{1}\underset{\leq A}{\underbrace{\abs{k(x,y)}}}\underset{< \frac{\varepsilon}{A}}{\underbrace{\abs{h(y,f_1(y))-h(y,f_2(y))}}} \,\mathrm{d}y < \varepsilon 
+	\end{align*}
+	Conclusion: $T: F \to F$ is continuous. 
+	\item[Step 5:] Apply Schander's fixed point theorem.
+	\end{description}
+\end{beispiel}
+\subsection{Completion of normed spaces} 
+\label{sub:completion_of_normed_spaces}
+$(E,\norm{.})$ normed spaces. We say that $(\tilde E, \norm{.}_*)$ is a completion of $(E,\norm{.})$ if $(\tilde E, \norm{.}_*)$ is a normed space such that
+\begin{enumerate}[(1)]
+	\item $\exists\, \Phi: E \to \tilde E$ injective and linear.
+	\item $\norm{x} = \norm{\Phi(x)}_*$ for all $x \in E$.
+	\item $\Phi(E)$ is dense in $\tilde E$.
+	\item $(\tilde E, \norm{.}_*)$ is a Banach space.
+\end{enumerate}
+\minisec{Construction:}
+Let $(x_n)_{n=1}^{\infty}$ and $(y_n)_{n=1}^{\infty}$ be Cauchy sequences in $(E,\norm{.})$. We say that $(x_n)_{n=1}^{\infty}$ and $(y_n)_{n=1}^{\infty}$ are equivalent, denoted by $(x_n) \sim (y_n)$, if 
+\[
+	\norm{x_n-y_n} \to 0, \qquad n \to \infty.
+\]
+Set \[
+	\tilde E= \set[ \left((x_n) \right)_N]{(x_n)_{n=1}^{\infty} \text{ Cauchy sequence in } (E,\norm{.})}
+\]
+Vecotr space structure:
+\[
+	\begin{cases}
+		[(x_n)]_N + [(\tilde x_n)]_N &= [(x_n + \tilde x_n)]_N \\
+		\lambda [(x_n)]_N &= [(\lambda x)_n]_N
+	\end{cases}
+\]
+Show that these definitions are well-defined, i.e. independent of the choice of representative Norm
+\[
+	\norm{ [(x_n)]_N}_* = \lim_{n \to \infty} \norm{x_n}
+\]
+Note \[
+	(x_n) \sim (y_n)
+\]
+implies
+\[
+	\lim_{n \to \infty}\norm{x_n} = \lim_{n \to \infty} \norm{y_n}.
+\]
+Since
+\[
+	\abs{\norm{x_n}- \norm{y_n}} \leq \norm{x_n-y_n} \to 0, \qquad n \to \infty
+\]
+Check that the axioms for being a norm are satisfied. \\
+Now we have $(\tilde E,\norm{.}_*)$ is a normed space. \\
+Define $\Phi$: For $x \in E$ set $\Phi(x) = \left[ (x)_{n=1}^{\infty} \right]_N$ where 
+\[
+	(x)_{n=1}^{\infty} = (x,x,x, \dots).
+\]
+\begin{description}
+\item[Claim 1 \& 2:] easy to prove. 
+\item[Claim 3:] item $\Phi(E)$ dense in $(\tilde E,\norm{.}_*)$. Fix $\left[ (x_n) \right]_N \in \tilde E$. Consider $\Phi(x_k)$ where $x_k$ is the element in the $k$-th position in the sequence $(x_1,x_2, \dots,x_n, \dots)$.
+\begin{align*}
+	\norm{\left[ (x_n) \right]_N - \Phi(x_k)}_* = \lim_{n \to \infty}\norm{x_n - x_k} \to 0 \qquad k \to \infty
+\end{align*}
+Since $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence. \\
+\item[Claim 4:] item $(\tilde E, \norm{.}_*)$ is a Banach space.\\
+Consider a Cauchy sequence $z_n \in \tilde E$ such that $\norm{z_n - z} \to 0$ as $n \to \infty$. \\
+To show: There exists $z \in \tilde E$ such that 
+\[
+	\norm{z_n - z} \to 0, \qquad n \to \infty.
+\]
+By 3 we have that $\Phi(E)$ is dense in $ \tilde E$ so for $n=1,2,\dots$ there exists $x_n \in E$, $n=1,2,\dots$ such that
+\[
+	\norm{z_n - \Phi(z_n)} < \frac{1}{n}, \qquad  n=1,2,\dots
+\]
+Set $z=: \left[ (x_n) \right]_N$. \\
+Need to show that $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence
+\begin{align*}
+	\norm{x_n - x_m} &= \norm{\Phi(x_n)-\Phi(x_m)}_* \\
+	& \leq  \norm{\Phi(x_n)- z_n}_* + \norm{z_n-z_m}_* + \norm{z_m - \Phi(x_m)}_* \\
+	&< \frac{1}{n} + \norm{z_n-z_m} + \frac{1}{m} \to 0, \qquad n,m \to \infty
+\end{align*}
+Conclusion: $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E, \norm{.})$. Remains to show:
+\[
+	\norm{z_n-z}_* \to 0, \qquad n \to \infty
+\]
+\[
+	\norm{z_n - z}_* \leq \underset{< \frac{1}{n}}{\underbrace{\norm{z_n - \Phi(x_n)}_*}} + \underset{= \lim_{n \to \infty}\norm{x_n-x_m}}{\underbrace{\norm{\Phi(x_n)-z}_*}} \to 0, \qquad n \to \infty.
+\]
+\end{description}
+
+Consider $ f \in C([0,1])$
+\begin{itemize}
+	\item max-norm: $\norm{f} = \max_{x \in [0,1]}\abs{f(x)}$. Then $(C([0,1]),\norm{.})$ is a Banach space.
+	\item $p \geq 1:$
+	\[
+		\norm{f}_{L^p} = \left( \int_{0}^{1}\abs{f(x)}^p \,\mathrm{d}x \right)^{\frac{1}{p}} 
+	\]
+	defines a norm for $C([0,1])$
+\end{itemize}
+\begin{bemerkung}
+	\begin{itemize}
+		\item Consider piecewise linear $f_n \in C([0,1])$ for $n =1,2, \dots$
+		\[
+			f_n(x) = \begin{cases}
+				1, &\text{ if } \frac{1}{2} \leq x \leq 1 \\
+				0, &\text{ if } x \leq \frac{1}{2} - \frac{1}{2n}
+			\end{cases}
+		\]
+		with
+		\[
+			\norm{f_n-f_m}_{L^1} \leq \frac{1}{2} \frac{1}{\min(m,n)} \to 0, \qquad n,m \to \infty
+		\]
+		So $(f_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(C([0,1]),\norm{.}_{L^1})$ but $(f_n)_{n=1}^{\infty}$ does not converge in $(C([0,1]),\norm{.}_{L^1})$ since
+		if $\norm{f_n - f}_{L^1} \to 0$ as $n \to \infty$ and $f \in C([0,1])$ then
+		\[
+			f(x) = \begin{cases}
+				0, &\text{ if }x \in [0,\frac{1}{2})\\
+				1, &\text{ if }x \in [\frac{1}{2},1]
+			\end{cases}
+		\]
+		Conclusion: $(C([0,1]), \norm{.}_{L^1})$ is not a Banach space.
+		\item Consider:
+		\[
+			f(x) = \begin{cases}
+				1, &\text{ if }x = \frac{1}{2}\\
+				0, &\text{ if }x \in [0,1] \setminus \set{\frac{1}{2}}
+			\end{cases}
+		\]
+		Then
+		\[
+			\norm{f}_{L^1} = 0 = \norm{0}_{L^1}.
+		\]
+		Compare this with the first axiom for a norm function.
+		\item Replace $[0,1]$ with $\mathbb{R}$. For $f : \mathbb{R} \to \mathbb{R}$ set \[
+			\supp(f) = \set[x \in \mathbb{R}]{f(x) \neq 0}
+		\]
+		Set 
+		\[
+			C_0(\mathbb{R}) = \set[f \in C(\mathbb{R})]{ \supp(f) \text{ is compact in }\mathbb{R}}
+		\]
+		\textbf{Claim:} \text{    }      $C_0(\mathbb{R})$ forms a vector space and for every $p \geq 1$ and $f \in C_0(\mathbb{R})$
+		\[
+			\norm{f}_{L^p} = \left( \int_{\mathbb{R}}^{} \abs{f(x)}^p \,\mathrm{d}x \right)^{\frac{1}{p}}
+		\] defines a norm on $C_0(\mathbb{R})$. \\
+		Problem: $(C_0(\mathbb{R}), \norm{.}_{L^p})$ for $p \geq 1$ are not Banach spaces. \\
+		$(L^1(\mathbb{R}),\norm{.}_{L^1})$ is a completion of $(C_0(\mathbb{R}),\norm{.}_{L^1})$. \\
+		Note $A \subset \mathbb{R}$ and $A$ bounded. Define
+		\[
+			f_A(x) \begin{cases}
+				1, & x \in A\\
+				0, \text{elsewhere}
+			\end{cases}
+		\]
+		Lebesguesmeasure of $A = \norm{f_A}_{L^1} = \mu(f_A)$. $A \subset \mathbb{R}$ and $A$ unbounded
+		\[
+			\mu(A) = \lim_{n \to \infty} \mu ( A \cap [-n,n]).
+		\]
+		We say that $A \subset \mathbb{R}$ is a $0$- set if for all $\varepsilon >0$ there exist open intervals $I_n$, $n=1,2, \dots$ such that
+		\begin{enumerate}[(1)]
+			\item $ A \subseteq \bigcup_{n=1}^{\infty}I_n$
+			\item $\sum_{n=1}^{\infty}$ lenghts of $I_m < \varepsilon$
+		\end{enumerate} 
+		In particular
+		\[
+			A = \mathbb{Q} = \set[r_n]{n=1,2,\dots}\qquad \text{is a $0$-set}	
+		\]
+	\end{itemize}
+\end{bemerkung}

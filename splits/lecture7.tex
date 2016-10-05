@@ -1,0 +1,501 @@
+%%lecture 7
+
+%% 20.9
+\newpage
+\section{Hilbert spaces} 
+\label{sec:hilbert_spaces}
+\begin{beispiel}
+	Consider $\mathbb{C}^n = \set[(x_1,x_2,\dots,x_n)]{x_i \in \mathbb{C}}$ and $x,y \in \mathbb{C}^n$ with
+	$x= (x_1,\dots,x_n)$, $y = (y_1,\dots,y_n)$. Define the inner product of $x,y$ (scalar product)
+	\[
+		\skal{x}{y} = \sum^{n}_{i=1}x_i \bar{y}_i \in \mathbb{C}
+	\]
+	We have a map
+	\begin{align*}
+		\mathbb{C}^n \times \mathbb{C}^n &\to \mathbb{C} \\
+		(x,y) &\mapsto \skal{x}{y}
+	\end{align*}
+	This mapping has properties:
+	\begin{itemize}
+		\item $x \neq 0$ folgt $\skal{x}{x} = \sum^{n}_{i=1}x_i \bar{x}_i = \sum^{n}_{i=1} \abs{x_i}^2 >0$
+		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for $x,y \in \mathbb{C}^n$, $\lambda \in \mathbb{C}$.
+		\item $\skal{x}{y} = \sum^{n}_{i=1} x_i \bar{y}_i = \overline{\sum^{n}_{i=1}y_i \bar{x}_i}$ for $x,y \in \mathbb{C}^n$. \\
+		In particular $\skal{x}{\lambda y} = \bar{\lambda} \skal{x}{y}$ for $\lambda \in \mathbb{C}$.
+		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for $x,y,z \in \mathbb{C}^n$. 
+	\end{itemize}
+\end{beispiel}
+\begin{definition*}
+	An inner product space $V$ is a complex vector space with an inner product which is a map 
+	\[
+		\skal{.}{.}: V \times V \to \mathbb{C}
+	\]
+	satisfying
+	\begin{itemize}
+		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for any $x,y \in V$, $\lambda \in \mathbb{C}$
+		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for any $x,y,z \in V$
+		\item $\skal{x}{y} = \overline{\skal{x}{y}}$ for any $x,y \in V$
+		\item $\skal{x}{x}>0$ for any $x \in V, x \neq 0$
+	\end{itemize}
+\end{definition*}
+Can we generalize $\mathbb{C}^n$? \\
+\[
+	\mathbb{C}^{\mathbb{N}} \set[(x_1,x_2, \dots)]{x_i \in \mathbb{C}}
+\]
+with
+\[
+	\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i 
+\]
+This is not necessarily convergent.
+\begin{beispiele}
+	\begin{enumerate}[(1)]
+		\item 	\[
+		l^2 = \set[(x_1,x_2, \dots)]{ \sum^{\infty}_{i=1} \abs{x_i}^2 < \infty}.
+	\]
+	We have with Cauchy Schwarz
+	\[
+		\sum^{n}_{i=1} \abs{x_i \bar{y}_i} \leq \left( \sum^{n}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum^{n}_{i=1} \abs{y_i}^2 \right)^{\frac{1}{2}}
+	\]
+	if $x \in l^2$ and $y \in l^2$ we get
+	\begin{align*}
+		\sum^{n}_{i=1}\abs{x_i \bar{y}_i} \leq \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum_{i=1}^{\infty} \abs{y_i}^2 \right)^{\frac{1}{2}} < \infty.
+	\end{align*}
+	It follows that $\sum_{i=1}^{\infty} x_i \bar{y}_i$ converges absolutely and hence it is convergent. The following 
+	\[
+		\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i
+	\]
+	is well-defined for vectors $x,y \in l^2$. Like for $\mathbb{C}^n$ one can easily check that $\skal{.}{.}$ satisfies the axioms for inner products. \\
+	$(l^2, \skal{.}{.})$ is an inner product space.
+	\item Consider $C([0,1])$ with the inner product
+	\[
+		\skal{f}{g} = \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t \qquad \forall\, f,g \in C([0,1])
+	\]
+	\begin{itemize}
+		\item 	\[
+			\skal{\lambda f}{g} = \int_{0}^{1}\lambda f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \skal{f}{g}
+		\]
+		\item \[
+			\skal{f}{f} = \int_{0}^{1}f(t) \overline{f(t)} \,\mathrm{d}t = \int_{0}^{1} \abs{f(t)}^2 \,\mathrm{d}t >0
+		\]	
+		\item $\dots$
+	\end{itemize}
+	\end{enumerate}
+\end{beispiele}
+If we take $\mathbb{R}^3$ with the Eukledian norm on $\mathbb{R}^3$
+\[
+	\norm{(x_1,x_2,x_3)} = \sqrt{x_1^2 + x_2^2 + x_3^2} = \left( \sum_{i=1}^{3} \abs{x_i}^2 \right)^{\frac{1}{2}} = \skal{x}{x}^{\frac{1}{2}}
+\]
+Let $V$ be an inner product space with $\skal{.}{.}$ as the inner product. Let for $x \in V$
+\[
+	\norm{x} := \skal{x}{x}^{\frac{1}{2}}
+\]
+\begin{satz}
+	The $x \mapsto  \norm{x}$ with $\norm{.}$ defined above is a norm.
+\end{satz}
+We are going to prove the norm axioms but first we need another theorem
+	\begin{theorem}[Cauchy-Schwarz inequalitiy]
+		For any $x,y \in V$ (inner product space) 
+		\[
+			\abs{\skal{x}{y}} \leq \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}
+		\]
+		The equality holds iff $x,y$ are linearly dependent.
+	\end{theorem}
+	\begin{beweis}
+		Assume $x,y$ linearly dependent. We can assume that $x= \lambda y$ for some $\lambda \in \mathbb{C} $.
+		\[
+			\abs{\skal{x}{y}} = \abs{ \skal{\lambda y}{y}} = \abs{\lambda} \skal{y}{y}
+		\]
+		and
+		\begin{align*}
+					\skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} &= \skal{\lambda y}{\lambda y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
+					&= \abs{\lambda} \skal{y}{y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
+					&= \abs{\lambda} \skal{y}{y}
+		\end{align*}
+		Hence \[
+			\abs{\skal{x}{y}} = \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}.
+		\]
+		Assume $x,y$ are linearly independent. Hence $x + \lambda y \neq 0$ for any $\lambda \in \mathbb{C}$. By an axiom for inner product we get
+		\[
+			0< \skal{x+ \lambda y}{x + \lambda y} = \skal{x}{x} + \lambda \skal{y}{x} + \bar{\lambda} \skal{x}{y} + \abs{\lambda}^2 \skal{y}{y}
+		\]
+		Pick now
+		\[
+			\lambda = - \frac{\skal{x}{y}}{\skal{y}{y}}
+		\]
+		(Note that $y \neq 0$ as $x,y$ linearly independent.)
+		We have \begin{align*}
+						0 &< \skal{x}{x} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\skal{x}{y}\skal{y}{x}}}}{\skal{y}{y}} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\overline{\skal{x}{y}}\skal{x}{y}}}}{\skal{y}{y}}+ \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}^2} \skal{y}{y} \\
+						&= \skal{x}{x} - \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}}
+		\end{align*}
+		This gives
+		\[
+			\frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}} < \skal{x}{x}
+		\]
+		and it follows
+		\[
+			\abs{\skal{x}{y}}^2 < \skal{x}{x} \skal{y}{y}
+		\]
+	\end{beweis}
+Now we can use this inequality to proof the statement above:
+\begin{beweis}
+	\begin{enumerate}[(i)]
+		\item $\norm{x} >0$ for all $x \neq 0$ in $V$ (Exercise)
+		\item $\norm{\lambda x} = \abs{\lambda} \norm{x}$ for all $x \in V$, $\lambda \in \mathbb{C}$ (Exercise)
+		\item Let $x,y \in V$. Then 
+		\begin{align*}
+			\norm{x+y}^2 &= \skal{x+y}{x+y} \\ &= \skal{x}{x}+ \skal{x}{y}+ \skal{y}{x} + \skal{y}{y} \\
+			&= \skal{x}{x} + 2 \text{Re}( \skal{x}{y}) + \skal{y}{y} \\
+			&\leq  \skal{x}{x}+ 2 \abs{\skal{x}{y}} + \skal{y}{y} \\
+			&\leq  \skal{x}{x} + 2 \skal{x}{x}^{\frac{1}{2}}\skal{y}{y}^{\frac{1}{2}} + \skal{y}{y} \\
+			&= \left( \skal{x}{x}^{\frac{1}{2}} + \skal{y}{y}^{\frac{1}{2}} \right)^2 
+		\end{align*} 
+		So
+		\[
+			\norm{x+y}^2 \leq \left( \norm{x} + \norm{y} \right)^2
+		\]
+	\end{enumerate}
+\end{beweis}
+\begin{theorem}[The Parallelogram Law]
+	Let $(V, \skal{.}{.})$ be an inner product space. Let $\norm{x} = \skal{x}{x}^{\frac{1}{2}}$. Then
+	\[
+		\norm{x+y}^2 + \norm{x-y}^2 = 2 (\norm{x}^2 + \norm{y}^2) \qquad \forall\, x,y \in V.
+	\]
+\end{theorem}
+\begin{satz}
+	$l^p$ has inner product $\skal{.}{.}_{l^p}$ such that
+	\[
+		\norm{x}_p = \sqrt{\skal{x}{x}_{l^p}}
+	\]
+	iff $p =2$.
+\end{satz}
+\begin{beweis}
+	Enough to show that $\norm{.}_p$-norm does not satisfy the parallelogram law for some $x,y \in l^p$ if $p \neq 2$. Take for example $x = (1,0,0, \dots)$
+	and $y= (0,1,0, \dots)$. Note that $\norm{x}_{l^p} = \norm{y}_{l^p} = 1$
+	\begin{align*}
+		\norm{x+y}^2_{l^p} &= \norm{(1,1,0, \dots)}_{l^p} = 2^{\frac{2}{p}} \\
+		\norm{x-y}^2_{l^p} &= \norm{(1,-1,0,\dots)}_{l^p} = 2^{\frac{2}{p}} \\
+		\norm{x+y}^2_{l^p} + \norm{x-y}_{l^p}^2 &= 2 \cdot 2^{\frac{2}{p}} = 2( \norm{x}^2_{l^p}+ \norm{y}^2_{l^p}) = 2 \cdot 2
+	\end{align*}
+\end{beweis}
+All $l^p$ with $p \neq 2$ are not inner product spaces. 
+\minisec{Exercise:}Show that $(C([0,1]),\norm{.}_{\infty})$ is not an inner product space.
+\begin{bemerkung}
+	Whenever a norm satisfies the parallelogram law then there exists an inner product on $V$ such that
+	\[
+		\norm{x} = \skal{x}{x}^{\frac{1}{2}}
+	\]
+\end{bemerkung}
+\begin{theorem}[The Polarization Identity]
+	Let $(V,\skal{.}{.})$ be an inner product space. Then 
+	\[
+		4 \skal{x}{y}  = \norm{x+y}^2- \norm{x-y}^2 + i \norm{x+ iy}^2 - i \norm{x - iy}^2
+	\]
+\end{theorem}
+\begin{definition}
+	Let $(V, \skal{.}{.})$ be an inner product space. We say that $x,y$ in $V$ are othogonal if $\skal{x}{y} = 0$ (We write $x \perp y$). Let $M \subseteq V$
+	Define the orthogonal complement
+	\[
+		M^{\perp} = \set[x \in V]{x \perp y \text{ for any }y \in M}
+	\]
+\end{definition}
+\begin{proposition}
+	If $M \subseteq V$ then $M^{\perp}$ is a subspace of $V$
+\end{proposition}
+\begin{theorem}[Pythagorean formula]
+	$x,y \in V$ (inner product space). Then
+	\[
+		x \perp y \qquad \text{iff} \qquad \norm{x+y}^2 = \norm{x}^2 + \norm{y}^2.
+	\]
+\end{theorem}
+
+\subsection{Orthogonal Systems} 
+\label{sub:orthogonal_systems}
+
+Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is called orthogonal system (with $n$ finite or infinite) if $u_n \perp u_m$ for all $n \neq m$. It is an orthonormal system if in addition $\norm{u_n}=1$. 
+
+\begin{beispiele}
+	\begin{enumerate}[1)]
+		\item $\set{e_k}_{k=1}^{\infty} \subseteq l^2$ with 
+		\[
+			\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i
+		\]
+		with 
+		\[
+			e_k = (0,\dots,1,0,\dots)
+		\]
+		$\Rightarrow$ $\set{e_k}$ is an ON-system. 
+		\item $C([-\pi,\pi])$ with
+		\[
+			\skal{f}{g} = \int_{- \pi}^{\pi} f(t) \overline{g(t)} \,\mathrm{d}t.
+		\]
+		\[
+			\set[\frac{1}{\sqrt{2 \pi}} e^{-int}]{n \in \mathbb{Z}}
+		\]
+		is an orthonormal system.
+	\end{enumerate}
+\end{beispiele}
+
+\begin{definition}
+	Let $\set[a_n]{n \in \mathbb{N}}$ be an orthonormal system in $V$. The formal series 
+	\[
+		\sum_{n=1}^{\infty} \skal{x}{a_n}a_n
+	\]
+	is called a fourier series of $x$ corresponding $\set[a_n]{n \in \mathbb{N}}$ and $\skal{x}{a_n}$ are called fourier coefficients of $x$ corresponding to $\set[a_n]{n \in \mathbb{N}}$. 
+\end{definition}
+
+\begin{theorem}[Bessel's Equality and Inequality]
+	If $\set{u_n}$ orthonormal system in an inner product space $V$, then for all $x \in V$
+	\[
+		\norm{x- \sum_{k=1}^{n} \skal{x}{a_k}a_k}^2 = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2
+	\]
+	and 
+	\[
+		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2
+	\]
+\end{theorem}
+\begin{beweis}
+	\begin{align*}
+		\norm{x- \sum_{k=1}^{n} \skal{x}{a_k}a_k}^2 &= \skal{x- \sum_{k=1}^{n} \skal{x}{a_k}a_k }{x - \sum_{k=1}^{n} \skal{x}{a_k}a_k} \\
+		&= \skal{x}{x} - \sum_{k=1}^{n} \overline{\skal{x}{a_k}} \skal{x}{a_k} - \sum_{k=1}^{n} \skal{x}{a_k}\skal{a_k}{x} 
+		\\ & \qquad \qquad + \skal{\sum_{k=1}^{n}\skal{x}{a_k}a_k}{\sum_{k=1}^{n}\skal{x}{a_k}a_k} \\
+		& = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2 + \sum_{k=1}^{n}\abs{\skal{x}{a_k}}^2  \\
+		& = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2
+	\end{align*}
+	This gives also:
+	\[
+		\sum_{k=1}^{n}\abs{\skal{x}{a_k}}^2 = \norm{x}^2 - \norm{x - \sum_{k=1}^{n} \skal{x}{a_k}a_k} \leq \norm{x}^2 
+	\]
+	for all $n \in \mathbb{N}$. Hence
+	\[
+		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2
+	\]
+\end{beweis}
+
+\begin{definition}[Hilbert space]
+	A Hilbert space is an inner product space which is complete w.r.t. the norm is defined through the inner product.
+\end{definition}
+
+\begin{beispiele}
+	\begin{itemize}
+		\item $\mathbb{C}^n$ is an inner product space and complete w.r.t the Eukledean norm. Hence $\mathbb{C}^n$ is a Hilbert space.
+		\item $l^2$ is a Banach space w.r.t. 
+		\[
+			\norm{x}_{l^2} = \left( \sum_{i=1}^{\infty} \abs{x_i}^2 \right)^{\frac{1}{2}}
+		\]
+		and
+		\[
+			\norm{x}_{l^2} = \skal{x}{x}^{\frac{1}{2}}
+		\]
+		where
+		\[
+			\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i
+		\]
+		\item $(C([0,1]), \norm{.}_{\infty})$ is a Banach space but not an inner product space. Hence it is no Hilbert space.
+		\item $(C([0,1]),\skal{.}{.})$ is an inner product space $f,g \in C([0,1])$ with
+		\[
+			\skal{f}{g} = \int_{0}^{1} f(t) \overline{g(t)} \,\mathrm{d}t
+		\]
+		and the corresponding
+		\[
+			\norm{f}_2 = \skal{f}{f} = \int_{0}^{1} \abs{f(t)}^2 \,\mathrm{d}t.
+		\]
+	\end{itemize}
+\end{beispiele}
+\begin{bemerkung}
+	Other $l^p$ spaces are not Hilbert spaces!!!! They are not inner product spaces.
+\end{bemerkung}
+
+\begin{satz}
+	$(C([0,1]), \skal{.}{.})$ is not a Hilbert space since $(C([0,1]), \norm{.}_2)$ is not complete.
+\end{satz}
+
+\begin{beweis}
+	Sketch: Show that $f_n(t)$, which is defined as a piecewise continuous function for example
+	\[
+		f_n(x)= \begin{cases}
+			1, &\text{ if }x \in [0,\frac{1}{2}]\\
+			0, &\text{ if }x \in [\frac{1}{2} + \frac{1}{n}] \\
+			\text{continuous}, & \text{else} 
+		\end{cases}
+	\] is a Cauchy sequence w.r.t $\norm{.}_2$ but has no limit in $C([0,1])$.
+\end{beweis}
+
+Consider
+\[
+	C_F = \set[(x_1,x_2,\dots)]{\text{only finite }x_i \neq 0} 
+\]
+with \[
+	\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i
+\]
+Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
+
+\begin{definition}[strongly and weakly convergent]
+	A sequence $\set{x_n} \subseteq H$, where $H$ is a Hilbert space, is called strongly convergent $(x_n \to x \in H)$ if 
+	\[
+		\norm{x_n -x} \to 0, \qquad n \to  \infty.
+	\]
+	(Norm induced by an inner product) \\ We say that $x_n$ is weakly convergent ($x_n \rightharpoonup x$) if
+	\[
+		\skal{x_n}{y} \to \skal{x}{y}, \qquad \forall\, y \in H.
+	\]
+\end{definition}
+
+\begin{satz}
+	$x_n \to x$$ \qquad \Rightarrow \qquad $ $x_n \rightharpoonup x$.
+\end{satz}
+
+\begin{beweis}
+	Assume strong convergence for $(x_n)_{n \in \mathbb{N}}$. Then
+	\begin{align*}
+		\abs{\skal{x_n}{y}- \skal{x}{y}} &= \abs{\skal{x_n-x}{y}} \\
+		&\leq \underset{=\norm{x_n-x}}{\underbrace{\skal{x_n-x}{x_n-x}^{\frac{1}{2}}}} \underset{= \norm{y}}{\underbrace{\skal{y}{y}^{\frac{1}{2}}}} \\
+		&= \underset{ \to 0}{\underbrace{x_n-x}} \norm{y} \to 0, \qquad n \to \infty
+	\end{align*}
+	Hence $\skal{x_n}{y} \to \skal{x}{y}$.
+\end{beweis}
+
+\begin{bemerkung}
+	The converse is not true in general: \\
+	Take $H=l^2$ and 
+	\begin{align*}
+		x_n &= e_n = (0, \dots,1,0,\dots) \\
+		y &= (y_1,y_2,\dots) \in l^2 
+	\end{align*}
+	We have for all $y \in H$
+	\[
+		\skal{e_n}{y} = y_n \to 0, \qquad n \to \infty
+	\]
+	as
+	\[
+		\norm{e_n -0}_{l^2} = \norm{e_n}_{l^2} =1.
+	\]
+\end{bemerkung}
+
+\begin{satz}
+	$x_n \to x$ and $y_n \to y$ yields
+	\[
+		\skal{x_n}{y_n} \to \skal{x}{y}.
+	\]
+	In particular
+	\[
+		x_n \to x \qquad \Rightarrow \qquad \norm{x_n} \to \norm{x}.
+	\]
+\end{satz}
+\begin{beweis}
+	\begin{align*}
+		\abs{\skal{x_n}{y_n}-\skal{x}{y}} &= \abs{\skal{x_n}{y_n}-\skal{x}{y_n} + \skal{x}{y_n} - \skal{x}{y}} \\
+		&= \abs{\skal{x_n -x}{y_n} + \skal{x}{y_n-y}} \\
+		&\leq \abs{\skal{x_n-x}{y}} + \abs{\skal{x}{y_n-y}} \\
+		&\leq \underset{\to 0}{\underbrace{\norm{x_n-x}}} \underset{< \infty}{\underbrace{\norm{y_n}}} + \underset{< \infty}{\underbrace{\norm{x}}} \underset{\to 0}{\underbrace{\norm{y_n-y}}} \to 0, \qquad  n \to \infty
+	\end{align*}
+	Check $\set{\norm{y_n}}$ is bounded
+	\[
+		\norm{y_n} = \norm{y_n -y +y} \leq \underset{\norm{y_n -y}}{\underbrace{\to 0}}+ \underset{< \infty}{\underbrace{\norm{y}}} \to 0, \qquad n \to \infty
+	\]
+\end{beweis}
+
+\begin{satz}
+	$x_n \rightharpoonup x$ and $\norm{x_n} \to \norm{x}$ yields
+	\[
+		x_n \to x.
+	\]
+\end{satz}
+\begin{beweis}
+	\begin{align*}
+		\norm{x_n-x}^2 &= \skal{x_n -x}{x_n-x} \\
+		&= \underset{= \norm{x_n}^2}{\underbrace{\skal{x_n}{x_n}}} - \skal{x}{x_n}- \skal{x_n}{x} + \skal{x}{x} \\
+		&= \norm{x_n}^2 - \overline{\skal{x_n}{x}} - \skal{x_n}{x} + \norm{x}^2 \\
+		&\to \norm{x}^2 - \norm{x}^2 - \norm{x}^2 + \norm{x}^2 = 0
+	\end{align*}
+\end{beweis}
+
+We have proved 
+\[
+	x_n \to x \qquad \Rightarrow \qquad \set{\norm{x_n}} \text{ is bounded}
+\]
+
+\begin{theorem}
+	\[
+		x_n \rightharpoonup x \qquad \Rightarrow \qquad \sup_{n \in \mathbb{N}}\norm{x_n} < \infty
+	\]
+\end{theorem}
+\begin{beweis}
+	Let $x_n \rightharpoonup x$. Consider $f_n: H \to \mathbb{C}$ where
+	\[
+		f_n(y) = \skal{y}{x_n}, \qquad y \in H.
+	\]
+	\begin{itemize}
+		\item $f_n$ is a linear functional for every $n \in \mathbb{N}$.
+		\item $\forall\, n \in \mathbb{N}$ $f_n$ is a bounded ($\Leftrightarrow$ continuous) linear functional as if 
+		\[
+			y_k \stackrel{k \to \infty}{\to }y \qquad \Rightarrow \qquad f_n(y_k) = \skal{y_k}{x_n} \to \skal{y}{x_n} = f_n(y), \qquad k \to \infty
+		\]
+		\item $f_n(y) \to \skal{y}{x}$. \\
+		$\set{f_n(y)}_n$ is a convergent sequence in $\mathbb{C}$ and hence bounded for all $y \in H$. \\
+		Hence it exists $M_y$ such that 
+		\[
+			\abs{f_n(y)} \leq M_y
+		\]
+		By Banach-Steinhaus-Theorem it holds
+		\[
+			\norm{f_n} \leq M \text{ for some }M >0.
+		\]
+		We are done if we proof that $\norm{f_n} = \norm{x_n}$.
+		\[
+			\abs{f_n(y)}= \abs{\skal{y}{x_n}} \leq \norm{y} \norm{x_n}, \qquad \forall\, y \in H
+		\]
+		Hence 
+		\[
+			\norm{f_n} \leq \norm{x_n} \qquad \qquad (1)
+		\]
+		On the other Hand we have
+		\[
+			f_n(x_n) = \skal{x_n}{x_n}= \norm{x_n}^2
+		\]
+		and thus
+		\[
+			\norm{f_n} = \sup_{x \in H} \frac{\abs{f_n(x)}}{\norm{x}} \geq \frac{\abs{f_n(x_n)}}{\norm{x_n}} = \norm{x_n} \qquad \qquad (2)
+		\]
+		With (1) and (2) we are finished.
+	\end{itemize}
+\end{beweis}
+
+\subsection{Orthogonal decomposition in Hilbert spaces} 
+\label{sub:orthogonal_decomposition_in_hilber_spaces}
+
+Remember Linear Algebra. Take $\mathbb{R}^n$ and a subspace $M \subseteq \mathbb{R}^n$ 
+\[
+	\Rightarrow \qquad \forall\, x \in \mathbb{R}^n \qquad x = z + y, \qquad \text{where }z \in M, y \in M^{\perp}
+\]
+This can be done in a unique way
+\begin{align*}
+	M &= \text{span } \set{e_z} \\ 
+	M^{\perp} &= \text{span }\set{e_y}
+\end{align*}
+and
+\[
+	z = \text{proj}_{M^{\perp}}x, \qquad \qquad \norm{x - \text{proj}_Mx} = \min_{y \in M}\norm{x-y}
+\]
+
+\minisec{General Hilbert space case}
+
+\begin{proposition}
+	$M \subseteq H$, then $M^{\perp}$ is a closed subspace and
+	\[
+		\left( M^{\perp} \right)^{\perp} = \overline{\text{span }M}
+	\]
+\end{proposition}
+
+\begin{satz}
+	$H$ Hilbert space and $M$-closed subspace of $H$ and $x \in H$. Then there exists a unique $z \in M$ such that
+	\[
+		\norm{x-z} = \dist(x,M) := \inf_{y \in M} \norm{x-y}
+	\]
+	($z$ analog of the $\text{proj}_Mx$ in the other case)
+\end{satz}
+
+\begin{proposition}
+	Taking $z \in M$ from the previous proposition. We have $x - z \in M^{\perp}$, i.e.
+	\[
+		x = \underset{\in M}{\underbrace{z}} + \underset{\in M^{\perp}}{\underbrace{(x - z)}}
+	\]
+\end{proposition}

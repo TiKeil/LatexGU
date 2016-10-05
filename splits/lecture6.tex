@@ -1,0 +1,318 @@
+%% lecture 6
+
+
+
+%%% 15.9.2016
+\begin{theorem}
+	$(E,\norm{.})$ Banach space, $(Y,\norm{.})$ normed space. $T: E \times Y \to E$ where
+	\begin{enumerate}[(1)]
+		\item There exists a $C > 1$ such that
+		\[
+			\norm{T(x,y)-T(\tilde x,y)} \leq C \norm{x - \tilde x} \qquad \text{for all }x, \tilde x \in E,\, y \in Y.
+		\]
+		\item $T_x: Y \to E$ where $T_x(y)= T(x,y)$ is continuous for all $x \in E$.
+	\end{enumerate}
+	$\Rightarrow $ For every $y \in Y$ there exists a unique $g(y) \in E$ such that \[
+		g(y)= T(g(y),y)
+	\] and $g: Y \to E$ is continuous.
+\end{theorem}
+\begin{beweis}
+	The existence of a unique element $g(y) \in E$ for every $y \in Y$ follows from Banach's fixed point theorem. \\
+	Assume $y_n \to \tilde y$ in $(Y, \norm{.}_{*})$, i.e. \[
+		\norm{y_n - \tilde y}_* \to 0, \qquad n \to \infty
+	\]
+	Remains to show
+	\[
+		g(y_m) \to g(\tilde y) \qquad \text{ in }(E(,\norm{.}))
+	\]
+	\begin{align*}
+		\norm{g(y_n)- g( \tilde y)} &= \norm{T(g(y_n),y_n) - T(g(\tilde y), \tilde y)} \\
+		&\leq  \underset{ \stackrel{(1)}{\leq } c \norm{g(y_n)-g(\tilde y)}}{\underbrace{\norm{T(g(y_n),y_n) - T(g( \tilde y),y_n)}}} + 
+		\underset{^{(2)}\to 0, \, n \to \infty}{\underbrace{\norm{T(g(\tilde y),y_n)- T(g(\tilde y),\tilde y)}}}
+	\end{align*}
+	We obtain
+	\[
+		\norm{g(y_n)-g(\tilde y)} \leq \frac{1}{1-c} \norm{T(g(\tilde y), y_n) - T(g(\tilde y),\tilde y)} \to 0, \qquad n \to \infty.
+	\]
+\end{beweis}
+
+\begin{theorem}[Brouwer's fixed point theorem]
+	$K$ compact ($=$ closed and bounded) convex subset of $\mathbb{R}^n$ and $T: K \to K$ continuous. Then $T$ has a fixed point, i.e. there exists $\bar{x} \in K$ with
+	\[
+		T(\bar{x}) = \bar{x}.
+	\]
+\end{theorem}
+\begin{bemerkung}
+	\begin{itemize}
+		\item No uniqueness! Consider the case $T= \id_K$.
+		\item Set $K \subseteq \mathbb{R}^n$ (in general) is convex if
+		\[
+			x, \tilde x \in K \text{ and } \lambda \in [0,1] \qquad \Rightarrow \qquad \lambda x + ( 1- \lambda)\tilde x \in K.
+		\]
+	\end{itemize}
+\end{bemerkung}
+
+\begin{theorem}[Perron's theorem]
+	$A$ real-valued $n \times n$-Matrix with positive entries. $A = [a_{ij}]_{i,j=1, \dots,n}$ all $a_{ij}>0$. \\
+	$\Rightarrow $ The mapping for $x \in \mathbb{R}^n$ 
+	\[
+		x \mapsto Ax
+	\]
+	has an eigenvalue $>0$ with an eigenvecto with positive entries, i.e. there exists $\lambda >0$ and $\tilde x \in \mathbb{R}^n$ with $A \tilde x = \lambda \tilde x$and all entries in $\tilde x$ are positive.
+\end{theorem}
+
+\begin{beweis}
+We use Brouwer's fixed point theorem. Set \[
+	K := \set[(x_1,x_2,\dots,x_n) \in \mathbb{R}^n]{x_k \geq 0, \, \sum^{n}_{i=1} x_i = 1}
+\]	
+\textbf{Claim:} \text{    }     $K$ is closed, bounded and a convex set in $\mathbb{R}^n$. Thus $K$ is compact (since $K \subseteq \mathbb{R}^n$). Set
+\[
+	T(x_1,\dots,x_n) = \underset{\in K}{\underbrace{\frac{1}{\norm{Ax}_{l^1}}A \cdot \begin{pmatrix}
+		x_1 \\ \vdots \\ x_n
+	\end{pmatrix}}} \qquad \text{for all }(x_1,\dots,x_n) \in K
+\]
+\textbf{Claim:} \text{    }     $T: K \to K$ is continuous. \\
+Since
+\[
+	x_k \to x \qquad \text{ in } K \text{ w.r.t. }l^1-\text{norm}.
+\]
+To show:
+\[
+	T(x_k) \to T(x) \qquad \text{ in } K \text{ w.r.t. }l^1-\text{norm}.
+\]
+Set
+\begin{align*}
+	x &= (x_1,x_2, \dots,x_n) \\
+	x_k &= (x_1^{(k)},x_2^{(k)}, \dots, x_n^{(k)}) \qquad k = 1,2,\dots.
+\end{align*}
+Consider
+\begin{align*}
+	\norm{T(x_k)-T(x)}_{l^1} &= \norm{ \frac{1}{\norm{Ax_k}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x }_{l^1} \\
+	&\leq  \norm{\frac{1}{\norm{Ax_k}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x_k}_{l^1} + \norm{\frac{1}{\norm{Ax}_{l^1}} A x_k - \frac{1}{\norm{Ax}_{l^1}} A x}_{l^1} \\
+	&= \abs{\frac{1}{\norm{Ax_k}_{l^1}} - \frac{1}{\norm{Ax}_{l^1}}} \norm{A x_k}_{l^1} + \frac{1}{\norm{Ax}_{l^1}} \norm{A(x -x_k)}_{l^1}
+\end{align*}
+and
+\begin{align*}
+	\norm{A(x-x_k)}_{l^1} &= \sum^{n}_{i=1} \abs{ \sum^{n}_{j=1} a_{ij}(x_j-x_j^{(k)})} \\
+	&\leq  \sum^{n}_{i=1} \sum^{n}_{j=1} a_{ij} \abs{x_j-x_j^{(k)}} \\
+	&\leq \underset{< \infty}{\underbrace{n \cdot \max\limits_{i,j} a_{ij}}} \underset{\to 0}{\underbrace{\norm{x-x_k}_{l^1}}} \to 0, \qquad k \to \infty
+\end{align*}
+So \[
+	Ax_k \to Ax \qquad \text{in }l^1.
+\]
+This implies
+\[
+	\norm{Ax_k}_{l^1} \to \norm{Ax}_{l^1} \qquad \text{ in }\mathbb{R}.
+\]
+Brouwer's fixed point theorem implies that $T$ has a fixed point $\bar{x} \in K$.
+\begin{align*}
+	\bar{x} &= (\bar{x}_1,\bar{x}_2,\dots,\bar{x}_n) \\
+	\bar{x} &= T(\bar{x}) = \frac{1}{\norm{A \bar{x}}_{l^1}} A \bar{x} 
+\end{align*}
+Hence
+$A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\abs{A \bar{x}}_l^1 >0$ and $\bar{x}$ has all entries $>0$.
+\end{beweis}
+
+\begin{theorem}[Schander's fixed point theorem]
+	$(E, \norm{.})$ Banach space. $K$ compact, convex set in $E$. $T: K \to K$ continuous. \\
+	$\Rightarrow $ $T$ has a fixed point in $K$.
+\end{theorem}
+\begin{beispiel}
+	\[
+		S = \set[f \in C([0,1])]{f(0) = 0,\, f(1)=1,\, \norm{f} = \max\limits_{x \in [0,1]} \abs{f(x)} \leq 1}
+	\]
+	$T: S \to S$ defined by
+	\[
+		T(f)(x) = f(x^2), \qquad x \in [0,1].
+	\]
+	$C([0,1])$ is equipped with the max-norm. \\
+	\textbf{Claim:} \text{    }     \begin{itemize}
+		\item $S$ is closed, bounded and convex in $C([0,1])$.
+		\item $T: S \to S$ is continuous
+		\item $T$ has no fixed point in $S$
+	\end{itemize}
+	\begin{itemize}
+		\item 
+	$S$ bounded: $f \in S$ implies $\norm{f}\leq 1$. 
+	\item $S$ closed: $f_n \to f$ in $(C([0,1]),\norm{.})$. \\
+	To show: $f \in S$. \\
+	Note \[
+		\max_{x \in [0,1]}\abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty
+	\]
+	This implies
+	\[
+		\abs{f(0)} = \abs{f_n(0)-f(0)} \to 0, \qquad n \to \infty.
+	\]
+	So $f(0)=0$.
+	\[
+		\abs{1-f(1)} = \norm{f_n(1)-f(1)} \to 0, \qquad n \to \infty.
+	\]
+	So $f(1)=1$. For $x \in [0,1]$ we get
+	\begin{align*}
+		\abs{f(x)} &\leq \norm{f(x)-f_n(x)} + \abs{f_n(x)} \\
+		&\leq \underset{\to 0}{\underbrace{\norm{f-f_n}}} + \underset{\leq 1}{\underbrace{\norm{f_n}}}. 
+	\end{align*}
+	Conclusion $f \in S$
+	\[
+		\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq 1.
+	\]
+	\item $f,\tilde f \in S$ and $\lambda \in [0,1]$. \\
+	To show: 
+	\[
+		\lambda f + (1- \lambda) \tilde f \in S
+	\]
+	Trivial since
+	\[
+		(\lambda f + (1-\lambda) \tilde f)(0) = 0 
+	\]
+	\[
+		(\lambda f + (1- \lambda) \tilde f)(1) = \lambda f(1)+ (1- \lambda)\tilde f(1)= 1
+	\]
+	and	
+	\[
+		\norm{\lambda f + (1-\lambda) \tilde f} \leq \abs{\lambda} \norm{f} + \abs{1- \lambda} \norm{ \tilde f} \leq 1
+	\]
+	\end{itemize}
+	We want to show that $T: S \to S$ is continuous. (obvious that $T(S) \subseteq S$)\\ Assume $f_n \to f$ in $S$ in max-norm, i.e.
+	\[
+		\max_{x \in [0,1]} \abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty
+	\]
+	To show: $T(f_n) \to T(f)$ in $S$ in max-norm.
+	\begin{align*}
+		\norm{T(f_n)-T(f)} &= \max_{x \in [0,1]}\abs{T(f_n)(x)- T(f)(x)} \\ & = \max_{x \in [0,1]}\abs{f_n(x^2)-f(x^2)}  \\ &= \norm{f_n -f} \to 0, \qquad n \to \infty
+	\end{align*}
+	$T: S \to S $ has no fixed point. \\
+	If $f \in S$ is a fixed point for $T$ then 
+	\[
+		f(x^2) = T(f)(x) = f(x), \qquad x \in [0,1].
+	\]
+	To show: there can be no such $f \in S$. \\
+	Set $a = \inf \set[x \in [0,1]]{f(x) = \frac{1}{2}} \neq \emptyset \text{ since $f$ is continuous}$. $a \in (0,1)$ since if $a = 0$ then there exists a sequence
+	\[
+		a_n \in \set[x \in [0,1]]{f(x)= \frac{1}{2}} 
+	\]
+	such that $a_n \to a$ in $\mathbb{R}$ as $n \to \infty$. Contradiction since 
+	\[
+		\frac{1}{2} = f(a_n) \to f(a) = f(0) = 0
+	\]
+	since $f$ is continuous. \\
+	But $0 < a^2 < a$ and $f(a^2) = f(a) = \frac{1}{2}$. This is a contradiction. \\
+	If we believe in Schauder then we can conclude that $S \subseteq C([0,1])$ is not compact.
+\end{beispiel}
+\begin{theorem}[Arzela-Ascoli theorem]
+	Assume $K$ is a compact set in $\mathbb{R}^n$ (e.g. $K = [0,1]$ in $\mathbb{R}$n $n=1$) and $S \subseteq C(K)$ where $C(K)$ is equipped with the max-norm. \\
+	$\Rightarrow $ S is relatively compact in $C(K)$ iff
+	\begin{enumerate}[(1)]
+		\item $S$ uniformly bounded.
+		\item $S$ is equicontinuous.
+	\end{enumerate}
+\end{theorem}
+\begin{definition*}
+	\begin{enumerate}[(i)]
+		\item $S$ is uniformly bounded if
+		\[
+			\sup\limits_{f \in S} \norm{f} < \infty
+		\]
+		\item $S$ is equicontinuous if: for every $\varepsilon >0$ there exists $\delta >0$ such that
+		\[
+			\abs{x- \tilde x} < \delta, \, x, \tilde x \in K \qquad \Rightarrow \qquad \abs{f(x)-f(\tilde x)}< \varepsilon.
+		\]
+		$\delta = \delta (\varepsilon)$ must not depend on $f$. \\
+	\end{enumerate}
+\end{definition*}
+$S$ is relatively compact in $C(K)$ if for every sequence $(f_n)_{n=1}^{\infty}$ in $S$ there exists a converging subsequence in $C(K)$. \\
+To show:
+$S$ is relatively compact in $C(K)$ iff the closure $\bar{S}$ is compact in $C(K)$. 
+\minisec{Things to do:}
+\begin{enumerate}[(1)]
+	\item Proof of Schander's theorem
+	\item Proof of Arzela-Ascoli theorem
+	\item Application with Schander
+	\item Proof of Brouwer's thereom (special case)
+	\item Completion of normed spaces
+\end{enumerate}	
+For (4) wie consider the following lemma
+\begin{lemma}[Sperner's lemma]
+	Big triangle $T$ 
+	\[
+		T = \bigcup_{a \in A} T_a
+	\]
+	$\set{T_a}_{a \in A}$ is triangle of $T$, i.e. for any pair $T_a$, $T_{\tilde a}$ in the triangulation
+	\[
+		T_a \cup T_{\tilde a}= \set{\emptyset \text{ or common vertrex or common side or }T_a = T_{\tilde a}}.
+	\]
+	$\Rightarrow $ There must exists a triangle $T_a$ with all vertices colored differently. MISSING FIGURE!
+\end{lemma}
+
+\begin{description}
+	\item[Proof of Schander's fixed point theorem:]
+	To prove: $(E, \norm{.})$ Banach space, $K$ compact \\ convex set in $E$ and $T: K \to K$ continuous. \\
+	\textbf{Claim:} \text{    }     $T$ has a fixed point. \\
+	\begin{beweis}
+		\begin{lemma*}
+			Assume $(x_n)_{n=1}^{\infty}$ sequence in $K$ such that
+			\[
+				\norm{T(x_n)-x_n} \to 0, \qquad  n \to \infty
+			\]
+			T has a fixed point in $K$
+		\end{lemma*}
+		\begin{beweis}
+			Consider $(T(x_n))_{n=1}^{\infty}$ in $K$. $K$ compact implies that there exists a $z \in K$ and a subsequence $(T(\tilde x_n))_{n=1}^{\infty}$ of $(T(x_n))_{n=1}^{\infty}$ such that 
+			\[
+				T(\tilde x_n) \to  z \qquad  \text{in $K$ as }n \to \infty.
+			\]
+			Then
+			\[
+				\norm{\underset{\to z}{\underbrace{T(\tilde x_n)}}- \tilde x_n} \to 0, \qquad \text{as }n \to \infty
+			\]
+			So $\tilde x_n \to z$ for $n \to \infty$. But $T$ continuous implies 
+			\[
+				z \leftarrow T( \tilde x_n) \to T(z), \qquad  n \to \infty.
+			\]
+			Conclusion: $z = T(z)$ so $z$ is a fixed point.
+		\end{beweis}
+		\begin{lemma*}
+			$K$ compact set in $E$. Let $\varepsilon >0$. Then there exists a finite set $x_1,\dots,x_n \in K$ such that for all $x \in K$
+			\[
+				\min\limits_{k = 1, \dots, N} \norm{x- x_k} < \varepsilon
+			\] 
+		\end{lemma*}
+		\begin{beweis}
+			Assume there is no finite sequence $x_1, \dots, x_N$. Then there exists a sequence $(x_n)_{n=1}^{\infty}$ such that
+			\[
+				\norm{x_k-x_l} \geq \varepsilon, \qquad \text{for }k \neq l
+			\]
+			Clearly $(x_n)_{n=1}^{\infty}$ has no converging subsequence. This contradicts $K$ beeing compact.
+		\end{beweis}
+		Fix positive integer $n$. Apply previous lemma with $\varepsilon = \frac{1}{\varepsilon}$. then there exists a finite set $x_1,\dots,x_N$ such that
+		\[
+			K \subset \bigcup_{k=1}^N B \left(x_k, \frac{1}{n} \right)
+		\]
+		Set 
+		\begin{align*}
+			K_n  &= \set{\text{set of all convex combinations of $x_1, \dots,x_N$}} \\
+			&= \set[\sum_{k=1}^{N} \lambda_k x_k]{\lambda_k \geq 0 \text{ for all }k,\, \sum_{k=1}^{N}\lambda_k = 1}
+		\end{align*}
+		This set is a closed and bounded set in $\text{span}(K_n)$ finite dimensional. Also $K_n$ is convex.  \\
+		(want $T_n: K_n \to K_n$ where $T_n$ close to $T$) \\
+		Set $f_k(x)= \max \left(0, \frac{1}{n}- \norm{x-x_k}\right)$ for $x \in K$ and $k=1,2, \dots,N$. \\
+		For each $x \in K$ there exists a $k$ such that $f_k(x)>0$. Set
+		\[
+			P_n(x) = \frac{f_1(x)x_1+f_2(x_2)+ \dots+ f_N(x_N)}{f_1(x)+f_2(x)+ \dots+ f_N(x)}, \qquad x \in K.
+		\]
+		$P_n$ is a convex combination of $x_1,\dots,x_N$ for every $x \in K$. So $P_n(x) \in K_n$ for every $x \in K$. \\
+		\textbf{Claim:} \text{    }     $\norm{P_n(x)-x} < \frac{1}{n}$ for all $x \in K$.Set $T_n$ to be defined like
+		\[
+			T_n := P_n T : K_n \to K_n
+		\]
+		Here $T_n$ is continuous since $T$ and $P_n$ are continuous. $K_n$ is compact and convex in a finite dimensional space. Brouwer's fixed point theorem implies that $T_n$ has a fixed point in $K_n$,i.e. there exists $x_n \in K_n$ such that
+		\[
+			x_n = T_n(x_n)= P_n(x_n).
+		\]
+		But then
+		\[
+			\norm{x_n - T(x_n)} \leq  \underset{=0}{\underbrace{\norm{x_n - \underset{=T_n}{\underbrace{P_nT(x_n)}}}}} + \underset{< \frac{1}{n}}{\underbrace{\norm{ P_nT(x_n)- T(x_n)}}}
+		\]
+		The first lemma above gives that $T$ has a fixed point in $K$.
+	\end{beweis} 
+\end{description}

@@ -1,0 +1,391 @@
+%%% lecture3
+
+\begin{definition*}[normed space]
+	Let $E$ be a vector space over $\mathbb{R}$ or $\mathbb{C}$. $\norm{.}:E \to \mathbb{R}$ a norm on $E$ if
+	\begin{enumerate}[(i)]
+		\item $\norm{x} >0 \qquad $ for any $x \in E \setminus \set{0}$
+		\item $\norm{\lambda x} = \abs{\lambda x} \qquad $ for any $\lambda \in \mathbb{C},x \in E$.
+		\item $\norm{x+y} \leq \norm{x} + \norm{y} \qquad$ for any $x,y \in E$.
+	\end{enumerate}
+	Obs. $\norm{x}=0$ if $x =0$. $(E, \norm{.})$ is called a normed space. A norm generates a distance function (metric)
+	\[
+		L(x,y):= \norm{x-y} \qquad \text{ for any }x,y \in E.
+	\]
+\end{definition*}
+\begin{beispiele}
+	\begin{itemize}
+		\item $\mathbb{R}^n$ with $\norm{x}_2 = \sqrt{\sum^{n}_{i=1}\abs{x_i}^2}$ is the eukledian norm.
+		\item $C([0,1])$ continuous functions in $[0,1]$ with
+		\[
+			L(f,g)=\norm{f-g}_{\infty}:= \max_{x \in [0,1]}\abs{f(x)-g(x)}
+		\]
+	\end{itemize}
+\end{beispiele}
+\begin{definition*}[balls]
+	 Let $x \in E$, $r >0$. Define
+	\begin{align*}
+		B(x,r) &:= \set[y \in E]{\norm{x-y}<r} \qquad \text{open ball} \\
+		\bar{B}(x,r) &:= \set[y \in E]{\norm{x-y}\leq r} \qquad \text{closed ball}
+	\end{align*}
+\end{definition*}
+\begin{definition*}[open/closed]
+	A subset $A \subset E$ of a normed space $(E,\norm{.})$ is called \underline{open} of any point $x$ of $A$ is inner, i.e 
+	\[
+		\exists\,r>0 \,:\, B(x,r) \subset A.
+	\]
+	It is called \underline{closed} if the complement $E \setminus A$ is open.
+\end{definition*}
+\begin{bemerkung}
+	\begin{itemize}
+		\item open balls are open sets.
+		\item closed balls are closed.
+		\item $(C([0,1]),\norm{.}_{\infty})$ with $\norm{f}_{\infty}= \max_{x \in [0,1]}\abs{f(x)}.$ 
+		\[
+			A := \set[g \in C([0,1])]{f(x) < g(x),\,\forall\, x \in [0,1]}
+		\]
+		is an open set $C([0,1])$.
+		\[
+			B := \set[g \in C([0,1])]{f(x) \leq g(x),\,\forall\, x \in [0,1]}
+ 		\]
+		is a closed set.
+	\end{itemize}
+	\minisec{Properties}
+	\begin{itemize}
+		\item Any union of open sets is an open set.
+		\item Any \underline{finite} intersection of open sets is open.
+		\item $\emptyset,E$ are both closed and open.
+		\item Normed spaces are topological spaces.
+	\end{itemize}
+\end{bemerkung}
+\begin{definition*}[convergence in normed spaces]
+	Let $(E,\norm{.})$ be a normed space $\set{x_n}_n \subset E$. We say that $x_n$ converges to $x \in E$ if 
+	\[
+		\norm{x_n-x} \to 0, \qquad n \to \infty
+	\]
+\end{definition*}
+One can define open and closed using the definition of convergence:
+\begin{satz} % statement
+	$A \subseteq E$ is closed if any convergent sequence in $A$ has a limit in $A$, i.e
+	\[
+		\substack{x_n \to x \\ \text{for }n \to \infty \\ x_n \in A} \Rightarrow x \in A
+	\]
+\end{satz}
+\begin{beweis}
+	\begin{description}
+		\item[$\Rightarrow$:]Assume that $A$ is closed and $x_n \to x$. $x_n \in A$, but $x_n \not \in A$. (try to get a contradiction). \\
+	 $A$ is closed $\Rightarrow $ $E \setminus A$ is open and hence $\exists\, r >0$ such that
+	 \[
+	 	B(x,r) \subset E \setminus A.
+	 \]
+	 Hence $\norm{x_n -x} \geq r$ for any $n$. This is a contradiction because in that case $x_n \not \to x$
+	 \item[$\Leftarrow $:] Assume that for any sequence $\set{x_n} \subset A$ such that $x_n \to x$ we have $x \in A$. We try to get a contradiction and assume that $A$ is not closed. Hence $E \setminus A$ is not open and therefore $\exists\, x \in E \setminus A$ which is not inner.
+	 \[
+	 	\Rightarrow \qquad  \forall\, B(x,\frac{1}{n}) \text{ containts points outside }E \setminus A 
+	 \]
+	 i.e.
+	 \[
+	 	\exists\, x_n \in B(x, \frac{1}{n}), \, x_n \in A.
+	 \]
+	 We get a sequence $\set{x_n} \subset A$ such that
+	 \[
+	 	\norm{x_n-x} < \frac{1}{n} \qquad \Rightarrow \qquad x_n \to x
+	 \]
+	 This is a contradiction
+	\end{description}
+\end{beweis}
+\begin{definition*}[closure]
+	$A \subset E$. The closure of $A$ is the minimal closed subset containing $A$. We write $\bar{A}$.
+\end{definition*}
+\begin{proposition}
+	$\bar{A}$ is the set of all limit points of $A$ which means
+	\[
+		\bar{A} := \set[x \in E]{\text{there exists $\set{x_n} \subseteq A$ such that $x_n \to x$}}
+	\]
+\end{proposition}
+\begin{beweis}
+	exercise.
+\end{beweis}
+\begin{definition*}[dense]
+	$A \subset E$ is dense in $E$ if 
+	\[
+		\bar{A} = E.
+	\]
+\end{definition*}
+\begin{bemerkung}
+	This definition of dense is equivalent to the following definition:
+	\[
+		\forall\, x \in E,\,\forall\, \varepsilon>0 \,\exists\,y \in A \text{ such that } \norm{x-y} < \varepsilon.
+	\]
+\end{bemerkung}
+\begin{beispiele}
+	\begin{enumerate}[1)]
+		\item $\mathbb{Q} \subseteq \mathbb{R}$ with $\abs{.}$ usual absolut value function. $\mathbb{Q}$ is dense in $\mathbb{R}$.
+		\item $C([a,b])$. The \underline{Weierstraß-Theorem} says that the set of all polynomials are dense in $(C([a,b],\norm{.}_{\infty}))$:
+		\[
+			\forall\, f \in C([a,b]),\,\forall\, \varepsilon>0 \,\exists\,p-\text{polynomial such that }\max_{x \in [a,b]}\abs{f(x)-p(x)} < \varepsilon.
+		\]
+	\end{enumerate}
+\end{beispiele}
+Another example is $(C_0, \norm{.}_{\infty})$ where
+		\[
+			C_0 = \set[x = (x_1,x_2,\dots)]{x_k \to 0 \text{ as }k \to \infty}
+		\]
+		\[
+			\norm{x}_{\infty}= \sup_{i}\abs{x_i}
+		\]
+		$(C_0,\norm{.}_{\infty})$ is a normed space. 
+		\[
+			C_F = \set[x = (x_1,x_2,\dots)]{\text{only a finite number of }x_i \neq 0} \subset C_0
+		\]
+\begin{satz}
+	$C_F$ is dense in $C_0$
+\end{satz}
+\begin{beweis}
+	\[
+		\forall\,  x \in C_0 \,\forall\, \varepsilon>0 \text{ must find }y \in C_F \text{ such that }\norm{y-x}_{\infty} < \varepsilon.
+	\]
+	\[
+		x \in C_0 \qquad \Rightarrow \qquad x_k \to 0 \text{ for }k \to \infty 
+	\]
+	\[
+		\Rightarrow \qquad \forall\, \varepsilon >0 \,\exists\,K \,\text{ such that } \abs{x_k} < \varepsilon \, \forall\, k \geq K
+	\]
+	Let now $y = (x_1,x_2, \dots,x_K, 0, \dots) \in C_F$. Then 
+	\[
+		\norm{x-y}_{\infty} = \norm{(0,0,\dots,0,x_{K+1},x_{K+2},\dots)}_{\infty} = \sup_{k >K}\abs{x_k} < \varepsilon
+	\]
+\end{beweis}
+\begin{definition*}[separable]
+	A normed space $(E,\norm{.})$ is called \underline{separable} if it contains a countable dense subset.
+\end{definition*}
+\begin{beispiele}
+	\begin{itemize}
+		\item $(\mathbb{R},\abs{.})$ is separable as $\mathbb{Q}$ is countable and dense in $\mathbb{R}$.
+		\item $(\mathbb{R}^n,\norm{.}_2)$ is separable, $\mathbb{Q}^n$ is countable and dense in $\mathbb{R}$.
+	\end{itemize}
+\end{beispiele}
+\begin{definition*}[compact set]
+	For a normed space $(E,\norm{.})$ is $A \subset E$ a compact set if any sequence $\set{x_n} \subset A$ has a subsequence convergent to an element $x \in A$.
+\end{definition*}
+\begin{beispiel}
+	 Any bounded and closed subset in $\mathbb{R}, \mathbb{R}^n, \mathbb{C}^n$ is compact. A sequence $\set{x_n}$ of a bounded set is bounded. From real Analysis one knows it has a subsequence that is convergent. If the subset is closed then the limit point is inside the set. 
+\end{beispiel}
+\begin{lemma*}
+	$S \subset$ compact in $(E, \norm{.})$ implies that $S$ is closed and bounded. (Bounded means that $S \subset B(0,R)$ for some $R>0$)
+\end{lemma*}
+\begin{beweis}
+	Let $S$ be a compact subset of $E$. Assume that $S$ is not bounded. Hence for any $n >0$ there exists points in $S$ which are outside $B(0,n)$, i.e. 
+	\[
+		\exists\, x_n \in S \,: \norm{x_n} >n.
+	\]
+	Then $\set{x_n}$ can not have a convergent subsequence as if $x_{n_k} \to x$ then
+	\[
+		n_k < \norm{x_{n_k}} = \norm{x_{n_k}-x + x} \leq \norm{x_{n_k}-x} + \norm{x} \to \norm{x}
+	\]
+	but $n_k \to \infty$. This is a contradiction, hence $S$ must be bounded. \\ $S$ must be closed, because if $x_n \to x$ then any subsequence converges to $x$. From the definition of compactness and uniqueness of the limit we have $x \in S$. \\
+\end{beweis}
+\begin{bemerkung}
+	In general, $S$ bounded and closed doesn't imply that $S$ is compact. \\
+For instance let $E= C([0,1])$. Then $S=\set[g \in C([0,1])]{\norm{g}_{\infty}\leq 1}$ is closed and bounded, but not compact. \\
+Take $x_n(t):=t^n$. Then $x_n \in S$. $\set{x_n}$ does not have a subsequence convergent to a continuous function.
+\end{bemerkung}
+\begin{theorem}
+	$(E,\norm{.})$ normed space and $\dim E < \infty$ \\ iff \[
+		\forall\, A \subset E,\,A \text{ compact } \Leftrightarrow A \text{ is closed and bounded}
+	\]
+\end{theorem}
+\begin{beweis}
+	\begin{description}
+		\item[$\Rightarrow$:]If $\dim E < \infty$ then $A$ is compact iff $A$ is bounded and closed (exsercise)
+		\item[$\Leftarrow$:]Enough to prove the following: \\
+		If $\dim E = \infty$ then the unit ball $S = \set[x \in E]{\norm{x}\leq 1}$ is not compact.
+	\end{description}
+\begin{lemma}[Riesz's lemma]
+	If $X$ is a proper closed subspace of a normed space $(E,\norm{.})$ then for every $\varepsilon \in (0,1)$ there exists an $x_{\varepsilon} \in E$ with $\norm{x_\varepsilon}=1$ such that
+	\[
+		\norm{x_{\varepsilon}-x} \geq \varepsilon \qquad \forall\, x \in X.
+	\]
+\end{lemma}
+\begin{beweis}
+	Let $z \in E \setminus X$ ($X$ proper and hence $E \setminus X \neq \emptyset$). Set 
+	\[
+		d:= \inf_{x \in X}\norm{z-x}
+	\] As $X$ is closed, $d >0$, otherwise $z$ is a limit point in $E \setminus X$. Fix $\varepsilon \in (0,1)$. Then there exists $x_0 \in X$ such that
+	\[
+		d \leq \norm{z-x_0} < \frac{d}{\varepsilon}.
+	\]
+	Let $x_\varepsilon := \frac{z-x_0}{\norm{z-x_0}}$; We have $\norm{x_\varepsilon}=1$ and
+	\begin{align*}
+		\norm{x- x_\varepsilon} &= \norm{x - \frac{z-x_0}{\norm{z-x_0}}} \\
+		&= \frac{\norm{x \norm{z-x_0}-z + x_0}}{\norm{z-x_0}} \\
+		&= \frac{\norm{\overset{\in X}{\overbrace{x \norm{z-x_0}+ x_0 }}- z}}{\norm{z-x_0}} \\
+		&\geq \frac{d}{d}\varepsilon = \varepsilon
+	\end{align*}
+\end{beweis}
+Continue now proof of the theorem above: \\
+Let $x_1 \in S$. Consider $X = \text{span} \set{x_1}$ which is a proper closed subspace of $E$. Hence by Riesz's lemma exists $x_2$ with $\norm{x_2}=1$ such that
+\[
+	\norm{x_2-x_1} \geq \frac{1}{2} 
+\]
+and
+\[
+	\norm{x_2-x} \geq \frac{1}{2} \qquad \forall\, x \in X.
+\]
+Now consider $\text{span} \set{x_1,x_2}$ which is a proper closed subspace of $E$. By Riesz's lemma follows
+\[
+	\exists\,x_3 \in E,\, \norm{x_3}=1: \, \norm{x_3-x_1}\geq \frac{1}{2}, \norm{x_3-x_2} \geq \frac{1}{2}.
+\]
+Continuing in the same fashion we get $\set{x_n}$, $\norm{x_n}=1$ such that 
+\[
+	\norm{x_n-x_m} \geq \frac{1}{2} \qquad \forall\, n,m,\,n \neq m.
+\]
+Clearly $\set{x_n} \subset S$ has no convergent subsequence. Hence $S$ is not compact.
+\end{beweis}
+\begin{definition*}[Cauchy sequence]
+	$(E, \norm{.})$ normed space. $\set{x_n} \subseteq E$ is called Cauchy if
+	\[
+		\forall\, \varepsilon >0 \,\exists\,N: \,\norm{x_n-x_m}< \varepsilon \,\text{ for any }n,m \geq N.
+	\]
+\end{definition*}
+\begin{beispiel}
+	$(C_F,\norm{.}_{\infty})$, $\norm{x}_{\infty}= \sup_{k \in \mathbb{N}}\abs{x_k}$ where $x = (x_1,x_2,\dots)$. Define
+	\[
+		x_n = (1, \frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n}, 0, \dots)
+	\]
+	Then $\set{x_n}$ is Cauchy, as for $n >m$ 
+	\begin{align*}
+		\norm{x_n-x_m}_{\infty} &= \norm{(0, \dots,0, \frac{1}{m+1}, \dots, \frac{1}{n},0,\dots)}_{\infty} \\
+		&= \frac{1}{m+1}
+	\end{align*}
+	Observe that $x_n$ is convergent in $(C_0,\norm{.}_{\infty})$
+	\[
+		\underset{\in C_F}{\underbrace{x_n}} \to (1, \frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n}, \dots) \in C_0 \setminus C_F
+	\]
+\end{beispiel}
+\begin{satz}
+	A convergent sequence is always a Cauchy sequence.
+\end{satz}
+\begin{definition*}[complete space]
+	A normed vector space $(E, \norm{.})$ is called \underline{complete} if any Cauchy sequence in $E$ is convergent in $E$.
+\end{definition*}
+$(C_F,\norm{.}_{\infty})$ is not complete.
+\begin{definition*}[Banach space]
+	A complete normed space is called \underline{Banach space}.
+\end{definition*}
+\begin{beispiele}
+	\begin{itemize}
+		\item $(\mathbb{R},\abs{.})$ is a Banach space.
+		\item $(\mathbb{C},\abs{.})$ is a Banach space.
+		\item $(l^2,\norm{.}_2)$ where
+		\[
+			l^2= \set[(x_1,x_2,\dots)]{\sum^{\infty}_{i=1} \abs{x_i}^2 < \infty, x_i \in \mathbb{C}}
+		\]
+		and 
+		\[
+			\norm{(x_1,x_2,\dots)}_2 = \left( \sum_{i=1}^{\infty} \abs{x_i}^2 \right)^{\frac{1}{2}}
+		\]
+		$(l^2,\norm{.}_2)$ is complete.
+		\begin{beweis}
+			Let $x_n = (x_1^n,x_2^n,\dots)$ be a Cauchy sequence in $l^2$. We must show that it has a limit in $l^2$. We will do it in a few steps:
+			\begin{enumerate}[Step 1:]
+				\item Find a candidate for a limit $a$
+				\item Show that $a \in l^2$.
+				\item $\norm{x_n - a }_2 \to 0$ as $n \to \infty$.
+			\end{enumerate}
+			\begin{description}
+				\item[Step 1:] Let
+				\begin{align*}
+					x_1 &= (x_1^1,x_2^1, \dots) \\
+					x_2 &= (x_1^2,x_2^2, \dots) \\
+					\vdots & \qquad \vdots \\
+					x_n &= (x_1^n,x_2^n, \dots)
+				\end{align*}
+				For each $k$ consider sequence $\set{x_k^n} \subset \mathbb{C}$ ($k$-th coordinates in each $x_n$). \\
+				Each sequence is Cauchy, as for all $n,m \geq N$
+				\[
+					\abs{x_k^n-x_k^m} < \left( \sum_{k=1}^{\infty} \abs{x_k^n-x_k^m}^2 \right)^{\frac{1}{2}} = \norm{x_n-x_m}_2 < \varepsilon
+				\]
+				As $(\mathbb{C}, \abs{.})$ is complete, $\set{x_k^n}_n$ has a limit $a_k \in \mathbb{C}$. Candidate for limit of $x_n$ is 
+				\[
+					a= (a_1,a_2, \dots, a_k, \dots).
+				\]
+				\item[Step 2:] Write 
+				\[
+					a = \underset{\in l^2}{\underbrace{x_n}} - (x_n - a)
+				\]
+				In order to show that $a \in l^2$ it is enough to see that $x_n - a \in l^2$ for some $n$. \\
+				$\set{x_n}$ Cauchy implies
+				\[
+					\forall\, \varepsilon>0 \,\exists\,N: \,\forall\, n,m \geq N: \,\norm{x_n-x_m}_2 < \varepsilon.
+				\]
+				Consider for some $u>0$
+				\begin{align*}
+					\sum^{u}_{i=1} \abs{x_i^n-x_i^m}^2 \leq \sum_{i=1}^{\infty}\abs{x_i^n-x_i^m}^2 = \norm{x_n-x_m}^2_2 < \varepsilon^2
+				\end{align*}
+				Let $m \to \infty$. We get 
+				\[
+					\sum^{m}_{i=1} \abs{x_i^n-a_i}^2 \leq  \varepsilon^2
+				\]
+				This holds for any $u \in \mathbb{N}$. Hence for any $n \geq \mathbb{N}$
+				\[
+					\underset{= \norm{x_n-a}_2^2}{\underbrace{\sum_{i=1}^{\infty}\abs{x_i^n-a_i}^2}} \leq \varepsilon^2.
+				\]
+				Hence $x_n - a \in l^2$ and moreover $\norm{x_n - a} \to 0$ as $n \to \infty$.
+			\end{description}
+		\end{beweis}
+		\item $(C([a,b]),\norm{.}_{\infty})$ is a Banach space.
+		\item $(l^p,\norm{.}_{l^p})$ for $1 \leq p < \infty$ are all Banach spaces.
+		\item $(C([a,b]),\norm{.}_2)$ with
+		\[
+			\norm{f}_2 = \left( \int_{}^{} \abs{f(t)}^2 \,\mathrm{d}t \right)^{\frac{1}{2}}
+		\]
+		One can prove that $(C([a,b]),\norm{.}_2)$ is not a Banach space.
+		\minisec{Exercise:} $[a,b] = [0,1]$ and \[
+			f_n(t)= \begin{cases}
+				0, &\text{ falls }t < \frac{1}{2} - \frac{1}{n}\\
+				1, &\text{ falls }t > \frac{1}{2}\\
+				\text{continuous linear function}
+			\end{cases}.
+		\]
+		Show that $\set{f_n}$ is Cauchy in $C([0,1],\norm{.}_2)$ but $f_n \not \to f \in C([0,1])$.
+	\end{itemize}
+\end{beispiele}
+\begin{definition*}[Convergent and absolutely convergent series]
+	A series $\sum_{n=1}^{\infty}x_n$ in $E$ is called \underline{convergent} if $\set{\sum_{n=1}^{m}x_n}_m$, a sequence of partial sums, is convergent in $E$. If $\sum_{n=1}^{\infty}\norm{x_n} < \infty$ then we say that $\sum_{n=1}^{\infty}x_n$ converges absolutely.
+\end{definition*}
+\begin{theorem}
+	A normed space $E$ is complete iff every absolutely convergent series converges in $E$.
+\end{theorem}
+\begin{beweis}
+	\begin{description}
+		\item[$\Rightarrow$:] Suppose $X$ is complete and $\sum_{n=1}^{\infty}\norm{x_n} < \infty$. Let 
+		\[
+			S_N := \sum_{n=1}^{N}x_n \in E.
+		\] 
+		For $M >N$:
+		\begin{align*}
+			\norm{S_N-S_M} &= \norm{\sum_{n=N+1}^{M}x_n} \\
+			&\leq \sum_{n=N+1}^{M} \norm{x_n} \\
+			&\leq \sum_{n=N+1}^{\infty} \norm{x_n} \to 0 \qquad \text{as }N \to \infty
+		\end{align*}
+		Hence $\set{S_N}$ is Cauchy. As $E$ is complete, $S_N$ has a limit in $E$ i.e. $\sum_{n=1}^{\infty}x_n$ converges in $E$.
+		\item[$\Leftarrow$:] Assume that every absolut convergent series is convergent in $E$. We want to see that $E$ is complete. \\
+		Let $\set{x_n}$ be a Cauchy sequence. We want to prove that $\set{x_n}$ has a limit in $E$. We know that
+		\[
+			\forall\, k \,\exists\,n_k: \, \norm{x_n-x_m}< \frac{1}{2^k} \qquad \forall\, n,m \geq n_k.
+		\]
+		We can assume that $\set{n_k}$ is an increasing sequence. Write
+		\[
+			x_{n_k} = (x_{n_k}-x_{n_{k-1}})+ (x_{n_{k-1}}-x_{n_{k-2}}) + \dots +(x_{n_1}-\underset{=0}{\underbrace{x_{n_0}}}) = \sum_{l=1}^{k}(x_{n_l}-x_{n_{l-1}}).
+		\]
+		\[
+			\sum_{l=1}^{\infty}\norm{x_{n_l}-x_{n_{l-1}}} \leq \sum_{l=1}^{\infty}\frac{1}{2^l} < \infty
+		\]
+		Hence $\sum_{l=1}^{\infty}(x_{n_l}-x_{n_{l-1}})$ is absolutely convergent. By assumption 
+		\[
+			\sum_{l=1}^{\infty}(x_{n_l}-x_{n_{l-1}}) 
+		\]
+		is convergent in $E$. Hence the partial sums is convergent. Subsequence is convergent. $\set{x_{n_k}}$ is convergent to some $x \in E$.
+		\minisec{Exercise:} Show that the whole $\set{x_n} \to x$.
+	\end{description}
+\end{beweis}
