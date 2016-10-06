@@ -149,7 +149,7 @@
 		\]
 		Set $B \subset E$ where
 		\begin{align*}
-			\text{span } B &= \set{\text{set of all linear combinations of elements in B}} \\
+			\spn  B &= \set{\text{set of all linear combinations of elements in B}} \\
 			&= \set[\sum_{k=1}^{n}lambda_k x_k]{x_k \in B, \lambda_k \in \mathbb{R}, k=1,2,\dots,n \text{ where n is a positive integer}}
 		\end{align*}
 		\begin{bemerkung}
@@ -163,7 +163,7 @@
 		$C \subset E$ is called a basis for E if
 		\begin{enumerate}[1)]
 			\item $C$ linear independent.
-			\item $ \text{span } C = E$
+			\item $ \spn  C = E$
 		\end{enumerate}
 		continue of the example above: \\
 		\textbf{Claim:} \text{    }     $A$ is a basis for E.
@@ -192,7 +192,7 @@
 		\]
 		So $\alpha_1= \alpha_2 = \dots = \alpha_n = 0$. \\
 		Question: Is $A$ a basis for $l^2$? \\
-		We note: If $X \in \text{span }A$ then
+		We note: If $X \in \spn A$ then
 		\[
 			X = (x_1,x_2, \dots,x_n,0,0,\dots)
 		\]
@@ -204,7 +204,7 @@
 		\[
 			\norm{X}_{l^2} = \left( \sum_{n=1}^{\infty} \frac{1}{n^2} \right)^{\frac{1}{2}} < \infty
 		\]
-		So $X \in l^2 \setminus \text{span }A$.
+		So $X \in l^2 \setminus \spn A$.
 		\end{enumerate}
 		\begin{bemerkung}
 			Every vector space has a basis (if we are allowed to use Axiom of Choice/ zorns lemma). \\ Basis = vector space basis = Hamel basis
@@ -215,6 +215,11 @@
 		\]
 		is well-defined. (System of linear equations, homogeneous with more unknowns than equations. Then there exists a nontrivial solution.)
 	\end{beispiele}
+	
+\section{Normed Spaces and Banach Spaces} 
+\label{sec:normed_spaces_and_banach_spaces}
+
+	
 \begin{definition*}[norm]
 	$E$ vector space. We say that $\norm{.}: E \to [0,\infty)$ is a norm on $E$ if
 	\begin{enumerate}[1)]

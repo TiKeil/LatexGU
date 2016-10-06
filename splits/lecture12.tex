@@ -1,0 +1,399 @@
+%%%lecture 12
+
+\minisec{recall:}
+
+$(E,\skal{.}{.})$ Hilbert space and $(x_n)_{n=1}^{\infty}$ ON-basis and $(\lambda_n)_{n=1}^{\infty}$ sequence of complex numbers.
+Set 
+\[
+	A(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n}x_n
+\]
+We have 
+\begin{itemize}
+	\item $A: E \to E$ if $(\lambda_n)_{n=1}^{\infty} \in l^{\infty}$ \\
+	if $(\lambda_n)_{n=1}^{\infty}$ is not bounded, there exists a subsequence $(\lambda_{n_k})_{k \in \mathbb{N}}$ such that
+	\[
+		\abs{\lambda_{n_k}} \geq k, \qquad k=1,2,\dots.
+	\] 
+	Set 
+	\[
+		x = \sum_{k=1}^{\infty}\frac{1}{k}x_{n_k}
+	\]
+	Clearly $x \in E$ since $\left( \frac{1}{k} \right)_{k=1}^{\infty} \in l^{\infty}$. But
+	\[
+		T(x) = \sum_{k=1}^{\infty} \lambda_{n_k} \frac{1}{k} x_{n_k} \not \in E
+	\]
+	since $\left( \lambda_{n_k} \cdot \frac{1}{k} \right)_{k=1}^{\infty} \not \in l^2$ \\
+	Note
+	\[
+		A \in B(E,E) \qquad \Leftrightarrow \qquad (\lambda_n)_{n=1}^{\infty} \in l^{\infty}.
+	\]
+	and $\norm{A} = \sup_{n} \abs{\lambda_n}$
+	\item $A \in K(E,E)$ iff $\lambda_n \to 0$ for $n \to \infty$.
+	\item $A$ is self adjoint iff $\lambda_n \in \mathbb{R}$ for all $n \in \mathbb{N}$
+\end{itemize}
+\minisec{Basis facts:}
+Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then
+\begin{itemize}
+	\item If $A$ is self-adjoint we have
+	\[
+		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}
+	\]
+	\item If $A$ is self-adjoint it follows
+	\[
+		\skal{A(x)}{x} \in \mathbb{R}, \qquad \forall\, x \in E.
+	\]
+	since
+	\begin{align*}
+		\skal{A(x)}{x} = \skal{x}{A^*(x)} \stackrel{\text{self-adjoint}}{=} \skal{x}{A(x)} = \overline{\skal{A(x)}{x}}
+	\end{align*} 
+	\item $K(E,E)$ (Set of all compact linear operators) closed subspace in $(B(E,E),\norm{.}_{E \to E})$
+	\item $A \in K(E,E)$ and $x_n \rightharpoonup x$ in $E$. Then
+	\[
+		A(x_n) \to A(x), \qquad \text{in }E.
+	\]
+	\item $A \in K(E,E)$ and $B \in B(E,E)$. Then
+	\begin{itemize}
+		\item $AB, BA \in K(E,E)$
+		\item $A^* \in K(E,E)$
+		\item $\mathcal{R}(B)^{\perp} = \mathcal{N}(B^*)$ \\
+		$\overline{\mathcal{R}(B)} = \mathcal{N}(B^*)^{\perp}$
+		\item $\mathcal{R}(I-A)$ is a closed subspace in $E$.
+	\end{itemize}
+	\item $E = \mathcal{R}(I-A) \oplus \mathcal{R}(I-A)^{\perp} = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*)$
+	\item For any $A \in K(E,E)$
+	\[
+		\dim(\mathcal{N}(I-A)) = \dim(\set[x \in E]{x-A(x)=0}) < \infty
+	\]
+	since: if $\dim(\mathcal{N}(I-A))= \infty$ then there exists an ON- sequence $(x_n)_{n=1}^{\infty}$ in $\mathcal{N}(I-A)$. Then
+	\[
+		x_n \rightharpoonup E, \qquad \text{since } \skal{x_n}{y} \to 0, n \to \infty
+	\]
+	since for $y \in \overline{\spn\set[x_n]{n=1,2,\dots}}$ then
+	\[
+		\norm{y}^2 = \sum_{n=1}^{\infty} \abs{\skal{x_n}{y}}^2 < \infty
+	\]
+	$A \in K(E,E)$ implies that $A(x_n) \to A(0)=0$ in $E$. But
+	\[
+		x_n = A(x_n) \to 0 \qquad \text{in }E, \qquad \norm{x_n}=1 \text{for all }n
+	\]
+	This is a contradiction. \\
+	Conclusion: $\dim(I-A) < \infty$.
+\end{itemize}
+From above we have for $A \in K(E,E)$ \[
+	E = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*)
+\]
+Consider the equation
+\[
+	x = A(x)+ y \qquad \qquad (1)
+\]
+(1) has a solution provided by $y \in \mathcal{R}(I-A)$. That is the case if $y \perp z$ for all $z \in \mathcal{N}(I-A^*)$. \\
+Since $\dim(\mathcal{N}(I-A^*)) < \infty$, this is just finitely many conditions.
+
+
+\begin{theorem}[Fredholm alternativ]
+$A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements below holds:
+\begin{enumerate}
+	\item $x = A(x) + y$ is solvable for every $y \in E$.
+	\item $x = A(x)$ has a non trivial solution $x \in E$, i.e. $x \neq 0$.
+\end{enumerate}
+(No assumption on $A$ being self-adjoint.)
+\end{theorem}
+\begin{bemerkung}
+	The statement in Fredholm Alternativ also holds if $(E,\norm{.})$ is a Banach space.
+\end{bemerkung}
+\begin{beweis}
+	\begin{description}
+		\item[(1) $\Rightarrow$ $ \lnot$ (2):] We want to show that there are no non-trivial solutions for $x = A(x)$. \\
+		Assume that there exists a non-trivial solution $x_1 \in E$ to $x = A(x)$, i.e.
+		\[
+			(I-A)(x_1)=0, \qquad \text{with }x_1 \neq 0
+		\]
+		If $(1)$ holds true there exists a $x_2 \in E$ such that
+		\[
+			(I-A)(x_2) = x_1 \neq 0
+		\]
+		But
+		\[
+			(I-A)(x_1) = (I-A)^2(x_2) = 0.
+		\]
+		With $(1)$ there exists $x_3 \in E$ such that 
+		\[
+			(I-A)(x_3) = x_2
+		\]
+		which implies
+		\[
+			(I-A)^2(x_3) = (I-A)(x_2) = x_1 \neq 0
+		\]
+		But once again
+		\[
+			(I-A)^3(x_3)=0
+		\]
+		Proceed inductively gives us a sequence $(x_k)_{k=1}^{\infty}$ such that
+		\[
+			(I-A)^k(x_k) =0, \qquad \text{but }(I-A)^{k-1}(x_k) \neq 0
+		\]
+		We obtain
+		\[
+			\mathcal{N}(I-A) \subsetneq \mathcal{N}((I-A)^2) \subsetneq \mathcal{N}((I-A)^3) \subsetneq \dots
+		\]
+		This is a sequence of proper closed subspaces.  \\
+		Apply now Riesz-Lemma: \\
+		There exists a sequence $(y_k)_{k=1}^{\infty}$ with $\norm{y_k} = 1$ and $\norm{y_k - x} \geq \frac{1}{2}$ for all $x \in \mathcal{N}((I-A)^{k-1})$ and 
+		$y_k \in \mathcal{N}((I-A)^k)$. \\
+		\textbf{Claim:} \text{    }$\norm{A(y_n)- A(y_m)} \geq \frac{1}{2}$ for all $n >m$. \\
+		\begin{align*}
+			\norm{A(y_m)- A(y_n)} &= \norm{\underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{(I-A)(y_n)}} - y_n + \underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{A(y_m)}}} \\
+			&=  \norm{y_n - \underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{((I-A)(y_n) + A(y_m))}}} \geq \frac{1}{2}
+		\end{align*}
+		So $(A(y_n))_{n=1}^{\infty}$ can not converge in $E$. But $A$ is compact and $\norm{y_n}=1$ for all $n$. This is a contradiction. \\
+		Conclusion: There is no non-trivial solution of $A(x)=x$.
+		\item[$\lnot$ (2) $\Rightarrow$ (1)] Assume that $x = A(x)$ has a no non-trivial solution $x \in E$. We want to show that $(1)$ holds.
+		\[
+			E = \mathcal{R}(I-A^*) \oplus \mathcal{N}(I-A), \qquad \text{ with }\mathcal{N}(I-A) = \set{0}.
+		\]
+		Hence 
+		\[
+			x = A^*(x)+y
+		\] is solvable for every $y \in E$. From the first part of the proof it follows that 
+		\[
+			\mathcal{N}(I-A^*) = \set{0}.
+		\]
+		But then
+		\[
+			E = \mathcal{R}(I-A) \oplus \mathcal{N}((I-A^*) = \mathcal{R}(I-A).
+		\]
+		Conclusion: $x = A(x) + y$ is solvable for all $y \in E$
+	\end{description}
+\end{beweis}
+
+\begin{beispiel}
+	$L^2([0,1])$, $k \in C([0,1] \times [0,1])$ and
+	\[
+		A(f)(x) = \int_{0}^{1}k(x,y)f(y) \,\mathrm{d}y , \qquad x \in [0,1]
+	\]
+	Then
+	\begin{itemize}
+		\item $A \in B(L^2,L^2)$ with $\norm{A}_{L^2 \to L^2} \leq \norm{k}_{L^2([0,1] \times [0,1])}$
+		\item $A$ self-adjoint if $k(x,y) = \overline{k(y,x)}$ for all $x,y \in [0,1]$.
+		\item $A \in K(E,E)$ (by approximation by finite rank operators). 
+	\end{itemize}
+\end{beispiel}
+
+\begin{theorem}[Hilbert-Schmidt-Theorem]
+	$(E, \skal{.}{.})$ Hilbert spaces and $A \in K(E,E)$ self adjoint. Then there exists a sequence of non-zero eigenvalues of $A$ denoted
+	$(\lambda_n)_{n=1}^{N}$ for $N$ finite or infinite, corresponding to Eigenvectors $(u_n)_{n=1}^{N}$. Respectively where $(u_n)_{n=1}^{N}$ is an ON-sequence, and
+	\[
+		\abs{\lambda_1} \geq \abs{\lambda_2} \geq \dots
+	\]
+	with 
+	\[
+		\lim_{n \to \infty} \lambda_n = 0, \qquad \text{if } N= \infty
+	\]
+	such that for $x \in E$
+	\[
+		x = \sum_{n=1}^{N}\skal{x}{u_n}u_n +v, \qquad v \in \mathcal{N}(A).
+	\]
+	Moreover
+	\[
+		A(x) = \sum_{n=1}^{N} \lambda_n \skal{x}{u_n}u_n.
+	\]
+\end{theorem}
+\begin{bemerkung}
+	With notation from the theorem above we have
+	\begin{enumerate}
+		\item \[
+		A^k(x) = \sum_{n=1}^{N} \lambda_n^k \skal{x}{u_n}u_n, \qquad k=1,2,\dots.
+	\]
+	\item If $A$ is injective, i.e. $\mathcal{N}(A) = \set{0}$ then the Eigenvectors $(u_n)_{n=1}^{N}$ form an ON-basis for $E$.
+	\end{enumerate}
+\end{bemerkung}
+\begin{definition*}[Eigenvalues and Eigenvectors for $A \in B(E,E)$]
+	$\lambda \in \mathbb{C}$ is called an eigenvalue of $A$ if there exists an $0 \neq x \in E$ such that
+	\[
+		A(x) = \lambda x.
+	\]
+\end{definition*}
+\begin{bemerkung}[properties for Eigenvalues and Eigenvectors]
+	\begin{enumerate}
+		\item $\abs{\lambda} \leq \norm{A}$ since
+		\[
+			\abs{\lambda} \norm{x} =\norm{\lambda x} = \norm{A(x)} \leq \norm{A} \cdot \norm{x}
+		\]
+		\item $A$ self-adjoint and $\lambda$ eigenvalue. Then
+		\[
+			\Rightarrow \lambda \in \mathbb{R}
+		\]
+		since
+		\begin{align*}
+			\lambda \skal{x}{x} &= \skal{\lambda x}{x} \\ &= \skal{A(x)}{x} \\ &= \skal{x}{A^*(x)} \\ &= \skal{x}{A(x)} \\ &= \skal{x}{\lambda x} \\ & = \bar{\lambda} \skal{x}{x}
+		\end{align*}
+		So \[
+			\lambda = \bar{\lambda}, \qquad \Rightarrow \lambda \in \mathbb{R}
+		\]
+		\item $A$ self-adjoint, $A(x) = \lambda x$ and $A(y) = \mu y$, where $x,y \neq 0$ and $\lambda \neq  \mu $.
+		\[
+			\Rightarrow \,x \perp y
+		\]
+		since
+		\[
+			\lambda \skal{x}{y} = \dots = \bar{\mu} \skal{x}{y}
+		\]
+		So
+		\[
+			\underset{\neq 0}{\underbrace{( \lambda - \mu)}}\skal{x}{y} = 0.
+		\]
+		\item $A \in K(E,E)$ and $\lambda \neq 0$ eigenvalue of $A$. Then
+		\[
+			\dim E_\lambda = \dim \set[x \in E]{A(x)= \lambda x} < \infty. 
+		\]
+	\end{enumerate}
+\end{bemerkung}
+\begin{proposition}
+	$(E, \skal{.}{.})$ Hilbert space and $A \in K(E,E)$ self-adjoint. Then
+	\[
+		\Rightarrow \,\norm{A} \qquad \text{or} \qquad  - \norm{A}
+	\]
+	is an eigenvalue of $A$.
+\end{proposition}
+\begin{beweis}
+	$A = 0$ then the statement is trivial. \\
+	Assume $A \neq 0$. \\
+	$A$ self-adjoint implies that 
+	\[
+		\norm{A} = \sum_{\norm{x}=1} \abs{\skal{A(x)}{x}}
+	\]
+	Also self-adjoint implies that for all $x \in E$ we have
+	\[
+		\skal{A(x)}{x} \in \mathbb{R}.
+	\]
+	Hence there exists a sequence $(x_n)_{n=1}^{\infty}$ in $E$ with $\norm{x_n}=1$ for all $n$ such that
+	\[
+		\skal{A(x_n)}{x_n} \to \lambda, \qquad n \to \infty.
+	\]
+	where $\lambda \in \mathbb{R}$ and $\abs{\lambda} = \norm{A}$. \\
+	\textbf{Claim:} \text{    }$A(x_n) - \lambda x_n \to 0$ in $E$. \\
+	\begin{align*}
+		\norm{A(x_n)- \lambda x_n}^2 &= \skal{A(x_n)-\lambda x_n}{A(x_n)- \lambda x_n} \\
+		&= \underset{\substack{= \norm{A(x_n)}^2 \\ \leq \norm{A}^2 \norm{x_n}^2 \\ = \norm{A}^2}}{\underbrace{\skal{A(x_n)}{A(x_n)}}}- 
+		\overset{\to \abs{\lambda}^2 = \norm{A}^2}{\overbrace{\bar{\lambda} 
+		\underset{ \to  \lambda}{\underbrace{\skal{A(x_n)}{x_n}}}}}- \overset{\to \lambda^2 = \norm{A}^2}{\overbrace{\lambda \underset{\to \lambda}{\underbrace{\skal{x_n}{A(x_n)}}}}} + \underset{= \norm{A}^2}{\underbrace{\abs{\lambda}}} \underset{=1}{\underbrace{\skal{x_n}{x_n}}} \\
+		&\to 0, \qquad n \to \infty.
+	\end{align*}
+	$A \in K(E,E)$ and $\norm{x_n}=1$ for all $n$ we get that 
+	\[
+		(A(x_n))_{n=1}^{\infty} 
+	\]
+	has a converging subsequence $(A(x_{n_k})_{k=1}^{\infty}$ in $E$. \\
+	Call the limit element $y \in E$ so
+	\[
+		A(x _{n_k}) \to y \qquad \text{ in }E. 
+	\]
+	\[
+		\begin{cases}
+			A(x_n) - \lambda x_n &\to 0\\
+			A(x _{n_k}) &\to y
+		\end{cases} \qquad \text{in }E
+	\]
+	implies
+	\[
+		x _{n_k} \to  \frac{1}{\lambda}y \qquad \text{ in }E
+	\]
+	(note $\abs{\lambda}>0$ since $A \neq 0$). \\
+	Set $x = \frac{1}{\lambda}y$. So $x _{n_k} \to x$ in $E$. Consider
+	\begin{align*}
+		\norm{A(x)- \lambda x} &\leq  \norm{A(x)-A(x _{n_k})} + \norm{A(x _{n_k})- y} \to 0, \qquad k \to \infty
+	\end{align*}
+	Conclusion: \[
+		A(x) = \lambda x.
+	\]
+	where $\norm{x}=1$ since $1 = \norm{x _{n_k}} \to  \norm{x}$ as $k \to \infty$.
+\end{beweis}
+We are now going to prove the Hilbert-Schmidt theorem:
+
+\begin{beweis}
+	If $A=0$ the theorem is trivial. \\ Assume $A \neq 0$. \\
+	By the proposition above there exists an eigenvalue $\lambda_1$ of $A$ with $\abs{\lambda_1}= \norm{A}$ and an eigenvector $u_1$ with 
+	$\norm{u_1}=1$ corresponding to the eigenvalue $\lambda_1$. \\
+	Set $Q_1 = \set{u_1}^{\perp}$. $Q_1$ is a closed subspace of $E$ and hence $Q_1$ is a Hilbert space. \\
+	For $x \in Q_1$ we have $A(x) \in Q_1$ since for $x \in Q_1$ we have
+	\begin{align*}
+		\skal{A(x)}{u_1} &= \skal{x}{A^*(u_1)}  \\ &= \skal{x}{A(u_1)} \\&= \skal{x}{\underset{\in  \mathbb{R}}{\underbrace{\lambda_1}} u_1} \\
+		&= \lambda_1 \skal{x}{u_1} = 0 
+	\end{align*}
+	Now
+	\[
+		A  \big|_{Q_1}^{} : Q_1 \to Q_1
+	\]
+	is compact and also self-adjoint. By proposition above there exists an eigenvalue $\lambda_2$ of $A  \big|_{Q_1}^{}$ and a corresponding eigenvector $u_2$ with $\norm{u_2}=1$ where
+	\[
+		\abs{\lambda_2} = \norm{A  \big|_{Q_1}^{}} \leq \norm{A} = \abs{ \lambda_1}
+	\]
+	Here $A(u_2) = \lambda_2 u_2$ so $\lambda_2$ is an eigenvalue of $A$. Set $Q_2 = \set{u_1,u_2}^{\perp}$. $Q_2$ is a closed subspace of $E$ and we have
+	\[
+		x \in Q_2 \qquad \Rightarrow \qquad A(x) \in Q_2 
+	\]
+	since $x \in Q_2$ we have
+	\begin{align*}
+		\skal{A(x)}{u_1} &= \skal{x}{A(u_1)} = \skal{x}{\lambda_1 u_1} = 0 \\
+		\skal{A(x)}{u_2} &= \skal{x}{A(u_2)} = \skal{x}{\lambda_2 u_2} = 0
+	\end{align*}
+	Proceed inductively.
+	\begin{description}
+		\item[Case 1:] For a positive integer $k$ we have 
+		\[
+			\abs{\lambda_1} \geq  \abs{\lambda_2} \geq  \dots \geq  \abs{\lambda_k}>0
+		\]
+		with corresponding eigenvectors $u_1,u_2, \dots,u_k$ but $A  \big|_{Q_k}^{}$ with $Q_k = \set{u_1,u_2,\dots,u_k}^{\perp}$, then is the zero-mapping $Q_k \to Q_k$. This corresponds to $N=k$ and 
+		\[
+			x = \sum_{n=1}^{k} \skal{x}{u_n}u_n + v, \qquad \text{where }v \in \mathcal{N}(A).
+		\]
+		\item[Case 2:] The process never terminates. We get 
+		\[
+			\abs{\lambda_1} \geq \abs{\lambda_2} \geq \dots \geq \abs{\lambda_n} \geq \dots
+		\]
+		with corresponding eigenvectors $u_1,u_2, \dots,u_n, \dots$. \\
+		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero EW $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ und $w_n \to 0$ in $E$ since 
+		$(u_n)_{n=1}^{\infty}$ is ON-sequence. \\
+		Then this implies $A(u_n) \to 0$ in $E$. So \[
+			\abs{\lambda_n} = \norm{\lambda_n u_n} = \norm{A(u_n)} \to 0, \qquad n \to \infty
+		\]
+		Hence \[
+			\lim_{n \to \infty} \lambda_n = 0
+		\]
+		Set 
+		\[
+			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{n}\alpha u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}
+		\]
+		S is a closed subspace of $E$. \\ We have $E = S \oplus S^{\perp}$ where $S^{\perp} \subseteq Q_k = \set{u_1,\dots,u_k}^{\perp}$ for all $k \in \mathbb{N}$.
+		For $x \in E$ we have
+		\[
+			\underset{\in S}{\underbrace{\sum_{k=1}^{\infty} \skal{x}{u_k}u_k}} + \underset{\in S^{\perp}}{\underbrace{v}}
+		\]
+		since $(\skal{x}{u_k})_{k=1}^{\infty} \in l^\infty$ by Bessel's inequality. 
+		To show: $A(u)=0$. Clearly, $v \in Q_k$ for all $k$. If $v = 0$ there is nothing to prove. For $v \neq 0$ set $w= \frac{1}{\norm{v}}v$ and get
+		\begin{align*}
+			\abs{\skal{A(v)}{v}} &= \norm{v}^2 \abs{ \skal{A(w)}{w}} \\
+			&\leq \norm{w}^2 \underset{= \norm{A  \big|_{Q_k}^{}} = \abs{\lambda_{k+1}} \to 0}{\underbrace{\sup_{ \substack{\norm{z}=1 \\ z \in Q_k}} \abs{\skal{A(z)}{z}}}}
+		\end{align*}
+		\textbf{Claim:} \text{    }$A  \big|_{S^{\perp}}^{} = 0$ and hence $v \in S^{\perp}$ implies $A(v) = 0$
+	\end{description}
+\end{beweis}
+
+\begin{theorem}[Spectral mapping theorem]
+	$(E,\skal{.}{.})$ seperable Hilbert space and $\infty$-dimensional $A \in K(E,E)$ self-adjoint. Then there exists a ON-basis of eigenvectors $(\tilde u_n)_{n=1}^{\infty}$ corresponding to the eigenvalues $(\tilde \lambda_n)_{n=1}^{\infty}$ if $A$ where $\lim_{n \to \infty} \tilde \lambda_n = 0$.
+\end{theorem}
+\begin{beweis}[consequence of HS-theorem]
+	We have by HS-theorem an ON-sequence $(u_n)_{n=1}^{\infty}$ of eigenvectors corresponding to the non-zero eigenvalues $(\lambda_n)_{n=1}^{N}$. \\
+	Set
+	\[
+		S = \overline{\spn\set{u_1,\dots,u_n, \dots}}
+	\]
+	$E$ is seperable implies $E$ has an ON-basis $(v_n)_{n=1}^{\infty}$. By Gram-Schmidt Orthoganlization procedure we can obtain an ON-basis $(w_n)_{n=1}^{M}$ for $S^{\perp}$. Have $M$ finite or infinite. \begin{align*}
+		S &:\,u1,u_2, \dots \qquad \text{ON-basis finite or infinite} \\
+		S^{\perp} &:\,w1,w_2, \dots \qquad \text{ON-basis finite or infinite}
+	\end{align*}
+	Consider the ON-sequence $u_1,w_1,u_2,w_2, \dots = \tilde u_1, \tilde u_2, \dots$. This gives an ON-basis for $E$ consisting of eigenvectors to $A$. Also
+	\[
+		\lim_{n \to \infty}\tilde \lambda_n = 0
+	\]
+\end{beweis}

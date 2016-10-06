@@ -216,20 +216,20 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\] 
 		it means
 		\[
-			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}w_i \in \text{span }\set[u_i]{i \geq 1}
+			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}w_i \in \spn\set[u_i]{i \geq 1}
 		\]
-		This is implies that any $x \in H$ is in $\overline{\text{span } \set[u_i]{i \geq 1}}$, i.e. $\set{w_i}$ is ON-basis.
+		This is implies that any $x \in H$ is in $\overline{\spn \set[u_i]{i \geq 1}}$, i.e. $\set{w_i}$ is ON-basis.
 		\item[(2) $\Rightarrow$ (5):] Let $\set{u_i}$ be a ON-basis. Assume 
 		\[
 			\skal{x}{u_k} = 0, \qquad \forall\,  k \in \mathbb{N}
 		\]
 		Then
 		\[
-			\skal{x}{u} = 0, \qquad \forall\, u \in \text{span }\set[u_k]{k \geq 1}.
+			\skal{x}{u} = 0, \qquad \forall\, u \in \spn\set[u_k]{k \geq 1}.
 		\]
 		By the property that strong convergence implies weak convergence we will have 
 		\[
-			\skal{x}{u}= 0, \qquad \forall\, u \in \text{span }\set[u_k]{k \geq 1} = H.
+			\skal{x}{u}= 0, \qquad \forall\, u \in \spn\set[u_k]{k \geq 1} = H.
 		\]
 		In particular
 		\[
@@ -363,10 +363,10 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 	are dense in $C([a,b])$.
 	\item $C([a,b])$ is dense in $L^2([a,b])$ w.r.t. $\norm{.}_{L^2}$-norm. 
 \end{enumerate}
-We will use $(1)$ and $(2)$ to show that $\text{span }\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ is dense in $L^2([-\pi,\pi])$.
+We will use $(1)$ and $(2)$ to show that $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ is dense in $L^2([-\pi,\pi])$.
 \begin{beweis}
 	Let \[
-		M := \text{span }\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq \set[f \in C([-\pi, \pi])]{f( \pi) = f(-\pi)}
+		M := \spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq \set[f \in C([-\pi, \pi])]{f( \pi) = f(-\pi)}
 	\]
 	$M$ seperates points, it contains the constant function $1$ and it is closed under complex conjugation. Furthermore $M$ is closed under taking products. With Stein-Weierstraß it follows that $M$ is dense in 
 	\[
@@ -389,7 +389,7 @@ We will use $(1)$ and $(2)$ to show that $\text{span }\set[\frac{1}{\sqrt{2 \pi}
 		&= \sqrt{\varepsilon} + \sqrt{C} \sqrt{\varepsilon}
 	\end{align*}
 	We conclude: any $f = L^2-$limit $g_n$ with $g_n \in C([-\pi,\pi])$ and $g_n(- \pi ) = g_n( \pi)$. Each $g_n = \norm{.}_\infty$-norm limit of an element in 
-	$ \text{span }\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ as
+	$ \spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ as
 	\[
 		\norm{g-f}_{L^2} \leq \norm{g-f}^{\frac{1}{2}}_{\infty} (2 \pi)^{\frac{1}{2}}
 	\]
@@ -397,9 +397,9 @@ We will use $(1)$ and $(2)$ to show that $\text{span }\set[\frac{1}{\sqrt{2 \pi}
 	\[
 		\left( \int_{- \pi}^{\pi} \abs{g(t)-f(t)}^2 \,\mathrm{d}t \right)^{\frac{1}{2}} \leq \max_{x \in [ - \pi, \pi]} \abs{g(t)- f(t)} \left( \int_{- \pi}^{\pi} \,\mathrm{d}t \right)^{\frac{1}{2}}
 	\]
-	We get that each $g_n$ can be approximated in the $L^2$-norm by elements in $\text{span }\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ hence
+	We get that each $g_n$ can be approximated in the $L^2$-norm by elements in $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ hence
 	\[
-		\text{span }\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq L^2([- \pi,\pi]).
+		\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq L^2([- \pi,\pi]).
 	\]
 \end{beweis}
 

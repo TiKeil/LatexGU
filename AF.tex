@@ -60,118 +60,16 @@ It mainly contains the written content of the lecture. I will not assume any res
 %%% lecture 10
 \input{splits/lecture10.tex}
 
+%%% lecture 11
+\input{splits/lecture11.tex}
+
+%%% lecture 12
+\input{splits/lecture12.tex}
 
 
-%%%%%%%%
 
 
-%%%%%% NACHHOLEN %%%%%%%
 
-
-%%%%%%%%
-
-\begin{beispiel}
-	$(E,\skal{.}{.})$ Hilbert space, $(x_{n})_{n=1}^{\infty}$ ON-basis and $(\lambda_n)_{n=1}^{\infty}$ sequence of scalars. Set
-\[
-	T(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n} x_n, \qquad x \in E
-\]	
-\textbf{Claim:} \text{    }     
-\begin{enumerate}[1)]
-	\item $T \in B(E,E) \qquad \Leftrightarrow \qquad (\lambda_n)^{\infty}_{n=1} \text{ is a bounded sequence in $\mathbb{C}$}$.
-	\item$T \in K(E,E) \qquad \Leftrightarrow \qquad \lambda_n \to 0 \text{ for }n \to \infty$.
-\end{enumerate}
-Note $x \in E$ and the Parseval's formula
-\[
-	\norm{x}^2 = \sum_{n=1}^{\infty} \abs{\skal{x}{x_n}}^2
-\]
-For $T(x) \in E$ we have
-\[
-	\norm{T(x)}^2 = \sum_{n=1}^{\infty} \abs{\lambda_n}^2 \abs{\skal{x}{x_n}}^2
-\]
-If $(\lambda_n)_{n=1}^{\infty}$ bounded sequence in $\mathbb{C}$. Then $\sup \abs{\lambda_n} \equiv M < \infty$ and
-\[
-	\norm{T(x)}^2 \leq \sum_{n=1}^{\infty} M^2 \abs{\skal{x}{x_n}}^2 = M^2 \norm{x}^2
-\]
-If $(\lambda_n)_{n=1}^{\infty}$ is not bounded then there exists a sequence $(\lambda_{n_k})_{k=1}^{\infty}$ such that $\abs{\lambda_{n_k}} \to \infty$ as $k \to \infty$. But
-\[
-	\norm{T(x_{n_k})} = \abs{\lambda_{n_k}}\norm{x_{n_k}} = \abs{\lambda_{n_k}} \to \infty, \qquad k \to \infty
-\]
-\[
-	\sup\limits_{\norm{x}=1} \norm{T(x)} = \infty
-\]
-So 1) is done. For 2) we assume $\lambda_n \to 0$ for $n \to \infty$. Set 
-\[
-	T_k(x)= \sum_{n=1}^{k}\lambda_n \skal{x}{x_n}x_n, \qquad x \in E
-\]
-$T_k$ is a finite rank operator for $k=1,2,\dots$. SO $T_k \in K(E,E)$ for all $k$.
-\begin{align*}
-	\norm{T-T_k}_{E \to E} &= \sup_{\norm{x}=1} \norm{(T-T_k)(x)} \\ &= \sup_{\norm{x}=1} \norm{\sum_{k=n+1}^{\infty} \lambda_n \skal{x}{x_n}x_n} \\
-	& \leq \sup\limits_{n= k+1,k+2,\dots}\abs{\lambda_n} \to 0, \qquad k \to \infty
-\end{align*}
-Assume $\lambda_n \not \to 0$ for $n \to \infty$. Then there exists $\varepsilon >0$ and a sequence $(\lambda_{n_k})_{k=1}^{\infty}$ such that 
-\[
-	\abs{\lambda_{n_k}} \geq \varepsilon
-\]
-Note
-\[
-	T(x_{n_k})= \lambda_{n_k}x_{n_k}, \qquad k =1,2,\dots
-\]
-\[
-	\norm{T(x_{n_k})} = \abs{\lambda_{n_k}} \norm{x_{n_k}} = \abs{\lambda_{n_k}} \geq \varepsilon, \qquad k = 1,2,\dots
-\]
-$x_{n_k} \stackrel{\text{w}}{\to }0$ in $(E,\skal{.}{.})$ since for $y \in E$
-\[
-	\skal{x_{n_k}}{y} = \skal{x_{n_k}}{\sum_{n=1}^{\infty}\skal{y}{x_n}x_n} = \overline{\skal{y}{x_{n_k}}} \to 0
-\]
-since
-\[
-	\sum_{n=1}^{\infty}\abs{\skal{y}{x_n}}^2 = \norm{y}^2 < \infty
-\]
-If $T \in K(E,E)$ then $T(x_{n_k}) \to T(0)=0$ but \[
-	\norm{T(x_{n_k})} \geq \varepsilon, \qquad \text{for all }k
-\]
-Hence
-\[
-	T \not \in K(E,E)
-\]
-\end{beispiel}
-\begin{beispiel}
-	$(E,\skal{.}{.})$ Hilbert space, $A \in K(E,E)$ and $I(x)=x$ for all $x \in E$. It follows
-	\[
-		\Rightarrow  \qquad R(I-A) \text{ closed in $E$}
-	\]
-\begin{bemerkung}
-	\begin{align*}
-		R(I-A)^{\perp} &= N((I-A)^{*}) = N(I-A^{*}) \\
-		\overline{R(I-A)} &= R(I-A)^{\perp \perp} = N(I-A^{*})^{\perp}
-	\end{align*}
-	If $A \in K(E,E)$ then
-	\[
-		\overline{R(I-A)} = R(I-A).
-	\]
-	Solve \[
-		x = A(x) + y \qquad \Leftrightarrow \qquad (I-A)(x) = y
-	\]
-	Compare 'Fredholm alternative'.
-\end{bemerkung}
-\end{beispiel}
-\begin{beweis}
-	Take a sequence $(y_n)_{n \in \mathbb{N}} \subseteq R(I-A)$ such that $y_n \to y$ in $(E,\norm{.})$. \\
-	To show: $y \in R(I-A)$, i.e. $y = (I-A)(x)$ for some $x \in E$ and $y_n = (I-A)(x_n)$ for some $x_n \in E$.
-	\[
-		x_n \in E = N(I-A) + N(I-A)^{\perp}
-	\]
-	such that
-	\[
-		x_n = \tilde x_n + \hat x_n 
-	\]
-	with
-	\[
-		\norm{x_n}^2 = \norm{\tilde x_n}^2 + \norm{\hat x_n}^2
-	\]
-	Step 1: Show $(\hat x_n)_{n=1}^{\infty}$ bounded in $E$. \\
-	Step 2: $y_n = (I-A)( \hat x_n) = \hat x_n - A( \hat x_n)$. \\
-\end{beweis}
 \cleardoubleoddemptypage
 \pagenumbering{Alph}
 \setcounter{page}{1}
