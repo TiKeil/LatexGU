@@ -8,12 +8,12 @@
 	Consider $\mathbb{C}^n = \set[(x_1,x_2,\dots,x_n)]{x_i \in \mathbb{C}}$ and $x,y \in \mathbb{C}^n$ with
 	$x= (x_1,\dots,x_n)$, $y = (y_1,\dots,y_n)$. Define the inner product of $x,y$ (scalar product)
 	\[
-		\skal{x}{y} = \sum^{n}_{i=1}x_i \bar{y}_i \in \mathbb{C}
+		\skal{x}{y} = \sum^{n}_{i=1}x_i \bar{y}_i \in \mathbb{C}.
 	\]
 	We have a map
 	\begin{align*}
 		\mathbb{C}^n \times \mathbb{C}^n &\to \mathbb{C} \\
-		(x,y) &\mapsto \skal{x}{y}
+		(x,y) &\mapsto \skal{x}{y}.
 	\end{align*}
 	This mapping has properties:
 	\begin{itemize}
@@ -27,14 +27,14 @@
 \begin{definition*}
 	An inner product space $V$ is a complex vector space with an inner product which is a map 
 	\[
-		\skal{.}{.}: V \times V \to \mathbb{C}
+		\skal{.}{.}: V \times V \to \mathbb{C}.
 	\]
-	satisfying
+	Satisfying
 	\begin{itemize}
-		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for any $x,y \in V$, $\lambda \in \mathbb{C}$
-		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for any $x,y,z \in V$
-		\item $\skal{x}{y} = \overline{\skal{x}{y}}$ for any $x,y \in V$
-		\item $\skal{x}{x}>0$ for any $x \in V, x \neq 0$
+		\item $\skal{\lambda x}{y} = \lambda \skal{x}{y}$ for any $x,y \in V$, $\lambda \in \mathbb{C}$.
+		\item $\skal{x+y}{z} = \skal{x}{z}+ \skal{y}{z}$ for any $x,y,z \in V$.
+		\item $\skal{x}{y} = \overline{\skal{x}{y}}$ for any $x,y \in V$.
+		\item $\skal{x}{x}>0$ for any $x \in V, x \neq 0$.
 	\end{itemize}
 \end{definition*}
 Can we generalize $\mathbb{C}^n$? \\
@@ -43,7 +43,7 @@ Can we generalize $\mathbb{C}^n$? \\
 \]
 with
 \[
-	\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i 
+	\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i.
 \]
 This is not necessarily convergent.
 \begin{beispiele}
@@ -57,7 +57,7 @@ This is not necessarily convergent.
 	\]
 	if $x \in l^2$ and $y \in l^2$ we get
 	\begin{align*}
-		\sum^{n}_{i=1}\abs{x_i \bar{y}_i} \leq \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum_{i=1}^{\infty} \abs{y_i}^2 \right)^{\frac{1}{2}} < \infty.
+		\sum^{n}_{i=1}\abs{x_i \bar{y}_i} \leq \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}} \left( \sum_{i=1}^{\infty} \abs{y_i}^2. \right)^{\frac{1}{2}} < \infty.
 	\end{align*}
 	It follows that $\sum_{i=1}^{\infty} x_i \bar{y}_i$ converges absolutely and hence it is convergent. The following 
 	\[
@@ -67,35 +67,35 @@ This is not necessarily convergent.
 	$(l^2, \skal{.}{.})$ is an inner product space.
 	\item Consider $C([0,1])$ with the inner product
 	\[
-		\skal{f}{g} = \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t \qquad \forall\, f,g \in C([0,1])
+		\skal{f}{g} = \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t \qquad \forall\, f,g \in C([0,1]).
 	\]
 	\begin{itemize}
 		\item 	\[
-			\skal{\lambda f}{g} = \int_{0}^{1}\lambda f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \skal{f}{g}
+			\skal{\lambda f}{g} = \int_{0}^{1}\lambda f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \int_{0}^{1}f(t) \overline{g(t)} \,\mathrm{d}t = \lambda \skal{f}{g}.
 		\]
 		\item \[
-			\skal{f}{f} = \int_{0}^{1}f(t) \overline{f(t)} \,\mathrm{d}t = \int_{0}^{1} \abs{f(t)}^2 \,\mathrm{d}t >0
+			\skal{f}{f} = \int_{0}^{1}f(t) \overline{f(t)} \,\mathrm{d}t = \int_{0}^{1} \abs{f(t)}^2 \,\mathrm{d}t >0.
 		\]	
-		\item $\dots$
+		\item $\dots$.
 	\end{itemize}
 	\end{enumerate}
 \end{beispiele}
 If we take $\mathbb{R}^3$ with the Eukledian norm on $\mathbb{R}^3$
 \[
-	\norm{(x_1,x_2,x_3)} = \sqrt{x_1^2 + x_2^2 + x_3^2} = \left( \sum_{i=1}^{3} \abs{x_i}^2 \right)^{\frac{1}{2}} = \skal{x}{x}^{\frac{1}{2}}
+	\norm{(x_1,x_2,x_3)} = \sqrt{x_1^2 + x_2^2 + x_3^2} = \left( \sum_{i=1}^{3} \abs{x_i}^2 \right)^{\frac{1}{2}} = \skal{x}{x}^{\frac{1}{2}}.
 \]
 Let $V$ be an inner product space with $\skal{.}{.}$ as the inner product. Let for $x \in V$
 \[
-	\norm{x} := \skal{x}{x}^{\frac{1}{2}}
+	\norm{x} := \skal{x}{x}^{\frac{1}{2}}.
 \]
 \begin{satz}
 	The $x \mapsto  \norm{x}$ with $\norm{.}$ defined above is a norm.
 \end{satz}
-We are going to prove the norm axioms but first we need another theorem
+We are going to prove the norm axioms but first we need another theorem.
 	\begin{theorem}[Cauchy-Schwarz inequalitiy]
 		For any $x,y \in V$ (inner product space) 
 		\[
-			\abs{\skal{x}{y}} \leq \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}
+			\abs{\skal{x}{y}} \leq \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}.
 		\]
 		The equality holds iff $x,y$ are linearly dependent.
 	\end{theorem}
@@ -108,23 +108,23 @@ We are going to prove the norm axioms but first we need another theorem
 		\begin{align*}
 					\skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} &= \skal{\lambda y}{\lambda y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
 					&= \abs{\lambda} \skal{y}{y}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}} \\
-					&= \abs{\lambda} \skal{y}{y}
+					&= \abs{\lambda} \skal{y}{y}.
 		\end{align*}
 		Hence \[
 			\abs{\skal{x}{y}} = \skal{x}{x}^{\frac{1}{2}} \skal{y}{y}^{\frac{1}{2}}.
 		\]
 		Assume $x,y$ are linearly independent. Hence $x + \lambda y \neq 0$ for any $\lambda \in \mathbb{C}$. By an axiom for inner product we get
 		\[
-			0< \skal{x+ \lambda y}{x + \lambda y} = \skal{x}{x} + \lambda \skal{y}{x} + \bar{\lambda} \skal{x}{y} + \abs{\lambda}^2 \skal{y}{y}
+			0< \skal{x+ \lambda y}{x + \lambda y} = \skal{x}{x} + \lambda \skal{y}{x} + \bar{\lambda} \skal{x}{y} + \abs{\lambda}^2 \skal{y}{y}.
 		\]
 		Pick now
 		\[
-			\lambda = - \frac{\skal{x}{y}}{\skal{y}{y}}
+			\lambda = - \frac{\skal{x}{y}}{\skal{y}{y}}.
 		\]
 		(Note that $y \neq 0$ as $x,y$ linearly independent.)
 		We have \begin{align*}
 						0 &< \skal{x}{x} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\skal{x}{y}\skal{y}{x}}}}{\skal{y}{y}} - \frac{\overset{= \abs{\skal{x}{y}}^2}{\overbrace{\overline{\skal{x}{y}}\skal{x}{y}}}}{\skal{y}{y}}+ \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}^2} \skal{y}{y} \\
-						&= \skal{x}{x} - \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}}
+						&= \skal{x}{x} - \frac{\abs{\skal{x}{y}}^2}{\skal{y}{y}}.
 		\end{align*}
 		This gives
 		\[
@@ -132,25 +132,25 @@ We are going to prove the norm axioms but first we need another theorem
 		\]
 		and it follows
 		\[
-			\abs{\skal{x}{y}}^2 < \skal{x}{x} \skal{y}{y}
+			\abs{\skal{x}{y}}^2 < \skal{x}{x} \skal{y}{y}.
 		\]
 	\end{beweis}
 Now we can use this inequality to proof the statement above:
 \begin{beweis}
 	\begin{enumerate}[(i)]
-		\item $\norm{x} >0$ for all $x \neq 0$ in $V$ (Exercise)
-		\item $\norm{\lambda x} = \abs{\lambda} \norm{x}$ for all $x \in V$, $\lambda \in \mathbb{C}$ (Exercise)
+		\item $\norm{x} >0$ for all $x \neq 0$ in $V$ (Exercise).
+		\item $\norm{\lambda x} = \abs{\lambda} \norm{x}$ for all $x \in V$, $\lambda \in \mathbb{C}$ (Exercise).
 		\item Let $x,y \in V$. Then 
 		\begin{align*}
 			\norm{x+y}^2 &= \skal{x+y}{x+y} \\ &= \skal{x}{x}+ \skal{x}{y}+ \skal{y}{x} + \skal{y}{y} \\
 			&= \skal{x}{x} + 2 \text{Re}( \skal{x}{y}) + \skal{y}{y} \\
 			&\leq  \skal{x}{x}+ 2 \abs{\skal{x}{y}} + \skal{y}{y} \\
 			&\leq  \skal{x}{x} + 2 \skal{x}{x}^{\frac{1}{2}}\skal{y}{y}^{\frac{1}{2}} + \skal{y}{y} \\
-			&= \left( \skal{x}{x}^{\frac{1}{2}} + \skal{y}{y}^{\frac{1}{2}} \right)^2 
+			&= \left( \skal{x}{x}^{\frac{1}{2}} + \skal{y}{y}^{\frac{1}{2}} \right)^2.
 		\end{align*} 
 		So
 		\[
-			\norm{x+y}^2 \leq \left( \norm{x} + \norm{y} \right)^2
+			\norm{x+y}^2 \leq \left( \norm{x} + \norm{y} \right)^2.
 		\]
 	\end{enumerate}
 \end{beweis}
@@ -173,7 +173,7 @@ Now we can use this inequality to proof the statement above:
 	\begin{align*}
 		\norm{x+y}^2_{l^p} &= \norm{(1,1,0, \dots)}_{l^p} = 2^{\frac{2}{p}} \\
 		\norm{x-y}^2_{l^p} &= \norm{(1,-1,0,\dots)}_{l^p} = 2^{\frac{2}{p}} \\
-		\norm{x+y}^2_{l^p} + \norm{x-y}_{l^p}^2 &= 2 \cdot 2^{\frac{2}{p}} = 2( \norm{x}^2_{l^p}+ \norm{y}^2_{l^p}) = 2 \cdot 2
+		\norm{x+y}^2_{l^p} + \norm{x-y}_{l^p}^2 &= 2 \cdot 2^{\frac{2}{p}} = 2( \norm{x}^2_{l^p}+ \norm{y}^2_{l^p}) = 2 \cdot 2.
 	\end{align*}
 \end{beweis}
 All $l^p$ with $p \neq 2$ are not inner product spaces. 
@@ -181,24 +181,24 @@ All $l^p$ with $p \neq 2$ are not inner product spaces.
 \begin{bemerkung}
 	Whenever a norm satisfies the parallelogram law then there exists an inner product on $V$ such that
 	\[
-		\norm{x} = \skal{x}{x}^{\frac{1}{2}}
+		\norm{x} = \skal{x}{x}^{\frac{1}{2}}.
 	\]
 \end{bemerkung}
 \begin{theorem}[The Polarization Identity]
 	Let $(V,\skal{.}{.})$ be an inner product space. Then 
 	\[
-		4 \skal{x}{y}  = \norm{x+y}^2- \norm{x-y}^2 + i \norm{x+ iy}^2 - i \norm{x - iy}^2
+		4 \skal{x}{y}  = \norm{x+y}^2- \norm{x-y}^2 + i \norm{x+ iy}^2 - i \norm{x - iy}^2.
 	\]
 \end{theorem}
 \begin{definition}
 	Let $(V, \skal{.}{.})$ be an inner product space. We say that $x,y$ in $V$ are othogonal if $\skal{x}{y} = 0$ (We write $x \perp y$). Let $M \subseteq V$
 	Define the orthogonal complement
 	\[
-		M^{\perp} = \set[x \in V]{x \perp y \text{ for any }y \in M}
+		M^{\perp} = \set[x \in V]{x \perp y \text{ for any }y \in M}.
 	\]
 \end{definition}
 \begin{proposition}
-	If $M \subseteq V$ then $M^{\perp}$ is a subspace of $V$
+	If $M \subseteq V$ then $M^{\perp}$ is a subspace of $V$.
 \end{proposition}
 \begin{theorem}[Pythagorean formula]
 	$x,y \in V$ (inner product space). Then
@@ -220,7 +220,7 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 		\]
 		with 
 		\[
-			e_k = (0,\dots,1,0,\dots)
+			e_k = (0,\dots,1,0,\dots).
 		\]
 		$\Rightarrow$ $\set{e_k}$ is an ON-system. 
 		\item $C([-\pi,\pi])$ with
@@ -249,7 +249,7 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 	\]
 	and 
 	\[
-		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2
+		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2.
 	\]
 \end{theorem}
 \begin{beweis}
@@ -258,7 +258,7 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 		&= \skal{x}{x} - \sum_{k=1}^{n} \overline{\skal{x}{a_k}} \skal{x}{a_k} - \sum_{k=1}^{n} \skal{x}{a_k}\skal{a_k}{x} 
 		\\ & \qquad \qquad + \skal{\sum_{k=1}^{n}\skal{x}{a_k}a_k}{\sum_{k=1}^{n}\skal{x}{a_k}a_k} \\
 		& = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2 + \sum_{k=1}^{n}\abs{\skal{x}{a_k}}^2  \\
-		& = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2
+		& = \norm{x}^2 - \sum_{k=1}^{n} \abs{\skal{x}{a_k}}^2.
 	\end{align*}
 	This gives also:
 	\[
@@ -266,7 +266,7 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 	\]
 	for all $n \in \mathbb{N}$. Hence
 	\[
-		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2
+		\sum_{k=1}^{\infty} \abs{\skal{x}{a_k}}^2 \leq \norm{x}^2.
 	\]
 \end{beweis}
 
@@ -283,11 +283,11 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 		\]
 		and
 		\[
-			\norm{x}_{l^2} = \skal{x}{x}^{\frac{1}{2}}
+			\norm{x}_{l^2} = \skal{x}{x}^{\frac{1}{2}},
 		\]
 		where
 		\[
-			\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i
+			\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i.
 		\]
 		\item $(C([0,1]), \norm{.}_{\infty})$ is a Banach space but not an inner product space. Hence it is no Hilbert space.
 		\item $(C([0,1]),\skal{.}{.})$ is an inner product space $f,g \in C([0,1])$ with
@@ -324,7 +324,7 @@ Consider
 	C_F = \set[(x_1,x_2,\dots)]{\text{only finite }x_i \neq 0} 
 \]
 with \[
-	\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i
+	\skal{x}{y} = \sum_{i=1}^{\infty} x_i \bar{y}_i.
 \]
 Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 
@@ -348,7 +348,7 @@ Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 	\begin{align*}
 		\abs{\skal{x_n}{y}- \skal{x}{y}} &= \abs{\skal{x_n-x}{y}} \\
 		&\leq \underset{=\norm{x_n-x}}{\underbrace{\skal{x_n-x}{x_n-x}^{\frac{1}{2}}}} \underset{= \norm{y}}{\underbrace{\skal{y}{y}^{\frac{1}{2}}}} \\
-		&= \underset{ \to 0}{\underbrace{x_n-x}} \norm{y} \to 0, \qquad n \to \infty
+		&= \underset{ \to 0}{\underbrace{x_n-x}} \norm{y} \to 0, \qquad n \to \infty.
 	\end{align*}
 	Hence $\skal{x_n}{y} \to \skal{x}{y}$.
 \end{beweis}
@@ -358,7 +358,7 @@ Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 	Take $H=l^2$ and 
 	\begin{align*}
 		x_n &= e_n = (0, \dots,1,0,\dots) \\
-		y &= (y_1,y_2,\dots) \in l^2 
+		y &= (y_1,y_2,\dots) \in l^2.
 	\end{align*}
 	We have for all $y \in H$
 	\[
@@ -385,11 +385,11 @@ Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 		\abs{\skal{x_n}{y_n}-\skal{x}{y}} &= \abs{\skal{x_n}{y_n}-\skal{x}{y_n} + \skal{x}{y_n} - \skal{x}{y}} \\
 		&= \abs{\skal{x_n -x}{y_n} + \skal{x}{y_n-y}} \\
 		&\leq \abs{\skal{x_n-x}{y}} + \abs{\skal{x}{y_n-y}} \\
-		&\leq \underset{\to 0}{\underbrace{\norm{x_n-x}}} \underset{< \infty}{\underbrace{\norm{y_n}}} + \underset{< \infty}{\underbrace{\norm{x}}} \underset{\to 0}{\underbrace{\norm{y_n-y}}} \to 0, \qquad  n \to \infty
+		&\leq \underset{\to 0}{\underbrace{\norm{x_n-x}}} \underset{< \infty}{\underbrace{\norm{y_n}}} + \underset{< \infty}{\underbrace{\norm{x}}} \underset{\to 0}{\underbrace{\norm{y_n-y}}} \to 0, \qquad  n \to \infty.
 	\end{align*}
 	Check $\set{\norm{y_n}}$ is bounded
 	\[
-		\norm{y_n} = \norm{y_n -y +y} \leq \underset{\norm{y_n -y}}{\underbrace{\to 0}}+ \underset{< \infty}{\underbrace{\norm{y}}} \to 0, \qquad n \to \infty
+		\norm{y_n} = \norm{y_n -y +y} \leq \underset{\norm{y_n -y}}{\underbrace{\to 0}}+ \underset{< \infty}{\underbrace{\norm{y}}} \to 0, \qquad n \to \infty.
 	\]
 \end{beweis}
 
@@ -404,18 +404,18 @@ Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 		\norm{x_n-x}^2 &= \skal{x_n -x}{x_n-x} \\
 		&= \underset{= \norm{x_n}^2}{\underbrace{\skal{x_n}{x_n}}} - \skal{x}{x_n}- \skal{x_n}{x} + \skal{x}{x} \\
 		&= \norm{x_n}^2 - \overline{\skal{x_n}{x}} - \skal{x_n}{x} + \norm{x}^2 \\
-		&\to \norm{x}^2 - \norm{x}^2 - \norm{x}^2 + \norm{x}^2 = 0
+		&\to \norm{x}^2 - \norm{x}^2 - \norm{x}^2 + \norm{x}^2 = 0.
 	\end{align*}
 \end{beweis}
 
 We have proved 
 \[
-	x_n \to x \qquad \Rightarrow \qquad \set{\norm{x_n}} \text{ is bounded}
+	x_n \to x \qquad \Rightarrow \qquad \set{\norm{x_n}} \text{ is bounded}.
 \]
 
 \begin{theorem}
 	\[
-		x_n \rightharpoonup x \qquad \Rightarrow \qquad \sup_{n \in \mathbb{N}}\norm{x_n} < \infty
+		x_n \rightharpoonup x \qquad \Rightarrow \qquad \sup_{n \in \mathbb{N}}\norm{x_n} < \infty.
 	\]
 \end{theorem}
 \begin{beweis}
@@ -427,13 +427,13 @@ We have proved
 		\item $f_n$ is a linear functional for every $n \in \mathbb{N}$.
 		\item $\forall\, n \in \mathbb{N}$ $f_n$ is a bounded ($\Leftrightarrow$ continuous) linear functional as if 
 		\[
-			y_k \stackrel{k \to \infty}{\to }y \qquad \Rightarrow \qquad f_n(y_k) = \skal{y_k}{x_n} \to \skal{y}{x_n} = f_n(y), \qquad k \to \infty
+			y_k \stackrel{k \to \infty}{\to }y \qquad \Rightarrow \qquad f_n(y_k) = \skal{y_k}{x_n} \to \skal{y}{x_n} = f_n(y), \qquad k \to \infty.
 		\]
 		\item $f_n(y) \to \skal{y}{x}$. \\
 		$\set{f_n(y)}_n$ is a convergent sequence in $\mathbb{C}$ and hence bounded for all $y \in H$. \\
 		Hence it exists $M_y$ such that 
 		\[
-			\abs{f_n(y)} \leq M_y
+			\abs{f_n(y)} \leq M_y.
 		\]
 		By Banach-Steinhaus-Theorem it holds
 		\[
@@ -441,11 +441,11 @@ We have proved
 		\]
 		We are done if we proof that $\norm{f_n} = \norm{x_n}$.
 		\[
-			\abs{f_n(y)}= \abs{\skal{y}{x_n}} \leq \norm{y} \norm{x_n}, \qquad \forall\, y \in H
+			\abs{f_n(y)}= \abs{\skal{y}{x_n}} \leq \norm{y} \norm{x_n}, \qquad \forall\, y \in H.
 		\]
 		Hence 
 		\[
-			\norm{f_n} \leq \norm{x_n} \qquad \qquad (1)
+			\norm{f_n} \leq \norm{x_n} \qquad \qquad (1).
 		\]
 		On the other Hand we have
 		\[
@@ -464,7 +464,7 @@ We have proved
 
 Remember Linear Algebra. Take $\mathbb{R}^n$ and a subspace $M \subseteq \mathbb{R}^n$ 
 \[
-	\Rightarrow \qquad \forall\, x \in \mathbb{R}^n \qquad x = z + y, \qquad \text{where }z \in M, y \in M^{\perp}
+	\Rightarrow \qquad \forall\, x \in \mathbb{R}^n \qquad x = z + y, \qquad \text{where }z \in M, y \in M^{\perp}.
 \]
 This can be done in a unique way
 \begin{align*}
@@ -473,7 +473,7 @@ This can be done in a unique way
 \end{align*}
 and
 \[
-	z = \text{proj}_{M^{\perp}}x, \qquad \qquad \norm{x - \text{proj}_Mx} = \min_{y \in M}\norm{x-y}
+	z = \text{proj}_{M^{\perp}}x, \qquad \qquad \norm{x - \text{proj}_Mx} = \min_{y \in M}\norm{x-y}.
 \]
 
 \minisec{General Hilbert space case}
@@ -481,21 +481,21 @@ and
 \begin{proposition}
 	$M \subseteq H$, then $M^{\perp}$ is a closed subspace and
 	\[
-		\left( M^{\perp} \right)^{\perp} = \overline{\spn M}
+		\left( M^{\perp} \right)^{\perp} = \overline{\spn M}.
 	\]
 \end{proposition}
 
 \begin{satz}
 	$H$ Hilbert space and $M$-closed subspace of $H$ and $x \in H$. Then there exists a unique $z \in M$ such that
 	\[
-		\norm{x-z} = \dist(x,M) := \inf_{y \in M} \norm{x-y}
+		\norm{x-z} = \dist(x,M) := \inf_{y \in M} \norm{x-y}.
 	\]
-	($z$ analog of the $\text{proj}_Mx$ in the other case)
+	($z$ analog of the $\text{proj}_Mx$ in the other case).
 \end{satz}
 
 \begin{proposition}
 	Taking $z \in M$ from the previous proposition. We have $x - z \in M^{\perp}$, i.e.
 	\[
-		x = \underset{\in M}{\underbrace{z}} + \underset{\in M^{\perp}}{\underbrace{(x - z)}}
+		x = \underset{\in M}{\underbrace{z}} + \underset{\in M^{\perp}}{\underbrace{(x - z)}}.
 	\]
 \end{proposition}

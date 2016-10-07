@@ -5,9 +5,9 @@
 $(E,\skal{.}{.})$ Hilbert space and $(x_n)_{n=1}^{\infty}$ ON-basis and $(\lambda_n)_{n=1}^{\infty}$ sequence of complex numbers.
 Set 
 \[
-	A(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n}x_n
+	A(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n}x_n.
 \]
-We have 
+We have: 
 \begin{itemize}
 	\item $A: E \to E$ if $(\lambda_n)_{n=1}^{\infty} \in l^{\infty}$ \\
 	if $(\lambda_n)_{n=1}^{\infty}$ is not bounded, there exists a subsequence $(\lambda_{n_k})_{k \in \mathbb{N}}$ such that
@@ -16,50 +16,50 @@ We have
 	\] 
 	Set 
 	\[
-		x = \sum_{k=1}^{\infty}\frac{1}{k}x_{n_k}
+		x = \sum_{k=1}^{\infty}\frac{1}{k}x_{n_k}.
 	\]
 	Clearly $x \in E$ since $\left( \frac{1}{k} \right)_{k=1}^{\infty} \in l^{\infty}$. But
 	\[
 		T(x) = \sum_{k=1}^{\infty} \lambda_{n_k} \frac{1}{k} x_{n_k} \not \in E
 	\]
-	since $\left( \lambda_{n_k} \cdot \frac{1}{k} \right)_{k=1}^{\infty} \not \in l^2$ \\
+	since $\left( \lambda_{n_k} \cdot \frac{1}{k} \right)_{k=1}^{\infty} \not \in l^2$. \\
 	Note
 	\[
-		A \in B(E,E) \qquad \Leftrightarrow \qquad (\lambda_n)_{n=1}^{\infty} \in l^{\infty}.
+		A \in B(E,E) \qquad \Leftrightarrow \qquad (\lambda_n)_{n=1}^{\infty} \in l^{\infty}
 	\]
-	and $\norm{A} = \sup_{n} \abs{\lambda_n}$
+	and $\norm{A} = \sup_{n} \abs{\lambda_n}$.
 	\item $A \in K(E,E)$ iff $\lambda_n \to 0$ for $n \to \infty$.
-	\item $A$ is self adjoint iff $\lambda_n \in \mathbb{R}$ for all $n \in \mathbb{N}$
+	\item $A$ is self adjoint iff $\lambda_n \in \mathbb{R}$ for all $n \in \mathbb{N}$.
 \end{itemize}
 \minisec{Basis facts:}
-Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then
+Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then:
 \begin{itemize}
 	\item If $A$ is self-adjoint we have
 	\[
-		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}
+		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
 	\]
 	\item If $A$ is self-adjoint it follows
 	\[
-		\skal{A(x)}{x} \in \mathbb{R}, \qquad \forall\, x \in E.
+		\skal{A(x)}{x} \in \mathbb{R}, \qquad \forall\, x \in E
 	\]
 	since
 	\begin{align*}
-		\skal{A(x)}{x} = \skal{x}{A^*(x)} \stackrel{\text{self-adjoint}}{=} \skal{x}{A(x)} = \overline{\skal{A(x)}{x}}
+		\skal{A(x)}{x} = \skal{x}{A^*(x)} \stackrel{\text{self-adjoint}}{=} \skal{x}{A(x)} = \overline{\skal{A(x)}{x}}.
 	\end{align*} 
-	\item $K(E,E)$ (Set of all compact linear operators) closed subspace in $(B(E,E),\norm{.}_{E \to E})$
+	\item $K(E,E)$ (Set of all compact linear operators) closed subspace in $(B(E,E),\norm{.}_{E \to E})$.
 	\item $A \in K(E,E)$ and $x_n \rightharpoonup x$ in $E$. Then
 	\[
 		A(x_n) \to A(x), \qquad \text{in }E.
 	\]
 	\item $A \in K(E,E)$ and $B \in B(E,E)$. Then
 	\begin{itemize}
-		\item $AB, BA \in K(E,E)$
-		\item $A^* \in K(E,E)$
+		\item $AB, BA \in K(E,E)$,
+		\item $A^* \in K(E,E)$,
 		\item $\mathcal{R}(B)^{\perp} = \mathcal{N}(B^*)$ \\
-		$\overline{\mathcal{R}(B)} = \mathcal{N}(B^*)^{\perp}$
+		$\overline{\mathcal{R}(B)} = \mathcal{N}(B^*)^{\perp}$,
 		\item $\mathcal{R}(I-A)$ is a closed subspace in $E$.
 	\end{itemize}
-	\item $E = \mathcal{R}(I-A) \oplus \mathcal{R}(I-A)^{\perp} = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*)$
+	\item $E = \mathcal{R}(I-A) \oplus \mathcal{R}(I-A)^{\perp} = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*)$.
 	\item For any $A \in K(E,E)$
 	\[
 		\dim(\mathcal{N}(I-A)) = \dim(\set[x \in E]{x-A(x)=0}) < \infty
@@ -70,7 +70,7 @@ Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then
 	\]
 	since for $y \in \overline{\spn\set[x_n]{n=1,2,\dots}}$ then
 	\[
-		\norm{y}^2 = \sum_{n=1}^{\infty} \abs{\skal{x_n}{y}}^2 < \infty
+		\norm{y}^2 = \sum_{n=1}^{\infty} \abs{\skal{x_n}{y}}^2 < \infty.
 	\]
 	$A \in K(E,E)$ implies that $A(x_n) \to A(0)=0$ in $E$. But
 	\[
@@ -80,11 +80,11 @@ Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then
 	Conclusion: $\dim(I-A) < \infty$.
 \end{itemize}
 From above we have for $A \in K(E,E)$ \[
-	E = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*)
+	E = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*).
 \]
 Consider the equation
 \[
-	x = A(x)+ y \qquad \qquad (1)
+	x = A(x)+ y \qquad \qquad (1).
 \]
 (1) has a solution provided by $y \in \mathcal{R}(I-A)$. That is the case if $y \perp z$ for all $z \in \mathcal{N}(I-A^*)$. \\
 Since $\dim(\mathcal{N}(I-A^*)) < \infty$, this is just finitely many conditions.
@@ -106,11 +106,11 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\item[(1) $\Rightarrow$ $ \lnot$ (2):] We want to show that there are no non-trivial solutions for $x = A(x)$. \\
 		Assume that there exists a non-trivial solution $x_1 \in E$ to $x = A(x)$, i.e.
 		\[
-			(I-A)(x_1)=0, \qquad \text{with }x_1 \neq 0
+			(I-A)(x_1)=0, \qquad \text{with }x_1 \neq 0.
 		\]
 		If $(1)$ holds true there exists a $x_2 \in E$ such that
 		\[
-			(I-A)(x_2) = x_1 \neq 0
+			(I-A)(x_2) = x_1 \neq 0.
 		\]
 		But
 		\[
@@ -122,19 +122,19 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\]
 		which implies
 		\[
-			(I-A)^2(x_3) = (I-A)(x_2) = x_1 \neq 0
+			(I-A)^2(x_3) = (I-A)(x_2) = x_1 \neq 0.
 		\]
 		But once again
 		\[
-			(I-A)^3(x_3)=0
+			(I-A)^3(x_3)=0.
 		\]
 		Proceed inductively gives us a sequence $(x_k)_{k=1}^{\infty}$ such that
 		\[
-			(I-A)^k(x_k) =0, \qquad \text{but }(I-A)^{k-1}(x_k) \neq 0
+			(I-A)^k(x_k) =0, \qquad \text{but }(I-A)^{k-1}(x_k) \neq 0.
 		\]
 		We obtain
 		\[
-			\mathcal{N}(I-A) \subsetneq \mathcal{N}((I-A)^2) \subsetneq \mathcal{N}((I-A)^3) \subsetneq \dots
+			\mathcal{N}(I-A) \subsetneq \mathcal{N}((I-A)^2) \subsetneq \mathcal{N}((I-A)^3) \subsetneq \dots.
 		\]
 		This is a sequence of proper closed subspaces.  \\
 		Apply now Riesz-Lemma: \\
@@ -143,7 +143,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\textbf{Claim:} \text{    }$\norm{A(y_n)- A(y_m)} \geq \frac{1}{2}$ for all $n >m$. \\
 		\begin{align*}
 			\norm{A(y_m)- A(y_n)} &= \norm{\underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{(I-A)(y_n)}} - y_n + \underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{A(y_m)}}} \\
-			&=  \norm{y_n - \underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{((I-A)(y_n) + A(y_m))}}} \geq \frac{1}{2}
+			&=  \norm{y_n - \underset{\in \mathcal{N}((I-A)^{n-1})}{\underbrace{((I-A)(y_n) + A(y_m))}}} \geq \frac{1}{2}.
 		\end{align*}
 		So $(A(y_n))_{n=1}^{\infty}$ can not converge in $E$. But $A$ is compact and $\norm{y_n}=1$ for all $n$. This is a contradiction. \\
 		Conclusion: There is no non-trivial solution of $A(x)=x$.
@@ -162,19 +162,19 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\[
 			E = \mathcal{R}(I-A) \oplus \mathcal{N}((I-A^*) = \mathcal{R}(I-A).
 		\]
-		Conclusion: $x = A(x) + y$ is solvable for all $y \in E$
+		Conclusion: $x = A(x) + y$ is solvable for all $y \in E$.
 	\end{description}
 \end{beweis}
 
 \begin{beispiel}
 	$L^2([0,1])$, $k \in C([0,1] \times [0,1])$ and
 	\[
-		A(f)(x) = \int_{0}^{1}k(x,y)f(y) \,\mathrm{d}y , \qquad x \in [0,1]
+		A(f)(x) = \int_{0}^{1}k(x,y)f(y) \,\mathrm{d}y , \qquad x \in [0,1].
 	\]
 	Then
 	\begin{itemize}
-		\item $A \in B(L^2,L^2)$ with $\norm{A}_{L^2 \to L^2} \leq \norm{k}_{L^2([0,1] \times [0,1])}$
-		\item $A$ self-adjoint if $k(x,y) = \overline{k(y,x)}$ for all $x,y \in [0,1]$.
+		\item $A \in B(L^2,L^2)$ with $\norm{A}_{L^2 \to L^2} \leq \norm{k}_{L^2([0,1] \times [0,1])}$,
+		\item $A$ self-adjoint if $k(x,y) = \overline{k(y,x)}$ for all $x,y \in [0,1]$,
 		\item $A \in K(E,E)$ (by approximation by finite rank operators). 
 	\end{itemize}
 \end{beispiel}
@@ -217,7 +217,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 	\begin{enumerate}
 		\item $\abs{\lambda} \leq \norm{A}$ since
 		\[
-			\abs{\lambda} \norm{x} =\norm{\lambda x} = \norm{A(x)} \leq \norm{A} \cdot \norm{x}
+			\abs{\lambda} \norm{x} =\norm{\lambda x} = \norm{A(x)} \leq \norm{A} \cdot \norm{x}.
 		\]
 		\item $A$ self-adjoint and $\lambda$ eigenvalue. Then
 		\[
@@ -225,10 +225,10 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\]
 		since
 		\begin{align*}
-			\lambda \skal{x}{x} &= \skal{\lambda x}{x} \\ &= \skal{A(x)}{x} \\ &= \skal{x}{A^*(x)} \\ &= \skal{x}{A(x)} \\ &= \skal{x}{\lambda x} \\ & = \bar{\lambda} \skal{x}{x}
+			\lambda \skal{x}{x} &= \skal{\lambda x}{x} \\ &= \skal{A(x)}{x} \\ &= \skal{x}{A^*(x)} \\ &= \skal{x}{A(x)} \\ &= \skal{x}{\lambda x} \\ & = \bar{\lambda} \skal{x}{x}.
 		\end{align*}
 		So \[
-			\lambda = \bar{\lambda}, \qquad \Rightarrow \lambda \in \mathbb{R}
+			\lambda = \bar{\lambda}, \qquad \Rightarrow \lambda \in \mathbb{R}.
 		\]
 		\item $A$ self-adjoint, $A(x) = \lambda x$ and $A(y) = \mu y$, where $x,y \neq 0$ and $\lambda \neq  \mu $.
 		\[
@@ -236,7 +236,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\]
 		since
 		\[
-			\lambda \skal{x}{y} = \dots = \bar{\mu} \skal{x}{y}
+			\lambda \skal{x}{y} = \dots = \bar{\mu} \skal{x}{y}.
 		\]
 		So
 		\[
@@ -260,7 +260,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 	Assume $A \neq 0$. \\
 	$A$ self-adjoint implies that 
 	\[
-		\norm{A} = \sum_{\norm{x}=1} \abs{\skal{A(x)}{x}}
+		\norm{A} = \sum_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
 	\]
 	Also self-adjoint implies that for all $x \in E$ we have
 	\[
@@ -318,7 +318,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	For $x \in Q_1$ we have $A(x) \in Q_1$ since for $x \in Q_1$ we have
 	\begin{align*}
 		\skal{A(x)}{u_1} &= \skal{x}{A^*(u_1)}  \\ &= \skal{x}{A(u_1)} \\&= \skal{x}{\underset{\in  \mathbb{R}}{\underbrace{\lambda_1}} u_1} \\
-		&= \lambda_1 \skal{x}{u_1} = 0 
+		&= \lambda_1 \skal{x}{u_1} = 0.
 	\end{align*}
 	Now
 	\[
@@ -326,7 +326,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	\]
 	is compact and also self-adjoint. By proposition above there exists an eigenvalue $\lambda_2$ of $A  \big|_{Q_1}^{}$ and a corresponding eigenvector $u_2$ with $\norm{u_2}=1$ where
 	\[
-		\abs{\lambda_2} = \norm{A  \big|_{Q_1}^{}} \leq \norm{A} = \abs{ \lambda_1}
+		\abs{\lambda_2} = \norm{A  \big|_{Q_1}^{}} \leq \norm{A} = \abs{ \lambda_1}.
 	\]
 	Here $A(u_2) = \lambda_2 u_2$ so $\lambda_2$ is an eigenvalue of $A$. Set $Q_2 = \set{u_1,u_2}^{\perp}$. $Q_2$ is a closed subspace of $E$ and we have
 	\[
@@ -335,7 +335,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	since $x \in Q_2$ we have
 	\begin{align*}
 		\skal{A(x)}{u_1} &= \skal{x}{A(u_1)} = \skal{x}{\lambda_1 u_1} = 0 \\
-		\skal{A(x)}{u_2} &= \skal{x}{A(u_2)} = \skal{x}{\lambda_2 u_2} = 0
+		\skal{A(x)}{u_2} &= \skal{x}{A(u_2)} = \skal{x}{\lambda_2 u_2} = 0.
 	\end{align*}
 	Proceed inductively.
 	\begin{description}
@@ -355,14 +355,14 @@ We are now going to prove the Hilbert-Schmidt theorem:
 		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero EW $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ und $w_n \to 0$ in $E$ since 
 		$(u_n)_{n=1}^{\infty}$ is ON-sequence. \\
 		Then this implies $A(u_n) \to 0$ in $E$. So \[
-			\abs{\lambda_n} = \norm{\lambda_n u_n} = \norm{A(u_n)} \to 0, \qquad n \to \infty
+			\abs{\lambda_n} = \norm{\lambda_n u_n} = \norm{A(u_n)} \to 0, \qquad n \to \infty.
 		\]
 		Hence \[
-			\lim_{n \to \infty} \lambda_n = 0
+			\lim_{n \to \infty} \lambda_n = 0.
 		\]
 		Set 
 		\[
-			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{n}\alpha u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}
+			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{n}\alpha u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}.
 		\]
 		S is a closed subspace of $E$. \\ We have $E = S \oplus S^{\perp}$ where $S^{\perp} \subseteq Q_k = \set{u_1,\dots,u_k}^{\perp}$ for all $k \in \mathbb{N}$.
 		For $x \in E$ we have
@@ -375,7 +375,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 			\abs{\skal{A(v)}{v}} &= \norm{v}^2 \abs{ \skal{A(w)}{w}} \\
 			&\leq \norm{w}^2 \underset{= \norm{A  \big|_{Q_k}^{}} = \abs{\lambda_{k+1}} \to 0}{\underbrace{\sup_{ \substack{\norm{z}=1 \\ z \in Q_k}} \abs{\skal{A(z)}{z}}}}
 		\end{align*}
-		\textbf{Claim:} \text{    }$A  \big|_{S^{\perp}}^{} = 0$ and hence $v \in S^{\perp}$ implies $A(v) = 0$
+		\textbf{Claim:} \text{    }$A  \big|_{S^{\perp}}^{} = 0$ and hence $v \in S^{\perp}$ implies $A(v) = 0$.
 	\end{description}
 \end{beweis}
 
@@ -386,7 +386,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	We have by HS-theorem an ON-sequence $(u_n)_{n=1}^{\infty}$ of eigenvectors corresponding to the non-zero eigenvalues $(\lambda_n)_{n=1}^{N}$. \\
 	Set
 	\[
-		S = \overline{\spn\set{u_1,\dots,u_n, \dots}}
+		S = \overline{\spn\set{u_1,\dots,u_n, \dots}}.
 	\]
 	$E$ is seperable implies $E$ has an ON-basis $(v_n)_{n=1}^{\infty}$. By Gram-Schmidt Orthoganlization procedure we can obtain an ON-basis $(w_n)_{n=1}^{M}$ for $S^{\perp}$. Have $M$ finite or infinite. \begin{align*}
 		S &:\,u1,u_2, \dots \qquad \text{ON-basis finite or infinite} \\
@@ -394,6 +394,6 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	\end{align*}
 	Consider the ON-sequence $u_1,w_1,u_2,w_2, \dots = \tilde u_1, \tilde u_2, \dots$. This gives an ON-basis for $E$ consisting of eigenvectors to $A$. Also
 	\[
-		\lim_{n \to \infty}\tilde \lambda_n = 0
+		\lim_{n \to \infty}\tilde \lambda_n = 0.
 	\]
 \end{beweis}

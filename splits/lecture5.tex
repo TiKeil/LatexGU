@@ -11,15 +11,15 @@
 	\textbf{Claim:} \text{    }     There exists an unique solution $f \in C([0,1])$ that $(*)$. \\
 	Idea:
 	\[
-		f(x) = f(x) - 5 \int_{0}^{1-x} \min(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1]
+		f(x) = f(x) - 5 \int_{0}^{1-x} \min(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1].
 	\]
-	Set für $x \in [0,1]$ 
+	Set for $x \in [0,1]$ 
 	\[
-			\tilde T(f)(x) = RHS(x)
+			\tilde T(f)(x) = RHS(x).
 	\]
 	To find a solution to $(*)$ is the same finding $f \in C([0,1])$ such that 
 	\[
-		f = \tilde T(f)
+		f = \tilde T(f).
 	\]
 	Clearly $ \tilde T : C([0,1]) \to C([0,1])$. (continual later).
 \end{beispiel}
@@ -31,7 +31,7 @@
 	\]
 	Then there exists a unique $ \bar{x} \in E$ such that 
 	\[
-		\bar{x} = T( \bar{ x})
+		\bar{x} = T( \bar{ x}).
 	\]
 	($\bar{x}$ is a fixed point)
 \end{theorem}
@@ -39,12 +39,12 @@
 	\begin{description}
 		\item[Uniqueness:]Assume $T( \bar{x}) = \bar{x}$ and $T ( \tilde x) = \tilde x$. Then
 		\[
-			\underset{\geq 0}{\underbrace{\norm{ \bar{ x} - \tilde x }}} = \norm{T( \bar{x})- T( \tilde x)} \leq \underset{< 1}{\underbrace{c}} \norm{ \bar{x}- \tilde x}
+			\underset{\geq 0}{\underbrace{\norm{ \bar{ x} - \tilde x }}} = \norm{T( \bar{x})- T( \tilde x)} \leq \underset{< 1}{\underbrace{c}} \norm{ \bar{x}- \tilde x}.
 		\] 
 		Thus $\norm{\bar{x}- \tilde x} = 0$, i.e. $\bar{x} = \tilde x$.
 		\item[Existence:] Pick an arbitrary $x_0 \in E$. Set
 		\[
-			x_{n+1} = T(x_{n}), \qquad n=0,1,2,\dots
+			x_{n+1} = T(x_{n}), \qquad n=0,1,2,\dots.
 		\]
 		\textbf{Claim:} \text{    }     $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$.
 		Note:
@@ -52,14 +52,14 @@
 			\norm{x_{n+1}-x_n}  &= \norm{T(x_n)-T(x_{n-1})} \\
 			&\leq  c \norm{x_n - x_{n-1}} \\
 			&\leq \dots \\
-			&\leq  c^n \norm{x_1-x_0}, \qquad n=1,2,\dots 
+			&\leq  c^n \norm{x_1-x_0}, \qquad n=1,2,\dots.
 		\end{align*}
 		For $n>m$
 		\begin{align*}
 			\norm{x_n-x_m} &= \norm{x_n - x_{n-1}+ x_{n-1}- \dots + x_{m+1}- x_m} \\
 			&\leq \norm{x_n - x_{n-1}} + \norm{x_{n-1} - x_{n-2}} + \dots + \norm{x_{m+1}- x_m} \\
 			&\leq (c^{n-1}+ c^{n-2} + \dots c^m) \norm{x_1-x_0} \\
-			&\leq \frac{c^m}{1-c} \norm{x_1 - x_0} \to 0 \qquad \text{as }n,m \to \infty
+			&\leq \frac{c^m}{1-c} \norm{x_1 - x_0} \to 0 \qquad \text{as }n,m \to \infty.
 		\end{align*}
 		Hence $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$. $(E, \norm{.})$ is a Banach space. So $(x_n)_{n=1}^{\infty}$ converges in $(E,\norm{.})$. Call the limit $\bar{x}$. \\
 		\textbf{Claim:} \text{    }     $\bar{x}$ is a fixed point for $T$. 
@@ -77,11 +77,11 @@
 		\begin{align*}
 			\norm{\bar{x}-z} &= \norm{T(\bar{x})- T(z) + T(z) -z} \\
 			&\leq \norm{T(\bar{x})-T(z)} + \norm{T(z) -z} \\
-			&\leq c \norm{\bar{x}-z} + \norm{T(z) - z} 
+			&\leq c \norm{\bar{x}-z} + \norm{T(z) - z}.
 		\end{align*}
 		Hence 
 		\[
-			\norm{\bar{x}-z} \leq \frac{1}{1-c}\norm{T(z)-z}
+			\norm{\bar{x}-z} \leq \frac{1}{1-c}\norm{T(z)-z}.
 		\]
 	\end{enumerate}
 \end{bemerkung}
@@ -93,10 +93,10 @@
 		&= \abs{5 \int_{0}^{1-x} \min(x,y)(f_2(y)-f_1(y)) \,\mathrm{d}y} \\
 		&\leq 5 \int_{0}^{1-x} \min(x,y) \underset{\leq \norm{f_2-f_1}}{\underbrace{\abs{f_2(y)-f_1(y)}}} \,\mathrm{d}y \\
 		&\leq 5 \underset{0 \leq  \dots \leq \frac{1}{6}}{\underbrace{\int_{0}^{1-x} \min(x,y)\,\mathrm{d}y}} \norm{f_2-f_1} \\
-		&\leq \frac{5}{6} \norm{f_2-f_1} 
+		&\leq \frac{5}{6} \norm{f_2-f_1}.
 	\end{align*}
 	Hence \[
-		\norm{\tilde T(f_1)- \tilde T(f_2)} \leq \frac{5}{6} \norm{f_1-f_2}
+		\norm{\tilde T(f_1)- \tilde T(f_2)} \leq \frac{5}{6} \norm{f_1-f_2}.
 	\]
 	We conclude that $\tilde T$ is a contraction. We can take $c = \frac{5}{6}$. By Banach's fixed point theorem $\tilde T$ has a unique fixed point. Finally $(*)$
 	has a unique solution $f \in C([0,1])$ which is the fixed point. 
@@ -108,7 +108,7 @@
 	\]
 	Then $T$ has unique fixed point $\bar{ x}$, i.e.
 	\[
-		\bar{x} = T(\bar{x}) \in F
+		\bar{x} = T(\bar{x}) \in F.
 	\]
 \end{theorem}
 \begin{beweis}
@@ -123,7 +123,7 @@
 		\begin{align*}
 			\norm{T(\bar{x})-\bar{x}} &= \norm{T(T^N(\bar{x}))- T^N(\bar{x})} \\
 			&= \norm{T^N(T(\bar{x}))- T^N(\bar{x})} \\
-			&\leq c \norm{T(\bar{x})-\bar{x}}
+			&\leq c \norm{T(\bar{x})-\bar{x}}.
  		\end{align*}
 		This gives 
 		\[
@@ -132,11 +132,11 @@
 		Existence of a fixed point for $T$ done. For the uniqueness assume $\bar{x} = T(\bar{x})$ and $\tilde x = T( \tilde x)$. Then
 	\begin{align*}
 		\bar{x} &= T( \bar{x}) = T^2(\bar{x}) = \dots = T^N(\bar{x}) \\
-		\tilde x &= T(\tilde x) = T^2(\tilde x) = \dots = T^N(\tilde x)
+		\tilde x &= T(\tilde x) = T^2(\tilde x) = \dots = T^N(\tilde x).
 	\end{align*}
 	But $T^N$ has a unique fixed point so 
 	\[
-		\bar{x} = \tilde x
+		\bar{x} = \tilde x.
 	\]
 	\end{description}
 \end{beweis}
@@ -162,7 +162,7 @@
 	\begin{description}
 		\item[Uniqueness:] Assume $\bar{x} = T(\bar{x})$ and $\tilde x = T( \tilde x)$ and $\bar{x} \neq \tilde x$ for $ \bar{x}, \tilde x \in K$. Then
 		\[
-			\norm{\bar{x} - \tilde x} = \norm{ T( \bar{ x})- \tilde x} < \norm{ \bar{x}- \tilde x}
+			\norm{\bar{x} - \tilde x} = \norm{ T( \bar{ x})- \tilde x} < \norm{ \bar{x}- \tilde x}.
 		\]
 		Contradiction because then $\bar{x} = \tilde x$.
 		\item[Existence:] To show: There exists $x \in K$ such that $x = T(x)$, i.e.
@@ -215,12 +215,12 @@
 \begin{beispiel}
 	Consider
 	\[
-		f(x) = \int_{0}^{x}k(x,y)h(y,f(y)) \,\mathrm{d}y + g(x), \qquad x \in [0,1] \qquad (*)
+		f(x) = \int_{0}^{x}k(x,y)h(y,f(y)) \,\mathrm{d}y + g(x), \qquad x \in [0,1] \qquad (*),
 	\]
 	where $g \in C([0,1])$, $k \in C([0,1] \times [0,1])$ and $h: [0,1] \times \mathbb{R} \to \mathbb{R}$ continuous and satisfies: \\
 	There exists $M>0$ such that
 	\[
-		\abs{h(x,z_1)-h(x,z_2)} \leq M \abs{z_1- z_2} \qquad \text{for all }x \in [0,1],\,z_1,z_2 \in \mathbb{R}
+		\abs{h(x,z_1)-h(x,z_2)} \leq M \abs{z_1- z_2} \qquad \text{for all }x \in [0,1],\,z_1,z_2 \in \mathbb{R}.
 	\]
 	\textbf{Claim:} \text{    }     $(*)$ has a unique solution $f \in C([0,1])$. \\ For $f \in C([0,1])$ set
 	\[
@@ -229,7 +229,7 @@
 	Here $T(f)(x) \in C([0,1])$. \\ Want to show: $T: C([0,1]) \to C([0,1])$ has a unique fixed point. \\
 	Start with the Banach space $(C([0,1]), \text{max-norm})$. Check if $T$ is a contraction in $C([0,1])$. Fix $f_1,f2 \in C([0,1])$
 	\[
-		T(f_1)(x)- T(f_2)(x) = \int_{0}^{x} k(x,y)(h(y,f_1(y))-h(y,f_2(y))) \,\mathrm{d}y
+		T(f_1)(x)- T(f_2)(x) = \int_{0}^{x} k(x,y)(h(y,f_1(y))-h(y,f_2(y))) \,\mathrm{d}y.
 	\] 
 	$k$ is continuous on the compact set $[0,1] \times [0,1]$ so 
 	\[
@@ -237,9 +237,9 @@
 	\]
 	We obtain 
 	\begin{align*}
-		\abs{(T(f_1)-T(f_2))(x)} &\leq \int_{0}^{x} \underset{\leq N}{\underbrace{\abs{k(x,y)}}}\underset{\leq M \underset{\leq \norm{f_1-f_2}}{\underbrace{f_1(y)-f_2(y)}}}{\underbrace{h(y,f_1(y))-h(y,f_2(y))}} \,\mathrm{d}y \\ & \leq \int_{0}^{x}NM \,\mathrm{d}y \norm{f_1-f_2} \\& \leq NM \norm{f_1-f_2}
+		\abs{(T(f_1)-T(f_2))(x)} &\leq \int_{0}^{x} \underset{\leq N}{\underbrace{\abs{k(x,y)}}}\underset{\leq M \underset{\leq \norm{f_1-f_2}}{\underbrace{f_1(y)-f_2(y)}}}{\underbrace{h(y,f_1(y))-h(y,f_2(y))}} \,\mathrm{d}y \\ & \leq \int_{0}^{x}NM \,\mathrm{d}y \norm{f_1-f_2} \\& \leq NM \norm{f_1-f_2}.
 		\end{align*}
-	this yields
+	This yields
 	\[
 		\norm{T(f_1)-T(f_2)} \leq NM \norm{f_1-f_2}.
 	\]
@@ -264,7 +264,7 @@
 	\begin{align*}
 		\abs{(T(f_1)-T(f_2))(x)} &\leq \int_{0}^{x} NM \abs{(f_1-f_2)(y)} \,\mathrm{d}y \\
 		&= \int_{0}^{x}NM e^{ay} \cdot \underset{\leq \norm{f_1-f_2}_a}{\underbrace{e^{-ay} \abs{(f_1-f_2)(x)}}} \,\mathrm{d}y \\
-		&\leq NM \underset{\frac{1}{a}(e^{ax}-1)}{\underbrace{\int_{0}^{x} e^{ay} \,\mathrm{d}y}} \norm{f_1-f_2}_a 
+		&\leq NM \underset{\frac{1}{a}(e^{ax}-1)}{\underbrace{\int_{0}^{x} e^{ay} \,\mathrm{d}y}} \norm{f_1-f_2}_a.
 	\end{align*}
 	So
 	\[

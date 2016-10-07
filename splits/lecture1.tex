@@ -8,31 +8,31 @@ We have
 	\begin{cases}
 		f''+f =g, &\text{ in }I = [0,1]\\
 		f(0)=1, \,f'(0)=1
-	\end{cases}
+	\end{cases},
 \]
 where $g$ is a known continous function on $I$. We will now consider different cases:
 
 \begin{enumerate}[1.]
 	\item $g=0$
 	\[
-		\Rightarrow \,f(x) = A \cos(x) + B \sin(x), x \in I
+		\Rightarrow \,f(x) = A \cos(x) + B \sin(x), x \in I,
 	\]
 	where $A,B \in \mathbb{R}$.
 	\item $g$ arbitrary. We will now introduce the Method of variation of constants. Set
 	\[
-		f(x)=A(x) \cos(x)+ B(x) \sin(x)
+		f(x)=A(x) \cos(x)+ B(x) \sin(x).
 	\]
 	Differentiate
 	\[
-		f'(x) = A'(x) \cos(x) + B'(x) \sin(x) - A(x) \sin(x) + B(x) \cos(x)
+		f'(x) = A'(x) \cos(x) + B'(x) \sin(x) - A(x) \sin(x) + B(x) \cos(x).
 	\]
-	Aussume (This is part of the method)
+	Assume (this is part of the method)
 	\[
-		A'(x)\cos(x) + B'(x) \sin(x) = 0, \qquad x \in I
+		A'(x)\cos(x) + B'(x) \sin(x) = 0, \qquad x \in I.
 	\]
 	Differentiate $f'(x)$ and get
 	\[
-		f''(x)=\underset{= -f(x)}{\underbrace{-A(x) \cos(x) - B(x) \sin(x)}} - A'(x) \sin(x) + B'(x) \cos(x)
+		f''(x)=\underset{= -f(x)}{\underbrace{-A(x) \cos(x) - B(x) \sin(x)}} - A'(x) \sin(x) + B'(x) \cos(x).
 	\]
 	We get
 	\[
@@ -44,42 +44,42 @@ where $g$ is a known continous function on $I$. We will now consider different c
 			A'(x)\cos(x) + B'(x) \sin(x) = 0, & x \in I\\
 			- A'(x) \sin(x)+ B'(x) \cos(x) = g(x), & x \in I \\
 			A(0)=1, \qquad B(0)=0 &
-		\end{cases}
+		\end{cases}.
 	\]
 	We get
 	\begin{align*}
-		A'(x) &= - g(x)\sin(x) \\
-		A(0) &= 1 \\
-		B'(x) &= g(x) \cos(x) \\
-		B(0) &=0
+		A'(x) &= - g(x)\sin(x), \\
+		A(0) &= 1, \\
+		B'(x) &= g(x) \cos(x), \\
+		B(0) &=0.
 	\end{align*}
 	This implies
 	\begin{align*}
-		A(x) &= A(0) + \int_{0}^{x} A'(t) \,\mathrm{d}t = 1 - \int_{0}^{x} g(t) \sin(t) \,\mathrm{d}t \\
-		B(x) &= B(0) + \int_{0}^{x}B'(t) \,\mathrm{d}t = 0 + \int_{0}^{x}g(t)\cos(t) \,\mathrm{d}t
+		A(x) &= A(0) + \int_{0}^{x} A'(t) \,\mathrm{d}t = 1 - \int_{0}^{x} g(t) \sin(t) \,\mathrm{d}t, \\
+		B(x) &= B(0) + \int_{0}^{x}B'(t) \,\mathrm{d}t = 0 + \int_{0}^{x}g(t)\cos(t) \,\mathrm{d}t.
 	\end{align*}
 	Hence
 	\begin{align*}
 		f(x) &= \cos(x) - \int_{0}^{x} g(t) \sin(t) \,\mathrm{d}t \cos(x) + \int_{0}^{x} g(t) \cos(t) \,\mathrm{d}t \sin(x) \\
 		&= \cos(x) + \int_{0}^{x} (\underset{=\sin(x-t)}{\underbrace{\sin(x)\cos(t)- \sin(t)\cos(x)}})g(t) \,\mathrm{d}t \\
-		&= \cos(x) + \int_{0}^{x}\sin(x-t)g(t) \,\mathrm{d}t \qquad (*)
+		&= \cos(x) + \int_{0}^{x}\sin(x-t)g(t) \,\mathrm{d}t \qquad (*).
 	\end{align*}
 	Check that $f(x)$ in $(*)$ satisfies the PDE.
 	\minisec{special case:}
 	Assume for $x \in I$
 	\[
-		g(x) = k(x)f(x)
+		g(x) = k(x)f(x).
 	\]
 	Here $k$ is a known continous function on $I$. Insert this in $(*)$. We obtain
 	\[
-		f(x) = \cos(x) + \int_{0}^{x} \sin(x-t)k(t)f(t) \,\mathrm{d}t, \qquad x \in I \qquad (**)
+		f(x) = \cos(x) + \int_{0}^{x} \sin(x-t)k(t)f(t) \,\mathrm{d}t, \qquad x \in I \qquad (**).
 	\]
 	Observe that $f$ appears both in LHS and RHS. $(**)$ is a reformulation of the PDE with $g=kf$. Pick a $\underset{\in C(I)}{\underbrace{\text{continous function in $I$}}}$. call it $f_0$. Set
 	\begin{align*}
-		f_1(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_0(t) \,\mathrm{d}t \\
-		f_2(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_1(t) \,\mathrm{d}t \\
+		f_1(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_0(t) \,\mathrm{d}t, \\
+		f_2(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_1(t) \,\mathrm{d}t, \\
 		\vdots &\qquad \qquad  \vdots \\
-		f_{n+1}(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_n(t) \,\mathrm{d}t, \qquad n=1,2,3, \dots \\
+		f_{n+1}(x) &= \cos(x) + \int_{0}^{x}\sin(x-t)k(t)f_n(t) \,\mathrm{d}t, \qquad n=1,2,3, \dots. \\
 	\end{align*}
 	\minisec{Hope:} $f_n$ tends to some continous function $f$ on $I$, denoted $f_n \to f$. 'Tends to' has to be more precis! 
 	\begin{align*}
@@ -92,27 +92,27 @@ where $g$ is a known continous function on $I$. We will now consider different c
 		\begin{cases}
 			u(x)&=\cos(x)\\
 			kv(x)&= \int_{0}^{x} \sin(x-t)k(t)v(t) \,\mathrm{d}t
-		\end{cases}
+		\end{cases}.
 	\]
 	We have $f_0 \in C(I)$, $f_{n+1}=u + k f_n$ for $n=0,1,2, \dots$ (!) \\
 	Facts from previous calculus classes:
 	\begin{definition*}[Sequenze of continous functions]
 		\[
-			v_n \in C(I), \qquad n=1,2,\dots
+			v_n \in C(I), \qquad n=1,2,\dots.
 		\]
 		We say that $(v_n)_{n=1}^{\infty}$ converges uniformly in $I$ if
 		\[
-			\max_{x \in I} \abs{v_n(x)-v_m(x)} \to 0 , \qquad n,m \to \infty
+			\max_{x \in I} \abs{v_n(x)-v_m(x)} \to 0 , \qquad n,m \to \infty,
 		\]
 		i.e.
 		\[
-			\forall\, \varepsilon >0 \exists\, N: \forall\, n,m \geq N: \, \max_{x \in I}\abs{v_n(x)-v_m(x)}< \varepsilon
+			\forall\, \varepsilon >0 \exists\, N: \forall\, n,m \geq N: \, \max_{x \in I}\abs{v_n(x)-v_m(x)}< \varepsilon.
 		\]
 	\end{definition*}
 	\begin{lemma*}
 		Suppose that $(v_n)_{n=1}^{\infty}$ converges uniformly on $I$. then there exists $v \in C(I)$ such that
 		\[
-			 \max_{x \in I}\abs{v_m(x)-v(x)} \to 0 \qquad \text{as }m \to \infty
+			 \max_{x \in I}\abs{v_m(x)-v(x)} \to 0 \qquad \text{as }m \to \infty.
 		\]
 	\end{lemma*}
 	Back to (!): \\
@@ -122,7 +122,7 @@ where $g$ is a known continous function on $I$. We will now consider different c
 	\]
 	and
 	\[
-		k^{n+1}v = k(k^nv), \qquad n=1,2,\dots
+		k^{n+1}v = k(k^nv), \qquad n=1,2,\dots.
 	\]
 	We have 
 	\begin{align*}
@@ -131,7 +131,7 @@ where $g$ is a known continous function on $I$. We will now consider different c
 	\end{align*}
 	and so on. Note that
 	\[
-		k(v+w)=kv+kw
+		k(v+w)=kv+kw.
 	\]
 	Then 
 	\begin{align*}
@@ -140,15 +140,15 @@ where $g$ is a known continous function on $I$. We will now consider different c
 	\end{align*}
 	and in general for $n=1,2,\dots$
 	\[
-		f_n = ku + \dots + k^{n-1}u + k^n f_0, \qquad n=1,2,\dots
+		f_n = ku + \dots + k^{n-1}u + k^n f_0, \qquad n=1,2,\dots.
 	\]
 	Assume $n>m$ then
 	\[
-		f_n-f_m = k^mu + \dots + k^{n-1}u + k^nf_0 - k^mf_0
+		f_n-f_m = k^mu + \dots + k^{n-1}u + k^nf_0 - k^mf_0.
 	\]
 	Set for $v \in C(I)$
 	\[
-		\norm{v} = \max_{x \in I}\abs{v(x)}
+		\norm{v} = \max_{x \in I}\abs{v(x)}.
 	\]
 	Note
 	\[
@@ -174,48 +174,48 @@ where $g$ is a known continous function on $I$. We will now consider different c
 	since
 	\begin{align*}
 		\sum_{l=1}^{\infty}\norm{k^lu} &< \infty \qquad \qquad (u(x)=\cos(x)) \\
-		\sum_{l=1}^{\infty}\norm{k^lf_0} &< \infty \qquad \qquad (f_0 \in C(I))
+		\sum_{l=1}^{\infty}\norm{k^lf_0} &< \infty \qquad \qquad (f_0 \in C(I)).
 	\end{align*}
-	conclusion: $(f_n)_{n=1}^{\infty}$ converges uniformly on $I$. By lemma above there exists $f \in C(I)$ such that
+	Conclusion: $(f_n)_{n=1}^{\infty}$ converges uniformly on $I$. By lemma above there exists $f \in C(I)$ such that
 	\[
-		\max_{x \in I}\abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty
+		\max_{x \in I}\abs{f_n(x)-f(x)} \to 0, \qquad n \to \infty,
 	\]
 	i.e.
 	\[
-		\norm{f_n -f} \to 0, \qquad n \to \infty
+		\norm{f_n -f} \to 0, \qquad n \to \infty.
 	\]
 	'Back hope':
 	$f_n$ tends to $f$, denoted $f_n \to f$ shall be interpretated as
 	\[
-		\norm{f_n -f} \to 0, \qquad n \to \infty
+		\norm{f_n -f} \to 0, \qquad n \to \infty.
 	\]
 	Remember
 	\[
-		f_{n+1}(x) = u(x) + k f_n(x) \to ?
+		f_{n+1}(x) = u(x) + k f_n(x) \to ?.
 	\]
 	For $x \in I$ there is
 	\begin{align*}
 		\abs{k f_n(x)- kf(x)} &= \abs{ \int_{0}^{x} \sin(x-t)k(t)f_n(t) \,\mathrm{d}t- \int_{0}^{x}\sin(x-t)k(t)f(t) \,\mathrm{d}t} \\
 		&\leq \int_{0}^{x}\abs{\sin(x-t)k(t)}\underset{\leq \norm{f_n-f}}{\underbrace{\abs{f_n(t)-f(t)}}} \,\mathrm{d}t \\
-		&\leq \int_{0}^{x}\abs{\sin(x-t)k(t)} \,\mathrm{d}t \norm{f_n-f}
+		&\leq \int_{0}^{x}\abs{\sin(x-t)k(t)} \,\mathrm{d}t \norm{f_n-f}.
 	\end{align*}
 	In particular
 	\begin{align*}
 		\norm{k f_n- kf} &\leq \max_{x \in I}\int_{0}^{x} \underset{\leq 1}{\underbrace{\abs{\sin(x-t)}}} \underset{\max_{t \in I}\abs{k(t)}< \infty}{\underbrace{\abs{k(t)}}} \,\mathrm{d}t \norm{f_n -f} \\
-		&\leq \norm{k} \norm{f_n-f}
+		&\leq \norm{k} \norm{f_n-f}.
 	\end{align*}
 	We have, provided $(***)$ holds, shown
 	\begin{align*}
 		f_{n+1} &= u + k f_n \\
 		\downarrow & \\
-		f &= u + kf
+		f &= u + kf.
 	\end{align*}
 	Let us try to prove $(***)$. For $v \in C(I)$ arbitrary and for $x \in I$
 	\begin{align*}
 		\norm{kv(x)} &= \abs{\int_{0}^{x}\sin(x-t)k(t)v(t) \,\mathrm{d}t} \\
 		&\leq \int_{0}^{x}\underset{\leq 1}{\underbrace{\abs{\sin(x-t)}}}\underset{\leq \norm{k}}{\underbrace{\abs{k(t)}}}\abs{v(t)} \,\mathrm{d}t \\
 		&\leq \int_{0}^{x}\underset{\leq \norm{v}}{\underbrace{\abs{v(t)}}} \,\mathrm{d}t \norm{k} \\
-		&\leq \norm{k} \norm{v}x
+		&\leq \norm{k} \norm{v}x.
 	\end{align*}
 	In particular
 	\[
@@ -225,28 +225,28 @@ where $g$ is a known continous function on $I$. We will now consider different c
 	\begin{align*}
 		\abs{k^2v(x)} &\leq \int_{0}^{x} \abs{kv(t)} \,\mathrm{d}t \norm{k} \\
 		&\leq \int_{0}^{x}\norm{k}\norm{v}t \,\mathrm{d}t \cdot \norm{k} \\
-		&= \norm{k}^2 \norm{v} \frac{x^2}{2}
+		&= \norm{k}^2 \norm{v} \frac{x^2}{2}.
 	\end{align*}
 	In particular
 	\[
-		\norm{k^2v} \leq \norm{k}^2 \norm{v} \frac{1}{2}
+		\norm{k^2v} \leq \norm{k}^2 \norm{v} \frac{1}{2}.
 	\]
 	By induction we get
 	\begin{align*}
 		\abs{k^n v(x)} &\leq \norm{k}^n \norm{v} \frac{x^m}{m!} \qquad x \in I \\
-		\norm{k^n v} &\leq  \norm{k}^n \norm{v} \frac{1}{n!}
+		\norm{k^n v} &\leq  \norm{k}^n \norm{v} \frac{1}{n!}.
 	\end{align*}
 	So 
 	\begin{align*}
 		\sum_{l=1}^{\infty}\norm{k^lv} &\leq \sum_{l=1}^{\infty}\norm{k}^l \norm{v} \frac{1}{l!} \\
 		&= \norm{v} \sum_{l=1}^{\infty} \frac{\norm{k}^l}{l!} \\
-		&\leq \norm{v} e^{\norm{k}} < \infty
+		&\leq \norm{v} e^{\norm{k}} < \infty.
 	\end{align*}
-	consider Taylor expansion.
+	Consider Taylor expansion.
 	$\Rightarrow $ $(***)$ holds true. \\
 	We have now shown that $f = u+kf$ where $u(x) = \cos(x)$ and
 	\[
-		kv = \int_{0}^{x}\sin(x-t)k(t)v(t) \,\mathrm{d}t
+		kv = \int_{0}^{x}\sin(x-t)k(t)v(t) \,\mathrm{d}t.
 	\]
 	$x \in I$ for $v \in C(I)$, has a solution $f \in C(I)$. \\
 	\minisec{Question:} Is the solution unique? \\
@@ -255,7 +255,7 @@ where $g$ is a known continous function on $I$. We will now consider different c
 		v = f- \tilde f \in C(I)
 	\]
 	\begin{align*}
-		\Rightarrow v &= (u+kf) - (u+ k \tilde f) \\ &= kf - k \tilde f \\ &= k(f- \tilde f) \\ &= kv
+		\Rightarrow v &= (u+kf) - (u+ k \tilde f) \\ &= kf - k \tilde f \\ &= k(f- \tilde f) \\ &= kv.
 	\end{align*}
 	We have $v = kv$, implies that $kv = k(kv) = k^2v$. So for $n=1,2,\dots$
 	\[
@@ -277,7 +277,7 @@ We have more or less proved the following theorem:
 \begin{theorem}
 	Set $I=[0,1]$. Suppose $u \in C(I)$ and $k \in C(I \times I)$. Consider 
 	\[
-		f(x) = u(x)+ \int_{0}^{x} k(x,t) f(t) \,\mathrm{d}t, \qquad x \in I \qquad \qquad (1)
+		f(x) = u(x)+ \int_{0}^{x} k(x,t) f(t) \,\mathrm{d}t, \qquad x \in I \qquad \qquad (1).
 	\]
 	Then $(1)$ has a unique solution $f \in C(I)$
 \end{theorem}
@@ -290,15 +290,15 @@ With the same technology we can prove:
 \end{theorem}
 Different notions: see introductional example.
 \begin{definition*}[vector space]
-	$C(I)$ with the operations for $x \in I$
+	$C(I)$ with the operations for $x \in I$:
 	\begin{description}
-		\item[addition] $v,w \in C(I)$: $\qquad (v+w)(x) = v(x)+ w(x)$ 
-		\item[mult. by scalar] $v \in C(I)$, $ \lambda \in \mathbb{R}$: $\qquad (\lambda v)(x) = \lambda v(x)$ 
+		\item[addition] $v,w \in C(I)$: $\qquad (v+w)(x) = v(x)+ w(x)$, 
+		\item[mult. by scalar] $v \in C(I)$, $ \lambda \in \mathbb{R}$: $\qquad (\lambda v)(x) = \lambda v(x)$.
 	\end{description}
 	Note that $v+w, \lambda v \in C(I)$.
 \end{definition*}
 \begin{definition*}[norm]
-	norm on $C(I)$ for instance 
+	Norm on $C(I)$ for instance 
 	\[
 		\norm{v} = \max_{x \in I} \abs{v(x)}
 	\]
@@ -310,11 +310,11 @@ Different notions: see introductional example.
 \begin{definition*}
 	$C(I)$ with the max-norm. Lemma above says that every Cauchy sequence converges i.e.
 	\[
-		\norm{v_n-v_m} \to 0, \qquad n,m \to \infty
+		\norm{v_n-v_m} \to 0, \qquad n,m \to \infty.
 	\]
 	This applies
 	\[
-		\exists\, v \in C(I): \norm{v_n-v} \to 0, \qquad n \to \infty
+		\exists\, v \in C(I): \norm{v_n-v} \to 0, \qquad n \to \infty.
 	\]
 	This is the defining property of a Banach space. \\
 	$K$ linear mapping $C(I) \to C(I)$ with
@@ -325,7 +325,7 @@ Different notions: see introductional example.
 	for $v,w \in  C(I)$, $\lambda \in \mathbb{R}$. \\
 	$K$ bounded linear:
 	\[
-		\norm{Kv} \leq M \norm{v} \qquad \forall\, v \in C(I)
+		\norm{Kv} \leq M \norm{v} \qquad \forall\, v \in C(I),
 	\]
 	where $M >0$ independent of $v$.	
 \end{definition*}
@@ -360,7 +360,7 @@ This is \underline{Banach's fixed point theorem}.
 	\[
 		\begin{cases}
 			f''+f &= h, \\
-			f(0) = f'(0)& = 0	
+			f(0) = f'(0)& = 0.	
 		\end{cases}
 	\]
 \end{definition*}
@@ -372,12 +372,12 @@ This is \underline{Banach's fixed point theorem}.
 	\end{description}
 	satisfying the axioms:
 	\begin{enumerate}[(1)]
-		\item $x+y = y+x, \qquad$ for all $x,y \in E$
-		\item $x+(y+z)= (x+y)+z, \qquad $ for all $x,y,z \in E$
-		\item For all $x,y \in E$ there exists $z \in E$ such that $x+z = y$
-		\item $\alpha (\beta x) = (\alpha \cdot \beta)x, \qquad $ for all $\alpha,\beta \in \mathbb{R}, x \in E$
-		\item $\alpha(x+y) = \alpha x+ \alpha y, \qquad $ for all $\alpha \in \mathbb{R}, x,y \in E$
-		\item $(\alpha + \beta) x = \alpha x + \beta x, \qquad $ for all $\alpha, \beta \in \mathbb{R}, x \in E$
+		\item $x+y = y+x, \qquad$ for all $x,y \in E$,
+		\item $x+(y+z)= (x+y)+z, \qquad $ for all $x,y,z \in E$,
+		\item For all $x,y \in E$ there exists $z \in E$ such that $x+z = y$,
+		\item $\alpha (\beta x) = (\alpha \cdot \beta)x, \qquad $ for all $\alpha,\beta \in \mathbb{R}, x \in E$,
+		\item $\alpha(x+y) = \alpha x+ \alpha y, \qquad $ for all $\alpha \in \mathbb{R}, x,y \in E$,
+		\item $(\alpha + \beta) x = \alpha x + \beta x, \qquad $ for all $\alpha, \beta \in \mathbb{R}, x \in E$,
 		\item $1 \cdot x = x, \qquad $ for all $x \in E$.  
 	\end{enumerate}
 \end{definition*}
@@ -389,7 +389,7 @@ This is \underline{Banach's fixed point theorem}.
 		\item \[
 			\exists\,! 0 \in E: \qquad x + 0 = x \qquad \text{for all }x \in E.
 		\]
-		since: Fix $x \in E$, by $(3)$, $\exists\, 0_x$ such that $0_x + x =x$. \\
+		Since: Fix $x \in E$, by $(3)$, $\exists\, 0_x$ such that $0_x + x =x$. \\
 		Fix $y \in E$. We want to show that $y + 0_y = y$. By $(3)$, there exists $z \in E$ such that $x+z = y$. So
 		\begin{align*}
 			y + 0_x & \stackrel{\hphantom{(1)}}{=} (x+z)+ 0_x \\
@@ -401,23 +401,23 @@ This is \underline{Banach's fixed point theorem}.
 		\end{align*}
 		Assume $x+ 0_1 = x$, $x+ 0_2 =x$ for all $x \in E$. We want to show $0_1 = 0_2$:
 		\[
-			0_1 = 0_1 + 0_2 = 0_2 + 0_1 = 0_2
+			0_1 = 0_1 + 0_2 = 0_2 + 0_1 = 0_2,
 		\]
 		\item 
 		\[
-			\forall\, x \in E: \, \exists\,! \,-x \in E: \,x+(-x)=0
+			\forall\, x \in E: \, \exists\,! \,-x \in E: \,x+(-x)=0.
 		\]
 		proof: exercise.
 		\item \begin{align*}
 			0x &=0 \qquad \text{for all }x \in E \\
-			(-1)x &= -x \qquad \text{for all }x \in E
+			(-1)x &= -x \qquad \text{for all }x \in E.
 		\end{align*}
 	\end{enumerate}
 \end{bemerkung}
 \begin{beispiele}[Examples of real vector spaces]
 	\begin{enumerate}[1)]
 		\item $\mathbb{R}$ with standard addition and mult. by scalar.
-		\item $\mathbb{R}^n$, $n=2,3, \dots$
+		\item $\mathbb{R}^n$, $n=2,3, \dots$.
 		\begin{description}
 			\item[addition] $(x_1,x_2,\dots) + (y_1,y_2, \dots) = (x_1+y_1,x_2+y_2, \dots)$ 
 			\item[mult.] $ \lambda (x_1,x_2,\dots) = (\lambda x_1, \lambda x_2, \dots)$
@@ -430,7 +430,7 @@ This is \underline{Banach's fixed point theorem}.
 		with the same addition and mult. by scalar as in $\mathbb{R}^{\infty}$. We have to check:
 		\begin{enumerate}[(1)]
 			\item $x,y \in l^p \qquad \Rightarrow \qquad x+y \in l^p$
-			\item $x \in l^p, \lambda \in \mathbb{R} \qquad \Rightarrow \qquad \lambda x \in l^p$ 
+			\item $x \in l^p, \lambda \in \mathbb{R} \qquad \Rightarrow \qquad \lambda x \in l^p$. 
 		\end{enumerate}
 		For $(1)$ we assume $x = (x_1, \dots, x_n, \dots)$ and $y = (y_1, \dots, y_n, \dots)$.
 		\begin{align*}
@@ -447,9 +447,9 @@ This is \underline{Banach's fixed point theorem}.
 			&= 2^p \underset{< \infty}{\underbrace{\sum_{}^{}\abs{x_n}^p}}+ 2^p \underset{< \infty}{\underbrace{\sum_{}^{}\abs{y_n}^p}} < \infty
 		\end{align*}
 		and \[
-			\sum_{n=1}^{\infty} \abs{\lambda x_n}^p = \sum_{n=1}^{\infty} \abs{\lambda}^p \cdot \abs{x_n}^p = \abs{\lambda}^p \sum_{n=1}^{\infty}\abs{x_n}^p < \infty
+			\sum_{n=1}^{\infty} \abs{\lambda x_n}^p = \sum_{n=1}^{\infty} \abs{\lambda}^p \cdot \abs{x_n}^p = \abs{\lambda}^p \sum_{n=1}^{\infty}\abs{x_n}^p < \infty.
 		\]
-		\item function spaces, say real-valued functions on $I$.
+		\item Function spaces, say real-valued functions on $I$.
 		\begin{description}
 			\item[addition:] $(f+g)(x) = f(x)+ g(x), \qquad x \in I$
 			\item[mult. by scalar:] $(\lambda f)(x)= \lambda f(x) \qquad $ for functions $f$ and $g$ 

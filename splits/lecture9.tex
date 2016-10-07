@@ -19,7 +19,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		f(x) = \skal{x}{x_f}, \qquad \forall\,  x \in H.
 	\]
 	Moreover \[
-		\norm{f} = \norm{x_f}_H
+		\norm{f} = \norm{x_f}_H.
 	\]
 \end{theorem}
 \begin{bemerkung}
@@ -47,7 +47,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 			\item $\dim N(f)^{\perp} = 1$. \\
 			Assume that $x_1 \neq 0,x_2 \neq 0 \in N(f)^{\perp}$. Then we have $f(x_1),f(x_2) \neq 0$. It exists $a \in \mathbb{C}$ such that
 			\[
-				f(x_1) + a f(x_2) = 0
+				f(x_1) + a f(x_2) = 0.
 			\]
 			And also
 			\[
@@ -59,10 +59,10 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
  			\] 
 			Hence
 			\[
-				x_1 + a x_2 = 0
+				x_1 + a x_2 = 0.
 			\]
 			Any two vectors are linearly dependent in $N(f)^{\perp}$ which gives \[
-				\dim N(f)^{\perp} = 1
+				\dim N(f)^{\perp} = 1.
 			\]
 		\end{itemize}
 		Take $y' \in N(f)^{\perp}$ with $\norm{y'} = 1$ and let \[
@@ -73,21 +73,21 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 			\skal{x}{x_f} = \begin{cases}
 				0, &\text{ if }x \in N(f)\\
 				\skal{\lambda y'}{\overline{f(y')}y'}= f(y') \lambda \underset{=1}{\underbrace{\skal{y'}{y'}}}, &\text{ if }x = \lambda y'
-			\end{cases}
+			\end{cases}.
 		\]
 		Furthermore
 		\[
 			\skal{x}{x_f} = \begin{cases}
 				f(x), &\text{ if }x \in N(f)\\
 				f(\lambda y') = f(x), &\text{ if }x = \lambda y'
-			\end{cases}
+			\end{cases}.
 		\]
 		Since every element in $H$ is given by $x + \lambda y'$. For $x \in N(f)$ and $\lambda \in \mathbb{C}$. Using linearity we get \[
 			f(x + \lambda y') = f(x) + f(\lambda y') = \skal{x}{x_f} + \skal{\lambda y'}{x_f} = \skal{x+ \lambda y'}{x_f}
 		\]
 		\item[uniqueness:] Assume there exists $x_1,x_2 \in H$ such that 
 		\[
-			f(x) = \skal{x}{x_1} = \skal{x}{x_2}, \qquad \forall\, x \in H
+			f(x) = \skal{x}{x_1} = \skal{x}{x_2}, \qquad \forall\, x \in H.
 		\]
 		We get
 		\[
@@ -98,39 +98,39 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 			\skal{x_1-x_2}{x_1-x_2} = 0 \qquad \Rightarrow \qquad x_1-x_2 = 0.
 		\]
 		\item[norm equality] We must see that \[
-			\norm{f} = \norm{x_f}_H
+			\norm{f} = \norm{x_f}_H.
 		\] From remark we have 
 		\[
-			f(x) = \skal{x}{x_f} \qquad \Rightarrow  \qquad \norm{f} \leq \norm{x_f}
+			f(x) = \skal{x}{x_f} \qquad \Rightarrow  \qquad \norm{f} \leq \norm{x_f}.
 		\]
 		We have for $x_f \neq 0$:
 		\[
-			\norm{f} = \sup_{x \neq 0} \frac{\abs{f(x)}}{\norm{x}} \geq \frac{\abs{f(x_f)}}{\norm{x_f}} = \frac{\norm{x_f}^2}{\norm{x_f}} = \norm{x_f}
+			\norm{f} = \sup_{x \neq 0} \frac{\abs{f(x)}}{\norm{x}} \geq \frac{\abs{f(x_f)}}{\norm{x_f}} = \frac{\norm{x_f}^2}{\norm{x_f}} = \norm{x_f}.
 		\]
 		This gives the desired result.
 	\end{description}
 \end{beweis}
 \begin{beispiel}
 	\[
-		E = C_F = \set[(x_1,x_2,\dots)]{\text{only finite number of $x_i \neq 0$}} \subseteq l^2
+		E = C_F = \set[(x_1,x_2,\dots)]{\text{only finite number of $x_i \neq 0$}} \subseteq l^2.
 	\]
 	On $C_F$ consider $l^2$-inner-product
 	\[
-		\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i \qquad \text{for }x,y \in C_F
+		\skal{x}{y} = \sum^{\infty}_{i=1} x_i \bar{y}_i \qquad \text{for }x,y \in C_F.
 	\]
 	\begin{enumerate}
 		\item $C_F$ is not a Hilbert space as it is not complete w.r.t
 		\[
-			\norm{x}_2 = \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}}
+			\norm{x}_2 = \left( \sum^{\infty}_{i=1} \abs{x_i}^2 \right)^{\frac{1}{2}}.
 		\]
 		Find a Cauchy sequence that is not convergent to an element in $C_F$. \\
 		Find a proper closed subspace $M$ such that $M^{\perp}= \set{0}$ (This would mean in particular that $C_F \neq M + M^{\perp}$) \\
 		Consider
 		\[
-			M = \set[(x_1,x_2,\dots) \in C_F]{\sum_{k=1}^{\infty} x_k \frac{1}{k}=0}
+			M = \set[(x_1,x_2,\dots) \in C_F]{\sum_{k=1}^{\infty} x_k \frac{1}{k}=0},
 		\]
 		\[
-			x_f = (1, \frac{1}{2}, \frac{1}{3}, \dots) \in l^2
+			x_f = (1, \frac{1}{2}, \frac{1}{3}, \dots) \in l^2,
 		\]
 		\[
 			M = \ker{f} \cap C_F
@@ -138,17 +138,17 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		where
 		\begin{align*}
 			f: l^2 &\to \mathbb{C} \\
-			f(x) &= \skal{x}{x_f} = \sum_{k=1}^{\infty}x_k \frac{1}{k}
+			f(x) &= \skal{x}{x_f} = \sum_{k=1}^{\infty}x_k \frac{1}{k},
 		\end{align*}
 		\[
-			M^{\perp} = \text{all elements in $C_F$ which are in $(\ker{f})^{\perp}$}
+			M^{\perp} = \text{all elements in $C_F$ which are in $(\ker{f})^{\perp}$}.
 		\]
 		From the proof of Riesz-Frechet theorem  we have $(\ker{f})^{\perp}$ is $1$-dimensional and \[
-			x_f \in (\ker{f})^{\perp}
+			x_f \in (\ker{f})^{\perp}.
 		\]
 		Hence
 		\[
-			(\ker{f})^{\perp} = \set[\lambda x_f]{\lambda \in \mathbb{C}}
+			(\ker{f})^{\perp} = \set[\lambda x_f]{\lambda \in \mathbb{C}}.
 		\]
 		We have
 		\[
@@ -156,14 +156,14 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		\item $(H,\skal{.}{.})$ Hilbert space and $\set{u_i} \subseteq H$ finite or infinite $i$. $\set{u_i}$ is an orthogonal system if
 		\[
-			\skal{u_i}{u_j}=0, \qquad \forall\, i \neq j.
+			\skal{u_i}{u_j}=0, \qquad \forall\, i \neq j
 		\]
 		and an orthonormal system if
 		\[
 			\skal{u_i}{u_j} = \delta_{ij} = \begin{cases}
 				0, &\text{ if }i \neq j\\
 				1, &\text{ if }i = j
-			\end{cases}
+			\end{cases}.
 		\]
 		\end{enumerate}
 	\end{beispiel}
@@ -178,11 +178,11 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		with $\set{u_i}$-ON-system. \\
 		$C([- \pi, \pi])$ and $\set{u_k} = \set[\frac{1}{\sqrt{2 \pi}} e^{ikt}]{k \in \mathbb{Z}}$ equipped with the scalar product
 		\[
-			\skal{f}{g} = \int_{- \pi}^{\pi}f(t)\overline{g(t)} \,\mathrm{d}t
+			\skal{f}{g} = \int_{- \pi}^{\pi}f(t)\overline{g(t)} \,\mathrm{d}t.
 		\]
 		It holds for the Fourier-series
 		\[
-			\skal{f}{u_k} = \hat f(k) = \frac{1}{\sqrt{2 \pi}}\int_{- \pi }^{\pi} f(t) e^{- ikt} \,\mathrm{d}t
+			\skal{f}{u_k} = \hat f(k) = \frac{1}{\sqrt{2 \pi}}\int_{- \pi }^{\pi} f(t) e^{- ikt} \,\mathrm{d}t.
 		\]
 		We want to see when
 		\[
@@ -192,7 +192,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\begin{definition}
 			$\mathcal{A}_n$ ON-system is called an ON-basis for $H$ if its span is dense in $H$. We say that an ON-system is complete if every $x \in H$ is 
 			\[
-				\sum^{\infty}_{i=1} \skal{x}{u_i}u_i
+				\sum^{\infty}_{i=1} \skal{x}{u_i}u_i.
 			\]
 		\end{definition}
 	\begin{theorem}
@@ -216,12 +216,12 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\] 
 		it means
 		\[
-			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}w_i \in \spn\set[u_i]{i \geq 1}
+			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}w_i \in \spn\set[u_i]{i \geq 1}.
 		\]
 		This is implies that any $x \in H$ is in $\overline{\spn \set[u_i]{i \geq 1}}$, i.e. $\set{w_i}$ is ON-basis.
 		\item[(2) $\Rightarrow$ (5):] Let $\set{u_i}$ be a ON-basis. Assume 
 		\[
-			\skal{x}{u_k} = 0, \qquad \forall\,  k \in \mathbb{N}
+			\skal{x}{u_k} = 0, \qquad \forall\,  k \in \mathbb{N}.
 		\]
 		Then
 		\[
@@ -260,7 +260,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 			\norm{\sum_{k=1}^{n}\skal{x}{u_k}w_k - \sum_{k=1}^{n} \skal{x}{u_k}w_k}^2 
 			&\stackrel{\hphantom{\text{pythagorian thm}}}{=} \norm{\sum_{k=m+1}^{n} \skal{x}{u_k}w_k}^2 \\
 			&\stackrel{\text{pythagorian thm}}{=} \sum_{k=m+1}^{n} \abs{\skal{x}{u_k}}^2 \norm{w_k}^2 \\
-			&\stackrel{\hphantom{\text{pythagorian thm}}}{\to } 0, \qquad n,m \to 0 \qquad (*)
+			&\stackrel{\hphantom{\text{pythagorian thm}}}{\to } 0, \qquad n,m \to 0 \qquad (*).
 		\end{align*}
 		Note that if $\set{x_i}$ are paarwise orthogonal it holds
 		\[
@@ -276,19 +276,19 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		for the limit. We must see that the limit is $x$. Consider
 		\[
-			y := x - \sum_{i=1}^{\infty} \skal{x}{u_i}w_i
+			y := x - \sum_{i=1}^{\infty} \skal{x}{u_i}w_i.
 		\]
 		Then 
 		\[
-			\skal{y}{u_i} = \skal{x}{w_i} - \skal{x}{w_i} = 0, \qquad \forall\, i
+			\skal{y}{u_i} = \skal{x}{w_i} - \skal{x}{w_i} = 0, \qquad \forall\, i.
 		\]
 		By assumption (5) it follows 
 		\[
-			y = 0 \qquad \Leftrightarrow \qquad x = \sum^{\infty}_{i=1} \skal{x}{u_i}w_i
+			y = 0 \qquad \Leftrightarrow \qquad x = \sum^{\infty}_{i=1} \skal{x}{u_i}w_i.
 		\]
 		\item[(1) $\Rightarrow$ (3):] From Bessel's equality we have again
 		\[
-			\norm{x- \sum^{n}_{i=1}\skal{x}{u_i}w_i}^2 = \norm{x}^2 - \sum^{n}_{i=1}\abs{\skal{x}{u_i}}^2
+			\norm{x- \sum^{n}_{i=1}\skal{x}{u_i}w_i}^2 = \norm{x}^2 - \sum^{n}_{i=1}\abs{\skal{x}{u_i}}^2.
 		\] 
 		By assumption (1) the LHS tends to $0$ as $n \to \infty$. On the other hand the RHS goes to 
 		\[
@@ -296,17 +296,17 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		This gives 
 		\[
-			\norm{x}^2 - \sum_{i=1}^{\infty} \abs{\skal{x}{u_i}^2} = 0
+			\norm{x}^2 - \sum_{i=1}^{\infty} \abs{\skal{x}{u_i}^2} = 0.
 		\]
 		\item[(3) $\Rightarrow $ (5)] trivial.
-		\item[(4) $\Rightarrow $ (5)] trivial (take $y=x$)
+		\item[(4) $\Rightarrow $ (5)] trivial (take $y=x$).
 		\item[(1) $\Rightarrow $ (4)] We have
 		\[
-			x = \sum_{k=1}^{\infty} \skal{x}{u_k}u_k
+			x = \sum_{k=1}^{\infty} \skal{x}{u_k}u_k.
 		\]
 		Then
 		\[
-			\skal{x}{y} = \sum_{k=1}^{\infty} \skal{x}{w_k}\skal{u_k}{y} = \sum_{k=1}^{\infty}\skal{x}{u_k}\overline{\skal{y}{u_k}}
+			\skal{x}{y} = \sum_{k=1}^{\infty} \skal{x}{w_k}\skal{u_k}{y} = \sum_{k=1}^{\infty}\skal{x}{u_k}\overline{\skal{y}{u_k}}.
 		\]
  	\end{description}
 \end{beweis}
@@ -318,7 +318,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 	\]
 	is an ON-system in $L^2([-\pi, \pi])$ where
 	\[
-		\skal{f}{g} = \int_{-\pi}^{\pi} f(t) \overline{g(t)} \,\mathrm{d}t
+		\skal{f}{g} = \int_{-\pi}^{\pi} f(t) \overline{g(t)} \,\mathrm{d}t.
 	\]
 \end{beispiel}
 
@@ -333,27 +333,27 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 	\]
 	which is equivalent to
 	\[
-		\norm{f - \sum_{k=-n}^{n} \hat f(k) e^{ikt}}^2_{L^2} \to 0
+		\norm{f - \sum_{k=-n}^{n} \hat f(k) e^{ikt}}^2_{L^2} \to 0.
 	\]
 \end{satz}
 
 \minisec{Sketch of the proof:}
 
 \begin{enumerate}[(1)]
-	\item Stein-Weierstraß-Theorem. $X$ compact set $C(X,\mathbb{C})$ continuous functions with complex values. Let $M \subseteq C(X,\mathbb{C})$ be a subspace that satisfies
+	\item Stein-Weierstraß-Theorem. $X$ compact set $C(X,\mathbb{C})$ continuous functions with complex values. Let $M \subseteq C(X,\mathbb{C})$ be a subspace that satisfies:
 	\begin{enumerate}[(a)]
 		\item it seperates points of $X$, i.e. 
 		\[
-			\forall\, x_1,x_2 \in X, x_1 \neq x_2 \,\exists\, f \in M: \qquad f(x_1) \neq f(x_2)
+			\forall\, x_1,x_2 \in X, x_1 \neq x_2 \,\exists\, f \in M: \qquad f(x_1) \neq f(x_2).
 		\]
-		\item $M$ contains the constant function 1 ($f(x)= 1$ for all $x \in X$)
+		\item $M$ contains the constant function 1 ($f(x)= 1$ for all $x \in X$).
 		\item It is closed under complex conjugation, i.e. 
 		\[
 			f \in M \qquad \Rightarrow \qquad \bar{f} \in M
 		\]
 		and closed under product, i.e.
 		\[
-			f_1,f_2 \in M \qquad \Rightarrow \qquad f_1 \cdot f_2 \in M
+			f_1,f_2 \in M \qquad \Rightarrow \qquad f_1 \cdot f_2 \in M.
 		\]
 	\end{enumerate}
 	Then $M$ is dense in $C(X,\mathbb{C})$ w.r.t. $\norm{.}_{\infty}$ (Continuous function by Polynomials) From this it follows
@@ -366,7 +366,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 We will use $(1)$ and $(2)$ to show that $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ is dense in $L^2([-\pi,\pi])$.
 \begin{beweis}
 	Let \[
-		M := \spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq \set[f \in C([-\pi, \pi])]{f( \pi) = f(-\pi)}
+		M := \spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}} \subseteq \set[f \in C([-\pi, \pi])]{f( \pi) = f(-\pi)}.
 	\]
 	$M$ seperates points, it contains the constant function $1$ and it is closed under complex conjugation. Furthermore $M$ is closed under taking products. With Stein-Weierstraß it follows that $M$ is dense in 
 	\[
@@ -374,7 +374,7 @@ We will use $(1)$ and $(2)$ to show that $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}
 	\]
 	By (2) we have $C([-\pi,\pi])$ is dense in $L^2([-\pi,\pi])$ w.r.t. the $L^2$-norm. From this one can see that even $\set[f \in C([-\pi,\pi])]{f(\pi)= f(-\pi)}$ is dense in $L^2([-\pi,\pi])$:
 	\[
-		\forall\,  \varepsilon>0, \,\forall\, f \in L^2 \,\exists\,g \in C([-\pi,\pi]): \qquad \norm{f-g}_{L^2}^2 = \int_{-\pi}^{\pi}\abs{f(t)-g(t)}^2 \,\mathrm{d}t < \varepsilon
+		\forall\,  \varepsilon>0, \,\forall\, f \in L^2 \,\exists\,g \in C([-\pi,\pi]): \qquad \norm{f-g}_{L^2}^2 = \int_{-\pi}^{\pi}\abs{f(t)-g(t)}^2 \,\mathrm{d}t < \varepsilon.
 	\] 
 	Define $g _{\varepsilon}$ such that it has a pike in $x = \pi - \varepsilon$ but it is continuous and is equal to $g$ for $x < \pi -\varepsilon$. Then
 	\[
@@ -386,16 +386,16 @@ We will use $(1)$ and $(2)$ to show that $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}
 		\norm{g - g _{\varepsilon}}_{L^2} \\
 		&\leq  \sqrt{\varepsilon} + \left( \int_{\pi - \varepsilon}^{\pi} \abs{g(t)-g _{\varepsilon}(t)} \,\mathrm{d}t  \right)^{\frac{1}{2}} \\
 		&\leq \sqrt{\varepsilon} + \sqrt{\max_{x \in [-\pi - \varepsilon, \pi]} \abs{g- g _{\varepsilon}}\varepsilon} \\
-		&= \sqrt{\varepsilon} + \sqrt{C} \sqrt{\varepsilon}
+		&= \sqrt{\varepsilon} + \sqrt{C} \sqrt{\varepsilon}.
 	\end{align*}
 	We conclude: any $f = L^2-$limit $g_n$ with $g_n \in C([-\pi,\pi])$ and $g_n(- \pi ) = g_n( \pi)$. Each $g_n = \norm{.}_\infty$-norm limit of an element in 
 	$ \spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ as
 	\[
-		\norm{g-f}_{L^2} \leq \norm{g-f}^{\frac{1}{2}}_{\infty} (2 \pi)^{\frac{1}{2}}
+		\norm{g-f}_{L^2} \leq \norm{g-f}^{\frac{1}{2}}_{\infty} (2 \pi)^{\frac{1}{2}}.
 	\]
 	Note that
 	\[
-		\left( \int_{- \pi}^{\pi} \abs{g(t)-f(t)}^2 \,\mathrm{d}t \right)^{\frac{1}{2}} \leq \max_{x \in [ - \pi, \pi]} \abs{g(t)- f(t)} \left( \int_{- \pi}^{\pi} \,\mathrm{d}t \right)^{\frac{1}{2}}
+		\left( \int_{- \pi}^{\pi} \abs{g(t)-f(t)}^2 \,\mathrm{d}t \right)^{\frac{1}{2}} \leq \max_{x \in [ - \pi, \pi]} \abs{g(t)- f(t)} \left( \int_{- \pi}^{\pi} \,\mathrm{d}t \right)^{\frac{1}{2}}.
 	\]
 	We get that each $g_n$ can be approximated in the $L^2$-norm by elements in $\spn\set[\frac{1}{\sqrt{2 \pi}}e^{int}]{n \in \mathbb{Z}}$ hence
 	\[
@@ -413,14 +413,14 @@ Bounded means in our case
 \begin{beispiel}
 	Set $H_1 = H_2 = L^2([0,1])$ and $K: [0,1] \times [0,1] \to \mathbb{C}$. Assume that $K$ is continuous. Consider
 	\[
-		(Af)(x) = \int_{0}^{1}K(x,y)f(y) \,\mathrm{d}y
+		(Af)(x) = \int_{0}^{1}K(x,y)f(y) \,\mathrm{d}y.
 	\]
 	$A$ is linear (trivial). Show that $A$ is bounded:
 	\begin{align*}
 		\norm{Af}_2 &\stackrel{\hphantom{\text{CS}}}{=} \int_{0}^{1} \abs{\int_{0}^{1}K(x,y)f(y) \,\mathrm{d}y}^2 \,\mathrm{d}x \\
 		&\stackrel{\text{CS}}{\leq} \int_{0}^{1} \left( \int_{0}^{1}\abs{K(x,y)}^2 \,\mathrm{d}y  \cdot \int_{0}^{1}\abs{f(y)}^2 \,\mathrm{d}y \right)\,\mathrm{d}x \\
 		&\stackrel{\hphantom{\text{CS}}}{=} \underset{< \infty}{\underbrace{\int_{0}^{1} \left( \int_{0}^{1} \abs{K(x,y)}^2 \,\mathrm{d}y \right) \,\mathrm{d}x}}
-		\cdot \underset{= \norm{f}_2^2}{\underbrace{ \int_{0}^{1}\abs{f(y)}^2 \,\mathrm{d}y}}
+		\cdot \underset{= \norm{f}_2^2}{\underbrace{ \int_{0}^{1}\abs{f(y)}^2 \,\mathrm{d}y}}.
 	\end{align*}
 	Hence
 	\[
@@ -429,7 +429,7 @@ Bounded means in our case
 \end{beispiel}
 	Products $(A \cdot B)$ of operators $H \to H$ with $A: H \to H$ and $B: H \to H$ are defined by
 	\[
-		(A \cdot B)(f) := A(Bf)
+		(A \cdot B)(f) := A(Bf).
 	\]
 \begin{satz}
 	If $A$ and $B$ are bounded, then $A \cdot B$ is also bounded and 
@@ -438,6 +438,6 @@ Bounded means in our case
 	\]
 	In particular: for all $n \in \mathbb{N}$ $A^n$ is bounded and 
 	\[
-		\norm{A^n} \leq \norm{A}^n
+		\norm{A^n} \leq \norm{A}^n.
 	\]
 \end{satz}

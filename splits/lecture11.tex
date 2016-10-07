@@ -1,7 +1,7 @@
 %%% lecture 11
 
 \begin{definition}[compact]
-	If $A: E \to E$ is linear, then we say that $A$ is \underline{compact} if for all bounded sequences $(x_n)_{n=1}^{\infty}$ in $E$, $ (A(x_n))_{n=1}^{\infty}$ has a bounded subsequence in $E$
+	If $A: E \to E$ is linear, then we say that $A$ is \underline{compact} if for all bounded sequences $(x_n)_{n=1}^{\infty}$ in $E$, $ (A(x_n))_{n=1}^{\infty}$ has a bounded subsequence in $E$.
 \end{definition}
 
 \begin{lemma}
@@ -10,7 +10,7 @@
 \begin{beweis}
 	If $A$ is not bounded then there exists a sequence $(y_n)_{n=1}^{\infty}$ in $E$ such that
 	\[
-		\norm{A(y_n)} \geq n \norm{y_n}, \qquad \text{for }n=1,2,\dots
+		\norm{A(y_n)} \geq n \norm{y_n}, \qquad \text{for }n=1,2,\dots.
 	\]
 	Set $x_n = \frac{y_n}{\norm{y_n}}$ for $n = 1,2,\dots$. Here $\norm{x_n}=1$ for all $n \in \mathbb{N}$ and 
 	\[
@@ -40,7 +40,7 @@
 	converges in $E$.
 \end{beweis} 
 Set \[
-	K(E,E) := \text{set of all compact linear mappings $E \to E$}
+	K(E,E) := \text{set of all compact linear mappings $E \to E$}.
 \]
 We have $K(E,E)$ is a subspace in $(B(E,E), \norm{.}_{E \to E})$.
 
@@ -49,14 +49,14 @@ We have $K(E,E)$ is a subspace in $(B(E,E), \norm{.}_{E \to E})$.
 \end{proposition}
 Before the proof we note:
 \begin{enumerate}
-	\item Assume $(E,\skal{.}{.})$ to be a Hilbert space and $A \in B(E,E)$
+	\item Assume $(E,\skal{.}{.})$ to be a Hilbert space and $A \in B(E,E)$.
 	\begin{align*}
 		x_n \to x \,\text{ in }E \qquad &\Rightarrow \qquad A(x_n) \to A(x)\, \text{ in }E \\
 		x_n \rightharpoonup x \,\text{ in }E \qquad &\Rightarrow \qquad A(x_n) \rightharpoonup A(x)\, \text{ in }E
 	\end{align*}
 	since for $y \in E$ we have
 	\[
-		\skal{A(x_n)}{y} = \skal{x_n}{A^*(y)} \stackrel{n \to \infty}{\to } \skal{x}{A^*(y)} = \skal{A(x)}{y}
+		\skal{A(x_n)}{y} = \skal{x_n}{A^*(y)} \stackrel{n \to \infty}{\to } \skal{x}{A^*(y)} = \skal{A(x)}{y}.
 	\]
 	\item $A \in K(E,E)$ and $x_n \rightharpoonup x$ in $E$ 
 	\[
@@ -68,7 +68,7 @@ Before the proof we note:
 	\]
 	since: Let $e_1,e_2, \dots, e_N$ be an ON-basis for $\mathcal{R}(A)$ with $N = \dim( \mathcal{R}(A))$. We have
 	\[
-		A(x) = \skal{A(x)}{e_1}e_1 + \dots + \skal{A(x)}{e_N}e_N
+		A(x) = \skal{A(x)}{e_1}e_1 + \dots + \skal{A(x)}{e_N}e_N.
 	\]
 	Fix an arbitrary bounded sequence $(x_n)_{n=1}^{\infty}$ in $E$. $A$ is bounded which implies that $(A(x_n))_{n=1}^{\infty}$ is a bounded sequence. Furthermore
 	\[
@@ -88,7 +88,7 @@ Before the proof we note:
 	 We have to show: $A \in K(E,E)$ \\
 	 Fix an arbitrary bounded sequence $(x_n)_{n=1}^{\infty}$ in $E$. We want to show that $(A(x_n))_{n=1}^{\infty}$ has a converging subsequence in $E$. \\
 	 Set \[
-	 	M = \sup_{n} \norm{x_n} < \infty
+	 	M = \sup_{n} \norm{x_n} < \infty.
 	 \]
 	 \begin{align*}
 	 	A_1 \in K(E,E) \qquad &\Rightarrow \qquad (A_1(x_n))_{n=1}^{\infty} \text{ has a converging subsequence }(A_1(x _{n_k}))_{k=1}^{\infty} \\
@@ -102,11 +102,11 @@ Before the proof we note:
 	 So since $(E,\norm{.})$ is a Banach space it is enough to show that $(A(y_n))_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$. \\
 	 Fix an arbitrary $\varepsilon >0$. We have
 	 \[
-	 	\norm{A(y_n)-A(y_m)} \leq \underset{\leq \norm{A-A_k}_{E \to E} \norm{y_n}}{\underbrace{\norm{A(y_n)-A_k(y_n)}}} + \norm{A_k(y_n)- A_k(y_m)} + \norm{A_k(y_m)-A(y_m)}
+	 	\norm{A(y_n)-A(y_m)} \leq \underset{\leq \norm{A-A_k}_{E \to E} \norm{y_n}}{\underbrace{\norm{A(y_n)-A_k(y_n)}}} + \norm{A_k(y_n)- A_k(y_m)} + \norm{A_k(y_m)-A(y_m)}.
 	 \]
 	 Fix $k$ large enough such that
 	 \[
-	 	\norm{A_k-A} < \frac{\varepsilon}{3M}
+	 	\norm{A_k-A} < \frac{\varepsilon}{3M}.
 	 \]
 	 Then 
 	 \[
@@ -135,7 +135,7 @@ Before the proof we note:
 	\]
 	Set 
 	\[
-		A_n(x) = A \left( \sum_{k=1}^{n}\skal{x}{x_k}x_k \right) = \sum_{k=1}^{n} \skal{x}{x_k}A(x_k), \qquad x \in E, \qquad n=1,2,\dots
+		A_n(x) = A \left( \sum_{k=1}^{n}\skal{x}{x_k}x_k \right) = \sum_{k=1}^{n} \skal{x}{x_k}A(x_k), \qquad x \in E, \qquad n=1,2,\dots.
 	\]
 	Here $\dim( \mathcal{R}(A_n)) \leq n$ for $n =1,2,\dots$. \\
 	So $A_n$ is a finite ranked operator in $E$ for $n=1,2,\dots$. \\
@@ -146,39 +146,39 @@ Before the proof we note:
 	\]
 	and thus
 	\[
-		\norm{A-A_n}_{E \to E}^2 \leq \sup\limits_{\substack{\norm{y}=1, \\ y \in \set{x_1,\dots,x_n}^{\perp}}} \norm{A(y)}^2
+		\norm{A-A_n}_{E \to E}^2 \leq \sup\limits_{\substack{\norm{y}=1, \\ y \in \set{x_1,\dots,x_n}^{\perp}}} \norm{A(y)}^2.
 	\]
 	Set 
 	\[
-		u_n := \sup\limits_{\substack{\norm{y}=1, \\ y \in \set{x_1,\dots,x_n}^{\perp}}} \norm{A(y)}^2 < \infty, \qquad n =1,2,\dots
+		u_n := \sup\limits_{\substack{\norm{y}=1, \\ y \in \set{x_1,\dots,x_n}^{\perp}}} \norm{A(y)}^2 < \infty, \qquad n =1,2,\dots.
 	\]
 	Here $a_n \geq a_{n+1} \geq 0$ for $n=1,2,\dots$. \\
 	Clearly $(a_n)_{n=1}^{\infty}$ converges in $\mathbb{R}$. Set $a = \lim_{n \to \infty}a_n$. It remains to prove $a =0$.
 	Assume $a>0$. Then there exists $(y_n)_{n=1}^{\infty}$ in $E$ such that
 	\begin{enumerate}
-		\item $\norm{y_n}=1$
-		\item $y \in \set{x_1,\dots,x_n}^{\perp}$
-		\item $\norm{A(y_n)}^2 \geq \frac{1}{2} a$
+		\item $\norm{y_n}=1$,
+		\item $y \in \set{x_1,\dots,x_n}^{\perp}$,
+		\item $\norm{A(y_n)}^2 \geq \frac{1}{2} a$.
 	\end{enumerate}
 	\textbf{Claim:} \text{    } $y_n \rightharpoonup 0$ in $(E,\skal{.}{.})$ since: \\
-	fix an arbitrary $x \in E$ and
+	Fix an arbitrary $x \in E$ and
 	\begin{align*}
 		\abs{\skal{y_n}{x}} &= \abs{\skal{y_n}{\sum_{k=1}^{\infty} \skal{x}{x_k}x_k}} \\
 		&= \abs{\skal{y_n}{\sum_{k=n+1}^{\infty}\skal{x}{x_k}x_k}} \\
 		&\leq \norm{y_n} \cdot \norm{\sum_{k=n+1}^{\infty}\skal{x}{x_k}x_k} \\
-		&= \sqrt{\sum_{k=n+1}^{\infty}\abs{\skal{x}{x_k}}^2} \to 0, \qquad n \to \infty
+		&= \sqrt{\sum_{k=n+1}^{\infty}\abs{\skal{x}{x_k}}^2} \to 0, \qquad n \to \infty.
 	\end{align*}
 	(Note that $\sum_{k=1}^{\infty}\abs{\skal{x}{x_k}}^2 = \norm{x}^2 < \infty$) \\
 	We have $y_n \rightharpoonup 0$ in $(E, \skal{.}{.})$ and
 	\[
-		A \in B(E,E) \qquad \Rightarrow \qquad A(y_n) \to A(0)= 0
+		A \in B(E,E) \qquad \Rightarrow \qquad A(y_n) \to A(0)= 0.
 	\]
 	Contradiction to (3) above which gives us $a=0$.
 \end{beweis}
 
 \begin{proposition}
 	$(E,\skal{.}{.})$ Hilbert space and $A \in K(E,E)$. Then \[
-		x_n \rightharpoonup x \text{ in } (E, \skal{.}{.}) \qquad \Rightarrow \qquad A(x_n) \to A(x) \text{ in }(E,\skal{.}{.})
+		x_n \rightharpoonup x \text{ in } (E, \skal{.}{.}) \qquad \Rightarrow \qquad A(x_n) \to A(x) \text{ in }(E,\skal{.}{.}).
 	\]
 \end{proposition}
 \begin{beweis}
@@ -186,20 +186,20 @@ Before the proof we note:
 	Say $A(x _{n_k}) \to y$ in $E$. $A \in K(E,E) \subset B(E,E)$ and $x_n \rightharpoonup x$ in $(E, \skal{.}{.})$. \\
 	This implies
 	\[
-		A(x_n) \rightharpoonup A(x) \qquad \text{in }(E,\skal{.}{.})
+		A(x_n) \rightharpoonup A(x) \qquad \text{in }(E,\skal{.}{.}).
 	\]
 	We get that $y = A(x)$. We have $A(x _{n_k}) \to A(x)$ in $E$. \\
 	Assume that $A(x_n) \not A(x)$ in $E$. \\
 	Then there exists an $\varepsilon >0$ and a subsequence $(A(\tilde x_n))_{n=1}^{\infty}$ of $(A(x_n))_{n=1}^{\infty}$ such that
 	\[
-		\norm{A( \tilde x_n) - A(x)} \geq \varepsilon, \qquad \forall\,  n
+		\norm{A( \tilde x_n) - A(x)} \geq \varepsilon, \qquad \forall\,  n.
 	\]
 	But $\tilde x_n \rightharpoonup x$ in $(E,\skal{.}{.})$ and to be compact implies that $(A(\tilde x_n))_{n=1}^{\infty}$ has a converging subsequence $(A( \tilde x _{n_k})_{k=1}^{\infty}$ that converges to $A(x)$ (same argument as before)
 	Conclusion: $A(x_n) \to A(x)$ in $(E, \skal{.}{.})$.
 \end{beweis}
 
 \begin{proposition}
-	$A \in K(E,E)$ and $(E, \skal{.}{.})$ Hilbert space \qquad $\Rightarrow $ $A^* \in K(E,E)$
+	$A \in K(E,E)$ and $(E, \skal{.}{.})$ Hilbert space \qquad $\Rightarrow $ $A^* \in K(E,E)$.
 \end{proposition}
 \begin{beweis}
 	Fix any bounded sequence $(x_n)_{n=1}^{\infty}$ in $E$. 
@@ -217,24 +217,24 @@ Before the proof we note:
 \begin{beispiel}
 	We already know this example: $k \in C([0,1] \times [0,1])$ with
 	\[
-		A(f)(x) = \int_{0}^{1} k(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1], \qquad f \in L^2([0,1])
+		A(f)(x) = \int_{0}^{1} k(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1], \qquad f \in L^2([0,1]).
 	\]
 	We know that $A \in B(L^2([0,1]), L^2([0,1]))$ 
 	\[
-		\norm{A}_{L^2 \to L^2} \leq \norm{k}_{L^2([0,1] \times [0,1])}
+		\norm{A}_{L^2 \to L^2} \leq \norm{k}_{L^2([0,1] \times [0,1])}.
 	\]
 	\textbf{Claim:} \text{    }$A \in K(L^2([0,1]),L^2([0,1]))$. \\
 	Approximate $A$ by finite-ranked operators. \\
 	Note: set $A = A_k$ and $B = A_{k_n}$ where $k_n$ is a nice function on $[0,1] \times [0,1]$ and
 	\[
-		A-B = A_k - A_{k_n} = A_{k-k_n}
+		A-B = A_k - A_{k_n} = A_{k-k_n}.
 	\]
 	So \[
-		\norm{A-B}_{L^2 \to L^2} \leq \norm{k - k_n}
+		\norm{A-B}_{L^2 \to L^2} \leq \norm{k - k_n}.
 	\]
 	Set \begin{align*}
 		I_f = [x_j - \frac{1}{N}, x_j], \qquad j = 1, \dots, N, \qquad x_j = \frac{j}{N} \\
-		\tilde I_l =[y_l - \frac{1}{N}, y_j], \qquad l = 1, \dots, N, \qquad y_l = \frac{l}{N} 
+		\tilde I_l =[y_l - \frac{1}{N}, y_j], \qquad l = 1, \dots, N, \qquad y_l = \frac{l}{N}. 
 	\end{align*}
 	Set \[
 		k_n(x,y) = \sum_{j=1}^{N} \sum_{l=1}^{N} k(x_j,y_l) \chi_{I_j}(x) \chi_{\tilde I_l}(y)
@@ -242,17 +242,17 @@ Before the proof we note:
 	where \[
 		\chi_{I_j}(x) = \begin{cases}
 			1, &\text{ if }x \in I_j\\
-			0, &\text{elsewhere}
+			0, &\text{elsewhere}.
 		\end{cases}
 	\]
 \end{beispiel}
 Since $k \in C([0,1] \times [0,1])$ and $[0,1] \times [0,1]$ compact in $\mathbb{R}^2$ then $k$ is uniformly continous on $[0,1] \times [0,1]$. We fix $\varepsilon >0$. \\
 \textbf{Claim:} \text{    }It exists an $N$ such that
 \[
-	\sup_{\substack{(x,y) \in  \\ [0,1] \times [0,1]}} \abs{k(x,y)- k_n(x,y)} < \infty
+	\sup_{\substack{(x,y) \in  \\ [0,1] \times [0,1]}} \abs{k(x,y)- k_n(x,y)} < \infty,
 \]
 \[
-	A_{k_N}(f)(x) = \int_{0}^{1} k_N(x,y) f(y) \,\mathrm{d}y = \sum_{j=1}^{N} \underset{\text{scalar}}{\underbrace{\sum_{l=1}^{N} k(x_i,y_l) \int_{0}^{1} \chi_{\tilde I_l}(y) f(y) \,\mathrm{d}y \chi_{I_j}(x)}}
+	A_{k_N}(f)(x) = \int_{0}^{1} k_N(x,y) f(y) \,\mathrm{d}y = \sum_{j=1}^{N} \underset{\text{scalar}}{\underbrace{\sum_{l=1}^{N} k(x_i,y_l) \int_{0}^{1} \chi_{\tilde I_l}(y) f(y) \,\mathrm{d}y \chi_{I_j}(x)}}.
 \]
 \[
 	\dim(\mathcal{R}(A_{k_N})) = N < \infty.
@@ -262,12 +262,12 @@ Moreover
 \[
 	\norm{A-A_{k_N}}_{L^2 \to L^2} \leq \norm{k - k_N}_{L^2([0,1] \times [0,1])} < \varepsilon
 \] 
-for $N$ large enough. $K(E,E)$ is a closed set in $(B(E,E), \norm{.}_{L^2 \to L^2})$ so $A \in K(L^2,L^2)$
+for $N$ large enough. $K(E,E)$ is a closed set in $(B(E,E), \norm{.}_{L^2 \to L^2})$ so $A \in K(L^2,L^2)$.
 
 \begin{beispiel}
 	$(E,\skal{.}{.})$ Hilbert space, $(x_{n})_{n=1}^{\infty}$ ON-basis and $(\lambda_n)_{n=1}^{\infty}$ sequence of scalars. Set
 \[
-	T(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n} x_n, \qquad x \in E
+	T(x) = \sum_{n=1}^{\infty}\lambda_n \skal{x}{x_n} x_n, \qquad x \in E.
 \]	
 \textbf{Claim:} \text{    }     
 \begin{enumerate}[1)]
@@ -276,22 +276,22 @@ for $N$ large enough. $K(E,E)$ is a closed set in $(B(E,E), \norm{.}_{L^2 \to L^
 \end{enumerate}
 Note $x \in E$ and the Parseval's formula
 \[
-	\norm{x}^2 = \sum_{n=1}^{\infty} \abs{\skal{x}{x_n}}^2
+	\norm{x}^2 = \sum_{n=1}^{\infty} \abs{\skal{x}{x_n}}^2.
 \]
 For $T(x) \in E$ we have
 \[
-	\norm{T(x)}^2 = \sum_{n=1}^{\infty} \abs{\lambda_n}^2 \abs{\skal{x}{x_n}}^2
+	\norm{T(x)}^2 = \sum_{n=1}^{\infty} \abs{\lambda_n}^2 \abs{\skal{x}{x_n}}^2.
 \]
 If $(\lambda_n)_{n=1}^{\infty}$ bounded sequence in $\mathbb{C}$. Then $\sup \abs{\lambda_n} \equiv M < \infty$ and
 \[
-	\norm{T(x)}^2 \leq \sum_{n=1}^{\infty} M^2 \abs{\skal{x}{x_n}}^2 = M^2 \norm{x}^2
+	\norm{T(x)}^2 \leq \sum_{n=1}^{\infty} M^2 \abs{\skal{x}{x_n}}^2 = M^2 \norm{x}^2.
 \]
 If $(\lambda_n)_{n=1}^{\infty}$ is not bounded then there exists a sequence $(\lambda_{n_k})_{k=1}^{\infty}$ such that $\abs{\lambda_{n_k}} \to \infty$ as $k \to \infty$. But
 \[
 	\norm{T(x_{n_k})} = \abs{\lambda_{n_k}}\norm{x_{n_k}} = \abs{\lambda_{n_k}} \to \infty, \qquad k \to \infty
 \]
 \[
-	\sup\limits_{\norm{x}=1} \norm{T(x)} = \infty
+	\sup\limits_{\norm{x}=1} \norm{T(x)} = \infty.
 \]
 So 1) is done. For 2) we assume $\lambda_n \to 0$ for $n \to \infty$. Set 
 \[
@@ -304,7 +304,7 @@ $T_k$ is a finite rank operator for $k=1,2,\dots$. SO $T_k \in K(E,E)$ for all $
 \end{align*}
 Assume $\lambda_n \not \to 0$ for $n \to \infty$. Then there exists $\varepsilon >0$ and a sequence $(\lambda_{n_k})_{k=1}^{\infty}$ such that 
 \[
-	\abs{\lambda_{n_k}} \geq \varepsilon
+	\abs{\lambda_{n_k}} \geq \varepsilon.
 \]
 Note
 \[
@@ -319,25 +319,25 @@ $x_{n_k} \stackrel{\text{w}}{\to }0$ in $(E,\skal{.}{.})$ since for $y \in E$
 \]
 since
 \[
-	\sum_{n=1}^{\infty}\abs{\skal{y}{x_n}}^2 = \norm{y}^2 < \infty
+	\sum_{n=1}^{\infty}\abs{\skal{y}{x_n}}^2 = \norm{y}^2 < \infty.
 \]
 If $T \in K(E,E)$ then $T(x_{n_k}) \to T(0)=0$ but \[
-	\norm{T(x_{n_k})} \geq \varepsilon, \qquad \text{for all }k
+	\norm{T(x_{n_k})} \geq \varepsilon, \qquad \text{for all }k.
 \]
 Hence
 \[
-	T \not \in K(E,E)
+	T \not \in K(E,E).
 \]
 \end{beispiel}
 \begin{beispiel}
 	$(E,\skal{.}{.})$ Hilbert space, $A \in K(E,E)$ and $I(x)=x$ for all $x \in E$. It follows
 	\[
-		\Rightarrow  \qquad R(I-A) \text{ closed in $E$}
+		\Rightarrow  \qquad R(I-A) \text{ closed in $E$}.
 	\]
 \begin{bemerkung}
 	\begin{align*}
 		R(I-A)^{\perp} &= \mathcal{N}((I-A)^{*}) = \mathcal{N}(I-A^{*}) \\
-		\overline{R(I-A)} &= R(I-A)^{\perp \perp} = \mathcal{N}(I-A^{*})^{\perp}
+		\overline{R(I-A)} &= R(I-A)^{\perp \perp} = \mathcal{N}(I-A^{*})^{\perp}.
 	\end{align*}
 	If $A \in K(E,E)$ then
 	\[
@@ -361,7 +361,7 @@ Hence
 	\]
 	with
 	\[
-		\norm{x_n}^2 = \norm{\tilde x_n}^2 + \norm{\hat x_n}^2
+		\norm{x_n}^2 = \norm{\tilde x_n}^2 + \norm{\hat x_n}^2.
 	\]
 	Step 1: Show $(\hat x_n)_{n=1}^{\infty}$ bounded in $E$. \\
 	Step 2: $y_n = (I-A)( \hat x_n) = \hat x_n - A( \hat x_n)$. \\

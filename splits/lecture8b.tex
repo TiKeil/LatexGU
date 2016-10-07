@@ -14,7 +14,7 @@
 \begin{beispiel}
 	Let $A \subseteq E$ where $E$ is a Hilbert space. It follows
 	\[
-		\overline{\spn  A} = \left( A^{\perp} \right)^{\perp}
+		\overline{\spn  A} = \left( A^{\perp} \right)^{\perp}.
 	\]
 	Note 
 	\[
@@ -24,22 +24,22 @@
 	\]
 	\[
 		A \subseteq \overline{\spn  A} \qquad \Rightarrow \qquad \overline{\spn  A}^{\perp} \subseteq A^{\perp} \qquad \Rightarrow \qquad 
-		\left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\spn  A}^{\perp} \right)^{\perp}
+		\left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\spn  A}^{\perp} \right)^{\perp}.
 	\]
 	Hence
 	\[
-		\overline{\spn  A} \subseteq \left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\spn  A}^{\perp} \right)^{\perp}
+		\overline{\spn  A} \subseteq \left( A^{\perp} \right)^{\perp} \subseteq \left( \overline{\spn  A}^{\perp} \right)^{\perp}.
 	\]
 	By the Orthogonal Decomposition Theorem we get
 	\[
-		E = \overline{\spn  A} \oplus \overline{\spn  A}^{\perp} = \overline{\spn  A}^{\perp} \oplus \left( \overline{\spn  A}^{\perp} \right)^{\perp} 
+		E = \overline{\spn  A} \oplus \overline{\spn  A}^{\perp} = \overline{\spn  A}^{\perp} \oplus \left( \overline{\spn  A}^{\perp} \right)^{\perp}, 
 	\]
 	which implies
 	\[
-		\overline{\spn  A} = \left( \overline{\spn  A}^{\perp} \right)^{\perp}
+		\overline{\spn  A} = \left( \overline{\spn  A}^{\perp} \right)^{\perp},
 	\]
 	\[
-		\Rightarrow \qquad \left( A^{\perp} \right)^{\perp} = \overline{\spn  A}
+		\Rightarrow \qquad \left( A^{\perp} \right)^{\perp} = \overline{\spn  A}.
 	\]
 \end{beispiel}
 
@@ -69,11 +69,11 @@ Now we are going to prove the Orthogonal Decomposition Theorem.
 		Note: $S$ must be convex. \\
 		Fix $x \in E$, choose $y \in S$ with
 		\[
-			\norm{x-y} \leq  \norm{x- \tilde y}, \qquad \forall\,  \tilde y \in S
+			\norm{x-y} \leq  \norm{x- \tilde y}, \qquad \forall\,  \tilde y \in S.
 		\]
 		Set
 		\[
-			\underset{\in E}{\underbrace{x}} = \underset{\in S}{\underbrace{y}} + (x-y)
+			\underset{\in E}{\underbrace{x}} = \underset{\in S}{\underbrace{y}} + (x-y).
 		\]
 		To show: $x-y \in S^{\perp}$. A variational argument of this is 
 		\[
@@ -87,21 +87,21 @@ Now we are going to prove the Orthogonal Decomposition Theorem.
 		\end{align*}
 		and
 		\[
-			0 \leq 2 \re( \alpha \skal{x+y}{v}) + \abs{\alpha}^2 \norm{v}
+			0 \leq 2 \re( \alpha \skal{x+y}{v}) + \abs{\alpha}^2 \norm{v}.
 		\]
 		Set 
 		\[
-			\alpha = t \overline{\skal{x-y}{v}}, \qquad t \in \mathbb{R}.
+			\alpha = t \overline{\skal{x-y}{v}}, \qquad t \in \mathbb{R},
 		\]
 		\[
-			\Rightarrow \qquad 0 \leq  2 t \abs{\skal{x-y}{v}}^2 + t^2 \abs{\skal{x-y}{v}}^2 \norm{v}^2
+			\Rightarrow \qquad 0 \leq  2 t \abs{\skal{x-y}{v}}^2 + t^2 \abs{\skal{x-y}{v}}^2 \norm{v}^2.
 		\]
 		Assume $\skal{x-y}{v} \neq 0$: \\
 		We have 
 		\begin{align*}
 			0 &\leq 2t + t^2 \norm{v}^2 \qquad \forall\, t \in \mathbb{R} \\
 			\Rightarrow \qquad -2t &\leq  t^2 \norm{v}^2, \qquad \text{Let }t <0 \\
-			\Leftrightarrow \qquad 2 &\leq -t \norm{v}^2, \qquad t<0
+			\Leftrightarrow \qquad 2 &\leq -t \norm{v}^2, \qquad t<0.
 		\end{align*}
 		Let $t \to 0$, then
 		\[

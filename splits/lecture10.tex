@@ -3,15 +3,15 @@
 \begin{beispiel}
 	$E = L^2([0,1])$ and $f,g \in E$ with
 	\[
-		\skal{f}{g}_{L^2} = \int_{0}^{1} f(x) \overline{g(x)} \,\mathrm{d}x, \qquad \norm{f}_{L^2} = \left( \int_{0}^{1} \abs{f(x)}^2 \,\mathrm{d}x \right)^{\frac{1}{2}}
+		\skal{f}{g}_{L^2} = \int_{0}^{1} f(x) \overline{g(x)} \,\mathrm{d}x, \qquad \norm{f}_{L^2} = \left( \int_{0}^{1} \abs{f(x)}^2 \,\mathrm{d}x \right)^{\frac{1}{2}}.
 	\]
 	Set $h \in C([0,1] \times [0,1])$ and for $f \in L^2([0,1])$
 	\[
-		A(f)(x) = \int_{0}^{1} h(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1]
+		A(f)(x) = \int_{0}^{1} h(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1].
 	\]
 	Then
 	\[
-		\norm{A} \leq \left( \int_{0}^{1} \left( \int_{0}^{1} \abs{h(x,y)}^2 \,\mathrm{d}y \right) \,\mathrm{d}x \right)^{\frac{1}{2}} < \infty
+		\norm{A} \leq \left( \int_{0}^{1} \left( \int_{0}^{1} \abs{h(x,y)}^2 \,\mathrm{d}y \right) \,\mathrm{d}x \right)^{\frac{1}{2}} < \infty.
 	\]
 \end{beispiel}
 \begin{beispiel}
@@ -23,10 +23,10 @@
 	\begin{bemerkung}
 		Consider $ f \in E = C^{\infty}([0,1])$ and 
 		\[
-			A = \diffd{}{x}, \qquad B=x
+			A = \diffd{}{x}, \qquad B=x.
 		\]Then
 		\[
-			(AB - BA)(f)(x) = \diffd{}{x}(x(f(x))) - x \diffd{}{x}f(x) = f(x) 
+			(AB - BA)(f)(x) = \diffd{}{x}(x(f(x))) - x \diffd{}{x}f(x) = f(x).
 		\]
 	\end{bemerkung}
 	Argue by contradiction. \\
@@ -35,13 +35,13 @@
 	\begin{align*}
 		A^2B-BA^2 &= A^2B-ABA + ABA - BA^2 \\
 		&= A(AB-BA) + (AB-BA)A \\
-		&= 2A
+		&= 2A.
 	\end{align*}
 	For $n=3$ we have
 	\begin{align*}
 		A^3B-BA^3 &= A^3B-A^2BA + A^2BA - BA^3 \\
 		&=A^2(AB-BA) + (A^2B-BA^2)A \\
-		&= 3A^2
+		&= 3A^2.
 	\end{align*}
 	In general 
 	\[
@@ -52,7 +52,7 @@
 		n \norm{A^{n-1}} = \norm{A^nB-BA^n} \leq \norm{A^nB} + \norm{BA^n} \leq  2 \norm{A^{n-1}} \norm{A} \norm{B}
 	\]
 	Hence \[
-		(2 \norm{A} \norm{B} -n) \norm{A^{n-1}} \geq 0, \qquad  \forall\,  n = 2,3,\dots
+		(2 \norm{A} \norm{B} -n) \norm{A^{n-1}} \geq 0, \qquad  \forall\,  n = 2,3,\dots.
 	\]
 	We conclude that $\norm{A^{n-1}}= 0$ for $n$ large enough. Clearly the same for $\norm{A^n}$. This yields $A^n=0$ for $n$ large enough. Repeated use of $(*)$ gives $A=0$. This contradicts $AB-BA= I$ so the implication in the example is proven.
 \end{beispiel}
@@ -62,27 +62,27 @@ Recall a important theorem:
 \begin{theorem}[Riesz representation theorem]
 	$(E, \skal{.}{.})$ Hilbert space $f \in B(E,\mathbb{C})$. $f$ is bounded linear functional on $E$. This yields
 	\[
-		\exists\,! x_f \in E: \qquad f(x) = \skal{x}{x_f}, \qquad \forall\, x \in E
+		\exists\,! x_f \in E: \qquad f(x) = \skal{x}{x_f}, \qquad \forall\, x \in E.
 	\]
 	Also it holds
 	\[
-		\underset{\substack{\text{operator norm} \\ \text{of $f$}}}{\underbrace{\norm{f}}} = \underset{\substack{norm of} \\ \text{$x_f$ in $E$}}{\underbrace{\norm{x_f}}}
+		\underset{\substack{\text{operator norm} \\ \text{of $f$}}}{\underbrace{\norm{f}}} = \underset{\substack{norm of} \\ \text{$x_f$ in $E$}}{\underbrace{\norm{x_f}}}.
 	\]
 \end{theorem}
 
 \begin{definition}
-	$\varphi: E \times E \to \mathbb{C}$ is called
+	$\varphi: E \times E \to \mathbb{C}$ is called:
 	\begin{itemize}
-		\item bilinear, if for scalars $\alpha$ and $\beta$ it holds
+		\item Bilinear, if for scalars $\alpha$ and $\beta$ it holds
 		\begin{align*}
 			\varphi( \alpha x, \beta y,z) &= \alpha \varphi(x,z)+ \beta \varphi(y,z) \qquad \forall\, x,y,z \in E \\
-			\varphi(x,\alpha y + \beta z) &= \bar{\alpha} \varphi(x,z) + \overline{\beta} \varphi(y,z) \qquad \forall\, x,y,z \in E
+			\varphi(x,\alpha y + \beta z) &= \bar{\alpha} \varphi(x,z) + \overline{\beta} \varphi(y,z) \qquad \forall\, x,y,z \in E.
 		\end{align*}
-		\item boudned, if there exists $M>0$ such that
+		\item Bounded, if there exists $M>0$ such that
 		\[
-			\abs{\varphi(x,y)} \leq M \norm{x}\norm{y}, \qquad \forall\, x,y \in E
+			\abs{\varphi(x,y)} \leq M \norm{x}\norm{y}, \qquad \forall\, x,y \in E.
 		\]
-		\item coercive, if there exists $K>0$ such that
+		\item Coercive, if there exists $K>0$ such that
 		\[
 			\varphi(x,x) \geq K \norm{x}^2, \qquad \forall\, x \in E.
 		\]
@@ -94,7 +94,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 \begin{theorem}[Lax-Milgram]
 	$(E, \skal{.}{.})$ Hilbert space. Let $\varphi: E \times E \to \mathbb{C}$ be a bilinear, bounded and coercive functional. $f: E \to \mathbb{C}$ bounded linear functional in $E$. Then there exists an unique $x_f \in E$ such that
 	\[
-		f(x) = \varphi(x,x_f), \qquad  \forall\, x \in E
+		f(x) = \varphi(x,x_f), \qquad  \forall\, x \in E.
 	\]
 \end{theorem}
 
@@ -107,7 +107,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\item $A$ is injective and surjective.
 		\item Apply RRT with $ \tilde x_f = A^{-1}(x_f)$
 		\begin{align*}
-			f(x) &= \skal{x}{x_f} \\ &= \skal{x}{A(A^{-1}(x_f))} \\ &= \varphi(x, \tilde x_f), \qquad \forall\, x \in E
+			f(x) &= \skal{x}{x_f} \\ &= \skal{x}{A(A^{-1}(x_f))} \\ &= \varphi(x, \tilde x_f), \qquad \forall\, x \in E.
 		\end{align*}
 	\end{enumerate}
 	\begin{description}
@@ -120,11 +120,11 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\begin{align*}
 			f_y(\alpha x+ \beta z) &= \varphi(\alpha x + \beta z,y) \\
 			&= \alpha \varphi(x,y) + \beta \varphi(z,y) \\
-			&= \alpha f_y(x) + \beta f_y(z)  
+			&= \alpha f_y(x) + \beta f_y(z).
 		\end{align*}
 		Hence $f_y$ is linear. It is bounded because of
 		\[
-			\abs{f_y(x)} = \abs{\varphi(x,y)} \leq (M \norm{y})\norm{x}, \qquad \forall\, x \in E
+			\abs{f_y(x)} = \abs{\varphi(x,y)} \leq (M \norm{y})\norm{x}, \qquad \forall\, x \in E.
 		\]
 		So $f_y$ is bounded. \\
 		RRT implies $f_y(x) = \skal{x}{A(y)}$ for all $x \in E$ for some $A(y) \in E$. \\ Now we have $A : E \to E$.
@@ -134,23 +134,23 @@ We will now introduce a Generalization of the Riesz representation theorem.
 			\skal{x}{A( \alpha y + \beta z)} &= \varphi(x, \alpha y + \beta z) \\
 			&= \bar{\alpha} \varphi(x,y)+ \bar{\beta} \varphi(x,z) \\
 			&= \bar{\alpha} \skal{x}{A(y)} + \bar{\beta} \skal{x}{A(z)} \\
-			&= \skal{x}{\alpha A(y)}+ \skal{x}{\beta A(z)} \\
+			&= \skal{x}{\alpha A(y)}+ \skal{x}{\beta A(z)}. \\
 		\end{align*}
 		This is equivalent to
 		\[
-			\skal{x}{A(\alpha y + \beta z)- \alpha A(y) - \beta A(z)} = 0, \qquad  x \in E
+			\skal{x}{A(\alpha y + \beta z)- \alpha A(y) - \beta A(z)} = 0, \qquad  x \in E.
 		\]
 		This implies 
 		\[
-			\norm{A(\alpha y + \beta z) - \alpha A(y) - \beta A(z)} = 0
+			\norm{A(\alpha y + \beta z) - \alpha A(y) - \beta A(z)} = 0.
 		\]
 		So \[
-			A( \alpha y+ \beta z) = \alpha A(y) + \beta A(z) \qquad \forall\, y,z \in E \text{ and scalars }\beta,\alpha
+			A( \alpha y+ \beta z) = \alpha A(y) + \beta A(z) \qquad \forall\, y,z \in E \text{ and scalars }\beta,\alpha.
 		\]
 		Hence, $A$ is linear. We will now show that $A$ is bounded: \\
 		We know because $\varphi$ is continuous that for all $x,y \in E$
 		\[
-			\abs{\skal{x}{A(y)}} = \abs{\varphi(x,y)} \leq M \norm{x} \norm{y}
+			\abs{\skal{x}{A(y)}} = \abs{\varphi(x,y)} \leq M \norm{x} \norm{y}.
 		\]
 		Take $x = A(y)$ and get
 		\[
@@ -158,17 +158,17 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\]
 		which implies
 		\[
-			\norm{A(y)} \leq M \norm{y} \qquad \forall\, y \in E
+			\norm{A(y)} \leq M \norm{y} \qquad \forall\, y \in E.
 		\]
 		Hence $\norm{A} \leq M < \infty$.
 		\item[Step 2:] Note $\varphi(x,y) = \skal{x}{A(y)}$ for alle $x,y \in E$. \\
 		\textbf{Claim:} \text{    }$A$ is injective, i.e.
 		\[
-			A(x_1) = A(x_2) \qquad \Rightarrow \qquad x_1 = x_2
+			A(x_1) = A(x_2) \qquad \Rightarrow \qquad x_1 = x_2.
  		\]
 		$\varphi$ is coercive so
 		\[
-			\norm{x}^2 \leq \frac{\varphi(x,x)}{K} = \frac{1}{K} \underset{\abs{\skal{x}{A(x)}}}{\underbrace{>0}} \leq \frac{1}{K} \norm{x} \norm{A(x)} \qquad \forall\,  x \in E
+			\norm{x}^2 \leq \frac{\varphi(x,x)}{K} = \frac{1}{K} \underset{\abs{\skal{x}{A(x)}}}{\underbrace{>0}} \leq \frac{1}{K} \norm{x} \norm{A(x)} \qquad \forall\,  x \in E.
 		\]
 		Hence \[
 			\norm{x} \leq  \frac{1}{K} \norm{A(x)}, \qquad \forall\, x \in E.
@@ -186,18 +186,18 @@ We will now introduce a Generalization of the Riesz representation theorem.
 			\item $\Re(A)$ is a subspace in $E$ since $A$ is linear.
 			\item $\Re(A)$ is closed since
 			\[
-				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \Re(A)
+				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \Re(A).
 			\]			
 		\end{itemize}
 		$\Re(A)$ is linear. Take $y_1,y_2 \in \Re(A)$ with preimages $x_1,x_2$ and yield
 		\[
-			\alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 A(x_1) + \alpha_2 A(x_2) = A(\alpha_1 x_1 + \alpha_2 x_2)
+			\alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 A(x_1) + \alpha_2 A(x_2) = A(\alpha_1 x_1 + \alpha_2 x_2).
 		\]
 		So \[
 			\alpha_1 y_1 + \alpha_2 y_2 \in \Re(A).
 		\]
 		Assume \[
-			y_n \to y \qquad \text{in }(E, \norm{.})
+			y_n \to y \qquad \text{in }(E, \norm{.}).
 		\]
 		For $n=1,2,\dots$ there are $x_1,x_2,\dots$ such that $y_n= A(x_n)$ for $n=1,2,\dots$. \\
 		\textbf{Claim:} \text{    }$(x_n)_{n \in \mathbb{N}}$ is a Cauchy sequence in $E$ since
@@ -215,7 +215,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		Secondly $A$ is surjective, i.e. $\Re(A)=E$. \\
 		Assume that this is not true. The Orthogonal decomposition theorem gives
 		\[
-			E = \Re(A) \oplus \Re(A)^{\perp}
+			E = \Re(A) \oplus \Re(A)^{\perp}.
 		\]
 		The first one is a closed subspace in $E$ and the second one is not empty by assumption. Fix $z \in \Re(A)^{\perp} \setminus \set{0}$. Note 
 		\[
@@ -227,7 +227,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\]
 		and 
 		\[
-			\varphi(z,z) \geq K \norm{z}^2 \geq 0 \qquad \Rightarrow  \,z=0
+			\varphi(z,z) \geq K \norm{z}^2 \geq 0 \qquad \Rightarrow  \,z=0.
 		\]
 		This is a contradiction. \\
 		The Conclusion is 
@@ -244,7 +244,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 
 $(E,\skal{.}{.})$ Hilbert space and $A \in B(E,E)$ with adjoint $A^{*}$, i.e.
 \[
-	\skal{A(x)}{y} = \skal{x}{A^*(y)} , \qquad \forall\, x,y \in E
+	\skal{A(x)}{y} = \skal{x}{A^*(y)} , \qquad \forall\, x,y \in E.
 \]
 Fix $y \in E$ and consider
 \[
@@ -255,53 +255,52 @@ Fix $y \in E$ and consider
 	\item linear since $A$ is linear.
 	\item bounded since $A$ is bounded with
 	\[
-		\abs{f_y(x)} \leq (\norm{A}\norm{y})\norm{x}, \qquad x \in E
+		\abs{f_y(x)} \leq (\norm{A}\norm{y})\norm{x}, \qquad x \in E.
 	\]
 \end{itemize}
 	RRT implies
 	\[
-		f_y(x) = \skal{x}{A^*(y)}, \qquad x \in E
+		f_y(x) = \skal{x}{A^*(y)}, \qquad x \in E.
 	\]
 	We have $A^*: E \to E$ such that
 	\[
-		\skal{A(x)}{y} = \skal{x}{A^*(y)} , \qquad \forall\, x,y \in E
+		\skal{A(x)}{y} = \skal{x}{A^*(y)} , \qquad \forall\, x,y \in E.
 	\]
-
 \begin{proposition}
-	$A \in B(E,E)$. Then $A^* \in B(E,E) $ and $\norm{A^*} = \norm{A}$
+	$A \in B(E,E)$. Then $A^* \in B(E,E) $ and $\norm{A^*} = \norm{A}$.
 \end{proposition}
 \begin{beweis}
 	$A^*$ linear:
 	\[
-		\skal{x}{A^* ( \alpha y + \beta z)} = \skal{x}{\alpha A^*(y) + \beta A^*(z)} \qquad \forall\, x,y \in E
+		\skal{x}{A^* ( \alpha y + \beta z)} = \skal{x}{\alpha A^*(y) + \beta A^*(z)} \qquad \forall\, x,y \in E.
 	\]
 	$A^*$ bounded: \\ Take $x= A^*(y)$ and get
 	\begin{align*}
 		\norm{A^*(y)}^2 &= \abs{\skal{A(A^*(y))}{y}} \\
 		&\leq \norm{A(A^*(y))} \norm{y} \\
-		&\leq \norm{A} \norm{A^*(y)} \norm{y}, \qquad y \in E
+		&\leq \norm{A} \norm{A^*(y)} \norm{y}, \qquad y \in E.
 	\end{align*}
 	We get
 	\[
-		\norm{A^*(y)} \leq \norm{A} \norm{y}, \qquad y \in E
+		\norm{A^*(y)} \leq \norm{A} \norm{y}, \qquad y \in E.
 	\]
 	Conclucion: $A^* \in B(E,E)$. We also get 
 	\[
-		\norm{A^*} \leq \norm{A}
+		\norm{A^*} \leq \norm{A}.
 	\]
 	But we also know that $A^{**} = A$ since
 	\begin{align*}
 		\skal{x}{A^{**}(y)} &= \skal{A^*(x)}{y} \\
 		&= \overline{\skal{y}{A^*(x)}} \\
 		&= \overline{\skal{A(y)}{x}} \\
-		&= \skal{x}{A(y)}, \qquad x,y \in E
+		&= \skal{x}{A(y)}, \qquad x,y \in E.
 	\end{align*}
 	So \[
 		\norm{A} = \norm{A^{**}} \leq \norm{A^*}
 	\]
 	which impllies
 	\[
-		\norm{A} = \norm{A^*}
+		\norm{A} = \norm{A^*}.
 	\]
 \end{beweis}
 \begin{bemerkung}
@@ -311,13 +310,13 @@ Fix $y \in E$ and consider
 		(AB)^* &= B^* A^* \\
 		(\alpha A)^* &= \bar{\alpha}A^* \\
 		A^{**} &= A \\
-		I^* &= I
+		I^* &= I.
 	\end{align*}
 \end{bemerkung}
 \begin{beispiel}
 	Continuity of the example above: For $f \in L^2([0,1])$ consider
 	\[
-		A(f)(x) = \int_{0}^{1}h(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1]
+		A(f)(x) = \int_{0}^{1}h(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1].
 	\]
 	For $g \in L^2([0,1])$ it holds
 	\begin{align*}
@@ -325,11 +324,11 @@ Fix $y \in E$ and consider
 		&= \int_{0}^{1}\int_{0}^{1} h(x,y)f(y) \,\mathrm{d}x \overline{g(x)} \,\mathrm{d}x \\
 		&= \int_{0}^{1}f(y) \cdot \int_{0}^{1}h(x,y) \overline{g(x)} \,\mathrm{d}x \,\mathrm{d}y \\
 		&= \int_{0}^{1} f(y) \cdot \overline{\int_{0}^{1} \overline{h(x,y)} g(x) \,\mathrm{d}x} \,\mathrm{d}y \\
-		&= \skal{f}{A^*(g)}_{L^2}
+		&= \skal{f}{A^*(g)}_{L^2}.
 	\end{align*}
 	This gives us 
 	\[
-		A^*(f)(x) = \int_{0}^{1} \overline{h(y,x)}f(y) \,\mathrm{d}y, \qquad x \in [0,1]
+		A^*(f)(x) = \int_{0}^{1} \overline{h(y,x)}f(y) \,\mathrm{d}y, \qquad x \in [0,1].
 	\]
 \end{beispiel}
 
@@ -338,7 +337,7 @@ Fix $y \in E$ and consider
 	\[
 		\Re(A)^{\perp} = N(A^*) = \set[x \in E]{A^*(x) = 0}
 	\]
-	since $x \in \Re(A)^{\perp}$ it is equivalent that
+	since $x \in \Re(A)^{\perp}$. It is equivalent that
 	\[
 		\skal{x}{A(y)} = 0, \qquad \forall\, y \in E
 	\] 
@@ -346,7 +345,7 @@ Fix $y \in E$ and consider
 		\Leftrightarrow \qquad \skal{A^*(x)}{y} = 0, \qquad \forall\, y \in E
 	\]
 	\[
-		\Rightarrow \qquad A^*(x) = 0 \qquad \Leftrightarrow \qquad x \in N(A^*)
+		\Rightarrow \qquad A^*(x) = 0 \qquad \Leftrightarrow \qquad x \in N(A^*).
 	\]
 	We get
 	\[
@@ -354,7 +353,7 @@ Fix $y \in E$ and consider
 	\]
 	since
 	\[
-		N(A^*)^{\perp} = \left( R(A)^{\perp} \right)^{\perp} = \overline{\spn(\Re(A))} = \overline{\Re(A)}
+		N(A^*)^{\perp} = \left( R(A)^{\perp} \right)^{\perp} = \overline{\spn(\Re(A))} = \overline{\Re(A)}.
 	\]
 \end{beispiel}
 \begin{bemerkung}
@@ -366,15 +365,15 @@ For $A \in B(E,E)$ we have
 \]
 since
 \[
-	\norm{\skal{A(x)}{y}} \leq \underset{\leq \norm{A}\norm{x}}{\underbrace{\norm{A(x)}}} \leq \norm{A}, \qquad \text{for }\norm{x}=\norm{y}=1
+	\norm{\skal{A(x)}{y}} \leq \underset{\leq \norm{A}\norm{x}}{\underbrace{\norm{A(x)}}} \leq \norm{A}, \qquad \text{for }\norm{x}=\norm{y}=1.
 \]
 If $A(x) = 0$ for all $x \in E$ then $\norm{A}=0$ and also
 \[
-	\sup\limits_{\substack{\norm{x} = 1  \\ \norm{y}=1}} \abs{\skal{A(x)}{y}} = 0
+	\sup\limits_{\substack{\norm{x} = 1  \\ \norm{y}=1}} \abs{\skal{A(x)}{y}} = 0.
 \]
 For $x$ with $A(x) \neq 0$ then it is
 \[
-	A \left( \frac{1}{\norm{x}}x \right) \neq 0
+	A \left( \frac{1}{\norm{x}}x \right) \neq 0.
 \]
 For such an $x$ with $\norm{x}=1$ we have
 \[
@@ -382,26 +381,26 @@ For such an $x$ with $\norm{x}=1$ we have
 \]
 and
 \[
-	\norm{A} \leq \sup_{\norm{x}=1} \norm{A(x)} \leq \sup\limits_{\substack{\norm{x} = 1  \\ \norm{y}=1}} \abs{\skal{A(x)}{y}} \leq \norm{A}
+	\norm{A} \leq \sup_{\norm{x}=1} \norm{A(x)} \leq \sup\limits_{\substack{\norm{x} = 1  \\ \norm{y}=1}} \abs{\skal{A(x)}{y}} \leq \norm{A}.
 \]
 \begin{proposition}
 	Let $A \in B(E,E)$ be self-adjoint. Then
 	\[
-		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}} 
+		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
 	\]
 \end{proposition}
 \begin{beweis}
 	Set 
 	\[
-		M = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}
+		M = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
 	\]
 	For $\norm{x}=1$ we have
 	\[
-		\abs{\skal{A(x)}{x}} \leq \norm{A(x)} \norm{x} \leq \norm{A}
+		\abs{\skal{A(x)}{x}} \leq \norm{A(x)} \norm{x} \leq \norm{A}.
 	\]
 	Furthermore
 	\[
-		M \leq \norm{A}
+		M \leq \norm{A}.
 	\]
 	It remains to prove: $\norm{A} \leq M$. \\
 	For $x,z \in E$ consider:
@@ -409,7 +408,7 @@ and
 		\skal{A(x+z)}{x+z} - \skal{A(x-z)}{x-z} &= 2 \skal{A(x)}{z} + 2 \skal{A(z)}{x} \\
 		&= 2 \left( \skal{A(x)}{z} + \skal{z}{A^*(x)} \right) \\
 		&= 2 (\skal{A(x)}{z} + \skal{z}{A(x)}) \\
-		&= 4 \re( \skal{A(x)}{z})
+		&= 4 \re( \skal{A(x)}{z}).
 	\end{align*}
 	Assume now $A(x) \neq 0$ and set
 	\[
@@ -418,23 +417,23 @@ and
 	Hence
 	\[
 		\norm{A(x)} = \frac{1}{4} \left( \skal{A(x+\frac{1}{\norm{A(x)}} A(x))}{x + \frac{1}{\norm{A(x)}} A(x)} 
-		- \skal{A(x-\frac{1}{\norm{A(x)}} A(x))}{x- \frac{1}{\norm{A(x)}} A(x)} \right)
+		- \skal{A(x-\frac{1}{\norm{A(x)}} A(x))}{x- \frac{1}{\norm{A(x)}} A(x)} \right).
 	\]
 	Note \[
-		\abs{\skal{A(y)}{y}} = \norm{y}^2 \abs{\skal{A(\frac{1}{\norm{y}}y)}{ \frac{1}{\norm{y}}y}} \leq M \norm{y}^2
+		\abs{\skal{A(y)}{y}} = \norm{y}^2 \abs{\skal{A(\frac{1}{\norm{y}}y)}{ \frac{1}{\norm{y}}y}} \leq M \norm{y}^2.
 	\]
 	We now obtain
 	\begin{align*}
 		\norm{A(x)} &\leq \frac{1}{4} \left( M \norm{x+\frac{1}{\norm{A(x)}} A(x)}^2 + M \norm{x - \frac{1}{\norm{A(x)}} A(x)}^2 \right) \\
 		&= \frac{M}{4} 2 \left( \norm{x}^2 + \norm{\frac{1}{\norm{A(x)}} A(x)}^2 \right) \\
-		&= \frac{M}{2} (\norm{x}^2 +1) 
+		&= \frac{M}{2} (\norm{x}^2 +1).
 	\end{align*}
 	So
 	\[
 		\norm{A} = \sup_{\norm{x}=1} \norm{A(x)} \leq M
 	\]
-	this yields
+	and this yields
 	\[
-		\norm{A}= M
+		\norm{A}= M.
 	\]
 \end{beweis}

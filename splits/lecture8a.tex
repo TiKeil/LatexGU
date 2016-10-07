@@ -3,15 +3,15 @@
 \begin{beispiel}
 	Assume $k(x,y)$ continuous on $[0,1] \times [0,1]$ and $h(y,z)$ continuous on $[0,1]\times \mathbb{R}$ and 
 	\[
-		\sup\limits_{(y,z) \in [0,1] \times \mathbb{R}} \abs{h(y,z)} \equiv B < \infty
+		\sup\limits_{(y,z) \in [0,1] \times \mathbb{R}} \abs{h(y,z)} \equiv B < \infty.
 	\]
 	Then there exists a solution $f \in C([0,1])$ to 
 	\[
-		f(x) = \int_{0}^{1} k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1]
+		f(x) = \int_{0}^{1} k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1].
 	\]
 	Method: Set $f \in C([0,1])$ and
 	\[
-		T(f)(x) = \int_{0}^{1}k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1] \qquad (*)
+		T(f)(x) = \int_{0}^{1}k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1] \qquad (*).
 	\]
 	We want to apply (a generalized version of) Schander's fixed point theorem. Assume $(E, \norm{.})$ is a Banach space and $F$ closed convex subset of $E$. Moreover assume $T: E \to E$ continuos and $T(F)$ relatively compact in $(E,\norm{.})$. Then $T$ has a fixed point in $F$. \\
 	\begin{description}
@@ -41,7 +41,7 @@
 	\]
 	Set 
 	\[
-		F:= \set[f \in C([0,1])]{\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq AB}
+		F:= \set[f \in C([0,1])]{\norm{f} = \max_{x \in [0,1]}\abs{f(x)} \leq AB}.
 	\]
 	Clearly $F$ is closed convex in $(C([0,1]),\norm{.})$ which is a Banach space.
 	\item[Step 3:] \textbf{Claim:} \text{    }     $T(F)$ is relatively compact. \\
@@ -52,19 +52,19 @@
 	\begin{enumerate}[(1)]
 		\item $\mathcal{S}$ uniformly bounded, i.e.
 		\[
-			\sup_{f \in \mathcal{S}} \norm{f} < \infty
+			\sup_{f \in \mathcal{S}} \norm{f} < \infty.
 		\]
-		\item equicontinuity of $f \in \mathcal{S}$, i.e.
+		\item Equicontinuity of $f \in \mathcal{S}$, i.e.
 		\begin{align*}
 			\forall\, \varepsilon>0 \,\exists\, \delta = \delta (\varepsilon) >0: \,\forall\,  f \in \mathcal{S}: & \\
-			\abs{x_1-x_2} < \delta, \, x_1,x_2 \in K \qquad \Rightarrow & \qquad \abs{f(x_2)-f(x_1)}< \varepsilon
+			\abs{x_1-x_2} < \delta, \, x_1,x_2 \in K \qquad \Rightarrow & \qquad \abs{f(x_2)-f(x_1)}< \varepsilon.
 		\end{align*}
 	\end{enumerate}
 	In our example it is $\mathcal{S} = F$, $K = [0,1]$ in $\mathbb{R}$. Check that (1) and (2) in AA-Theorem are satisfied. \\
 	\begin{enumerate}[(1)]
 		\item $F$ is uniformly bounded since
 	\[
-		\sup_{f \in F}\norm{f} \leq AB < \infty
+		\sup_{f \in F}\norm{f} \leq AB < \infty.
 	\]
 	\item Equicontinuity follows from calculations in Step 1. \\
 	\end{enumerate}	
@@ -79,12 +79,12 @@
 	\] 
 	for $\abs{(y_1,z_1)-(y_2,z_2)} < \delta $. For $f_1,f_2 \in F$ with
 	\[
-		\norm{f_1-f_2} < \delta 
+		\norm{f_1-f_2} < \delta.
 	\]
 	We have 
 	\begin{align*}
 		\abs{T(f_1)(x)-T(f_2)(x)} &= \abs{\int_{0}^{1}k(x,y)(h(y,f_1(y))-h(y,f_2(y))) \,\mathrm{d}y} \\
-		&\leq  \int_{0}^{1}\underset{\leq A}{\underbrace{\abs{k(x,y)}}}\underset{< \frac{\varepsilon}{A}}{\underbrace{\abs{h(y,f_1(y))-h(y,f_2(y))}}} \,\mathrm{d}y < \varepsilon 
+		&\leq  \int_{0}^{1}\underset{\leq A}{\underbrace{\abs{k(x,y)}}}\underset{< \frac{\varepsilon}{A}}{\underbrace{\abs{h(y,f_1(y))-h(y,f_2(y))}}} \,\mathrm{d}y < \varepsilon.
 	\end{align*}
 	Conclusion: $T: F \to F$ is continuous. 
 	\item[Step 5:] Apply Schander's fixed point theorem.
@@ -105,18 +105,18 @@ Let $(x_n)_{n=1}^{\infty}$ and $(y_n)_{n=1}^{\infty}$ be Cauchy sequences in $(E
 	\norm{x_n-y_n} \to 0, \qquad n \to \infty.
 \]
 Set \[
-	\tilde E= \set[ \left((x_n) \right)_N]{(x_n)_{n=1}^{\infty} \text{ Cauchy sequence in } (E,\norm{.})}
+	\tilde E= \set[ \left((x_n) \right)_N]{(x_n)_{n=1}^{\infty} \text{ Cauchy sequence in } (E,\norm{.})}.
 \]
-Vecotr space structure:
+Vector space structure:
 \[
 	\begin{cases}
 		[(x_n)]_N + [(\tilde x_n)]_N &= [(x_n + \tilde x_n)]_N \\
-		\lambda [(x_n)]_N &= [(\lambda x)_n]_N
+		\lambda [(x_n)]_N &= [(\lambda x)_n]_N.
 	\end{cases}
 \]
-Show that these definitions are well-defined, i.e. independent of the choice of representative Norm
+Show that these definitions are well-defined, i.e. independent of the choice of representative norm
 \[
-	\norm{ [(x_n)]_N}_* = \lim_{n \to \infty} \norm{x_n}
+	\norm{ [(x_n)]_N}_* = \lim_{n \to \infty} \norm{x_n}.
 \]
 Note \[
 	(x_n) \sim (y_n)
@@ -139,7 +139,7 @@ Define $\Phi$: For $x \in E$ set $\Phi(x) = \left[ (x)_{n=1}^{\infty} \right]_N$
 \item[Claim 1 \& 2:] easy to prove. 
 \item[Claim 3:] item $\Phi(E)$ dense in $(\tilde E,\norm{.}_*)$. Fix $\left[ (x_n) \right]_N \in \tilde E$. Consider $\Phi(x_k)$ where $x_k$ is the element in the $k$-th position in the sequence $(x_1,x_2, \dots,x_n, \dots)$.
 \begin{align*}
-	\norm{\left[ (x_n) \right]_N - \Phi(x_k)}_* = \lim_{n \to \infty}\norm{x_n - x_k} \to 0 \qquad k \to \infty
+	\norm{\left[ (x_n) \right]_N - \Phi(x_k)}_* = \lim_{n \to \infty}\norm{x_n - x_k} \to 0 \qquad k \to \infty.
 \end{align*}
 Since $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence. \\
 \item[Claim 4:] item $(\tilde E, \norm{.}_*)$ is a Banach space.\\
@@ -150,14 +150,14 @@ To show: There exists $z \in \tilde E$ such that
 \]
 By 3 we have that $\Phi(E)$ is dense in $ \tilde E$ so for $n=1,2,\dots$ there exists $x_n \in E$, $n=1,2,\dots$ such that
 \[
-	\norm{z_n - \Phi(z_n)} < \frac{1}{n}, \qquad  n=1,2,\dots
+	\norm{z_n - \Phi(z_n)} < \frac{1}{n}, \qquad  n=1,2,\dots.
 \]
 Set $z=: \left[ (x_n) \right]_N$. \\
 Need to show that $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence
 \begin{align*}
 	\norm{x_n - x_m} &= \norm{\Phi(x_n)-\Phi(x_m)}_* \\
 	& \leq  \norm{\Phi(x_n)- z_n}_* + \norm{z_n-z_m}_* + \norm{z_m - \Phi(x_m)}_* \\
-	&< \frac{1}{n} + \norm{z_n-z_m} + \frac{1}{m} \to 0, \qquad n,m \to \infty
+	&< \frac{1}{n} + \norm{z_n-z_m} + \frac{1}{m} \to 0, \qquad n,m \to \infty.
 \end{align*}
 Conclusion: $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(E, \norm{.})$. Remains to show:
 \[
@@ -175,7 +175,7 @@ Consider $ f \in C([0,1])$
 	\[
 		\norm{f}_{L^p} = \left( \int_{0}^{1}\abs{f(x)}^p \,\mathrm{d}x \right)^{\frac{1}{p}} 
 	\]
-	defines a norm for $C([0,1])$
+	defines a norm for $C([0,1])$.
 \end{itemize}
 \begin{bemerkung}
 	\begin{itemize}
@@ -188,7 +188,7 @@ Consider $ f \in C([0,1])$
 		\]
 		with
 		\[
-			\norm{f_n-f_m}_{L^1} \leq \frac{1}{2} \frac{1}{\min(m,n)} \to 0, \qquad n,m \to \infty
+			\norm{f_n-f_m}_{L^1} \leq \frac{1}{2} \frac{1}{\min(m,n)} \to 0, \qquad n,m \to \infty.
 		\]
 		So $(f_n)_{n=1}^{\infty}$ is a Cauchy sequence in $(C([0,1]),\norm{.}_{L^1})$ but $(f_n)_{n=1}^{\infty}$ does not converge in $(C([0,1]),\norm{.}_{L^1})$ since
 		if $\norm{f_n - f}_{L^1} \to 0$ as $n \to \infty$ and $f \in C([0,1])$ then
@@ -196,7 +196,7 @@ Consider $ f \in C([0,1])$
 			f(x) = \begin{cases}
 				0, &\text{ if }x \in [0,\frac{1}{2})\\
 				1, &\text{ if }x \in [\frac{1}{2},1]
-			\end{cases}
+			\end{cases}.
 		\]
 		Conclusion: $(C([0,1]), \norm{.}_{L^1})$ is not a Banach space.
 		\item Consider:
@@ -204,7 +204,7 @@ Consider $ f \in C([0,1])$
 			f(x) = \begin{cases}
 				1, &\text{ if }x = \frac{1}{2}\\
 				0, &\text{ if }x \in [0,1] \setminus \set{\frac{1}{2}}
-			\end{cases}
+			\end{cases}.
 		\]
 		Then
 		\[
@@ -212,11 +212,11 @@ Consider $ f \in C([0,1])$
 		\]
 		Compare this with the first axiom for a norm function.
 		\item Replace $[0,1]$ with $\mathbb{R}$. For $f : \mathbb{R} \to \mathbb{R}$ set \[
-			\supp(f) = \set[x \in \mathbb{R}]{f(x) \neq 0}
+			\supp(f) = \set[x \in \mathbb{R}]{f(x) \neq 0}.
 		\]
 		Set 
 		\[
-			C_0(\mathbb{R}) = \set[f \in C(\mathbb{R})]{ \supp(f) \text{ is compact in }\mathbb{R}}
+			C_0(\mathbb{R}) = \set[f \in C(\mathbb{R})]{ \supp(f) \text{ is compact in }\mathbb{R}}.
 		\]
 		\textbf{Claim:} \text{    }      $C_0(\mathbb{R})$ forms a vector space and for every $p \geq 1$ and $f \in C_0(\mathbb{R})$
 		\[
@@ -229,7 +229,7 @@ Consider $ f \in C([0,1])$
 			f_A(x) \begin{cases}
 				1, & x \in A\\
 				0, \text{elsewhere}
-			\end{cases}
+			\end{cases}.
 		\]
 		Lebesguesmeasure of $A = \norm{f_A}_{L^1} = \mu(f_A)$. $A \subset \mathbb{R}$ and $A$ unbounded
 		\[
@@ -237,12 +237,12 @@ Consider $ f \in C([0,1])$
 		\]
 		We say that $A \subset \mathbb{R}$ is a $0$- set if for all $\varepsilon >0$ there exist open intervals $I_n$, $n=1,2, \dots$ such that
 		\begin{enumerate}[(1)]
-			\item $ A \subseteq \bigcup_{n=1}^{\infty}I_n$
-			\item $\sum_{n=1}^{\infty}$ lenghts of $I_m < \varepsilon$
+			\item $ A \subseteq \bigcup_{n=1}^{\infty}I_n$,
+			\item $\sum_{n=1}^{\infty}$ lenghts of $I_m < \varepsilon$.
 		\end{enumerate} 
 		In particular
 		\[
-			A = \mathbb{Q} = \set[r_n]{n=1,2,\dots}\qquad \text{is a $0$-set}	
+			A = \mathbb{Q} = \set[r_n]{n=1,2,\dots}\qquad \text{is a $0$-set}.	
 		\]
 	\end{itemize}
 \end{bemerkung}
