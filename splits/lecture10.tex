@@ -186,7 +186,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 			\item $\Re(A)$ is a subspace in $E$ since $A$ is linear.
 			\item $\Re(A)$ is closed since
 			\[
-				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \Re(A).
+				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \mathcal{R}(A).
 			\]			
 		\end{itemize}
 		$\Re(A)$ is linear. Take $y_1,y_2 \in \Re(A)$ with preimages $x_1,x_2$ and yield
@@ -194,7 +194,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 			\alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 A(x_1) + \alpha_2 A(x_2) = A(\alpha_1 x_1 + \alpha_2 x_2).
 		\]
 		So \[
-			\alpha_1 y_1 + \alpha_2 y_2 \in \Re(A).
+			\alpha_1 y_1 + \alpha_2 y_2 \in \mathcal{R}(A).
 		\]
 		Assume \[
 			y_n \to y \qquad \text{in }(E, \norm{.}).
@@ -215,7 +215,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		Secondly $A$ is surjective, i.e. $\Re(A)=E$. \\
 		Assume that this is not true. The Orthogonal decomposition theorem gives
 		\[
-			E = \Re(A) \oplus \Re(A)^{\perp}.
+			E = \mathcal{R}(A) \oplus \mathcal{R}(A)^{\perp}.
 		\]
 		The first one is a closed subspace in $E$ and the second one is not empty by assumption. Fix $z \in \Re(A)^{\perp} \setminus \set{0}$. Note 
 		\[
@@ -232,7 +232,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		This is a contradiction. \\
 		The Conclusion is 
 		\[
-			\Re(A)^{\perp} = \set{0} \qquad \Rightarrow \qquad \Re(A) = E.
+			\mathcal{R}(A)^{\perp} = \set{0} \qquad \Rightarrow \qquad \mathcal{R}(A) = E.
 		\]
 		We have $\varphi(x,y) = \skal{x}{A(y)}$ for all $x,y \in E$ and $A \in B(E,E)$ surjective.
 		\item[Step 3:] see above.
