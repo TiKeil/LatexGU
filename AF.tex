@@ -112,8 +112,8 @@ is a bijection.
 	\[
 		\sigma_p(A) = \set[\lambda \in \mathbb{C}]{\lambda \text{eigenvalue of $A$}}.
 	\]
-	\item If $A-\lambda I$ is injective, densely defined but not bounded then $\lambda \in \sigma(A)$. The set of such $\lambda$'s is called the continuous spectrum of $A$, denoted $sigma_c(A)$
-	\item If $A-\lambda I$ is not surjective then the set of such $\lambda$'s is called the residual spectrum, denoted $\sigma_r(A)$.
+	\item If $A-\lambda I$ is injective, densely defined but not bounded then $\lambda \in \sigma(A)$. The set of such $\lambda$'s is called the continuous spectrum of $A$, denoted $\sigma_c(A)$
+	\item If $A-\lambda I$ is not surjective then the set of such $\lambda$'s is called the residual spectrum, denoted $\sigma _r(A)$.
 \end{itemize}
 \end{beweis}
  \begin{lemma*}
@@ -388,11 +388,11 @@ Given $L$ and $R_j$ for $j=1,2,\dots,n$ find the corresponding Green's function.
 	\end{beweis}
 Set 
 \[
- 	\mathcal{N}(L) = \set[u \in C^n([0,1])]{Lu=0}
+ 	\mathcal{N}(L) = \set[u \in C^n((0,1))]{Lu=0}
 \]
 \textbf{Claim:} \text{    }$\dim \mathcal{N}(L)=n$ \\
 Set \[
-	C_R^n([0,1]) = \set[u \in C^n([0,1])]{R_ju = 0, j = 1,2,\dots,n}
+	C_R^n([0,1]) = \set[u \in C^n((0,1))]{R_ju = 0, j = 1,2,\dots,n}
 \]
 and $L_0 = L  \big|_{C^n_R([0,1])}^{}$. Let $u_1,\dots,u_m \in \mathcal{N}(L)$
 
@@ -405,7 +405,7 @@ and $L_0 = L  \big|_{C^n_R([0,1])}^{}$. Let $u_1,\dots,u_m \in \mathcal{N}(L)$
 	\end{enumerate}
 	where 
 	\[
-		w(x) = \det \left( \begin{pmatrix}
+		W(x) = \det \left( \begin{pmatrix}
 			u_1(x) & \dots & u_n(x) \\
 			u'_1(x) & \dots & u'_n(x) \\
 			\vdots & & \vdots \\

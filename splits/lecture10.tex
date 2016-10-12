@@ -179,17 +179,17 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\]
 		We get $x_1 = x_2$. \\
 		\textbf{Claim:} \text{    }$A$ is surjective, i.e. the image of $A$ is $E$: \[
-			\Re(A) = \set[A(x)]{x \in E} = E.
+			\mathcal{R}(A) = \set[A(x)]{x \in E} = E.
 		\] 
-		We first show that $\Re(A)$ is a closed subspace of $E$. 
+		We first show that $\mathcal{R}(A)$ is a closed subspace of $E$. 
 		\begin{itemize}
-			\item $\Re(A)$ is a subspace in $E$ since $A$ is linear.
-			\item $\Re(A)$ is closed since
+			\item $\mathcal{R}(A)$ is a subspace in $E$ since $A$ is linear.
+			\item $\mathcal{R}(A)$ is closed since
 			\[
 				y_n \to y \qquad \text{in }(E, \norm{.}) \qquad \Rightarrow y \in \mathcal{R}(A).
 			\]			
 		\end{itemize}
-		$\Re(A)$ is linear. Take $y_1,y_2 \in \Re(A)$ with preimages $x_1,x_2$ and yield
+		$\mathcal{R}(A)$ is linear. Take $y_1,y_2 \in \mathcal{R}(A)$ with preimages $x_1,x_2$ and yield
 		\[
 			\alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 A(x_1) + \alpha_2 A(x_2) = A(\alpha_1 x_1 + \alpha_2 x_2).
 		\]
@@ -211,13 +211,13 @@ We will now introduce a Generalization of the Riesz representation theorem.
 		\[
 			A(x_n) \to y
 		\]
-		since $A$ is bounded, continuos and linear. So $y = A(x)$ and we get $y \in \Re(A)$. \\
-		Secondly $A$ is surjective, i.e. $\Re(A)=E$. \\
+		since $A$ is bounded, continuos and linear. So $y = A(x)$ and we get $y \in \mathcal{R}(A)$. \\
+		Secondly $A$ is surjective, i.e. $\mathcal{R}(A)=E$. \\
 		Assume that this is not true. The Orthogonal decomposition theorem gives
 		\[
 			E = \mathcal{R}(A) \oplus \mathcal{R}(A)^{\perp}.
 		\]
-		The first one is a closed subspace in $E$ and the second one is not empty by assumption. Fix $z \in \Re(A)^{\perp} \setminus \set{0}$. Note 
+		The first one is a closed subspace in $E$ and the second one is not empty by assumption. Fix $z \in \mathcal{R}(A)^{\perp} \setminus \set{0}$. Note 
 		\[
 			\varphi(x,y) = \skal{x}{A(y)} \qquad x,y \in E
 		\]
@@ -335,9 +335,9 @@ Fix $y \in E$ and consider
 \begin{beispiel}
 	$A \in B(E,E)$. It follows
 	\[
-		\Re(A)^{\perp} = N(A^*) = \set[x \in E]{A^*(x) = 0}
+		\mathcal{R}(A)^{\perp} = N(A^*) = \set[x \in E]{A^*(x) = 0}
 	\]
-	since $x \in \Re(A)^{\perp}$. It is equivalent that
+	since $x \in \mathcal{R}(A)^{\perp}$. It is equivalent that
 	\[
 		\skal{x}{A(y)} = 0, \qquad \forall\, y \in E
 	\] 
@@ -349,11 +349,11 @@ Fix $y \in E$ and consider
 	\]
 	We get
 	\[
-		N(A^*)^{\perp} = \overline{\Re(A)}
+		N(A^*)^{\perp} = \overline{\mathcal{R}(A)}
 	\]
 	since
 	\[
-		N(A^*)^{\perp} = \left( R(A)^{\perp} \right)^{\perp} = \overline{\spn(\Re(A))} = \overline{\Re(A)}.
+		N(A^*)^{\perp} = \left( R(A)^{\perp} \right)^{\perp} = \overline{\spn(\mathcal{R}(A))} = \overline{\mathcal{R}(A)}.
 	\]
 \end{beispiel}
 \begin{bemerkung}
