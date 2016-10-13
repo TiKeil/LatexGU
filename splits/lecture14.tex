@@ -1,0 +1,449 @@
+%%%% 13.10.2016
+
+\minisec{Recall:}
+
+We have a bounded value problem with
+\[
+	\begin{cases}
+		Lu &\equiv u^{(n)}+ c_{n-1}(x) u^{(n-1)} + \dots + c_1(x) u' + c_0(x)u= f \in C([0,1]) \\
+		R_ju &= \sum_{k=0}^{n-1}\left( \alpha_{kj} u^{(k)}(0) + \beta_{kj}u^{(k)}(1) \right) = 0, \qquad j = 1,2,\dots,n
+	\end{cases}
+\]
+with $\alpha_{kj}, \beta_{kj} \in \mathbb{C}$ for $k=0, \dots,n-1$ and $j =1,\dots,n$. \\
+We have
+\[
+	\mathcal{N}(L) = \set[u \in C^n((0,1))]{Lu =0}.
+\]
+Set $u_1,u_2, \dots,u_n$ as a basis for $\mathcal{N}(L)$ and set
+\[
+	L_0 = L  \big|_{C_R^n([0,1])}^{}
+\]
+where
+\[
+	C_R^n([0,1]) = \set[u \in C^n((0,1))]{R_ju=0,\,j=1, \dots,n}.
+\]
+Then $L_0 u \in C([0,1])$ for $u \in C_R^n([0,1])$. Remember Theorem 4.3 and Theorem 4.4:
+\begin{theorem*}
+	Assume
+	\[
+		\det(R_ju_k) \neq 0.
+	\]
+	Then
+	\begin{enumerate}
+		\item $L_0: C_R^n([0,1]) \to  C([0,1])$ is a bijection.
+		\item Set $G = L_0^{-1}$. Then there exists a continuous function $g(x,y)$ in $[0,1] \times [0,1]$ such that 
+		\[
+			G(f) = \int_{0}^{1}g(x,y)f(y) \,\mathrm{d}y, \qquad x \in [0,1].
+		\]
+		with $f \in C([0,1])$ and $g$ is called the Green's function for $L$ and the boundary conditions $R_j$, $j =1, \dots,n$ can be given by
+		\[
+			g(x,y) = e(x,y) \theta(x-y) + \sum_{k=1}^{n}b_k(y) u_k(x)
+		\]
+		where
+		\[
+			e(x,y) = \sum_{k=1}^{n}a_k(y)u_k(x)
+		\]
+		with $a_k$ and $b_k$ are defined through
+		\[
+			\begin{cases}
+				\left( \diff{}{x} \right)^l e(x,y)  \big|_{x=y}^{} &= 0, \qquad l=0,1,\dots,n-2. \\
+				\left( \diff{}{x} \right)^{n-1} e(x,y)  \big|_{x=y}^{} &= 1
+			\end{cases}
+		\]	
+		and \[
+			R_j(g(.,y))= 0, \qquad 0<y<1, \qquad j=1,2,\dots,n.
+		\]
+ 	\end{enumerate}
+\end{theorem*}
+\begin{bemerkung}
+	Consider the problem
+	\[
+		\begin{cases}
+			Lu &= f(x,u), \qquad x \in [0,1] \\
+			R_ju &= c_j, \qquad j=1,2,\dots,n
+		\end{cases}.
+	\]
+	Pick any $\tilde u \in C^n([0,1])$ such that
+	\[
+		R_j \tilde u = c_j, \qquad j=1, \dots,n.
+	\]
+	Set $U =  \tilde u + v$. Note that 
+	\[
+		R_jv= R_j(u- \tilde u) = R_ju - R_j \tilde u = 0, \qquad j =1,2,\dots,n
+	\]
+	and
+	\[
+		L( \tilde u + v) = f(x, \tilde u + v)
+	\]
+	gives \[
+		Lv = f(x, \tilde u + v) - L \tilde u = \hat f(x,v).
+	\] 
+	Solve 
+	\[
+		\begin{cases}
+			Lv &= \hat f (x,v) \\
+			R_jv &=0, \qquad j=1, \dots,n
+		\end{cases}
+	\]
+	Moreover set \[
+		T(v)(x) = \int_{0}^{1}g(x,y) \hat f(y, v(y)) \,\mathrm{d}y, \qquad x \in [0,1].
+	\]
+	Apply a fixed point theorem. \\ \underline{Warning:} don't take for example the space $C^2([0,1])$ because in this case we need another norm to use the fixed point theorem (no Banach space). Take
+	\[
+		T : C([0,1]) \to  C([0,1])
+	\] instead where $(C([0,1]), \norm{.})$ is a Banach space. \\
+If $u \in C^([0,1])$ is a fixed point then
+\[
+	u(x) = \int_{0}^{1}g(x,y) f(y,u(y)) \,\mathrm{d}y, \qquad  x \in [0,1].
+\]
+WE ACTUALLY have $u \in C_R^n([0,1])$!!
+\end{bemerkung}
+\begin{definition*}
+	Call $L_0$ \underline{symmetric} if 
+	\[
+		\skal{L_0u}{v}_{L^2} = \skal{u}{L_0v}_{L^2}, \qquad \forall\, u,v \in C_R^n([0,1])
+	\]
+	where
+	\[
+		\skal{f}{h}_{L^2} = \int_{0}^{1}f(x) \overline{h(x)} \,\mathrm{d}x
+	\]
+\end{definition*}
+\begin{theorem}
+	Assume that $L_0: C_R^n([0,1]) \to C([0,1])$ is a bijection. The following statements are equivalent:
+	\begin{enumerate}
+		\item $L_0$ is symmetric.
+		\item $\tilde G$ self-adjoint. 
+		\item $g(x,y) = \overline{g(y,x)}$ for all $(x,y) \in [0,1] \times [0,1]$.
+	\end{enumerate}
+	Here \begin{align*}
+				G(f) &= \int_{0}^{1}g(x,y)f(y) \,\mathrm{d}y, \qquad  f \in C([0,1]) \\
+				\tilde G(f) &= \int_{0}^{1}g(x,y)f(y) \,\mathrm{d}y, \qquad f \in L^2([0,1])
+	\end{align*}
+	$\tilde G \in \mathcal{B}(L^2([0,1]),L^2([0,1]))$ and $\overline{C([0,1])}^{L^2([0,1])} = L^2([0,1])$. \\
+\end{theorem}
+
+\begin{beweis}
+	
+	\begin{description}
+		\item[(1) $\Rightarrow$ (2):] Assume that $L_0$ is symmetric. Then we have \[
+			\skal{L_0(G(f))}{G(h)}_{L^2} = \skal{G(f)}{L_0(G(h))}_{L^2}
+		\] for all $f,h \in C([0,1])$. Hence
+		\[
+			\skal{f}{G(h)}_{L^2} = \skal{G(f)}{h}_{L^2}, \qquad \forall\, f,h \in C([0,1]). 
+		\]
+		Change
+		\[
+			\skal{f}{ \tilde G(h)}_{L^2} = \skal{ \tilde G(f)}{h}_{L^2}, \qquad \forall\, f,h \in L^2([0,1]) \qquad (*)
+		\]
+		Hence $\tilde G$ is self-adjoint in $\mathcal{B}(L^2([0,1]),L^2([0,1]))$.
+		This yields (2).
+		\item[(2) $\Rightarrow$ (3):]  Given (2). From $(*)$ we get 
+		\begin{align*}
+			\int_{0}^{1}f(x)\int_{0}^{1}g(x,y)h(y) \,\mathrm{d}y \,\mathrm{d}x &= \int_{0}^{1} \int_{0}^{1}g(x,y)f(y) \,\mathrm{d}y \overline{h(x)} \,\mathrm{d}x \\
+			&= \int_{0}^{1}f(y) \int_{0}^{1}g(x,y) \overline{h(x)} \,\mathrm{d}x \,\mathrm{d}y \\
+			&= \int_{0}^{1}f(x) \overline{\int_{0}^{1} \overline{g(y,x)}h(y) \,\mathrm{d}y} \,\mathrm{d}x \\
+		\end{align*}
+		We get
+		\[
+			\int_{0}^{1}f(x) \overline{\int_{0}^{1}(g(x,y)-\overline{g(y,x)})h(y) \,\mathrm{d}y} \,\mathrm{d}x = 0, \qquad f,g,h \text{cont.}
+		\]
+		This implies that
+		\[
+			\int_{0}^{1}(g(x,y)- \overline{g(y,x)}) h(y) \,\mathrm{d}y = 0, \qquad  \forall\, x \in [0,1].
+		\]
+		This implies 
+		\[
+			g(x,y) = \overline{g(y,x)}, \qquad \forall\, x,y \in [0,1]
+		\]
+	\end{description}
+\end{beweis}
+\begin{theorem}
+	Assume $L_0$ symmetric and bijection. Then
+	\begin{enumerate}
+		\item \begin{itemize}
+			\item $0$ is not an eigenvalue of $L_0$.
+			\item $0$ is not an eigenvalue of $\tilde G$.
+		\end{itemize}
+		\item $f$ is an eigenfunction for $L_0$ with the eigenvalue $\mu$ if and only if $f$ is an eigenfunction for $\tilde G$ with the eigenvalue $\frac{1}{\mu}$.
+	\end{enumerate}
+\end{theorem}
+\begin{beweis}
+	\begin{enumerate}
+		\item $\mathcal{N}(L_0)= \set{0}$. So $0$ is not an eigenvalue of $L_0$. IF $f$ is an eigenfunction for $\tilde G$ with eigenvalue $0$ then for $u \in C_R^n([0,1])$ we have
+		\begin{align*}
+			\skal{f}{u} &= \skal{f}{G \underset{\in  C([0,1])}{\underbrace{L_0(u)}}} \\ & = \skal{f}{\tilde G(L_0u)}  \\ &= \skal{\tilde G(f)}{L_0u} \\
+			&= \skal{0}{L_0u}  \\ &=0
+ 		\end{align*}
+		So we have
+		\[
+			\skal{f}{u}= 0, \qquad \forall\, u \in C_R^n([0,1]).
+		\]
+		\textbf{Claim:} \text{    }$C_R^n([0,1])$ is dense in $L^2([0,1])$. \\
+		If so, we get
+		\[
+			f \equiv 0.
+		\]
+		\item Assume
+		\[
+			L_0(f) = \mu f, \qquad f \in C_R^n([0,1]) \setminus \set{0}.
+		\]
+		We have
+		\[
+			0 \neq f = G(L_0(f)) = G( \mu f) = \tilde G( \mu f) = \mu \tilde G(f)
+		\]
+		So $\tilde G(f) = \frac{1}{\mu}f$. \\
+		Assume $\tilde G(f) = \frac{1}{\mu} f$ for $f \in L^2([0,1]) \setminus \set{0}$. \\
+		We have 
+		\[
+			\tilde G(f)(x) = \frac{1}{\mu}f(x), \qquad \text{ for all }x \in  [0,1] \text{ except for $x$ in a zero set.}
+		\]
+		Consider
+		\[
+			\underset{\in C([0,1])}{\underbrace{\mu \underset{\substack{\text{continuous} \\ \text{function}}}{\underbrace{\tilde G(f)(x)}}}}.
+		\]
+		Set 
+		\[
+			h(x):= \mu \tilde G(f)(x), \qquad  x \in  [0,1].
+		\]
+		We get
+		\[
+			h(x) = \mu \tilde G(h)(x) = \mu \underset{\in C^n_R([0,1])}{\underbrace{G(h)}}(x).
+		\]
+		and
+		\[
+			L_0h= L_0( \mu G(h)) = \mu L_0G(h) = \mu h.
+		\]
+		So
+		\[
+			L_0(h) = \mu h.
+		\]
+	\end{enumerate}
+\end{beweis}
+\begin{theorem}
+	Assume $L_0$ to be symmetric and a bijection. Let $(\mu_n)_{n=1}^{\infty}$ be the eigenvalues of $L_0$ counted with multiplicity and $(e_n)_{n=1}^{\infty}$ corresponding ON-sequence of eigenfunctions. Then
+	\begin{enumerate}
+		\item $(e_n)_{n=1}^{\infty}$ is an ON-basis for $L^2([0,1])$.
+		\item The solution $u$ of 
+		\[
+			\begin{cases}
+				Lu &= f \in C([0,1]) \\
+				R_ju &=0, \qquad j= 1,2,\dots,n
+			\end{cases}
+		\]
+		is given by
+		\[
+			u = \sum_{n=1}^{\infty} \frac{1}{\mu_n} \skal{f}{e_n}e_n 
+		\]
+		in $L^2([0,1])$. \\
+		Note $Le_n = \mu e_n$.
+	\end{enumerate}
+\end{theorem}
+
+\subsection{Method of continuity} 
+\label{sub:method_of_continuity}
+\begin{theorem}
+	Assume $(E,\norm{.})$ Banach space. $A_t \in \mathcal{B}(E,E)$ for $t \in [0,1]$. Assume that there exists $c>0$ such that
+	\begin{enumerate}
+		\item $\norm{x} \leq c \norm{A_t(x)}$ for all $x \in E$ and $t \in [0,1]$.
+		\item $\norm{A_t(x)-A_s(x)} \leq C \abs{t-s} \norm{x}$ for all $x \in E$ and $s,t \in [0,1]$.
+		\item $A_0$ is invertible. 
+	\end{enumerate}
+
+	Then $A_1$ is invertible.
+\end{theorem}
+
+\begin{beweis}
+	Assume $A_t$ is invertible. 
+	\[
+		A_s = \underset{\text{invertible}}{\underbrace{A_t}} \underset{\substack{\text{invertible if}} \\ \norm{A^{-1}_t (A_s - A_t)}< 1 \\ \text{by 'Neumann series} \\ \text{lemma}}{\underbrace{\left( I + A_t^{-1} ( A_s - A_t) \right)}}
+	\]
+	But \[
+		\norm{A^{-1}_t (A_s- A_t)} \leq \underset{\leq c}{\underbrace{\norm{A_t^{-1}}}} \cdot \underset{\leq C \abs{t-s}}{\underbrace{ \norm{A_s-A_t}}}
+	\]
+	So if $\abs{t-s} < \frac{1}{c^2}$ then $A_s$ is invertible. Pick a sequence $t_k$ for $k=1,\dots,N$ such that
+	\[
+		\max_{k =1,\dots,N-1} \abs{t_{k+1}-t_k} < \frac{1}{c^2}
+	\]
+	where $0 = t_1 < t_2 < \dots < t_N=1$. Finally we get if $A_0$ is invertible that $A_{t_1}$ is invertible. \\
+	$\Rightarrow $ $A_{t_2}$ is invertible. $\Rightarrow $ $\dots$ $\Rightarrow $ $A_1$ is invertible.
+\end{beweis}
+
+\subsection{Orthogonal projections} 
+\label{sub:orthogonal_projections}
+\underline{Attention:} We should have done this earlier. \\
+$(E, \skal{.}{.})$ Hilbert space and $S$ closed subspace. We know that
+\[
+	E = S \oplus S^{\perp}
+\]
+For every $x \in E$ there are unique $y \in S$, $z \in S^{\perp}$ such that
+\[
+	x = y + z
+\]
+Define $P_S: E \to E$ with
+\[
+	P_s(x)= y, \qquad \forall\, x \in E.
+\]
+We note:
+\begin{itemize}
+	\item $P_S$ is linear: \\
+	For $y_1,y_2 \in S$ we find $z_1,z_2 \in S^{\perp}$
+	\begin{align*}
+		x_1 &= y_1 + z_1 \\
+		x_2 &= y_2 + z_2
+	\end{align*}
+	For scalars $\alpha_1,\alpha_2$ we have
+	\[
+		\alpha_1 x_1 + \alpha_2 + x_2 = \underset{\in S}{\underbrace{\alpha_1 + y_1 + \alpha_2 y_2}} + \underset{\in S^{\perp}}{\underbrace{\alpha_1 z_1 + \alpha_2 z_2}}
+	\]
+	Then we have
+	\[
+		P_S(\alpha_1 x_1 + \alpha_2 x_2) = \alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 P_S(x_1) + \alpha_2 P_S(x_2)
+	\]
+	and
+	\[
+		P_S(x_1) =y_1, \qquad P_S(x_2)=y_2
+	\]
+	\item $P_S$ is bounded: \\
+	\begin{align*}
+		\norm{P_S(x)}^2 & \stackrel{\hphantom{y \perp z}}{=} \norm{y}^2 \\
+		& \stackrel{y \perp z}{\leq } \norm{y}^2 + \norm{z}^2 \\
+		& \stackrel{\hphantom{y \perp z}}{=} \norm{x}^2
+	\end{align*}
+	So $\norm{P_S} \leq 1$. But
+	\[
+		\norm{P_S(y)} = \norm{y}, \qquad y \in S.
+	\]
+	So $\norm{P_S}=1$.
+	\item $P_s$ is self-adjoint: \\
+	\begin{align*}
+		\skal{P_S(x_1)}{x_2} &= \skal{y_1}{x_2} \\
+		&= \skal{y_1}{y_2} \\
+		&= \skal{x_1}{y_2} \\
+		&= \skal{x_1}{P_S(x_2)}, \qquad \forall\, x_1,x_2 \in E.
+	\end{align*}
+	\item $P_S^2=P_S$:
+	\begin{align*}
+		P_S^2(x) &= P_S(P_S(x) \\
+		&= P_S(y) \\
+		&= y \\
+		&= P_S(x)
+	\end{align*}
+\end{itemize}
+ 
+\begin{proposition}
+	Assume $P \in \mathcal{B}(E,E)$. With $P^2=P$ and $P$ self-adjoint. Then there exists a closed subspace $S$ in $E$ such that $P=P_S$
+\end{proposition}
+\begin{beweis}
+	What is $S$? Set 
+	\[
+		S= \set[x \in E]{P(x)=x}
+	\]
+	\textbf{Claim:} \text{    }$S$ is a closed subspace in $E$.  \\
+	This is obvious. \\
+	\textbf{Claim:} \text{    }$S$ is closed. \\
+	Assume $x_n \in S$ with $x_n \to x$ in $E$. 
+	\[
+		P(x_n) \to P(x) \qquad \text{ in }E \text{ since $P$ continuous.}
+	\]
+	So $x \in S$. By the Orthogonal Decomposition Theorem we have 
+	\[
+		E = S \oplus S^{\perp}.
+	\]
+	It remains to show $P = P_S$. Fix $x \in E$.
+	\[
+		x = P(x) + x- P(x)
+	\]
+	show that $P(x) \in S$ and $x-P(x) \in S^{\perp}$.
+	\begin{enumerate}
+		\item $P(x) \in S$ since 
+		\[
+			P(P(x)) = P^2(x) = P(x), \qquad \text{by assumption}
+		\]
+		\item $x-P(x) \in S^{\perp}$ since for $y \in S$ we have
+		\begin{align*}
+			\skal{y}{x-P(x)} &= \skal{P(y)}{x-P(x)} \\
+			&= \skal{y}{P^*(x- P(x))} \\
+			&= \skal{y}{P(x)-P(x)} \\
+			&= 0
+		\end{align*}
+	\end{enumerate}
+\end{beweis}
+
+\begin{example}[last example]
+	Set $(E,\skal{.}{.})$ Hilbert space. $(e_n)_{n=1}^{\infty}$ ON-basis, $(f_n)_{n=1}^{\infty}$ ON-sequence. \\
+	Assume 
+	\[
+		\sum_{n=1}^{\infty}\norm{e_n-f_n}^2 < \infty
+	\] 
+	Then
+	\[
+		\Rightarrow \qquad (f_n)_{n=1}^{\infty} \text{ is an ON-basis.}
+	\]
+\end{example}
+\begin{beweis}
+	\begin{description}
+		\item[Step 1:] Assume 
+		\[
+			\sum_{n=1}^{\infty}\norm{e_n - f_n}^2 < 1.
+		\] 
+		Assume that $(f_n)_{n=1}^{\infty}$ is not an ON-basis. Then there exists $0 \neq x \in E$ such that
+		\[
+			\skal{x}{f_k} = 0, \qquad  k =1,2,\dots.
+		\]
+		But $(e_n)_{n=1}^{\infty}$ is an ON-basis. 
+		\[
+			x= \sum_{n=1}^{\infty} \skal{x}{e_n}e_n
+		\]
+		Parseval's formula gives
+		\begin{align*}
+				0 &< \norm{x}^2 \\ &= \sum_{n=1}^{\infty}\abs{\skal{x}{e_n}}^2 \\& = \sum_{n=1}^{\infty}\abs{\skal{x}{e_n-f_n}}^2 \\
+				&\leq  \sum_{n=1}^{\infty}\norm{x}^2 \norm{e_n-f_n}^2 \\
+				&= \norm{x}^2 \underset{< 1}{\underbrace{\sum_{n=1}^{\infty}\norm{e_n -f_n }^2}} \\
+				&< \norm{x}^2
+		\end{align*}
+		which is a contradiction. \\
+		Conslusion: $(f_n)_{n=1}^{\infty}$ is an ON-basis.
+		\item[Step 2:] Assume 
+		\[
+			\sum_{n=1}^{\infty}\norm{e_n-f_n}^2 < \infty.
+		\]
+		Assume once more that $(f_n)_{n=1}^{\infty}$ is not an ON-basis. \\
+		There exists $0 \neq x \in E$ such that 
+		\[
+			\skal{x}{f_k} = 0, \qquad k=1,2,\dots.
+		\]
+		Since \[
+			\sum_{n=1}^{\infty} \norm{e_n-f_n}^2 < \infty
+		\]
+		there exists a positive interger $N \in \mathbb{N}$ such that
+		\[
+			\sum_{n=N+1}^{\infty} \norm{e_n-f_n}^2 < 1.
+		\]
+		Note that $\spn \set{x,f_1,f_2,\dots,f_n}$ has the dimension $N+1$. \\
+		\textbf{Claim:} \text{    }There exists a non-trivial solution to 
+		\[
+			\alpha_0 x + \alpha_1 f_1 + \alpha_2 f_2 + \dots + \alpha_N f_N \perp e_k, \qquad k=1,2,\dots,N.
+		\]
+		$N$ equations, $N+1$ unknowns and it is a homogenous linear system. There exists 
+		\[
+			y = \alpha_0 x + \alpha_1 f_1 + \dots + \alpha_N f_N
+		\]
+		where not all $\alpha_k$'s are $0$ such that
+		\[
+			y \perp e_k, \qquad \text{ for }k =1,2,\dots,N.
+		\]
+		Note that $y \neq 0$. \\
+		$(e_n)_{n=1}^{\infty}$ is an ON-basis for $E$. So
+		\begin{align*}
+		y &= \sum_{n=1}^{\infty} \skal{y }{e_n}e_n  \\
+		&= \sum_{n=N+1}^{\infty} \skal{y}{e_n}e_n 
+		\end{align*}
+		Parseval's formular gives
+		\begin{align*}
+			0	&< \norm{y}^2 \\ &= \sum_{n=N+1}^{\infty}\abs{\skal{y}{e_n}}^2 \\
+			&= \sum_{n=1=N+1}^{\infty}\abs{\skal{y}{e_n-f_n}}^2 \\
+			&\leq \norm{y}^2 \cdot \sum_{n=N+1}^{\infty} \norm{e_n-f_n}^2 < \norm{y}^2
+		\end{align*}
+		This is a contradiction and we are done.
+	\end{description}
+\end{beweis}

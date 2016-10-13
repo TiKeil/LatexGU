@@ -212,13 +212,13 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
  	\begin{description}
  		\item[(1) $\Rightarrow $ (2):] We have 
 		\[
-			x = \sum^{\infty}_{i=1} \skal{x}{u_i}w_i
+			x = \sum^{\infty}_{i=1} \skal{x}{u_i}u_i
 		\] 
 		it means
 		\[
-			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}w_i \in \spn\set[u_i]{i \geq 1}.
+			x = \lim_{n \to \infty} \sum^{n}_{i=1} \skal{x}{u_i}u_i \in \spn\set[u_i]{i \geq 1}.
 		\]
-		This is implies that any $x \in H$ is in $\overline{\spn \set[u_i]{i \geq 1}}$, i.e. $\set{w_i}$ is ON-basis.
+		This is implies that any $x \in H$ is in $\overline{\spn \set[u_i]{i \geq 1}}$, i.e. $\set{u_i}$ is ON-basis.
 		\item[(2) $\Rightarrow$ (5):] Let $\set{u_i}$ be a ON-basis. Assume 
 		\[
 			\skal{x}{u_k} = 0, \qquad \forall\,  k \in \mathbb{N}.
@@ -249,17 +249,17 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		We must see
 		\[
-			x = \sum_{k=1}^{n} \skal{x}{u_k}w_k \qquad \forall\, x \in H.
+			x = \sum_{k=1}^{n} \skal{x}{u_k}u_k \qquad \forall\, x \in H.
 		\]
 		From Bessel's equality we have
 		\[
-			\sum_{k=1}^{n} \abs{\skal{x}{w_k}} = \norm{x}^2 - \norm{x- \sum_{k=1}^{n} \skal{x}{u_k}w_k}^2 \leq \norm{x}^2, \qquad \forall\, k \in \mathbb{N}
+			\sum_{k=1}^{n} \abs{\skal{x}{u_k}} = \norm{x}^2 - \norm{x- \sum_{k=1}^{n} \skal{x}{u_k}u_k}^2 \leq \norm{x}^2, \qquad \forall\, k \in \mathbb{N}
 		\]
-		and hence $\sum_{k=1}^{n}\abs{\skal{x}{w_k}}^2$ is convergent. It implies that for $n>m$ we have
+		and hence $\sum_{k=1}^{n}\abs{\skal{x}{u_k}}^2$ is convergent. It implies that for $n>m$ we have
 		\begin{align*}
-			\norm{\sum_{k=1}^{n}\skal{x}{u_k}w_k - \sum_{k=1}^{n} \skal{x}{u_k}w_k}^2 
-			&\stackrel{\hphantom{\text{pythagorian thm}}}{=} \norm{\sum_{k=m+1}^{n} \skal{x}{u_k}w_k}^2 \\
-			&\stackrel{\text{pythagorian thm}}{=} \sum_{k=m+1}^{n} \abs{\skal{x}{u_k}}^2 \norm{w_k}^2 \\
+			\norm{\sum_{k=1}^{n}\skal{x}{u_k}u_k - \sum_{k=1}^{m} \skal{x}{u_k}u_k}^2 
+			&\stackrel{\hphantom{\text{pythagorian thm}}}{=} \norm{\sum_{k=m+1}^{n} \skal{x}{u_k}u_k}^2 \\
+			&\stackrel{\text{pythagorian thm}}{=} \sum_{k=m+1}^{n} \abs{\skal{x}{u_k}}^2 \norm{u_k}^2 \\
 			&\stackrel{\hphantom{\text{pythagorian thm}}}{\to } 0, \qquad n,m \to 0 \qquad (*).
 		\end{align*}
 		Note that if $\set{x_i}$ are paarwise orthogonal it holds
@@ -268,27 +268,27 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		From $(*)$ we know that the partial sum
 		\[
-			S_n := \sum_{k=1}^{n}\skal{x}{u_k}w_k
+			S_n := \sum_{k=1}^{n}\skal{x}{u_k}u_k
 		\]
 		is a Cauchy sequence. As $H$ is a Hilbert space, $H$ is complete and hence $S_n$ has a limit in $H$. Write
 		\[
-			\sum_{i=1}^{\infty} \skal{x}{u_i}w_i 
+			\sum_{i=1}^{\infty} \skal{x}{u_i}u_i 
 		\]
 		for the limit. We must see that the limit is $x$. Consider
 		\[
-			y := x - \sum_{i=1}^{\infty} \skal{x}{u_i}w_i.
+			y := x - \sum_{i=1}^{\infty} \skal{x}{u_i}u_i.
 		\]
 		Then 
 		\[
-			\skal{y}{u_i} = \skal{x}{w_i} - \skal{x}{w_i} = 0, \qquad \forall\, i.
+			\skal{y}{u_i} = \skal{x}{u_i} - \skal{x}{u_i} = 0, \qquad \forall\, i.
 		\]
 		By assumption (5) it follows 
 		\[
-			y = 0 \qquad \Leftrightarrow \qquad x = \sum^{\infty}_{i=1} \skal{x}{u_i}w_i.
+			y = 0 \qquad \Leftrightarrow \qquad x = \sum^{\infty}_{i=1} \skal{x}{u_i}u_i.
 		\]
 		\item[(1) $\Rightarrow$ (3):] From Bessel's equality we have again
 		\[
-			\norm{x- \sum^{n}_{i=1}\skal{x}{u_i}w_i}^2 = \norm{x}^2 - \sum^{n}_{i=1}\abs{\skal{x}{u_i}}^2.
+			\norm{x- \sum^{n}_{i=1}\skal{x}{u_i}u_i}^2 = \norm{x}^2 - \sum^{n}_{i=1}\abs{\skal{x}{u_i}}^2.
 		\] 
 		By assumption (1) the LHS tends to $0$ as $n \to \infty$. On the other hand the RHS goes to 
 		\[
@@ -306,7 +306,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		Then
 		\[
-			\skal{x}{y} = \sum_{k=1}^{\infty} \skal{x}{w_k}\skal{u_k}{y} = \sum_{k=1}^{\infty}\skal{x}{u_k}\overline{\skal{y}{u_k}}.
+			\skal{x}{y} = \sum_{k=1}^{\infty} \skal{x}{u_k}\skal{u_k}{y} = \sum_{k=1}^{\infty}\skal{x}{u_k}\overline{\skal{y}{u_k}}.
 		\]
  	\end{description}
 \end{beweis}

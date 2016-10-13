@@ -143,7 +143,7 @@ Now we can use this inequality to proof the statement above:
 		\item Let $x,y \in V$. Then 
 		\begin{align*}
 			\norm{x+y}^2 &= \skal{x+y}{x+y} \\ &= \skal{x}{x}+ \skal{x}{y}+ \skal{y}{x} + \skal{y}{y} \\
-			&= \skal{x}{x} + 2 \text{Re}( \skal{x}{y}) + \skal{y}{y} \\
+			&= \skal{x}{x} + 2 \re( \skal{x}{y}) + \skal{y}{y} \\
 			&\leq  \skal{x}{x}+ 2 \abs{\skal{x}{y}} + \skal{y}{y} \\
 			&\leq  \skal{x}{x} + 2 \skal{x}{x}^{\frac{1}{2}}\skal{y}{y}^{\frac{1}{2}} + \skal{y}{y} \\
 			&= \left( \skal{x}{x}^{\frac{1}{2}} + \skal{y}{y}^{\frac{1}{2}} \right)^2.
@@ -473,7 +473,7 @@ This can be done in a unique way
 \end{align*}
 and
 \[
-	z = \text{proj}_{M^{\perp}}x, \qquad \qquad \norm{x - \text{proj}_Mx} = \min_{y \in M}\norm{x-y}.
+	z = \proj_{M^{\perp}}x, \qquad \qquad \norm{x - \proj_Mx} = \min_{y \in M}\norm{x-y}.
 \]
 
 \minisec{General Hilbert space case}
