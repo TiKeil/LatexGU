@@ -113,13 +113,13 @@ Hence
 $A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\abs{A \bar{x}}_l^1 >0$ and $\bar{x}$ has all entries $>0$.
 \end{beweis}
 
-\begin{theorem}[Schander's fixed point theorem]
+\begin{theorem}[Schauder's fixed point theorem]
 	$(E, \norm{.})$ Banach space. $K$ compact, convex set in $E$. $T: K \to K$ continuous. \\
 	$\Rightarrow $ $T$ has a fixed point in $K$.
 \end{theorem}
 \begin{beispiel}
 	\[
-		S = \set[f \in C([0,1])]{f(0) = 0,\, f(1)=1,\, \norm{f} = \max\limits_{x \in [0,1]} \abs{f(x)} \leq 1}
+		S = \set[f \in C((0,1))]{f(0) = 0,\, f(1)=1,\, \norm{f} = \max\limits_{x \in [0,1]} \abs{f(x)} \leq 1}
 	\]
 	$T: S \to S$ defined by
 	\[
@@ -200,7 +200,7 @@ $A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\abs{A \bar{x}}_l^1 >0$ and
 	If we believe in Schauder then we can conclude that $S \subseteq C([0,1])$ is not compact.
 \end{beispiel}
 \begin{theorem}[Arzela-Ascoli theorem]
-	Assume $K$ is a compact set in $\mathbb{R}^n$ (e.g. $K = [0,1]$ in $\mathbb{R}$n $n=1$) and $S \subseteq C(K)$ where $C(K)$ is equipped with the max-norm. \\
+	Assume $K$ is a compact set in $\mathbb{R}^n$ (e.g. $K = [0,1]$ in $\mathbb{R}^n$ $n=1$) and $S \subseteq C(K)$ where $C(K)$ is equipped with the max-norm. \\
 	$\Rightarrow $ S is relatively compact in $C(K)$ iff
 	\begin{enumerate}[(1)]
 		\item $S$ uniformly bounded.

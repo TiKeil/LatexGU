@@ -332,16 +332,16 @@ Hence
 \begin{beispiel}
 	$(E,\skal{.}{.})$ Hilbert space, $A \in K(E,E)$ and $I(x)=x$ for all $x \in E$. It follows
 	\[
-		\Rightarrow  \qquad R(I-A) \text{ closed in $E$}.
+		\Rightarrow  \qquad \mathcal{R}(I-A) \text{ closed in $E$}.
 	\]
 \begin{bemerkung}
 	\begin{align*}
-		R(I-A)^{\perp} &= \mathcal{N}((I-A)^{*}) = \mathcal{N}(I-A^{*}) \\
-		\overline{R(I-A)} &= R(I-A)^{\perp \perp} = \mathcal{N}(I-A^{*})^{\perp}.
+		\mathcal{R}(I-A)^{\perp} &= \mathcal{N}((I-A)^{*}) = \mathcal{N}(I-A^{*}) \\
+		\overline{\mathcal{R}(I-A)} &= \left( \mathcal{R}(I-A)^{\perp} \right)^{\perp} = \mathcal{N}(I-A^{*})^{\perp}.
 	\end{align*}
 	If $A \in K(E,E)$ then
 	\[
-		\overline{R(I-A)} = R(I-A).
+		\overline{\mathcal{R}(I-A)} = \mathcal{R}(I-A).
 	\]
 	Solve \[
 		x = A(x) + y \qquad \Leftrightarrow \qquad (I-A)(x) = y
@@ -351,7 +351,7 @@ Hence
 \end{beispiel}
 \begin{beweis}
 	Take a sequence $(y_n)_{n \in \mathbb{N}} \subseteq R(I-A)$ such that $y_n \to y$ in $(E,\norm{.})$. \\
-	To show: $y \in R(I-A)$, i.e. $y = (I-A)(x)$ for some $x \in E$ and $y_n = (I-A)(x_n)$ for some $x_n \in E$.
+	To show: $y \in \mathcal{R}(I-A)$, i.e. $y = (I-A)(x)$ for some $x \in E$ and $y_n = (I-A)(x_n)$ for some $x_n \in E$.
 	\[
 		x_n \in E = \mathcal{N}(I-A) + \mathcal{N}(I-A)^{\perp}
 	\]
