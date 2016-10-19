@@ -67,12 +67,12 @@ One can define open and closed using the definition of convergence:
 \begin{satz} % statement
 	$A \subseteq E$ is closed if any convergent sequence in $A$ has a limit in $A$, i.e
 	\[
-		\substack{x_n \to x \\ \text{for }n \to \infty \\ x_n \in A} \Rightarrow x \in A.
+		\underset{\substack{\text{for }n \to \infty \\ x_n \in A}}{\underbrace{x_n \to x}} \qquad  \Rightarrow \qquad  x \in A.
 	\]
 \end{satz}
 \begin{beweis}
 	\begin{description}
-		\item[$\Rightarrow$:]Assume that $A$ is closed and $x_n \to x$. $x_n \in A$, but $x_n \not \in A$. (try to get a contradiction). \\
+		\item[$\Rightarrow$:]Assume that $A$ is closed and $x_n \to x$. $x_n \in A$, but $x \not \in A$. (try to get a contradiction). \\
 	 $A$ is closed $\Rightarrow $ $E \setminus A$ is open and hence $\exists\, r >0$ such that
 	 \[
 	 	B(x,r) \subset E \setminus A.
@@ -171,7 +171,7 @@ Another example is $(C_0, \norm{.}_{\infty})$ where
 	 Any bounded and closed subset in $\mathbb{R}, \mathbb{R}^n, \mathbb{C}^n$ is compact. A sequence $\set{x_n}$ of a bounded set is bounded. From real Analysis one knows it has a subsequence that is convergent. If the subset is closed then the limit point is inside the set. 
 \end{beispiel}
 \begin{lemma*}
-	$S \subset$ compact in $(E, \norm{.})$ implies that $S$ is closed and bounded. (Bounded means that $S \subset B(0,R)$ for some $R>0$).
+	$S \subset E$ compact in $(E, \norm{.})$ implies that $S$ is closed and bounded. (Bounded means that $S \subset B(0,R)$ for some $R>0$).
 \end{lemma*}
 \begin{beweis}
 	Let $S$ be a compact subset of $E$. Assume that $S$ is not bounded. Hence for any $n >0$ there exists points in $S$ which are outside $B(0,n)$, i.e. 
@@ -186,7 +186,7 @@ Another example is $(C_0, \norm{.}_{\infty})$ where
 \end{beweis}
 \begin{bemerkung}
 	In general, $S$ bounded and closed doesn't imply that $S$ is compact. \\
-For instance let $E= C([0,1])$. Then $S=\set[g \in C([0,1])]{\norm{g}_{\infty}\leq 1}$ is closed and bounded, but not compact. \\
+For instance let $E= C([0,1])$. Then $S=\set[g \in C((0,1))]{\norm{g}_{\infty}\leq 1}$ is closed and bounded, but not compact. \\
 Take $x_n(t):=t^n$. Then $x_n \in S$. $\set{x_n}$ does not have a subsequence convergent to a continuous function.
 \end{bemerkung}
 \begin{theorem}
@@ -358,7 +358,7 @@ $(C_F,\norm{.}_{\infty})$ is not complete.
 \end{theorem}
 \begin{beweis}
 	\begin{description}
-		\item[$\Rightarrow$:] Suppose $X$ is complete and $\sum_{n=1}^{\infty}\norm{x_n} < \infty$. Let 
+		\item[$\Rightarrow$:] Suppose $E$ is complete and $\sum_{n=1}^{\infty}\norm{x_n} < \infty$. Let 
 		\[
 			S_N := \sum_{n=1}^{N}x_n \in E.
 		\] 

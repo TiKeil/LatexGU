@@ -1,7 +1,7 @@
 %%% lecture 11
 
 \begin{definition}[compact]
-	If $A: E \to E$ is linear, then we say that $A$ is \underline{compact} if for all bounded sequences $(x_n)_{n=1}^{\infty}$ in $E$, $ (A(x_n))_{n=1}^{\infty}$ has a bounded subsequence in $E$.
+	If $A: E \to E$ is linear, then we say that $A$ is \underline{compact} if for all bounded sequences $(x_n)_{n=1}^{\infty}$ in $E$, $ (A(x_n))_{n=1}^{\infty}$ has a convergent subsequence in $E$.
 \end{definition}
 
 \begin{lemma}
@@ -30,10 +30,10 @@
 \end{bemerkung}
 
 \begin{lemma}
-	$A,B$ compact linear operators $E \to E$ and $\alpha$ and $\beta$ scalars. Then $\alpha A+ \beta A$ is compact.
+	$A,B$ compact linear operators $E \to E$ and $\alpha$ and $\beta$ scalars. Then $\alpha A+ \beta B$ is compact.
 \end{lemma}
 \begin{beweis}
-	Fix an arbitrary bounded sequence $(x_n)_{n=1}^{\infty}$ in $E$. Since $A$ is compact there exists a converging subsequence $(A(x_{n_k}))_{k=1}^{\infty}$ of $(A(x_n))_{n=1}^{\infty}$. \\ Clearly $(\alpha A(x_n))_{n=1}^{\infty}$ converges in $E$. \\ Since $B$ is compact there exists a converging subsequence $(B(x_{n_k}))_{k=1}^{\infty}$ of $(B(x_n))_{n=1}^{\infty}$.  \\ Clearly $(\beta B(x_{n_k}))_{k=1}^{\infty}$ converges in $E$. Hence
+	Fix an arbitrary bounded sequence $(x_n)_{n=1}^{\infty}$ in $E$. Since $A$ is compact there exists a converging subsequence $(A(x_{n_k}))_{k=1}^{\infty}$ of $(A(x _{n_k}))_{k=1}^{\infty}$. \\ Clearly $(\alpha A(x_n))_{n=1}^{\infty}$ converges in $E$. \\ Since $B$ is compact there exists a converging subsequence $(B(x_{n_k}))_{k=1}^{\infty}$ of $(B(x_n))_{n=1}^{\infty}$.  \\ Clearly $(\beta B(x_{n_k}))_{k=1}^{\infty}$ converges in $E$. Hence
 	\[
 		\left( \alpha A(x _{n_k}) + \beta B(x _{n_k}) \right)_{k=1}^{\infty} = \left( (\alpha A + \beta B)(x _{n_k}) \right)_{k=1}^{\infty}
 	\]
@@ -189,7 +189,7 @@ Before the proof we note:
 		A(x_n) \rightharpoonup A(x) \qquad \text{in }(E,\skal{.}{.}).
 	\]
 	We get that $y = A(x)$. We have $A(x _{n_k}) \to A(x)$ in $E$. \\
-	Assume that $A(x_n) \not A(x)$ in $E$. \\
+	Assume that $A(x_n) \not \to  A(x)$ in $E$. \\
 	Then there exists an $\varepsilon >0$ and a subsequence $(A(\tilde x_n))_{n=1}^{\infty}$ of $(A(x_n))_{n=1}^{\infty}$ such that
 	\[
 		\norm{A( \tilde x_n) - A(x)} \geq \varepsilon, \qquad \forall\,  n.

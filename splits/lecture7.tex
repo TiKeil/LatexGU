@@ -191,7 +191,7 @@ All $l^p$ with $p \neq 2$ are not inner product spaces.
 	\]
 \end{theorem}
 \begin{definition}
-	Let $(V, \skal{.}{.})$ be an inner product space. We say that $x,y$ in $V$ are othogonal if $\skal{x}{y} = 0$ (We write $x \perp y$). Let $M \subseteq V$
+	Let $(V, \skal{.}{.})$ be an inner product space. We say that $x,y$ in $V$ are orthogonal if $\skal{x}{y} = 0$ (We write $x \perp y$). Let $M \subseteq V$
 	Define the orthogonal complement
 	\[
 		M^{\perp} = \set[x \in V]{x \perp y \text{ for any }y \in M}.
@@ -314,7 +314,7 @@ Let $(V, \skal{.}{.})$ be an inner product space $\set{u_n} \subseteq V$ is call
 		f_n(x)= \begin{cases}
 			1, &\text{ if }x \in [0,\frac{1}{2}]\\
 			0, &\text{ if }x \in [\frac{1}{2} + \frac{1}{n}] \\
-			\text{continuous}, & \text{else} 
+			\text{continuous}, & \text{elsewhere} 
 		\end{cases}
 	\] is a Cauchy sequence w.r.t $\norm{.}_2$ but has no limit in $C([0,1])$.
 \end{beweis}
@@ -384,12 +384,12 @@ Show that $(C_F, \skal{.}{.})$ is not a Hilbert space.
 	\begin{align*}
 		\abs{\skal{x_n}{y_n}-\skal{x}{y}} &= \abs{\skal{x_n}{y_n}-\skal{x}{y_n} + \skal{x}{y_n} - \skal{x}{y}} \\
 		&= \abs{\skal{x_n -x}{y_n} + \skal{x}{y_n-y}} \\
-		&\leq \abs{\skal{x_n-x}{y}} + \abs{\skal{x}{y_n-y}} \\
+		&\leq \abs{\skal{x_n-x}{y_n}} + \abs{\skal{x}{y_n-y}} \\
 		&\leq \underset{\to 0}{\underbrace{\norm{x_n-x}}} \underset{< \infty}{\underbrace{\norm{y_n}}} + \underset{< \infty}{\underbrace{\norm{x}}} \underset{\to 0}{\underbrace{\norm{y_n-y}}} \to 0, \qquad  n \to \infty.
 	\end{align*}
 	Check $\set{\norm{y_n}}$ is bounded
 	\[
-		\norm{y_n} = \norm{y_n -y +y} \leq \underset{\norm{y_n -y}}{\underbrace{\to 0}}+ \underset{< \infty}{\underbrace{\norm{y}}} \to 0, \qquad n \to \infty.
+		\norm{y_n} = \norm{y_n -y +y} \leq \underset{\to 0}{\underbrace{\norm{y_n -y}}}+ \underset{< \infty}{\underbrace{\norm{y}}} \to 0, \qquad n \to \infty.
 	\]
 \end{beweis}
 

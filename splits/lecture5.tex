@@ -25,7 +25,7 @@
 \end{beispiel}
 
 \begin{theorem}[Banach's fixed point theorem]
-	$(E, \norm{.})$ Banach space. $T: E \to E$ (no assumption on linearity) is a contraction on $E$, i.e. there exists $c>1$ such that
+	$(E, \norm{.})$ Banach space. $T: E \to E$ (no assumption on linearity) is a contraction on $E$, i.e. there exists $c<1$ such that
 	\[
 		\norm{T(x)-T(\tilde x)} \leq c \norm{x- \tilde x} \qquad \text{for all }x,\tilde x \in E.
 	\]
@@ -118,7 +118,7 @@
 			\underset{\in F}{\underbrace{x_n}} \to \bar{x} \text{ in }E \text{ and $F$ is closed}
 		\] 
 		implies $\bar{x} \in F$. The rest of the argument is the same as before.
-		\item[$N>1$:] By previous result we know that $T^N$ has a unique fixpoint $\bar{x} \in F$, i.e. $\bar{x} = T^N(\bar{x})$. \\
+		\item[$N>1$:] By previous result we know that $T^N$ has a unique fixed point $\bar{x} \in F$, i.e. $\bar{x} = T^N(\bar{x})$. \\
 		\textbf{Claim:} \text{    }     $\bar{x}$ is a fixed point for $T$.
 		\begin{align*}
 			\norm{T(\bar{x})-\bar{x}} &= \norm{T(T^N(\bar{x}))- T^N(\bar{x})} \\

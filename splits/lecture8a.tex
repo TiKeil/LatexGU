@@ -13,7 +13,7 @@
 	\[
 		T(f)(x) = \int_{0}^{1}k(x,y)h(y,f(y)) \,\mathrm{d}y, \qquad x \in [0,1] \qquad (*).
 	\]
-	We want to apply (a generalized version of) Schander's fixed point theorem. Assume $(E, \norm{.})$ is a Banach space and $F$ closed convex subset of $E$. Moreover assume $T: E \to E$ continuos and $T(F)$ relatively compact in $(E,\norm{.})$. Then $T$ has a fixed point in $F$. \\
+	We want to apply (a generalized version of) Schauder's fixed point theorem. Assume $(E, \norm{.})$ is a Banach space and $F$ closed convex subset of $E$. Moreover assume $T: E \to E$ continuos and $T(F)$ relatively compact in $(E,\norm{.})$. Then $T$ has a fixed point in $F$. \\
 	\begin{description}
 		\item[Step 1:] $T$ as in $(*)$. \\
 		\textbf{Claim:} \text{    }     $T(C([0,1])) \subseteq C([0,1])$. \\
@@ -87,7 +87,7 @@
 		&\leq  \int_{0}^{1}\underset{\leq A}{\underbrace{\abs{k(x,y)}}}\underset{< \frac{\varepsilon}{A}}{\underbrace{\abs{h(y,f_1(y))-h(y,f_2(y))}}} \,\mathrm{d}y < \varepsilon.
 	\end{align*}
 	Conclusion: $T: F \to F$ is continuous. 
-	\item[Step 5:] Apply Schander's fixed point theorem.
+	\item[Step 5:] Apply Schauder's fixed point theorem.
 	\end{description}
 \end{beispiel}
 \subsection{Completion of normed spaces} 
@@ -137,12 +137,12 @@ Define $\Phi$: For $x \in E$ set $\Phi(x) = \left[ (x)_{n=1}^{\infty} \right]_N$
 \]
 \begin{description}
 \item[Claim 1 \& 2:] easy to prove. 
-\item[Claim 3:] item $\Phi(E)$ dense in $(\tilde E,\norm{.}_*)$. Fix $\left[ (x_n) \right]_N \in \tilde E$. Consider $\Phi(x_k)$ where $x_k$ is the element in the $k$-th position in the sequence $(x_1,x_2, \dots,x_n, \dots)$.
+\item[Claim 3:] $\Phi(E)$ dense in $(\tilde E,\norm{.}_*)$. Fix $\left[ (x_n) \right]_N \in \tilde E$. Consider $\Phi(x_k)$ where $x_k$ is the element in the $k$-th position in the sequence $(x_1,x_2, \dots,x_n, \dots)$.
 \begin{align*}
 	\norm{\left[ (x_n) \right]_N - \Phi(x_k)}_* = \lim_{n \to \infty}\norm{x_n - x_k} \to 0 \qquad k \to \infty.
 \end{align*}
 Since $(x_n)_{n=1}^{\infty}$ is a Cauchy sequence. \\
-\item[Claim 4:] item $(\tilde E, \norm{.}_*)$ is a Banach space.\\
+\item[Claim 4:] $(\tilde E, \norm{.}_*)$ is a Banach space.\\
 Consider a Cauchy sequence $z_n \in \tilde E$ such that $\norm{z_n - z} \to 0$ as $n \to \infty$. \\
 To show: There exists $z \in \tilde E$ such that 
 \[
@@ -228,7 +228,7 @@ Consider $ f \in C([0,1])$
 		\[
 			f_A(x) \begin{cases}
 				1, & x \in A\\
-				0, \text{elsewhere}
+				0, &\text{elsewhere}
 			\end{cases}.
 		\]
 		Lebesguesmeasure of $A = \norm{f_A}_{L^1} = \mu(f_A)$. $A \subset \mathbb{R}$ and $A$ unbounded

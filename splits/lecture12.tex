@@ -74,7 +74,7 @@ Set $A \in B(E,E)$ where $(E,\skal{.}{.})$ is a Hilbert space. Then:
 	\]
 	$A \in K(E,E)$ implies that $A(x_n) \to A(0)=0$ in $E$. But
 	\[
-		x_n = A(x_n) \to 0 \qquad \text{in }E, \qquad \norm{x_n}=1 \text{for all }n
+		x_n = A(x_n) \to 0 \qquad \text{in }E, \qquad \norm{x_n}=1 \text{ for all }n
 	\]
 	This is a contradiction. \\
 	Conclusion: $\dim(I-A) < \infty$.
@@ -147,7 +147,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\end{align*}
 		So $(A(y_n))_{n=1}^{\infty}$ can not converge in $E$. But $A$ is compact and $\norm{y_n}=1$ for all $n$. This is a contradiction. \\
 		Conclusion: There is no non-trivial solution of $A(x)=x$.
-		\item[$\lnot$ (2) $\Rightarrow$ (1)] Assume that $x = A(x)$ has a no non-trivial solution $x \in E$. We want to show that $(1)$ holds.
+		\item[$\lnot$ (2) $\Rightarrow$ (1)] Assume that $x = A(x)$ has no non-trivial solution $x \in E$. We want to show that $(1)$ holds.
 		\[
 			E = \mathcal{R}(I-A^*) \oplus \mathcal{N}(I-A), \qquad \text{ with }\mathcal{N}(I-A) = \set{0}.
 		\]
@@ -260,7 +260,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 	Assume $A \neq 0$. \\
 	$A$ self-adjoint implies that 
 	\[
-		\norm{A} = \sum_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
+		\norm{A} = \sup_{\norm{x}=1} \abs{\skal{A(x)}{x}}.
 	\]
 	Also self-adjoint implies that for all $x \in E$ we have
 	\[
@@ -352,7 +352,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 			\abs{\lambda_1} \geq \abs{\lambda_2} \geq \dots \geq \abs{\lambda_n} \geq \dots
 		\]
 		with corresponding eigenvectors $u_1,u_2, \dots,u_n, \dots$. \\
-		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero EW $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ und $w_n \to 0$ in $E$ since 
+		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero eigenvalue $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ und $u_n \to 0$ in $E$ since 
 		$(u_n)_{n=1}^{\infty}$ is ON-sequence. \\
 		Then this implies $A(u_n) \to 0$ in $E$. So \[
 			\abs{\lambda_n} = \norm{\lambda_n u_n} = \norm{A(u_n)} \to 0, \qquad n \to \infty.

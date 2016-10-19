@@ -75,7 +75,7 @@ Recall a important theorem:
 	\begin{itemize}
 		\item Bilinear, if for scalars $\alpha$ and $\beta$ it holds
 		\begin{align*}
-			\varphi( \alpha x, \beta y,z) &= \alpha \varphi(x,z)+ \beta \varphi(y,z) \qquad \forall\, x,y,z \in E \\
+			\varphi( \alpha x+ \beta y,z) &= \alpha \varphi(x,z)+ \beta \varphi(y,z) \qquad \forall\, x,y,z \in E \\
 			\varphi(x,\alpha y + \beta z) &= \bar{\alpha} \varphi(x,z) + \overline{\beta} \varphi(y,z) \qquad \forall\, x,y,z \in E.
 		\end{align*}
 		\item Bounded, if there exists $M>0$ such that
@@ -168,7 +168,7 @@ We will now introduce a Generalization of the Riesz representation theorem.
  		\]
 		$\varphi$ is coercive so
 		\[
-			\norm{x}^2 \leq \frac{\varphi(x,x)}{K} = \frac{1}{K} \underset{\abs{\skal{x}{A(x)}}}{\underbrace{>0}} \leq \frac{1}{K} \norm{x} \norm{A(x)} \qquad \forall\,  x \in E.
+			\norm{x}^2 \leq \frac{\varphi(x,x)}{K} = \frac{1}{K} \underset{>0}{\underbrace{\abs{\skal{x}{A(x)}}}} \leq \frac{1}{K} \norm{x} \norm{A(x)} \qquad \forall\,  x \in E.
 		\]
 		Hence \[
 			\norm{x} \leq  \frac{1}{K} \norm{A(x)}, \qquad \forall\, x \in E.

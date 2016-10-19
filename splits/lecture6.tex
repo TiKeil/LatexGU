@@ -6,7 +6,7 @@
 \begin{theorem}
 	$(E,\norm{.})$ Banach space, $(Y,\norm{.})$ normed space. $T: E \times Y \to E$ where
 	\begin{enumerate}[(1)]
-		\item There exists a $C > 1$ such that
+		\item There exists a $C < 1$ such that
 		\[
 			\norm{T(x,y)-T(\tilde x,y)} \leq C \norm{x - \tilde x} \qquad \text{for all }x, \tilde x \in E,\, y \in Y.
 		\]
@@ -58,7 +58,7 @@
 	\[
 		x \mapsto Ax
 	\]
-	has an eigenvalue $>0$ with an eigenvecto with positive entries, i.e. there exists $\lambda >0$ and $\tilde x \in \mathbb{R}^n$ with $A \tilde x = \lambda \tilde x$and all entries in $\tilde x$ are positive.
+	has an eigenvalue $>0$ with an eigenvector with positive entries, i.e. there exists $\lambda >0$ and $\tilde x \in \mathbb{R}^n$ with $A \tilde x = \lambda \tilde x$and all entries in $\tilde x$ are positive.
 \end{theorem}
 
 \begin{beweis}
@@ -110,7 +110,7 @@ Brouwer's fixed point theorem implies that $T$ has a fixed point $\bar{x} \in K$
 	\bar{x} &= T(\bar{x}) = \frac{1}{\norm{A \bar{x}}_{l^1}} A \bar{x} 
 \end{align*}
 Hence
-$A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\abs{A \bar{x}}_l^1 >0$ and $\bar{x}$ has all entries $>0$.
+$A \bar{x} = \norm{ A \bar{x}}_{l^1} \bar{x}$ where $\norm{A \bar{x}}_{l^1} >0$ and $\bar{x}$ has all entries $>0$.
 \end{beweis}
 
 \begin{theorem}[Schauder's fixed point theorem]

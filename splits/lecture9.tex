@@ -14,7 +14,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 	x = y + z.
 \]
 \begin{theorem}[Riesz-Frechét represantation theorem]
-	Let $(H, \skal{.}{.})$ be a Hilbertspace. Let $f$ be a bounded linear functionall on $H$. Then there exists a unique $x_f \in H$ such that
+	Let $(H, \skal{.}{.})$ be a Hilbertspace. Let $f$ be a bounded linear functional on $H$. Then there exists a unique $x_f \in H$ such that
 	\[
 		f(x) = \skal{x}{x_f}, \qquad \forall\,  x \in H.
 	\]
@@ -253,7 +253,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		From Bessel's equality we have
 		\[
-			\sum_{k=1}^{n} \abs{\skal{x}{u_k}} = \norm{x}^2 - \norm{x- \sum_{k=1}^{n} \skal{x}{u_k}u_k}^2 \leq \norm{x}^2, \qquad \forall\, k \in \mathbb{N}
+			\sum_{k=1}^{n} \abs{\skal{x}{u_k}}^2 = \norm{x}^2 - \norm{x- \sum_{k=1}^{n} \skal{x}{u_k}u_k}^2 \leq \norm{x}^2, \qquad \forall\, k \in \mathbb{N}
 		\]
 		and hence $\sum_{k=1}^{n}\abs{\skal{x}{u_k}}^2$ is convergent. It implies that for $n>m$ we have
 		\begin{align*}
@@ -296,7 +296,7 @@ Then we know $H = M + M^{\perp}$, i.e. for any $x \in H$ there exists a unique $
 		\]
 		This gives 
 		\[
-			\norm{x}^2 - \sum_{i=1}^{\infty} \abs{\skal{x}{u_i}^2} = 0.
+			\norm{x}^2 - \sum_{i=1}^{\infty} \abs{\skal{x}{u_i}}^2 = 0.
 		\]
 		\item[(3) $\Rightarrow $ (5)] trivial.
 		\item[(4) $\Rightarrow $ (5)] trivial (take $y=x$).

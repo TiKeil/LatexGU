@@ -96,7 +96,7 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 		\end{align*}
 		We have $z_n \to 0$ in $(E_1,\norm{.}_1)$. But 
 		\[
-			\norm{T(z_n)}_2 = \norm{\frac{1}{n \norm{x_n}_1}T(x_n)_2} = \frac{1}{n \norm{x_n}_1} \norm{T(x_n)}_2 > 1 \qquad \text{ for all }n.
+			\norm{T(z_n)}_2 = \norm{\frac{1}{n \norm{x_n}_1}T(x_n)}_2 = \frac{1}{n \norm{x_n}_1} \norm{T(x_n)}_2 > 1 \qquad \text{ for all }n.
 		\]
 		Hence
 		\[
@@ -162,7 +162,7 @@ converging squences $(x_n)_{n=1}^{\infty}$ in $(E,\norm{.})$. $\norm{x_n-x} \to 
 			\end{align*}
 			\item Fix $f \in C([0,1])$. For $x \in [0,1]$
 			\begin{align*}
-				\abs{T(f)(x)} &= \abs{ \int_{0}^{1-x} \underset{\geq 0}{\underbrace{\min(x,y)f(y)}} \,\mathrm{d}y }\\
+				\abs{T(f)(x)} &= \abs{ \int_{0}^{1-x} \underset{\geq 0}{\underbrace{\min(x,y)}}f(y) \,\mathrm{d}y }\\
 				&\stackrel{(*_1)}{\leq} \int_{0}^{1-x}\min(x,y)\underset{\leq \norm{f}}{\underbrace{\abs{f(y)}}} \,\mathrm{d}y \\
 				&\stackrel{(*_2)}{\leq} \int_{0}^{1-x} \min(x,y) \,\mathrm{d}y \norm{f}.
 			\end{align*}
@@ -302,7 +302,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normed space.
 	\begin{enumerate}[(1)]
 		\item Observe 
 		\begin{align*}
-		T(\lambda_1 x_1 + \lambda_2 + x_2)\leftarrow T_n(\lambda_1 x_1 + \lambda_2 x_2) = \set{T \text{ linear}} = \underset{\to \lambda_1 T(x_1) + \lambda_2 T(x_2)}{\underbrace{\underset{\to \lambda_1 T(x_1)}{\underbrace{\lambda_1 \underset{\to T(x_1)}{\underbrace{T_n(x_1)}}}} + \underset{\to \lambda_2 T(x_2)}{\underbrace{\lambda_2 \underset{\to T(x_2)}{\underbrace{T_n(x_2)}}}}}}.
+		T(\lambda_1 x_1 + \lambda_2 x_2)\leftarrow T_n(\lambda_1 x_1 + \lambda_2 x_2) = \set{T \text{ linear}} = \underset{\to \lambda_1 T(x_1) + \lambda_2 T(x_2)}{\underbrace{\underset{\to \lambda_1 T(x_1)}{\underbrace{\lambda_1 \underset{\to T(x_1)}{\underbrace{T_n(x_1)}}}} + \underset{\to \lambda_2 T(x_2)}{\underbrace{\lambda_2 \underset{\to T(x_2)}{\underbrace{T_n(x_2)}}}}}}.
 		\end{align*}
 		So for $n \to  \infty$ it is
 		\[
@@ -368,7 +368,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normed space.
 			\[
 				\norm{T \left( \frac{r}{\norm{x}_1} x \right)}_2 \leq 2M.
 			\]
-			$\frac{r}{\norm{x}_1} $ has the $\norm{.}_1$-norm equal to $r$. This implies, since T linear,
+			$\frac{r}{\norm{x}_1} x$ has the $\norm{.}_1$-norm equal to $r$. This implies, since T linear,
 			\[
 				\frac{r}{\norm{x}_1} \norm{T(x)}_2 \leq 2M,
 			\]
@@ -378,7 +378,7 @@ Conclusion: $(B(E_1,B_2),\norm{.}_{E_1 \to E_2})$ is a normed space.
 			\]
 			We have
 			\[
-				\norm{t}_{E_1 \to E_2} \leq \underset{\substack{\text{independant}\\ \text{of }T}}{\underbrace{\frac{2M}{r}}} < \infty
+				\norm{T}_{E_1 \to E_2} \leq \underset{\substack{\text{independant}\\ \text{of }T}}{\underbrace{\frac{2M}{r}}} < \infty
 			\]
 			\[
 				\sup\limits_{T \in \mathcal{F}}\norm{T}_{E_1 \to E_2} \leq \frac{2M}{r} < \infty.
