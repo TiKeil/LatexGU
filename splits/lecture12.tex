@@ -160,7 +160,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\]
 		But then
 		\[
-			E = \mathcal{R}(I-A) \oplus \mathcal{N}((I-A^*) = \mathcal{R}(I-A).
+			E = \mathcal{R}(I-A) \oplus \mathcal{N}(I-A^*) = \mathcal{R}(I-A).
 		\]
 		Conclusion: $x = A(x) + y$ is solvable for all $y \in E$.
 	\end{description}
@@ -181,7 +181,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 
 \begin{theorem}[Hilbert-Schmidt-Theorem]
 	$(E, \skal{.}{.})$ Hilbert spaces and $A \in K(E,E)$ self adjoint. Then there exists a sequence of non-zero eigenvalues of $A$ denoted
-	$(\lambda_n)_{n=1}^{N}$ for $N$ finite or infinite, corresponding to Eigenvectors $(u_n)_{n=1}^{N}$. Respectively where $(u_n)_{n=1}^{N}$ is an ON-sequence, and
+	$(\lambda_n)_{n=1}^{N}$ for $N$ finite or infinite, corresponding to eigenvectors $(u_n)_{n=1}^{N}$. Respectively where $(u_n)_{n=1}^{N}$ is an ON-sequence, and
 	\[
 		\abs{\lambda_1} \geq \abs{\lambda_2} \geq \dots
 	\]
@@ -276,7 +276,7 @@ $A \in K(E,E)$ where $E$ is a Hilbert space. then exactly one of the statements 
 		\norm{A(x_n)- \lambda x_n}^2 &= \skal{A(x_n)-\lambda x_n}{A(x_n)- \lambda x_n} \\
 		&= \underset{\substack{= \norm{A(x_n)}^2 \\ \leq \norm{A}^2 \norm{x_n}^2 \\ = \norm{A}^2}}{\underbrace{\skal{A(x_n)}{A(x_n)}}}- 
 		\overset{\to \abs{\lambda}^2 = \norm{A}^2}{\overbrace{\bar{\lambda} 
-		\underset{ \to  \lambda}{\underbrace{\skal{A(x_n)}{x_n}}}}}- \overset{\to \lambda^2 = \norm{A}^2}{\overbrace{\lambda \underset{\to \lambda}{\underbrace{\skal{x_n}{A(x_n)}}}}} + \underset{= \norm{A}^2}{\underbrace{\abs{\lambda}}} \underset{=1}{\underbrace{\skal{x_n}{x_n}}} \\
+		\underset{ \to  \lambda}{\underbrace{\skal{A(x_n)}{x_n}}}}}- \overset{\to \lambda^2 = \norm{A}^2}{\overbrace{\lambda \underset{\to \lambda}{\underbrace{\skal{x_n}{A(x_n)}}}}} + \underset{= \norm{A}^2}{\underbrace{\abs{\lambda}^2}} \underset{=1}{\underbrace{\skal{x_n}{x_n}}} \\
 		&\to 0, \qquad n \to \infty.
 	\end{align*}
 	$A \in K(E,E)$ and $\norm{x_n}=1$ for all $n$ we get that 
@@ -352,7 +352,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 			\abs{\lambda_1} \geq \abs{\lambda_2} \geq \dots \geq \abs{\lambda_n} \geq \dots
 		\]
 		with corresponding eigenvectors $u_1,u_2, \dots,u_n, \dots$. \\
-		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero eigenvalue $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ und $u_n \to 0$ in $E$ since 
+		We have $(u_n)_{n=1}^{\infty}$ ON-sequence in $E$ corresponding to the non-zero eigenvalue $(\lambda_n)_{n=1}^{\infty}$. $A \in K(E,E)$ and $u_n \to 0$ in $E$ since 
 		$(u_n)_{n=1}^{\infty}$ is ON-sequence. \\
 		Then this implies $A(u_n) \to 0$ in $E$. So \[
 			\abs{\lambda_n} = \norm{\lambda_n u_n} = \norm{A(u_n)} \to 0, \qquad n \to \infty.
@@ -362,7 +362,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 		\]
 		Set 
 		\[
-			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{n}\alpha u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}.
+			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{\infty}a_n u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}.
 		\]
 		S is a closed subspace of $E$. \\ We have $E = S \oplus S^{\perp}$ where $S^{\perp} \subseteq Q_k = \set{u_1,\dots,u_k}^{\perp}$ for all $k \in \mathbb{N}$.
 		For $x \in E$ we have
@@ -370,10 +370,10 @@ We are now going to prove the Hilbert-Schmidt theorem:
 			\underset{\in S}{\underbrace{\sum_{k=1}^{\infty} \skal{x}{u_k}u_k}} + \underset{\in S^{\perp}}{\underbrace{v}}
 		\]
 		since $(\skal{x}{u_k})_{k=1}^{\infty} \in l^\infty$ by Bessel's inequality. 
-		To show: $A(u)=0$. Clearly, $v \in Q_k$ for all $k$. If $v = 0$ there is nothing to prove. For $v \neq 0$ set $w= \frac{1}{\norm{v}}v$ and get
+		To show: $A(v)=0$. Clearly, $v \in Q_k$ for all $k$. If $v = 0$ there is nothing to prove. For $v \neq 0$ set $w= \frac{1}{\norm{v}}v$ and get
 		\begin{align*}
 			\abs{\skal{A(v)}{v}} &= \norm{v}^2 \abs{ \skal{A(w)}{w}} \\
-			&\leq \norm{w}^2 \underset{= \norm{A  \big|_{Q_k}^{}} = \abs{\lambda_{k+1}} \to 0}{\underbrace{\sup_{ \substack{\norm{z}=1 \\ z \in Q_k}} \abs{\skal{A(z)}{z}}}}
+			&\leq \norm{v}^2 \underset{= \norm{A  \big|_{Q_k}^{}} = \abs{\lambda_{k+1}} \to 0}{\underbrace{\sup_{ \substack{\norm{z}=1 \\ z \in Q_k}} \abs{\skal{A(z)}{z}}}}
 		\end{align*}
 		\textbf{Claim:} \text{    }$A  \big|_{S^{\perp}}^{} = 0$ and hence $v \in S^{\perp}$ implies $A(v) = 0$.
 	\end{description}
