@@ -362,7 +362,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 		\]
 		Set 
 		\[
-			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{\infty}a_n u_n]{ (a_n)_{n=1}^{\infty} \in l^\infty}.
+			S := \overline{\spn\set{u_1, \dots,u_n, \dots}} = \set[\sum_{k=1}^{\infty}a_k u_k]{ (a_n)_{n=1}^{\infty} \in l^\infty}.
 		\]
 		S is a closed subspace of $E$. \\ We have $E = S \oplus S^{\perp}$ where $S^{\perp} \subseteq Q_k = \set{u_1,\dots,u_k}^{\perp}$ for all $k \in \mathbb{N}$.
 		For $x \in E$ we have
@@ -380,7 +380,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 \end{beweis}
 
 \begin{theorem}[Spectral mapping theorem]
-	$(E,\skal{.}{.})$ seperable Hilbert space and $\infty$-dimensional $A \in K(E,E)$ self-adjoint. Then there exists a ON-basis of eigenvectors $(\tilde u_n)_{n=1}^{\infty}$ corresponding to the eigenvalues $(\tilde \lambda_n)_{n=1}^{\infty}$ if $A$ where $\lim_{n \to \infty} \tilde \lambda_n = 0$.
+	$(E,\skal{.}{.})$ seperable Hilbert space and $\infty$-dimensional $A \in K(E,E)$ self-adjoint. Then there exists a ON-basis of eigenvectors $(\tilde u_n)_{n=1}^{\infty}$ corresponding to the eigenvalues $(\tilde \lambda_n)_{n=1}^{\infty}$ of $A$ where $\lim_{n \to \infty} \tilde \lambda_n = 0$.
 \end{theorem}
 \begin{beweis}[consequence of HS-theorem]
 	We have by HS-theorem an ON-sequence $(u_n)_{n=1}^{\infty}$ of eigenvectors corresponding to the non-zero eigenvalues $(\lambda_n)_{n=1}^{N}$. \\
@@ -388,7 +388,7 @@ We are now going to prove the Hilbert-Schmidt theorem:
 	\[
 		S = \overline{\spn\set{u_1,\dots,u_n, \dots}}.
 	\]
-	$E$ is seperable implies $E$ has an ON-basis $(v_n)_{n=1}^{\infty}$. By Gram-Schmidt Orthoganlization procedure we can obtain an ON-basis $(w_n)_{n=1}^{M}$ for $S^{\perp}$. Have $M$ finite or infinite. \begin{align*}
+	$E$ is seperable implies $E$ has an ON-basis $(v_n)_{n=1}^{\infty}$. By Gram-Schmidt Orthogonalization procedure we can obtain an ON-basis $(w_n)_{n=1}^{M}$ for $S^{\perp}$. Have $M$ finite or infinite. \begin{align*}
 		S &:\,u_1,u_2, \dots \qquad \text{ON-basis finite or infinite} \\
 		S^{\perp} &:\,w_1,w_2, \dots \qquad \text{ON-basis finite or infinite}
 	\end{align*}

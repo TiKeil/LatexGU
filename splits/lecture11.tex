@@ -91,12 +91,12 @@ Before the proof we note:
 	 	M = \sup_{n} \norm{x_n} < \infty.
 	 \]
 	 \begin{align*}
-	 	A_1 \in K(E,E) \qquad &\Rightarrow \qquad (A_1(x_n))_{n=1}^{\infty} \text{ has a converging subsequence }(A_1(x _{n_k}))_{k=1}^{\infty} \\
-		A_2 \in K(E,E) \qquad &\Rightarrow \qquad (A_2(x_n))_{n=1}^{\infty} \text{ has a converging subsequence }(A_2(x _{n_k}))_{k=1}^{\infty}
+	 	A_1 \in K(E,E) \qquad &\Rightarrow \qquad (A_1(x_n))_{n=1}^{\infty} \text{ has a converging subsequence }(A_1(x _{n,1}))_{n=1}^{\infty} \\
+		A_2 \in K(E,E) \qquad &\Rightarrow \qquad (A_2(x_{n,1}))_{n=1}^{\infty} \text{ has a converging subsequence }(A_2(x _{n,2}))_{n=1}^{\infty}
 	 \end{align*}
 	 proceed inductively:
 	 \[
-	 	A_k \in K(E,E) \qquad \Rightarrow \qquad (A_k(x_n))_{n=1}^{\infty} \text{ has a converging subsequence }(A_k(x _{n_l}))_{l=1}^{\infty}
+	 	A_k \in K(E,E) \qquad \Rightarrow \qquad (A_k(x_{n,k-1}))_{n=1}^{\infty} \text{ has a converging subsequence }(A_k(x _{n,k}))_{l=1}^{\infty}
 	 \] 
 	 Also: $(A_l(x_{n,k})_{n=1}^{\infty}$ converges in $E$ for $l=1,2,\dots,k$. \\ Here $(A_k(y_n))_{n=1}^{\infty}$ converges for $k=1,2,\dots$. \\
 	 So since $(E,\norm{.})$ is a Banach space it is enough to show that $(A(y_n))_{n=1}^{\infty}$ is a Cauchy sequence in $(E,\norm{.})$. \\
