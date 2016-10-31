@@ -1,0 +1,181 @@
+(dp0
+Vengine
+p1
+Vxelatex
+p2
+sVpackages
+p3
+c__builtin__
+set
+p4
+((lp5
+Vmathrsfs
+p6
+aVxcolor
+p7
+aVstackrel
+p8
+aVbooktabs
+p9
+aVlatexsym
+p10
+aVetoolbox
+p11
+aVfloat
+p12
+aVmakeidx
+p13
+aVstmaryrd
+p14
+aVamsthm
+p15
+aVcancel
+p16
+aVtikz-cd
+p17
+aVifthen
+p18
+aVragged2e
+p19
+aVparalist
+p20
+aVmathtools
+p21
+aVmulticol
+p22
+aVletltxmacro
+p23
+aVmdframed
+p24
+aVnicefrac
+p25
+aVbookmark
+p26
+aVxltxtra
+p27
+aVulem
+p28
+aVblindtext
+p29
+aVmicrotype
+p30
+aVtocstyle
+p31
+aVscrtime
+p32
+aVmarginnote
+p33
+aVfontspec
+p34
+aVmathdots
+p35
+aVcleveref
+p36
+aVscrpage2
+p37
+aVthmtools
+p38
+aVellipsis
+p39
+aVgraphicx
+p40
+aVwrapfig
+p41
+aVtodonotes
+p42
+aVpolyglossia
+p43
+aVhyperref
+p44
+aVtikz
+p45
+aVwasysym
+p46
+aVcaption
+p47
+aVpgfplots
+p48
+aVcsquotes
+p49
+aVesint
+p50
+aVamssymb
+p51
+atp52
+Rp53
+sVfiles_with_guttermarks
+p54
+g4
+((lp55
+V/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/./AF.tex
+p56
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/Applied Functional/tex/script/!config/VorlagenTim/preambel.tex
+p57
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture8b.tex
+p58
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture5.tex
+p59
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/./splits/lecture7.tex
+p60
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/./splits/lecture2.tex
+p61
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture14.tex
+p62
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture4.tex
+p63
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture9.tex
+p64
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture3.tex
+p65
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture8b.tex
+p66
+aS'AF.tex'
+p67
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./AF.tex
+p68
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture10.tex
+p69
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/./splits/lecture8b.tex
+p70
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture7.tex
+p71
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture11.tex
+p72
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture8a.tex
+p73
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/!config/VorlagenTim/preambel.tex
+p74
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture7.tex
+p75
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture2.tex
+p76
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture11.tex
+p77
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture12.tex
+p78
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/Applied Functional/tex/script/./AF.tex
+p79
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/Applied Functional/tex/./AF.tex
+p80
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture13.tex
+p81
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/splits/lecture10.tex
+p82
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture6.tex
+p83
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture12.tex
+p84
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/Applied Functional/tex/!config/VorlagenTim/preambel.tex
+p85
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture9.tex
+p86
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture1.tex
+p87
+aV/Users/Tii/Documents/Uni/Mathe/9. Semester (Schweden)/LatexGU/AF/./splits/lecture13.tex
+p88
+atp89
+Rp90
+sVsynctex
+p91
+I01
+s.
