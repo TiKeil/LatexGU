@@ -27,8 +27,239 @@ It mainly contains the written content of the lecture. I will not assume any res
 
 \section{Introduction} 
 \label{sec:introduction}
+\begin{definition*}[Fouriertransforms]
+	We remember the Fouriertransformation for $\mathbb{R}^n$
+	\[
+		\hat{f}(\xi) = \int_{\mathbb{R}^n}^{}e^{-2 \pi i x \cdot \xi} f(x) \,\mathrm{d}x.
+	\]
+	where
+	\[
+		x \cdot \xi = \sum^{n}_{i=1}x_i \xi_j
+	\]
+\end{definition*}
+The course will be about
+\begin{itemize}
+	\item The Fourier transforms
+	\item Distribution theory
+	\item Transforms related to Fouriertransforms. (Radon, Hankel z-transforms)
+	\item The Wavelet transforms
+	\item Multiresolution analysis
+	\item Discrete Fouriertransforms, Sampling
+	\item Applications (3 Lab obligus)
+\end{itemize}
+\begin{description}
+	\item[Notation] 
+	\[
+		\begin{cases}
+			\hat{f}(\xi) &= (\mathcal{F}f)(\xi) \\
+			f(x) &\stackrel{\mathcal{F}}{\supset} \hat{f}(\xi)
+		\end{cases}
+	\]
+\item[Basic properties]
+\begin{description}
+	\item[Linearity] \begin{align*}
+		f + g &\supset \hat{f} + \hat{g} \\
+		\alpha f &\supset \alpha \hat{f} \qquad (\alpha \in \mathbb{C}, \alpha \in \mathbb{R}) 
+	\end{align*} 
+	\item[Scaling] \[
+		f \supset \hat{f} \qquad \Leftrightarrow \qquad \frac{1}{a}f ( \frac{x}{a}) \stackrel{\mathcal{F}}{\supset} \hat{f}(a \xi)
+	\]
+\end{description}
+If $f$ is "resonably regular/smoth" so is $\hat{f}$.
+\item[ouriertransform in $L_2(\mathbb{R})$]
+\[
+	L_2(\mathbb{R}):= \set[f]{f \text{ is measurable and } \int_{\mathbb{R}}^{}\abs{f(x)}^2 \,\mathrm{d}x < \infty}
+\]
+\item[Scalar product]
+With $f,g :\mathbb{R} \to \mathbb{C}$ we have
+\[
+	\skal{f}{g} = \int_{\mathbb{R}}^{} f(x) \overline{g(x)} \,\mathrm{d}x.
+\]
+\item[Parsevals formula]
+\[
+	\int_{\mathbb{R}}^{}\abs{f(x)}^2 \,\mathrm{d}x = \int_{\mathbb{R}}^{} \abs{\hat{f}(\xi)}^2 \,\mathrm{d}\xi.
+\]
+\end{description}
+By "regular/smoth" we will mean Schwartz class $S$. \\
+Often we will have that $f(x)$ is a signal where $f(t)= sin(\omega t)$.
+\begin{definition*}[Hevyside]
+	We call
+	\[
+		f(t) = H(x) := \begin{cases}
+			1, &x \geq 0 \\
+			0, &x <0
+		\end{cases}
+	\]
+	the Hevyside-function. \\
+	We have also 
+	\[
+		f(t) = \delta(t)
+	\]
+	which is called the Diracs "$\delta $-function" and it is the derivative of the Hevyside function. The Dirac functions are not in $L_2$ (nor in $S$).
+\end{definition*}
+\begin{fundamental}[The Fourier inversion forumula]
+	\[
+		\hat{f}(\xi) = \int_{\mathbb{R}}^{} e^{-2 \pi i x \xi} f(x) \,\mathrm{d}x \qquad \Leftrightarrow \qquad f(x) = \int_{\mathbb{R}}^{}e^{2 \pi i x \xi}\hat{f}(\xi) \,\mathrm{d}\xi.
+	\]
+\end{fundamental}
+\begin{beispiel}
+	Consider
+	\[
+		\mathcal{F}(e^{-\pi x^2}) = e^{- \pi \xi^2}.
+	\]
+	We want to scale with $a=2$. Then we get
+	\[
+		\frac{1}{2} e^{- \pi \left( \frac{x}{2} \right)^2} \stackrel{\mathcal{F}}{\supset } e^{-\pi (2 \xi)^2}.
+	\]
+\end{beispiel}
+\minisec{Other transforms:}
+\begin{description}
+	\item[Hankel:]
+	\[
+		\hat{f}(\xi_1,\xi_2) = \int_{\mathbb{R}^2}^{} e^{- 2 \pi i (x_1 \xi_1 + x_2 \xi_2)} f(x_1,x_2) \,\mathrm{d}x_1 \,\mathrm{d}x_2
+	\] 
+	Let 
+	\[
+		f(x_1,x_2) = F( \sqrt{x_1^2+ x_2^2}) = F(r), \qquad \begin{cases}
+			x_1 &= r \cos \theta, \\	
+			x_2 &= r \sin \theta		
+		\end{cases}
+	\]
+	Then
+	\[
+		\hat{f}(\xi_1,\xi_2) = \tilde F(\sqrt{\xi_1^2+ \xi_2^2}) = \tilde F(\rho), \qquad \begin{cases}
+			% \xi_1 &= r \cos \theta, \\
+% 			\xi_2 &= r \sin \theta		
+		\end{cases}
+	\]
+	\[
+		F(r) \mapsto \tilde F( \rho)
+	\] 
+	\item[Raden] IF $f(x_1,x_2)$ is the density of "the head" at point $(x_1,x_2)$. Then
+	\[
+		\int_{L_{r,\omega}}^{} f(x_1,x_2) \,\mathrm{d}t
+	\]
+	gives a measure of damping along $L_{r,\omega}$ (which can be measured).
+	\[
+		\mathcal{R}_{\omega} = \int_{L_{r,\omega}}^{} f(x_1,x_2) \,\mathrm{d}t
+	\]
+	is the Radon transform. It has an application in computer tomography.
+\end{description}
+\subsection{Functions with Fouriertransform} 
+\label{sub:functions_with_fouriertransform}
+What functions do have a Fouriertransform?
+\begin{align*}
+	L_2(\mathbb{R}) = \\
+	\mathcal{S} \qquad \text{(smooth functions with rapid dacay)} \\
+	L_1(\mathbb{R}) = \set[f]{\int_{\mathbb{R}}^{}\abs{f(x)} \,\mathrm{d}x < \infty}
+\end{align*}
+Note that if
+\[
+	f \in L_1(\mathbb{R}) 
+\]
+we get
+\begin{align*}
+	\abs{\hat{f}f(\xi)} = \abs{\int_{\mathbb{R}}^{} e^{-2 \pi x \xi} f(x) \,\mathrm{d}x} \\
+	\leq \int_{\mathbb{R}}^{} \underset{= \abs{f(x)}}{\underbrace{\abs{e^{-2 \pi i x \xi}f(x)}}} \,\mathrm{d}x < \infty
+\end{align*}
+So we have in general
+\[
+	f \in L_1(\mathbb{R}) \qquad \Rightarrow \qquad \hat{f} \in L_{\infty}(\mathbb{R})
+\]
+And more general we have it for $L_p$ and $L_q$ for $\frac{1}{p}+ \frac{1}{q} =1$.
+\begin{theorem}[Hausdorff-Young's inequality]
+	For $1 \leq p \leq 2$ with $\frac{1}{p} + \frac{1}{q} = 1$ we have
+	\[
+		f \in L_p(\mathbb{R}) \qquad \Rightarrow \qquad \hat{f} \in L_q(\mathbb{R})
+	\]
+	This is a variation of Hölder's inequality.
+\end{theorem}
+\begin{theorem}[Convolution Theorem]
+	Let \[
+		f(x) \stackrel{\mathcal{F}}{\supset} \hat{f}(\xi) \text{ and } g(x) \stackrel{\mathcal{F}}{\supset} \hat{g}(\xi)
+	\]
+	Then we define
+	\[
+		(f * g)(x) = \int_{\mathbb{R}}^{} f(x-y)g(y) \,\mathrm{d}y \qquad \Leftrightarrow \qquad \supset \hat{f}(\xi)\hat{g}(\xi)
+	\]
+	with the properties
+	\begin{description}
+		\item[commutative:] $f * g= g * f$
+		\item[associative] $f *( g * h) = (f*g) * h$
+		\item[distributive] $f * (g + h) = f *g + f *h$ 
+	\end{description}
+\end{theorem}
+\minisec{Translation:}
+Let $\tau_a$ be a translation such that $\tau_a: f(.) \mapsto f(. -a)$. Then we have
+\begin{align*}
+	\mathcal{F}(\tau_a f)(\xi) &= \int_{\mathbb{R}}^{}e ^{-2 \pi i \xi x}f(\underset{x-a}{\underbrace{=y}}) \,\mathrm{d}x \\
+	&= \int_{\mathbb{R}}^{} e^{-2 \pi i x \xi(x+y)} f(y) \,\mathrm{d}y \\
+	&= e^{-2 \pi i x \xi a} \int_{\mathbb{R}}^{} e^{-2 \pi i \xi y} f(y) \,\mathrm{d}y 
+\end{align*}
+and also
+\begin{align*}
+	\tau_a \hat{f}(\xi) &= \int_{\mathbb{R}}^{} e^{-2 \pi i x ( \xi - a )} f(x) \,\mathrm{d}x \\
+	&= \int_{\mathbb{R}}^{} e^{-2 \pi i x \xi} \left( e^{2 \pi i x a }f(x) \right) \,\mathrm{d}x
+\end{align*}
+\minisec{Derivation:}
+We have
+\[
+	f \stackrel{\mathcal{F}}{\supset} \hat{f} \qquad \Rightarrow \qquad \begin{cases}
+		Df &\stackrel{\mathcal{F}}{\supset} 2 \pi i \xi \hat{f}(\xi) \\
+		- 2 \pi i (.)f &\stackrel{\mathcal{F}}{\supset} D \hat{f}
+	\end{cases}
+\]
+\begin{beweis}
+	We have
+	\[
+		\hat{f}(\xi) = \int_{\mathbb{R}}^{} f(x) e^{-2 \pi i x \xi} \,\mathrm{d}x
+	\]
+	Then
+	\[
+		D \hat{f}(\xi) = \int_{\mathbb{R}}^{} \left( -2 \pi i x f(x) \right) e^{-2 pi i x \xi} \,\mathrm{d}x.
+	\]
+	And also with partial differentiation
+	\begin{align*}
+		\mathcal{F}(Df) &= \int_{\mathbb{R}}^{} e^{-2 \pi i x \xi} f'(x) \,\mathrm{d}x \\
+		&= - \int_{\mathbb{R}}^{} - 2 \pi i \xi e^{-2 \pi i x \xi}f(x) \,\mathrm{d}x.
+	\end{align*}
+\end{beweis}
+\subsection{The schwartz classes $\mathcal{S}$ and $\mathcal{S}'$} 
+\label{sub:the_classes_mathcal_s_and_mathcal_s}
+[Distributions (generalized functions)]
 
+\begin{definition}[Schwartz-class]
+	The function class $\mathcal{S}$ are complex-valued functions $f$ of a real variable such that $f: \mathbb{R} \to \mathbb{C}$ satisfies
+	\[
+		\sup_{x \in \mathbb{R}} \abs{ \abs{x}^{\alpha} D^{\beta}f(x)} < \infty.
+	\]   
+	for any choice of $\alpha \geq 0$ and $\beta \geq 0$.
+\end{definition}
+\begin{beispiele}
+	\begin{itemize}
+		\item For $a >0$ \[
+		f(x) = e^{- a x^2}
+	\]
+	What if $a = i$ or $a <0$?
+	\item \[
+		f(x) = \begin{cases}
+			e^{- \frac{1}{(x-2)^2} - \frac{1}{(x-b)^2}}, &a < x < b \\
+			0, &\text{else}
+		\end{cases}
+	\]
+	$f$ has compact support $f \in C^{\infty}$ "but not! real analytic" (i.e. its power series is not convergent)
+	\end{itemize}
+\end{beispiele}
 
+%% missing
+
+We will now state properties of $\mathcal{S}$.
+\begin{lemma}[properties of $\mathcal{S}$]
+	\begin{enumerate}
+		\item if $f \in \mathcal{S}$ and if for $\alpha, \beta \in \mathbb{Z}^+$ $g(x) = x^{\alpha} D^{\beta}f(x)$ then $g \in \mathcal{S}$
+		\item $f \in  \mathcal{S} \qquad \Rightarrow \qquad \hat{f} \in S$.
+	\end{enumerate}
+\end{lemma}
 
 \cleardoubleoddemptypage
 \pagenumbering{Alph}
